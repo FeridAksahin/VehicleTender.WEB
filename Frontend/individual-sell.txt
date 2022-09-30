@@ -1,0 +1,77 @@
+﻿    <div class="container">
+        <div class="row">
+            <h4 style="text-align: center;"><u>Araç Detay Bilgileri</u></h4>
+            <div class="col-4">
+                <div class="form-group">
+                    <label>Araç Marka</label>
+                    <select class="form-control">
+                        <option>X</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Araç Model</label>
+                    <select class="form-control">
+                        <option>X</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Gövde Tipi</label>
+                    <select class="form-control">
+                        <option>X</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Yıl</label>
+                    <select class="form-control">
+                        <option>X</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Vites Tipi</label>
+                    <select class="form-control">
+                        <option>X</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Yakıt Tipi</label>
+                    <select class="form-control">
+                        <option>X</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Renk</label>
+                    <select class="form-control">
+                        <option>X</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Versiyon</label>
+                    <select class="form-control">
+                        <option>X</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Donanım</label>
+                    <select class="form-control">
+                        <option>X</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>KM Bilgisi</label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="form-group">
+                    <label>Fotoğraf</label>
+                    <input type="file" class="form-control">
+                </div><br><br><br>
+                <div class="form-group">
+                    <label>Açıklama</label>
+                    <textarea class="form-control" cols="30" rows="10"></textarea>
+                </div>
+                <input type="submit" value="Teklif Al" class="btn btn-outline-success mt-2" style="float:right; margin-left: 2%;">
+                <input type="submit" value="Hasar Tramer Bilgileri" class="btn btn-outline-success mt-2" style="float:right;">
+            </div>
+        </div>
+    </div>

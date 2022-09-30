@@ -1,0 +1,86 @@
+﻿    <div class="container mt-3">
+        <h4><u>İhale Genel Bilgiler</u></h4>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-4">
+                    <label>İhale Adı</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div class="col-4">
+                    <label>Bireysel / Kurumsal</label>
+                    <select class="form-control">
+                        <option value="1">Bireysel</option>
+                        <option value="2">Kurumsal</option>
+                    </select>
+                </div>
+                <div class="col-4">
+                    <label>Şirket Adı</label>
+                    <select class="form-control">
+                        <option value="1">X</option>
+                        <option value="2">Y</option>
+                    </select>
+                </div>
+            </div>
+        </div><br>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-4">
+                    <label>Statü</label>
+                    <select class="form-control">
+                        <option value="1">X</option>
+                        <option value="2">Y</option>
+                    </select>
+                </div>
+                <div class="col-4">
+                    <label>İhale Başlangıç Tarih</label>
+                    <input type="datetime-local" class="form-control">
+                </div>
+                <div class="col-4">
+                    <label>İhale Başlangıç Saati</label>
+                    <input type="time" class="form-control">
+                </div>
+            </div>
+        </div><br>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-4">
+                    <label>İhale Bitiş Tarih</label>
+                    <input type="datetime-local" class="form-control">
+                </div>
+                <div class="col-4">
+                    <label>İhale Bitiş Saati</label>
+                    <input type="time" class="form-control">
+                </div>
+            </div>
+        </div>
+        <br>
+        <h4><u>İhale Araç Listesi</u></h4>
+        <table class="table table-hover" style="margin-top: 10px">
+            <thead>
+                <tr>
+                    <th>Araç ID</th>
+                    <th>Araç Marka</th>
+                    <th>Araç Model</th>
+                    <th>Bireysel / Kurumsal</th>
+                    <th>Statü</th>
+                    <th>Kaydeden Kullanıcı</th>
+                    <th>Kaydetme Zamanı</th>
+                    <th>Fiyat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>123</td>
+                    <td>Toyota</td>
+                    <td>Yaris</td>
+                    <td>Bireysel</td>
+                    <td>Satışta</td>
+                    <td>Kemal</td>
+                    <td>12.08.2020-15:30</td>
+                    <td>X</td>
+                </tr>
+            </tbody>
+        </table>
+        <input type="submit" class="btn btn-outline-primary" value="Araç Ekle" style="float: right; margin-left: 15px;">
+        <input type="submit" class="btn btn-outline-primary" value="Kaydet" style="float: right;">
+    </div>

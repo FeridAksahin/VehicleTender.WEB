@@ -1,0 +1,55 @@
+﻿using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using VehicleTender.API.Entity.Entities;
+
+namespace VehicleTender.API.Entity.Context
+{
+    public class VehicleTenderContext : DbContext
+    {
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) //startupda adddbcontext kullanıyorsak bunu yazmak zorundayız aynen bu şekil
+        {
+            optionsBuilder.UseSqlServer("data source=.;database=VehicleTender;Integrated Security=true;");
+        }
+
+
+        public VehicleTenderContext()
+        {
+
+        } 
+        public virtual DbSet<Car> Car { get; set; }
+        public virtual DbSet<CarDetailInfo> CarDetailInfo { get; set; }
+        public virtual DbSet<VehicleStatuHistory> VehicleStatuHistory { get; set; }
+        public virtual DbSet<Authority> Authority { get; set; }
+        public virtual DbSet<IndividualVehiclePurchase> IndividualVehiclePurchase { get; set; }
+        public virtual DbSet<IndividualVehicleSales> IndividualVehicleSales { get; set; }
+        public virtual DbSet<Expertise> Expertise { get; set; }
+        public virtual DbSet<EnumCompanyType> EnumCompanyType { get; set; }
+        public virtual DbSet<EnumPacket> EnumPacket { get; set; }
+        public virtual DbSet<EnumStatuType> EnumStatuType { get; set; }
+        public virtual DbSet<Favorite> Favorite { get; set; }
+        public virtual DbSet<BuyingTenderVehicle> BuyingTenderVehicle { get; set; }
+        public virtual DbSet<TenderVehicleSales> TenderVehicleSales { get; set; }
+        public virtual DbSet<AdvertInfo> AdvertInfo { get; set; }
+        public virtual DbSet<Commission> Commission { get; set; }
+        public virtual DbSet<CorporateDetail> CorporateDetail { get; set; }
+        public virtual DbSet<Message> Message { get; set; }
+        public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<Notary> Notary { get; set; }
+        public virtual DbSet<PacketAuthority> PacketAuthority { get; set; }
+        public virtual DbSet<Picture> Picture { get; set; }
+        public virtual DbSet<Role> Role { get; set; }
+        public virtual DbSet<RoleAuthority> RoleAuthority { get; set; }
+        public virtual DbSet<RoleUser> RoleUser { get; set; }
+        public virtual DbSet<PurchasedVehicle> PurchasedVehicle { get; set; }
+        public virtual DbSet<Statu> Statu { get; set; }
+        public virtual DbSet<Stock> Stock { get; set; }
+        public virtual DbSet<FavoriteSearchCriteria> FavoriteSearchCriteria { get; set; }
+        public virtual DbSet<FavoriteFeature> FavoriteFeature { get; set; }
+        public virtual DbSet<Hardware> Hardware { get; set; }
+
+    }
+}
