@@ -25,7 +25,7 @@ namespace VehicleTender.API.ChatBotService.CommandGenerator.Financial
                 return getReponseMessage;
             }
             catch
-            {//aslında requestlerde enumla alınıyor catche gerek yok 
+            { 
                 return "";
                 //error log
                 //error message 

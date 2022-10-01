@@ -11,9 +11,11 @@ namespace VehicleTender.API.ChatBotService.CommandGenerator.Financial
         Dictionary<RequestCommands, ResponseCommands> getResponseMessage = new Dictionary<RequestCommands, ResponseCommands>();
         public Dictionary<RequestCommands, ResponseCommands> GetResponse()
         {
+            //for döngüsüne çevirip otomatik atandırcak.
             getResponseMessage.Add(RequestCommands.NotaryPriceInfo, ResponseCommands.NotaryPrice);
             getResponseMessage.Add(RequestCommands.EmergencyCardSituation, ResponseCommands.EmergencyCardSituationResponse);
             return getResponseMessage;
         }
+
     }
 }
