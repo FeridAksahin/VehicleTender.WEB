@@ -10,10 +10,10 @@ namespace VehicleTender.API.Common.Enums
     public enum ChatBotRequest
     {
         [Description("Mali İşler Botu Talebi")]
-        MaliIslerBotuTalebi,
+        FinancialAffairsBotRequest,
         [Description("Üye İşlemleri Bot Talebi")]
-        UyeIslemlerBotuTalebi
+        MemberProcessBotRequest
 
-            //daha gelicek bot tipleri mevcut
+        //daha gelicek bot tipleri mevcut
     }
 }

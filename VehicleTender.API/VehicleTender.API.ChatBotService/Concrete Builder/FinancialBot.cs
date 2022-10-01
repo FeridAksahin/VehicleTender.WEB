@@ -18,12 +18,11 @@ namespace VehicleTender.API.ChatBotService.Concrete_Builder
             request = _request;
             bot = new Bot();
         }
-      
+
         public override string buildBotCommands()
         {
             responseCommands = new ResponseMessage(request);
-            var message = responseCommands.SendResponseMessage();
-            return message;
+            return bot.BuildBotCommands = responseCommands.SendResponseMessage();
         }
 
         public override string buildBotDescription()
