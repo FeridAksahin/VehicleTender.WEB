@@ -17,9 +17,6 @@ namespace VehicleTender.API.Entity.Entities
         public int? StatuId { get; set; }
 
         public string? TenderName { get; set; }
-
-        public int? CarDetailInfoId { get; set; }
-
         [Column(TypeName = "money")]
         public decimal? TenderStartingPrice { get; set; }
 
@@ -36,15 +33,17 @@ namespace VehicleTender.API.Entity.Entities
 
         [Column(TypeName = "money")]
         public decimal? TargetPrice { get; set; }
+        public int? UserId { get; set; }
 
         public int? FavoriteCount { get; set; }
 
         [StringLength(50)]
         public string? TenderDuration { get; set; } //ihalede kalma süresi
-        [ForeignKey("CarDetailInfoId")]
-        public virtual CarDetailInfo CarDetailInfo { get; set; }
         public virtual List<BuyingTenderVehicle> BuyingTenderVehicle { get; set; }
+        public virtual List<TenderVehicleDetail> TenderVehicleDetail { get; set; }
         [ForeignKey("StatuId")]
         public virtual Statu Statu { get; set; }
+        [ForeignKey("UserId")]
+        public virtual User User { get; set; }
     }
 }

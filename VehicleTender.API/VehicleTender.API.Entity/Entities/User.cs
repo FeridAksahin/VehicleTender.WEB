@@ -41,7 +41,7 @@ namespace VehicleTender.API.Entity.Entities
         public virtual List<RoleUser> RoleUser { get; set; }
         [NotMapped]
         public virtual List<PurchasedVehicle> PurchasedVehicle { get; set; }
-
+        public virtual List<TenderVehicleSales> TenderVehicleSales { get; set; }
         public virtual List<Stock> Stock { get; set; }
     }
 }

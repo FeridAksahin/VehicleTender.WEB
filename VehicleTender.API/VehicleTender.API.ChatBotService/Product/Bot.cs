@@ -9,7 +9,7 @@ namespace VehicleTender.API.ChatBotService.Product
 {
     public class Bot
     {
-        public List<ResponseGenerator> BuildBotCommands { get; set; }
+        public string BuildBotCommands { get; set; }
         public string BuildBotDescription { get; set; }
     }
 }
