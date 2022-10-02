@@ -33,6 +33,7 @@ namespace VehicleTender.API.Entity.Entities
 
         [Column(TypeName = "money")]
         public decimal? TargetPrice { get; set; }
+        public int? UserId { get; set; }
 
         public int? FavoriteCount { get; set; }
 
@@ -42,5 +43,7 @@ namespace VehicleTender.API.Entity.Entities
         public virtual List<TenderVehicleDetail> TenderVehicleDetail { get; set; }
         [ForeignKey("StatuId")]
         public virtual Statu Statu { get; set; }
+        [ForeignKey("UserId")]
+        public virtual User User { get; set; }
     }
 }

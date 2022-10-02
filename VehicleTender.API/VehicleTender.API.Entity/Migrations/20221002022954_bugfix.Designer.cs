@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VehicleTender.API.Entity.Context;
 
@@ -11,9 +12,10 @@ using VehicleTender.API.Entity.Context;
 namespace VehicleTender.API.Entity.Migrations
 {
     [DbContext(typeof(VehicleTenderContext))]
-    partial class VehicleTenderContextModelSnapshot : ModelSnapshot
+    [Migration("20221002022954_bugfix")]
+    partial class bugfix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1172,6 +1174,11 @@ namespace VehicleTender.API.Entity.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int?>("AdvertInfoId")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("int");
+
                     b.Property<int?>("CreatedBy")
                         .HasColumnType("int");
 
@@ -1206,8 +1213,7 @@ namespace VehicleTender.API.Entity.Migrations
                         .HasColumnType("nvarchar(150)");
 
                     b.Property<string>("TenderEndHour")
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal?>("TenderMinumumPrice")
                         .HasColumnType("money");
@@ -1218,18 +1224,14 @@ namespace VehicleTender.API.Entity.Migrations
                     b.Property<decimal?>("TenderStartingPrice")
                         .HasColumnType("money");
 
-                    b.Property<int?>("UserId")
-                        .IsRequired()
-                        .HasColumnType("int");
-
                     b.Property<bool?>("isItCorporate")
                         .HasColumnType("bit");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("StatuId");
+                    b.HasIndex("AdvertInfoId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("StatuId");
 
                     b.ToTable("TenderVehicleSales");
                 });
@@ -1664,21 +1666,21 @@ namespace VehicleTender.API.Entity.Migrations
 
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.TenderVehicleSales", b =>
                 {
+                    b.HasOne("VehicleTender.API.Entity.Entities.AdvertInfo", "AdvertInfo")
+                        .WithMany("TenderVehicleSales")
+                        .HasForeignKey("AdvertInfoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("VehicleTender.API.Entity.Entities.Statu", "Statu")
                         .WithMany("TenderVehicleSales")
                         .HasForeignKey("StatuId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("VehicleTender.API.Entity.Entities.User", "User")
-                        .WithMany("TenderVehicleSales")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("AdvertInfo");
 
                     b.Navigation("Statu");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.VehicleStatuHistory", b =>
@@ -1707,6 +1709,8 @@ namespace VehicleTender.API.Entity.Migrations
                     b.Navigation("Favorite");
 
                     b.Navigation("Picture");
+
+                    b.Navigation("TenderVehicleSales");
                 });
 
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.Car", b =>
@@ -1806,8 +1810,6 @@ namespace VehicleTender.API.Entity.Migrations
                     b.Navigation("RoleUser");
 
                     b.Navigation("Stock");
-
-                    b.Navigation("TenderVehicleSales");
                 });
 #pragma warning restore 612, 618
         }
