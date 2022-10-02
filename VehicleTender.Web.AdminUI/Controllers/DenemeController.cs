@@ -20,5 +20,9 @@ namespace VehicleTender.Web.AdminUI.Controllers
         {
             return View();
         }
+        public IActionResult Error()
+        {
+            return View();
+        }
     }
 }
