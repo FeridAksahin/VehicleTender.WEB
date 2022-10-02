@@ -6,4 +6,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="AppServices\" />
+    <Folder Include="Filters\" />
+    <Folder Include="ViewComponents\" />
+  </ItemGroup>
+
 </Project>
