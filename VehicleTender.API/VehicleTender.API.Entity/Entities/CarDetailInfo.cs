@@ -41,8 +41,8 @@ namespace VehicleTender.API.Entity.Entities
 
         public virtual List<VehicleStatuHistory> VehicleStatuHistory { get; set; }
         public virtual List<IndividualVehicleSales> IndividualVehicleSales { get; set; }
-        public virtual List<TenderVehicleSales> TenderVehicleSales { get; set; }
         public virtual List<PurchasedVehicle> PurchasedVehicle { get; set; }
+        public virtual List<TenderVehicleDetail> TenderVehicleDetail { get; set; }
         public virtual List<Stock> Stock { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VehicleTender.API.Entity.Context;
 
@@ -11,9 +12,10 @@ using VehicleTender.API.Entity.Context;
 namespace VehicleTender.API.Entity.Migrations
 {
     [DbContext(typeof(VehicleTenderContext))]
-    partial class VehicleTenderContextModelSnapshot : ModelSnapshot
+    [Migration("20221001231951_control")]
+    partial class control
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1172,6 +1174,9 @@ namespace VehicleTender.API.Entity.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int?>("CarDetailInfoId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("CreatedBy")
                         .HasColumnType("int");
 
@@ -1222,6 +1227,8 @@ namespace VehicleTender.API.Entity.Migrations
                         .HasColumnType("bit");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CarDetailInfoId");
 
                     b.HasIndex("StatuId");
 
@@ -1658,6 +1665,10 @@ namespace VehicleTender.API.Entity.Migrations
 
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.TenderVehicleSales", b =>
                 {
+                    b.HasOne("VehicleTender.API.Entity.Entities.CarDetailInfo", null)
+                        .WithMany("TenderVehicleSales")
+                        .HasForeignKey("CarDetailInfoId");
+
                     b.HasOne("VehicleTender.API.Entity.Entities.Statu", "Statu")
                         .WithMany("TenderVehicleSales")
                         .HasForeignKey("StatuId")
@@ -1709,6 +1720,8 @@ namespace VehicleTender.API.Entity.Migrations
                     b.Navigation("Stock");
 
                     b.Navigation("TenderVehicleDetail");
+
+                    b.Navigation("TenderVehicleSales");
 
                     b.Navigation("VehicleStatuHistory");
                 });
