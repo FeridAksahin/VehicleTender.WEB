@@ -2,7 +2,7 @@
 
 namespace VehicleTender.API.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class SecurityController : Controller
     {
@@ -10,9 +10,31 @@ namespace VehicleTender.API.Api.Controllers
         /// All Security actions will be done here.
         /// </summary>
         /// <returns></returns>
-        public IActionResult Index()
+        public SecurityController()
         {
-            return View();
+
+        }
+
+        [HttpGet("")]
+        public IActionResult GetIndex()
+
+        {
+            return Ok();
+        }
+        [HttpPut("")]
+        public IActionResult PutIndex()
+        {
+            return Ok();
+        }
+        [HttpPost("")]
+        public IActionResult PostIndex()
+        {
+            return Ok();
+        }
+        [HttpDelete("")]
+        public IActionResult DeleteIndex()
+        {
+            return Ok();
         }
     }
 }
