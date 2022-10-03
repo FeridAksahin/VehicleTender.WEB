@@ -27,10 +27,24 @@ namespace VehicleTender.Web.EndUserUI.Controllers
             return View();
         }
 
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        public ActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        [HandleError]
         public ActionResult ErrorPage404()
         {
-            Response.StatusCode = 404;
-            Response.TrySkipIisCustomErrors = true;
             return View();
         }
     }
