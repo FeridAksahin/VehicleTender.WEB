@@ -24,5 +24,7 @@ namespace VehicleTender.API.Entity.Entities
         public virtual EnumStatuType EnumStatuType { get; set; }
 
         public virtual List<TenderVehicleSales> TenderVehicleSales { get; set; }
+        public virtual List<TenderStatuHistory> TenderStatuHistory { get; set; }
+        List<IndividualVehicleSalesStatuHistory> IndividualVehicleSalesStatuHistory { get; set; }
     }
 }

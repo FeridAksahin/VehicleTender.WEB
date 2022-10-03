@@ -8,20 +8,17 @@ using System.Threading.Tasks;
 
 namespace VehicleTender.API.Entity.Entities
 {
-    [Table("VehicleStatuHistory")]
-    public class VehicleStatuHistory : BaseEntity
+    [Table("IndividualVehicleSalesStatuHistory")]
+    public class IndividualVehicleSalesStatuHistory : BaseEntity
     {
         [Key]
         public int Id { get; set; }
-
+        public int? IndividualVehicleSalesId { get; set; }
         public int? StatuId { get; set; }
-
-        public string? Note { get; set; }
-        public int? CarDetailInfoId { get; set; }
-
-        [ForeignKey("CarDetailInfoId")]
-        public virtual CarDetailInfo CarDetailInfo { get; set; }
+        [ForeignKey("IndividualVehicleSalesId")]
+        public virtual IndividualVehicleSales IndividualVehicleSales { get; set; }
         [ForeignKey("StatuId")]
         public virtual Statu Statu { get; set; }
+ 
     }
 }

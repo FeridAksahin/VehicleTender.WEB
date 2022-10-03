@@ -9,16 +9,18 @@ using System.Threading.Tasks;
 namespace VehicleTender.API.Entity.Entities
 {
     [Table("Message")]
-    public class Message : BaseEntity
+    public class Message 
     {
         [Key]
         public int Id { get; set; }
 
         public int? UserId { get; set; }
-
-        [Column("UserMessage")]
-        public string? UserMessage { get; set; }
+        public int? EnumMessageId { get; set; }
         [ForeignKey("UserId")]
         public virtual User User { get; set; }
+        [ForeignKey("EnumMessageId")]
+        public virtual EnumMessage EnumMessage { get; set; }
+        public DateTime? ModifiedDate { get; set; } = DateTime.Now;
+        public DateTime? CreatedDate { get; set; } = DateTime.Now;
     }
 }

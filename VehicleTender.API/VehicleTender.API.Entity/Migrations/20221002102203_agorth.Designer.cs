@@ -12,8 +12,8 @@ using VehicleTender.API.Entity.Context;
 namespace VehicleTender.API.Entity.Migrations
 {
     [DbContext(typeof(VehicleTenderContext))]
-    [Migration("20221002024107_garg")]
-    partial class garg
+    [Migration("20221002102203_agorth")]
+    partial class agorth
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

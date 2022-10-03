@@ -8,19 +8,13 @@ using System.Threading.Tasks;
 
 namespace VehicleTender.API.Entity.Entities
 {
-
-    [Table("Commission")]
-    public class Commission : BaseEntity
+    [Table("HardwareType")]
+    public class HardwareType
     {
         [Key]
         public int Id { get; set; }
-
-        [Column(TypeName = "money")]
-        public decimal? CommissionPrice { get; set; }
-
-        public DateTime? EndDate { get; set; }
-
-
+        public string HardwareName { get; set; }
+        public bool isActive { get; set; }
+        public virtual List<Hardware> Hardware { get; set; }
     }
-
 }

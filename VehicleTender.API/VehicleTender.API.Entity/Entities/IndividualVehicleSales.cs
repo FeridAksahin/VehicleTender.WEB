@@ -30,5 +30,6 @@ namespace VehicleTender.API.Entity.Entities
         [ForeignKey("UserId")]
         public virtual User User { get; set; }
         public virtual List<IndividualVehiclePurchase> IndividualVehiclePurchase { get; set; }
+        public virtual List<IndividualVehicleSalesStatuHistory> IndividualVehicleSalesStatuHistory { get; set; }
     }
 }
