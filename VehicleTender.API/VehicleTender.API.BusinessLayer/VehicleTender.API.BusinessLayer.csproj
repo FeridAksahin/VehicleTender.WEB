@@ -9,7 +9,10 @@
   <ItemGroup>
     <Folder Include="Log\" />
     <Folder Include="MailService\" />
-    <Folder Include="Validation\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
   </ItemGroup>
 
 </Project>
