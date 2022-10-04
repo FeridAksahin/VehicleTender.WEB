@@ -20,5 +20,6 @@ namespace VehicleTender.API.Entity.Entities
         public virtual List<CorporateDetail> CorporateDetail { get; set; }
 
         public virtual List<PacketAuthority> PacketAuthority { get; set; }
+        public virtual List<CompanyPacketHistory> CompanyPacketHistory { get; set; }
     }
 }

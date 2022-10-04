@@ -14,6 +14,8 @@ namespace VehicleTender.API.Entity.Entities
         [Key]
         public int Id { get; set; }
 
+        public string? UserName { get; set; }
+
         [StringLength(150)]
         public string? Name { get; set; }
 
@@ -26,6 +28,8 @@ namespace VehicleTender.API.Entity.Entities
         public string? Password { get; set; }
 
         public string? Mail { get; set; }
+
+        public bool Kvkk { get; set; } = true;
 
         public virtual List<CarDetailInfo> CarDetailInfo { get; set; }
         public virtual List<IndividualVehiclePurchase> IndividualVehiclePurchase { get; set; }
@@ -43,5 +47,6 @@ namespace VehicleTender.API.Entity.Entities
         public virtual List<PurchasedVehicle> PurchasedVehicle { get; set; }
         public virtual List<TenderVehicleSales> TenderVehicleSales { get; set; }
         public virtual List<Stock> Stock { get; set; }
+        public virtual List<CompanyPacketHistory> CompanyPacketHistory { get; set; }
     }
 }

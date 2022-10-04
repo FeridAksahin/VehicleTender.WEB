@@ -12,8 +12,8 @@ using VehicleTender.API.Entity.Context;
 namespace VehicleTender.API.Entity.Migrations
 {
     [DbContext(typeof(VehicleTenderContext))]
-    [Migration("20221001231951_control")]
-    partial class control
+    [Migration("20221003220903_dbUpdate")]
+    partial class dbUpdate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -35,10 +35,6 @@ namespace VehicleTender.API.Entity.Migrations
                     b.Property<int?>("CarDetailInfoId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Ceiling")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
                     b.Property<int?>("CreatedBy")
                         .HasColumnType("int");
 
@@ -48,32 +44,12 @@ namespace VehicleTender.API.Entity.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("EngineBonnet")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("FrontBumper")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
                     b.Property<bool?>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<string>("LeftFrontDoor")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("LeftFrontMudguard")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("LeftRearDoor")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("LeftRearMudguard")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    b.Property<string>("KM")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.Property<int?>("ModifiedBy")
                         .HasColumnType("int");
@@ -81,29 +57,8 @@ namespace VehicleTender.API.Entity.Migrations
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("RearBonnet")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("RearBumper")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("RightFrontDoor")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("RightFrontMudguard")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("RightRearDoor")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("RightRearMudguard")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    b.Property<decimal?>("Price")
+                        .HasColumnType("money");
 
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
@@ -187,17 +142,9 @@ namespace VehicleTender.API.Entity.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("BodyType")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
-
                     b.Property<string>("Brand")
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
-
-                    b.Property<string>("Color")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int?>("CreatedBy")
                         .HasColumnType("int");
@@ -205,16 +152,11 @@ namespace VehicleTender.API.Entity.Migrations
                     b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("FuelType")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool?>("IsActive")
                         .HasColumnType("bit");
-
-                    b.Property<string>("KM")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
 
                     b.Property<string>("Model")
                         .HasMaxLength(250)
@@ -225,17 +167,6 @@ namespace VehicleTender.API.Entity.Migrations
 
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<decimal?>("Price")
-                        .HasColumnType("money");
-
-                    b.Property<string>("TransmissionType")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("Version")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
 
                     b.Property<int?>("Year")
                         .HasColumnType("int");
@@ -308,7 +239,7 @@ namespace VehicleTender.API.Entity.Migrations
                     b.ToTable("CarDetailInfo");
                 });
 
-            modelBuilder.Entity("VehicleTender.API.Entity.Entities.Commission", b =>
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.CarFeature", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -316,8 +247,69 @@ namespace VehicleTender.API.Entity.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("CarDetailInfoId")
+                    b.Property<int?>("CarFeatureCodeMeaningId")
+                        .IsRequired()
                         .HasColumnType("int");
+
+                    b.Property<string>("CarFeatureName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CarFeatureCodeMeaningId");
+
+                    b.ToTable("CarFeature");
+                });
+
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.CarFeatureCodeMeaning", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("CodeName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CarFeatureCodeMeaning");
+                });
+
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.CarFeatureValue", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("CarFeatureId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CarId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CarFeatureId");
+
+                    b.HasIndex("CarId");
+
+                    b.ToTable("CarFeatureValue");
+                });
+
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.Commission", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<decimal?>("CommissionPrice")
                         .HasColumnType("money");
@@ -343,6 +335,46 @@ namespace VehicleTender.API.Entity.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Commission");
+                });
+
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.CompanyPacketHistory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("CreatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("EnumPacketId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<bool?>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("ModifiedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("UserId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EnumPacketId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("CompanyPacketHistory");
                 });
 
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.CorporateDetail", b =>
@@ -405,6 +437,25 @@ namespace VehicleTender.API.Entity.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("EnumCompanyType");
+                });
+
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.EnumMessage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("Message")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("isActive")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EnumMessage");
                 });
 
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.EnumPacket", b =>
@@ -596,9 +647,9 @@ namespace VehicleTender.API.Entity.Migrations
                     b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("HardwareName")
+                    b.Property<int?>("HardwareTypeId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("int");
 
                     b.Property<bool?>("IsActive")
                         .HasColumnType("bit");
@@ -613,7 +664,29 @@ namespace VehicleTender.API.Entity.Migrations
 
                     b.HasIndex("CarId");
 
+                    b.HasIndex("HardwareTypeId");
+
                     b.ToTable("Hardware");
+                });
+
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.HardwareType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("HardwareName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("isActive")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("HardwareType");
                 });
 
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.IndividualVehiclePurchase", b =>
@@ -701,6 +774,46 @@ namespace VehicleTender.API.Entity.Migrations
                     b.ToTable("IndividualVehicleSales");
                 });
 
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.IndividualVehicleSalesStatuHistory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("CreatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("IndividualVehicleSalesId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<bool?>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("ModifiedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("StatuId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IndividualVehicleSalesId");
+
+                    b.HasIndex("StatuId");
+
+                    b.ToTable("IndividualVehicleSalesStatuHistory");
+                });
+
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.Log", b =>
                 {
                     b.Property<int>("Id")
@@ -769,16 +882,11 @@ namespace VehicleTender.API.Entity.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("CreatedBy")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool?>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<int?>("ModifiedBy")
+                    b.Property<int?>("EnumMessageId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("ModifiedDate")
@@ -788,11 +896,9 @@ namespace VehicleTender.API.Entity.Migrations
                         .IsRequired()
                         .HasColumnType("int");
 
-                    b.Property<string>("UserMessage")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("UserMessage");
-
                     b.HasKey("Id");
+
+                    b.HasIndex("EnumMessageId");
 
                     b.HasIndex("UserId");
 
@@ -1106,8 +1212,41 @@ namespace VehicleTender.API.Entity.Migrations
                     b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("CustomerId")
+                    b.Property<bool?>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("ModifiedBy")
                         .HasColumnType("int");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("UserId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CarDetailInfoId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Stock");
+                });
+
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.TenderStatuHistory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("CreatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<bool?>("IsActive")
                         .HasColumnType("bit");
@@ -1118,13 +1257,19 @@ namespace VehicleTender.API.Entity.Migrations
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("StatuId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<string>("TenderName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("CarDetailInfoId");
+                    b.HasIndex("StatuId");
 
-                    b.HasIndex("CustomerId");
-
-                    b.ToTable("Stock");
+                    b.ToTable("TenderStatuHistory");
                 });
 
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.TenderVehicleDetail", b =>
@@ -1174,9 +1319,6 @@ namespace VehicleTender.API.Entity.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("CarDetailInfoId")
-                        .HasColumnType("int");
-
                     b.Property<int?>("CreatedBy")
                         .HasColumnType("int");
 
@@ -1223,16 +1365,105 @@ namespace VehicleTender.API.Entity.Migrations
                     b.Property<decimal?>("TenderStartingPrice")
                         .HasColumnType("money");
 
+                    b.Property<int?>("UserId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
                     b.Property<bool?>("isItCorporate")
                         .HasColumnType("bit");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CarDetailInfoId");
-
                     b.HasIndex("StatuId");
 
+                    b.HasIndex("UserId");
+
                     b.ToTable("TenderVehicleSales");
+                });
+
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.TramerPart", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("TramerPartName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TramerPrice")
+                        .HasColumnType("int");
+
+                    b.Property<bool?>("isActive")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TramerPart");
+                });
+
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.TramerSituationValue", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("Situation")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TramerSituationValue");
+                });
+
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.TramerValue", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("CarId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("CreatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool?>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("ModifiedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("TramerPartId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TramerSituationValueId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CarId");
+
+                    b.HasIndex("TramerPartId");
+
+                    b.HasIndex("TramerSituationValueId");
+
+                    b.ToTable("TramerValue");
                 });
 
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.User", b =>
@@ -1250,6 +1481,9 @@ namespace VehicleTender.API.Entity.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<bool?>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("Kvkk")
                         .HasColumnType("bit");
 
                     b.Property<string>("Mail")
@@ -1275,6 +1509,9 @@ namespace VehicleTender.API.Entity.Migrations
                     b.Property<string>("Telephone")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -1307,6 +1544,9 @@ namespace VehicleTender.API.Entity.Migrations
 
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("StatuId")
                         .IsRequired()
@@ -1352,10 +1592,6 @@ namespace VehicleTender.API.Entity.Migrations
                         .WithMany("CarDetailInfo")
                         .HasForeignKey("CarDetailInfoId");
 
-                    b.HasOne("VehicleTender.API.Entity.Entities.Commission", null)
-                        .WithMany("CarDetailInfo")
-                        .HasForeignKey("CarDetailInfoId");
-
                     b.HasOne("VehicleTender.API.Entity.Entities.Car", "Car")
                         .WithMany("CarDetailInfo")
                         .HasForeignKey("CarId")
@@ -1387,6 +1623,55 @@ namespace VehicleTender.API.Entity.Migrations
                     b.Navigation("Commission");
 
                     b.Navigation("Notary");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.CarFeature", b =>
+                {
+                    b.HasOne("VehicleTender.API.Entity.Entities.CarFeatureCodeMeaning", "CarFeatureCodeMeaning")
+                        .WithMany("CarFeature")
+                        .HasForeignKey("CarFeatureCodeMeaningId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CarFeatureCodeMeaning");
+                });
+
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.CarFeatureValue", b =>
+                {
+                    b.HasOne("VehicleTender.API.Entity.Entities.CarFeature", "CarFeature")
+                        .WithMany("CarFeatureValue")
+                        .HasForeignKey("CarFeatureId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("VehicleTender.API.Entity.Entities.Car", "Car")
+                        .WithMany("CarFeatureValue")
+                        .HasForeignKey("CarId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Car");
+
+                    b.Navigation("CarFeature");
+                });
+
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.CompanyPacketHistory", b =>
+                {
+                    b.HasOne("VehicleTender.API.Entity.Entities.EnumPacket", "EnumPacket")
+                        .WithMany("CompanyPacketHistory")
+                        .HasForeignKey("EnumPacketId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("VehicleTender.API.Entity.Entities.User", "User")
+                        .WithMany("CompanyPacketHistory")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("EnumPacket");
 
                     b.Navigation("User");
                 });
@@ -1472,7 +1757,15 @@ namespace VehicleTender.API.Entity.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("VehicleTender.API.Entity.Entities.HardwareType", "HardwareType")
+                        .WithMany("Hardware")
+                        .HasForeignKey("HardwareTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Car");
+
+                    b.Navigation("HardwareType");
                 });
 
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.IndividualVehiclePurchase", b =>
@@ -1511,6 +1804,25 @@ namespace VehicleTender.API.Entity.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.IndividualVehicleSalesStatuHistory", b =>
+                {
+                    b.HasOne("VehicleTender.API.Entity.Entities.IndividualVehicleSales", "IndividualVehicleSales")
+                        .WithMany("IndividualVehicleSalesStatuHistory")
+                        .HasForeignKey("IndividualVehicleSalesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("VehicleTender.API.Entity.Entities.Statu", "Statu")
+                        .WithMany()
+                        .HasForeignKey("StatuId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("IndividualVehicleSales");
+
+                    b.Navigation("Statu");
+                });
+
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.Log", b =>
                 {
                     b.HasOne("VehicleTender.API.Entity.Entities.LogProcess", "LogProcess")
@@ -1530,11 +1842,19 @@ namespace VehicleTender.API.Entity.Migrations
 
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.Message", b =>
                 {
+                    b.HasOne("VehicleTender.API.Entity.Entities.EnumMessage", "EnumMessage")
+                        .WithMany()
+                        .HasForeignKey("EnumMessageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("VehicleTender.API.Entity.Entities.User", "User")
                         .WithMany("Message")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("EnumMessage");
 
                     b.Navigation("User");
                 });
@@ -1639,11 +1959,24 @@ namespace VehicleTender.API.Entity.Migrations
 
                     b.HasOne("VehicleTender.API.Entity.Entities.User", "User")
                         .WithMany("Stock")
-                        .HasForeignKey("CustomerId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("CarDetailInfo");
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.TenderStatuHistory", b =>
+                {
+                    b.HasOne("VehicleTender.API.Entity.Entities.Statu", "Statu")
+                        .WithMany("TenderStatuHistory")
+                        .HasForeignKey("StatuId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Statu");
                 });
 
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.TenderVehicleDetail", b =>
@@ -1665,17 +1998,48 @@ namespace VehicleTender.API.Entity.Migrations
 
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.TenderVehicleSales", b =>
                 {
-                    b.HasOne("VehicleTender.API.Entity.Entities.CarDetailInfo", null)
-                        .WithMany("TenderVehicleSales")
-                        .HasForeignKey("CarDetailInfoId");
-
                     b.HasOne("VehicleTender.API.Entity.Entities.Statu", "Statu")
                         .WithMany("TenderVehicleSales")
                         .HasForeignKey("StatuId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("VehicleTender.API.Entity.Entities.User", "User")
+                        .WithMany("TenderVehicleSales")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Statu");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.TramerValue", b =>
+                {
+                    b.HasOne("VehicleTender.API.Entity.Entities.Car", "Car")
+                        .WithMany("TramerValue")
+                        .HasForeignKey("CarId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("VehicleTender.API.Entity.Entities.TramerPart", "TramerPart")
+                        .WithMany("TramerValue")
+                        .HasForeignKey("TramerPartId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("VehicleTender.API.Entity.Entities.TramerSituationValue", "TramerSituationValue")
+                        .WithMany("TramerValue")
+                        .HasForeignKey("TramerSituationValueId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Car");
+
+                    b.Navigation("TramerPart");
+
+                    b.Navigation("TramerSituationValue");
                 });
 
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.VehicleStatuHistory", b =>
@@ -1709,6 +2073,10 @@ namespace VehicleTender.API.Entity.Migrations
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.Car", b =>
                 {
                     b.Navigation("CarDetailInfo");
+
+                    b.Navigation("CarFeatureValue");
+
+                    b.Navigation("TramerValue");
                 });
 
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.CarDetailInfo", b =>
@@ -1721,14 +2089,17 @@ namespace VehicleTender.API.Entity.Migrations
 
                     b.Navigation("TenderVehicleDetail");
 
-                    b.Navigation("TenderVehicleSales");
-
                     b.Navigation("VehicleStatuHistory");
                 });
 
-            modelBuilder.Entity("VehicleTender.API.Entity.Entities.Commission", b =>
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.CarFeature", b =>
                 {
-                    b.Navigation("CarDetailInfo");
+                    b.Navigation("CarFeatureValue");
+                });
+
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.CarFeatureCodeMeaning", b =>
+                {
+                    b.Navigation("CarFeature");
                 });
 
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.EnumCompanyType", b =>
@@ -1738,6 +2109,8 @@ namespace VehicleTender.API.Entity.Migrations
 
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.EnumPacket", b =>
                 {
+                    b.Navigation("CompanyPacketHistory");
+
                     b.Navigation("CorporateDetail");
 
                     b.Navigation("PacketAuthority");
@@ -1748,9 +2121,16 @@ namespace VehicleTender.API.Entity.Migrations
                     b.Navigation("Statu");
                 });
 
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.HardwareType", b =>
+                {
+                    b.Navigation("Hardware");
+                });
+
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.IndividualVehicleSales", b =>
                 {
                     b.Navigation("IndividualVehiclePurchase");
+
+                    b.Navigation("IndividualVehicleSalesStatuHistory");
                 });
 
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.LogProcess", b =>
@@ -1772,6 +2152,8 @@ namespace VehicleTender.API.Entity.Migrations
 
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.Statu", b =>
                 {
+                    b.Navigation("TenderStatuHistory");
+
                     b.Navigation("TenderVehicleSales");
 
                     b.Navigation("VehicleStatuHistory");
@@ -1784,11 +2166,23 @@ namespace VehicleTender.API.Entity.Migrations
                     b.Navigation("TenderVehicleDetail");
                 });
 
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.TramerPart", b =>
+                {
+                    b.Navigation("TramerValue");
+                });
+
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.TramerSituationValue", b =>
+                {
+                    b.Navigation("TramerValue");
+                });
+
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.User", b =>
                 {
                     b.Navigation("BuyingTenderVehicle");
 
                     b.Navigation("CarDetailInfo");
+
+                    b.Navigation("CompanyPacketHistory");
 
                     b.Navigation("CorporateDetail");
 
@@ -1805,6 +2199,8 @@ namespace VehicleTender.API.Entity.Migrations
                     b.Navigation("RoleUser");
 
                     b.Navigation("Stock");
+
+                    b.Navigation("TenderVehicleSales");
                 });
 #pragma warning restore 612, 618
         }

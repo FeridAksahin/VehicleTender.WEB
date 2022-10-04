@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace VehicleTender.API.Entity.Migrations
 {
-    public partial class initial : Migration
+    public partial class agorth : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -629,6 +629,46 @@ namespace VehicleTender.API.Entity.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "TenderVehicleSales",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    StatuId = table.Column<int>(type: "int", nullable: false),
+                    TenderName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TenderStartingPrice = table.Column<decimal>(type: "money", nullable: true),
+                    TenderMinumumPrice = table.Column<decimal>(type: "money", nullable: true),
+                    TenderEndHour = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: true),
+                    TenderEndDate = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: true),
+                    isItCorporate = table.Column<bool>(type: "bit", nullable: true),
+                    TargetPrice = table.Column<decimal>(type: "money", nullable: true),
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    FavoriteCount = table.Column<int>(type: "int", nullable: true),
+                    TenderDuration = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    IsActive = table.Column<bool>(type: "bit", nullable: true),
+                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreatedBy = table.Column<int>(type: "int", nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    ModifiedBy = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TenderVehicleSales", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_TenderVehicleSales_Statu_StatuId",
+                        column: x => x.StatuId,
+                        principalTable: "Statu",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_TenderVehicleSales_User_UserId",
+                        column: x => x.UserId,
+                        principalTable: "User",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "IndividualVehicleSales",
                 columns: table => new
                 {
@@ -658,7 +698,7 @@ namespace VehicleTender.API.Entity.Migrations
                         column: x => x.UserId,
                         principalTable: "User",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -691,7 +731,7 @@ namespace VehicleTender.API.Entity.Migrations
                         column: x => x.SellerUserId,
                         principalTable: "User",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -722,46 +762,6 @@ namespace VehicleTender.API.Entity.Migrations
                         column: x => x.CustomerId,
                         principalTable: "User",
                         principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "TenderVehicleSales",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    StatuId = table.Column<int>(type: "int", nullable: false),
-                    TenderName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CarDetailInfoId = table.Column<int>(type: "int", nullable: false),
-                    TenderStartingPrice = table.Column<decimal>(type: "money", nullable: true),
-                    TenderMinumumPrice = table.Column<decimal>(type: "money", nullable: true),
-                    TenderEndHour = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: true),
-                    TenderEndDate = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: true),
-                    isItCorporate = table.Column<bool>(type: "bit", nullable: true),
-                    TargetPrice = table.Column<decimal>(type: "money", nullable: true),
-                    FavoriteCount = table.Column<int>(type: "int", nullable: true),
-                    TenderDuration = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    IsActive = table.Column<bool>(type: "bit", nullable: true),
-                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    CreatedBy = table.Column<int>(type: "int", nullable: true),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    ModifiedBy = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_TenderVehicleSales", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_TenderVehicleSales_CarDetailInfo_CarDetailInfoId",
-                        column: x => x.CarDetailInfoId,
-                        principalTable: "CarDetailInfo",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_TenderVehicleSales_Statu_StatuId",
-                        column: x => x.StatuId,
-                        principalTable: "Statu",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -796,36 +796,6 @@ namespace VehicleTender.API.Entity.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "IndividualVehiclePurchase",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    UserIdBuyer = table.Column<int>(type: "int", nullable: true),
-                    IndividualVehicleSalesId = table.Column<int>(type: "int", nullable: false),
-                    IsActive = table.Column<bool>(type: "bit", nullable: true),
-                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    CreatedBy = table.Column<int>(type: "int", nullable: true),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    ModifiedBy = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_IndividualVehiclePurchase", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_IndividualVehiclePurchase_IndividualVehicleSales_IndividualVehicleSalesId",
-                        column: x => x.IndividualVehicleSalesId,
-                        principalTable: "IndividualVehicleSales",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_IndividualVehiclePurchase_User_UserIdBuyer",
-                        column: x => x.UserIdBuyer,
-                        principalTable: "User",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
                 name: "BuyingTenderVehicle",
                 columns: table => new
                 {
@@ -855,7 +825,67 @@ namespace VehicleTender.API.Entity.Migrations
                         column: x => x.UserId,
                         principalTable: "User",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.NoAction);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TenderVehicleDetail",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    CarDetailInfoId = table.Column<int>(type: "int", nullable: true),
+                    TenderVehicleSalesId = table.Column<int>(type: "int", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: true),
+                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreatedBy = table.Column<int>(type: "int", nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    ModifiedBy = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TenderVehicleDetail", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_TenderVehicleDetail_CarDetailInfo_CarDetailInfoId",
+                        column: x => x.CarDetailInfoId,
+                        principalTable: "CarDetailInfo",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_TenderVehicleDetail_TenderVehicleSales_TenderVehicleSalesId",
+                        column: x => x.TenderVehicleSalesId,
+                        principalTable: "TenderVehicleSales",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "IndividualVehiclePurchase",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserIdBuyer = table.Column<int>(type: "int", nullable: true),
+                    IndividualVehicleSalesId = table.Column<int>(type: "int", nullable: false),
+                    IsActive = table.Column<bool>(type: "bit", nullable: true),
+                    ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    CreatedBy = table.Column<int>(type: "int", nullable: true),
+                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    ModifiedBy = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_IndividualVehiclePurchase", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_IndividualVehiclePurchase_IndividualVehicleSales_IndividualVehicleSalesId",
+                        column: x => x.IndividualVehicleSalesId,
+                        principalTable: "IndividualVehicleSales",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_IndividualVehiclePurchase_User_UserIdBuyer",
+                        column: x => x.UserIdBuyer,
+                        principalTable: "User",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
@@ -1034,14 +1064,24 @@ namespace VehicleTender.API.Entity.Migrations
                 column: "CustomerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_TenderVehicleSales_CarDetailInfoId",
-                table: "TenderVehicleSales",
+                name: "IX_TenderVehicleDetail_CarDetailInfoId",
+                table: "TenderVehicleDetail",
                 column: "CarDetailInfoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TenderVehicleDetail_TenderVehicleSalesId",
+                table: "TenderVehicleDetail",
+                column: "TenderVehicleSalesId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TenderVehicleSales_StatuId",
                 table: "TenderVehicleSales",
                 column: "StatuId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TenderVehicleSales_UserId",
+                table: "TenderVehicleSales",
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_VehicleStatuHistory_CarDetailInfoId",
@@ -1099,10 +1139,10 @@ namespace VehicleTender.API.Entity.Migrations
                 name: "Stock");
 
             migrationBuilder.DropTable(
-                name: "VehicleStatuHistory");
+                name: "TenderVehicleDetail");
 
             migrationBuilder.DropTable(
-                name: "TenderVehicleSales");
+                name: "VehicleStatuHistory");
 
             migrationBuilder.DropTable(
                 name: "EnumCompanyType");
@@ -1129,13 +1169,13 @@ namespace VehicleTender.API.Entity.Migrations
                 name: "Role");
 
             migrationBuilder.DropTable(
-                name: "Statu");
+                name: "TenderVehicleSales");
 
             migrationBuilder.DropTable(
                 name: "CarDetailInfo");
 
             migrationBuilder.DropTable(
-                name: "EnumStatuType");
+                name: "Statu");
 
             migrationBuilder.DropTable(
                 name: "AdvertInfo");
@@ -1151,6 +1191,9 @@ namespace VehicleTender.API.Entity.Migrations
 
             migrationBuilder.DropTable(
                 name: "User");
+
+            migrationBuilder.DropTable(
+                name: "EnumStatuType");
         }
     }
 }

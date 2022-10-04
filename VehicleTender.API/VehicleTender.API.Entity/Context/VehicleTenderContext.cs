@@ -50,6 +50,18 @@ namespace VehicleTender.API.Entity.Context
         public virtual DbSet<FavoriteSearchCriteria> FavoriteSearchCriteria { get; set; }
         public virtual DbSet<FavoriteFeature> FavoriteFeature { get; set; }
         public virtual DbSet<Hardware> Hardware { get; set; }
+        public virtual DbSet<CompanyPacketHistory> CompanyPacketHistory { get; set; }
+        public virtual DbSet<EnumMessage> EnumMessage { get; set; }
+        public virtual DbSet<IndividualVehicleSalesStatuHistory> IndividualVehicleSalesStatuHistory { get; set; }
+        public virtual DbSet<TenderStatuHistory> TenderStatuHistory { get; set; }
+        public virtual DbSet<TramerPart> TramerPart { get; set; }
+        public virtual DbSet<TramerSituationValue> TramerSituationValue { get; set; }
+        public virtual DbSet<TramerValue> TramerValue { get; set; }
+        public virtual DbSet<CarFeature> CarFeature { get; set; }
+        public virtual DbSet<CarFeatureCodeMeaning> CarFeatureCodeMeaning { get; set; }
+        public virtual DbSet<CarFeatureValue> CarFeatureValue { get; set; }
+        public virtual DbSet<HardwareType> HardwareType { get; set; }
+
 
     }
 }

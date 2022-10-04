@@ -8,19 +8,15 @@ using System.Threading.Tasks;
 
 namespace VehicleTender.API.Entity.Entities
 {
-
-    [Table("Commission")]
-    public class Commission : BaseEntity
+    [Table("TramerSituationValue")]
+    public class TramerSituationValue
     {
         [Key]
         public int Id { get; set; }
 
-        [Column(TypeName = "money")]
-        public decimal? CommissionPrice { get; set; }
+        public int? Situation { get; set; }
 
-        public DateTime? EndDate { get; set; }
-
+        public virtual List<TramerValue> TramerValue { get; set; }
 
     }
-
 }

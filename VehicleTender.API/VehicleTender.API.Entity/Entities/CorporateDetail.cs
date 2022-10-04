@@ -37,3 +37,4 @@ namespace VehicleTender.API.Entity.Entities
         public virtual User User { get; set; }
     }
 }
+ 

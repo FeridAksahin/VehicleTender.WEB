@@ -13,51 +13,14 @@ namespace VehicleTender.API.Entity.Entities
     {
         [Key]
         public int Id { get; set; }
-
         public string? Title { get; set; }
+        [StringLength(20)]
+        public string? KM { get; set; }
 
+        [Column(TypeName = "money")]
+        public decimal? Price { get; set; }
         public string? Description { get; set; }
         public int? CarDetailInfoId { get; set; }
-
-        [StringLength(50)]
-        public string? RightRearMudguard { get; set; }
-
-        [StringLength(50)]
-        public string? RearBonnet { get; set; }
-
-        [StringLength(50)]
-        public string? LeftRearMudguard { get; set; }
-
-        [StringLength(50)]
-        public string? RightRearDoor { get; set; }
-
-        [StringLength(50)]
-        public string? RightFrontDoor { get; set; }
-
-        [StringLength(50)]
-        public string? Ceiling { get; set; }
-
-        [StringLength(50)]
-        public string? LeftRearDoor { get; set; }
-
-        [StringLength(50)]
-        public string? LeftFrontDoor { get; set; }
-
-        [StringLength(50)]
-        public string? RightFrontMudguard { get; set; }
-
-        [StringLength(50)]
-        public string? EngineBonnet { get; set; }
-
-        [StringLength(50)]
-        public string? LeftFrontMudguard { get; set; }
-
-        [StringLength(50)]
-        public string? FrontBumper { get; set; }
-
-        [StringLength(50)]
-        public string? RearBumper { get; set; }
-
         [StringLength(50)]
         public string? TotalTramerPrice { get; set; }
 

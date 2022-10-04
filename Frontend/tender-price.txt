@@ -17,4 +17,4 @@
                 <input type="submit" value="Kaydet" class="btn btn-outline-success mt-2" style="float: right;">
             </div>
         </div>
-    </div>
+    </div>//
