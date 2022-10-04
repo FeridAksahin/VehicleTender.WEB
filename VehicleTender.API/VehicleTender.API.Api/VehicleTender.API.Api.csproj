@@ -15,11 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
-<<<<<<< HEAD
     <ProjectReference Include="..\VehicleTender.API.Logs\VehicleTender.API.Logs.csproj" />
-=======
+
     <ProjectReference Include="..\VehicleTender.API.DTO\VehicleTender.API.DTO.csproj" />
->>>>>>> 90dcbff9a7892079e832329b14fd7f3d777ecebd
   </ItemGroup>
 
 </Project>
