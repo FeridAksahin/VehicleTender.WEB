@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using VehicleTender.API.Common.Enums;
+using VehicleTender.API.DTO.LogDTOs;
+using VehicleTender.API.Logs;
 
 namespace VehicleTender.API.Api.Controllers
 {
@@ -11,15 +14,17 @@ namespace VehicleTender.API.Api.Controllers
         /// </summary>
         /// <returns></returns>
 
-        public HomeController()
+        private readonly ILoggerManager _logger;
+        public HomeController(ILoggerManager logger)
         {
-
+            _logger = logger;
         }
 
         [HttpGet("")]
         public IActionResult GetIndex()
 
         {
+            _logger.Log(new LogDTO() { Date = DateTime.Now,Message="fasdfasd", LogProcess = LogProcess.Info,UserId=null });
             return Ok();
         }
         [HttpPut("")]

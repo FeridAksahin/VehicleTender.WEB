@@ -7,7 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="HtmlAgilityPack" Version="1.11.46" />
+    <ProjectReference Include="..\VehicleTender.API.DAL\VehicleTender.API.DAL.csproj" />
+    <ProjectReference Include="..\VehicleTender.API.DTO\VehicleTender.API.DTO.csproj" />
   </ItemGroup>
 
 </Project>

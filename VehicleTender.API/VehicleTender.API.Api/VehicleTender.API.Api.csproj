@@ -14,4 +14,8 @@
     <Folder Include="Filter\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\VehicleTender.API.Logs\VehicleTender.API.Logs.csproj" />
+  </ItemGroup>
+
 </Project>

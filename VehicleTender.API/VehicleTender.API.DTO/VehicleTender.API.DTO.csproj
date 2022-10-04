@@ -10,4 +10,8 @@
     <Folder Include="Concrete\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\VehicleTender.API.Common\VehicleTender.API.Common.csproj" />
+  </ItemGroup>
+
 </Project>
