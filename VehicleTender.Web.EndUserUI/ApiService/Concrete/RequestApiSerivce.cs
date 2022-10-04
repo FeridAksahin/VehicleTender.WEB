@@ -21,6 +21,7 @@ namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
        //     _addressSuffix = addressSuffix;
             httpClient = CreateHttpClient(_baseAddress);
         }
+
         public HttpClient CreateHttpClient(string serviceBaseAddress)
         {
             httpClient = new HttpClient();
@@ -35,6 +36,12 @@ namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
                 return JsonConvert.DeserializeObject<List<T>>(await response.Content.ReadAsStringAsync());
             }
             return null;
+        }
+        public async Task GetRequest2(string endpoint)
+        {
+            var client = new HttpClient();
+
+            var result = await client.GetAsync(endpoint);
         }
         public async Task<string> PostAsync<T>(T data, string endpoint) where T : class
         {
