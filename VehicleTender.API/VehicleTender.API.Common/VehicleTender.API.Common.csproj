@@ -8,7 +8,10 @@
 
   <ItemGroup>
     <Folder Include="Enums\" />
-    <Folder Include="Web Scrap\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.46" />
   </ItemGroup>
 
 </Project>
