@@ -5,13 +5,17 @@ VisualStudioVersion = 17.2.32505.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleTender.Web.EndUserUI", "VehicleTender.Web.EndUserUI\VehicleTender.Web.EndUserUI.csproj", "{1ECB6571-B6F1-4ED4-8451-C8577E2C7F69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Frontend", "Frontend\Frontend.csproj", "{A07F45E9-4CF6-4A62-9ADD-A5D78D58F8AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Frontend", "Frontend\Frontend.csproj", "{A07F45E9-4CF6-4A62-9ADD-A5D78D58F8AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleTender.Web.AdminUI", "VehicleTender.Web.AdminUI\VehicleTender.Web.AdminUI.csproj", "{41997695-CBE2-4DFF-BD34-3E4A3B014E3E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleTender.Web.AdminUI", "VehicleTender.Web.AdminUI\VehicleTender.Web.AdminUI.csproj", "{41997695-CBE2-4DFF-BD34-3E4A3B014E3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleTender.WEB.Common", "VehicleTender.WEB.Common\VehicleTender.WEB.Common.csproj", "{C9E7A14B-35BD-4594-9A5C-307D8D85EBC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleTender.WEB.AdminDTO", "VehicleTender.WEB.AdminDTO\VehicleTender.WEB.AdminDTO.csproj", "{E5F78B53-43D0-4896-8028-DEC3B631F5F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleTender.WEB.DTO", "VehicleTender.WEB.DTO\VehicleTender.WEB.DTO.csproj", "{6FBE835C-0674-4C19-920A-5A2A44020A42}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleTender.WEB.EndUser.Common", "VehicleTender.WEB.EndUser.Common\VehicleTender.WEB.EndUser.Common.csproj", "{63EE4E5E-7704-42A2-8607-FCCB1EFAFA29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleTender.WEB.Admin.Common", "VehicleTender.WEB.Admin.Common\VehicleTender.WEB.Admin.Common.csproj", "{01AD44EA-BCC4-4376-8BBE-1EAD5A85AD58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleTender.WEB.UserDTO", "VehicleTender.WEB.UserDTO\VehicleTender.WEB.UserDTO.csproj", "{CDE75240-D855-4BC8-AAA3-1794E5778313}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,14 +35,22 @@ Global
 		{41997695-CBE2-4DFF-BD34-3E4A3B014E3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41997695-CBE2-4DFF-BD34-3E4A3B014E3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41997695-CBE2-4DFF-BD34-3E4A3B014E3E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C9E7A14B-35BD-4594-9A5C-307D8D85EBC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C9E7A14B-35BD-4594-9A5C-307D8D85EBC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C9E7A14B-35BD-4594-9A5C-307D8D85EBC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C9E7A14B-35BD-4594-9A5C-307D8D85EBC0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6FBE835C-0674-4C19-920A-5A2A44020A42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6FBE835C-0674-4C19-920A-5A2A44020A42}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6FBE835C-0674-4C19-920A-5A2A44020A42}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6FBE835C-0674-4C19-920A-5A2A44020A42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5F78B53-43D0-4896-8028-DEC3B631F5F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5F78B53-43D0-4896-8028-DEC3B631F5F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5F78B53-43D0-4896-8028-DEC3B631F5F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5F78B53-43D0-4896-8028-DEC3B631F5F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63EE4E5E-7704-42A2-8607-FCCB1EFAFA29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63EE4E5E-7704-42A2-8607-FCCB1EFAFA29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63EE4E5E-7704-42A2-8607-FCCB1EFAFA29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63EE4E5E-7704-42A2-8607-FCCB1EFAFA29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01AD44EA-BCC4-4376-8BBE-1EAD5A85AD58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01AD44EA-BCC4-4376-8BBE-1EAD5A85AD58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01AD44EA-BCC4-4376-8BBE-1EAD5A85AD58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01AD44EA-BCC4-4376-8BBE-1EAD5A85AD58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDE75240-D855-4BC8-AAA3-1794E5778313}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDE75240-D855-4BC8-AAA3-1794E5778313}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDE75240-D855-4BC8-AAA3-1794E5778313}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDE75240-D855-4BC8-AAA3-1794E5778313}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
