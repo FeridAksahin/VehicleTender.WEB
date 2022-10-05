@@ -5,17 +5,17 @@ using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using VehicleTender.API.BusinessLayer.Validation.Attributes;
-using VehicleTender.API.BusinessLayer.Validation.Base;
+using VehicleTender.API.Validation.Attributes;
+using VehicleTender.API.Validation.Validators.Base;
 
-namespace VehicleTender.API.BusinessLayer.Validation.Validators
+namespace VehicleTender.API.Validation.Validators
 {
     public record EmailValidator<T>() : Validator, IValidator<T>
     {
         public List<(bool, Exception)> Validate(T value, int? validateType, int? value3, string source, PropertyInfo? info, object? model)
         {
             var errorList = new List<(bool, Exception)>();
-            if (!typeof(T).IsValueType && typeof(T) != typeof(String))
+            if (!typeof(T).IsValueType && typeof(T) != typeof(string))
             {
                 throw new ArgumentException("T must be a value type or System.String.");
             }
@@ -79,8 +79,8 @@ namespace VehicleTender.API.BusinessLayer.Validation.Validators
                             break;
                         }
                 }
-            }           
-            return errorList;           
+            }
+            return errorList;
         }
     }
 }
