@@ -4,7 +4,7 @@ using VehicleTender.Web.AdminUI.Models;
 
 namespace VehicleTender.Web.AdminUI.ApiServices.Base
 {
-    public abstract class BaseApiService<T> :IBaseApiService<T> where T : class
+    public class BaseApiService<T> :IBaseApiService<T> where T : class
     {
         private readonly HttpClient client;
         public BaseApiService(HttpClient httpClient)
@@ -58,7 +58,7 @@ namespace VehicleTender.Web.AdminUI.ApiServices.Base
 
             if (response.IsSuccessStatusCode)
             {
-                return response.Content.ReadAsStringAsync().Result == "Ok" ? true : false; // yine Ok döndürülmesi gerekmez mi?
+                return response.Content.ReadAsStringAsync().Result == "Ok" ? true : false;
             } 
             return false;
         }
