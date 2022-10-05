@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -139,6 +141,19 @@ namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
                     httpClient.Dispose();
                 }
                 disposed = true;
+            }
+        }
+
+        public async Task<T> GetRequest<T>(string endpoint) where T : class
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(endpoint);
+
+            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            using (Stream stream = response.GetResponseStream())
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                string resp = reader.ReadToEnd();
+                return JsonConvert.DeserializeObject<T>(resp);
             }
         }
     }
