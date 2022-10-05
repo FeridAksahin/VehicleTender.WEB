@@ -13,10 +13,14 @@ namespace VehicleTender.API.Api.Controllers
     {
         readonly VehicleTenderContext _context;
         readonly IConfiguration _configuration;
-        public LoginController(VehicleTenderContext content, IConfiguration configuration)
+        private readonly ILogger<LoginController> _hede;
+       
+
+        public LoginController(VehicleTenderContext content, IConfiguration configuration, ILogger<LoginController> hede)
         {
             _context = content;
             _configuration = configuration;
+            _hede = hede;
         }
         [HttpPost]
         [Route("SignIn")]
@@ -72,11 +76,7 @@ namespace VehicleTender.API.Api.Controllers
             return null;
         }
 
-        private readonly ILogger<LoginController> _hede;
-        public LoginController(ILogger<LoginController> hede)
-        {
-            _hede = hede;
-        }
+       
         [HttpGet("")]
         public IActionResult GetIndex()
 
