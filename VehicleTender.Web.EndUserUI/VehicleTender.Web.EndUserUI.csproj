@@ -132,6 +132,7 @@
     <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="ViewModels\GetVehicleListInput.cs" />
     <Compile Include="ViewModels\VehicleListViewModel.cs" />
+    <Compile Include="ViewModels\VehicleViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
@@ -144,6 +145,7 @@
     <Content Include="css\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="img\1.jpg" />
     <Content Include="img\about.png" />
     <Content Include="img\banner-left.png" />
     <Content Include="img\banner-right.png" />
