@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using VehicleTender.Web.EndUserUI.ApiService.Concrete;
@@ -13,13 +14,10 @@ namespace VehicleTender.Web.EndUserUI.Controllers
 {
     public class VehicleController : Controller
     {
-        private readonly RequestApiService _requestApiService;
+        private readonly VehicleApiService _vehicleService;
         public VehicleController()
         {
-
-            string apiUrl = ConfigurationManager.AppSettings["ApiUrl"];
-            _requestApiService = new RequestApiService(apiUrl);
-
+            _vehicleService = new VehicleApiService();
         }
 
         // GET: Vehicle
@@ -29,12 +27,9 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         }
 
         [HttpGet]
-        public ActionResult ListVehicle()
+        public async Task<ActionResult> ListVehicle()
         {
-            string apiUrl = ConfigurationManager.AppSettings["ApiUrl"];
-            string endpoint = apiUrl + "Vehicle/GetIndex";
-
-            List<VehicleListViewModel> list = _requestApiService.GetRequest<List<VehicleListViewModel>>(endpoint).Result;
+            List<VehicleListViewModel> list = await _vehicleService.GetListAsync(null);
             VehicleViewModel vehicleViewModel = new VehicleViewModel
             {
                 VehicleList = list
@@ -55,19 +50,14 @@ namespace VehicleTender.Web.EndUserUI.Controllers
 
 
         [HttpPost]
-        public ActionResult ListVehicle(GetVehicleListInput input)
+        public async Task<ActionResult> ListVehicle(GetVehicleListInput input)
         {
-
-            string apiUrl = ConfigurationManager.AppSettings["ApiUrl"];
-            string endpoint = apiUrl + "Vehicle/GetIndex?marka=" + input.BrandId + "&model=" + input.ModelId + "&isIndividual=" + input.isIndividual + "&status=" + input.StatusId;
-
-            List<VehicleListViewModel> list = _requestApiService.GetAsync<List<VehicleListViewModel>>(endpoint).Result;
+            List<VehicleListViewModel> list = await _vehicleService.GetListAsync(input);
             VehicleViewModel vehicleViewModel = new VehicleViewModel
             {
                 VehicleList = list
             };
             return View(vehicleViewModel);
-
         }
 
 
