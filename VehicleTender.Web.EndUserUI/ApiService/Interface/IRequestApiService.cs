@@ -10,7 +10,7 @@ namespace VehicleTender.Web.EndUserUI.ApiService.Interface
     public interface IRequestApiService
     {
         HttpClient CreateHttpClient(string serviceBaseAddress);
-        Task<List<T>> GetRequest<T>(string endpoint) where T : class;
+        Task<T> GetRequest<T>(string endpoint) where T : class;
         Task<string> PostAsync<T>(T data, string endpoint) where T : class;
     }
 }
