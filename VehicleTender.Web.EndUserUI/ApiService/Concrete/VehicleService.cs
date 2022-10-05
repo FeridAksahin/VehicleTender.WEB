@@ -7,11 +7,11 @@ using VehicleTender.WEB.UserDTO.Concrete;
 
 namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
 {
-    public class VehicleApiService
+    public class VehicleService
     {
         private readonly RequestApiService _requestApiService;
         private readonly string _apiUrl;
-        public VehicleApiService()
+        public VehicleService()
         {
             _apiUrl = ConfigurationManager.AppSettings["ApiUrl"];
             _requestApiService = new RequestApiService();

@@ -11,7 +11,7 @@ namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
     {
         private readonly RequestApiService _requestApiService;
         private readonly string _apiUrl;
-        public VehicleApiService()
+        public VehicleService()
         {
             _apiUrl = ConfigurationManager.AppSettings["ApiUrl"];
             _requestApiService = new RequestApiService();
