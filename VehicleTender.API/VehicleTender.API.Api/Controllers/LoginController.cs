@@ -35,6 +35,8 @@ namespace VehicleTender.API.Api.Controllers
 
             await _context.SaveChangesAsync();
             return true;
+
+         
         }
         [HttpPost]
         [Route("Login")]
@@ -58,7 +60,8 @@ namespace VehicleTender.API.Api.Controllers
         }
 
 
-        [HttpGet("[action]")]
+        [HttpGet]
+        [Route("RefreshLogin")]
         public async Task<Models.Token> RefreshTokenLogin([FromBody] string refreshToken)
         {
             User user = await _context.User.FirstOrDefaultAsync(x => x.RefreshToken == refreshToken);

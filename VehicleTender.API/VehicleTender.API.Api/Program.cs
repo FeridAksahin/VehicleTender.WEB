@@ -1,5 +1,10 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using NLog;
 using NLog.Web;
+using System.Text;
+using VehicleTender.API.Api.Models;
+using VehicleTender.API.Entity.Context;
 
 var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
 logger.Debug("init main");
@@ -17,6 +22,24 @@ try
 
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
+    builder.Services.AddDbContext<VehicleTenderContext>();
+
+    //token
+    builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(option =>
+    {
+        CustomTokenOptions x = builder.Configuration.GetSection("Token").Get<CustomTokenOptions>();
+        option.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateAudience = true,
+            ValidateIssuer = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = x.Issuer,
+            ValidAudience = x.Audience,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(x.SecurityKey)),
+            ClockSkew = TimeSpan.Zero
+        };
+    });
 
     var app = builder.Build();
 
@@ -40,7 +63,7 @@ try
 }
 catch (Exception exception)
 {
-    // NLog: catch setup errors
+    //// NLog: catch setup errors
     logger.Error(exception, "Stopped program because of exception");
     throw;
 }
