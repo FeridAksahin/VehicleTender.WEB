@@ -16,8 +16,10 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         private readonly RequestApiService _requestApiService;
         public VehicleController()
         {
+            /*
             string apiUrl = ConfigurationManager.AppSettings["ApiUrl"];
             _requestApiService = new RequestApiService(apiUrl);
+            */
         }
 
         // GET: Vehicle
@@ -47,6 +49,7 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         [HttpPost]
         public ActionResult ListVehicle(GetVehicleListInput input)
         {
+            /*
             string apiUrl = ConfigurationManager.AppSettings["ApiUrl"];
             string endpoint = apiUrl + "Vehicle/GetIndex?marka=" + input.BrandId + "&model=" + input.ModelId + "&isIndividual=" + input.isIndividual + "&status=" + input.StatusId;
 
@@ -56,6 +59,8 @@ namespace VehicleTender.Web.EndUserUI.Controllers
                 VehicleList = list
             };
             return View(vehicleViewModel);
+            */
+            return View();
         }
     }
 }
