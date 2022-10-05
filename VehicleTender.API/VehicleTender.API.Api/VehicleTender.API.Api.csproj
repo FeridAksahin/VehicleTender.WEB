@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\VehicleTender.API.Entity\VehicleTender.API.Entity.csproj" />
     <ProjectReference Include="..\VehicleTender.API.Logs\VehicleTender.API.Logs.csproj" />
 
     <ProjectReference Include="..\VehicleTender.API.DTO\VehicleTender.API.DTO.csproj" />
