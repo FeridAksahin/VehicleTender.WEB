@@ -12,6 +12,8 @@ using System.Web;
 using VehicleTender.Web.EndUserUI.ApiService.Interface;
 using VehicleTender.WEB.EndUser.Common;
 using VehicleTender.WEB.EndUser.Common.CustomHTTPResponse;
+using VehicleTender.WEB.UserDTO.Concrete;
+//using VehicleTender.WEB.UserDTO.Token;
 
 namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
 {
@@ -19,19 +21,26 @@ namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
     {
         StatusGenerator statusGenerator = new StatusGenerator();
         private bool disposed = false;
-        private HttpClient httpClient;
+        private static HttpClient httpClient;
         private readonly string _baseAddress;//api base adresi - https://localhost:44358/api/ gibi
                                              //  private readonly string _addressSuffix; //https://localhost:44358/api/userproc/ gibi
+
+      /*  static public TokenDTO SetToken
+        {
+            set
+            {
+                if (value != null)
+                    httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + value.AccessToken);
+            }
+        }*/
         public RequestApiService(string baseAddress = null)
         {
-            
+
             if (baseAddress == null)
-               _baseAddress = ConfigurationManager.AppSettings["ApiUrl"];
+                _baseAddress = ConfigurationManager.AppSettings["ApiUrl"];
             else
-            {
                 _baseAddress = baseAddress;
                 //     _addressSuffix = addressSuffix;
-            }
             httpClient = CreateHttpClient(_baseAddress);
         }
         public HttpClient CreateHttpClient(string serviceBaseAddress)
@@ -40,6 +49,27 @@ namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
             httpClient.BaseAddress = new Uri(serviceBaseAddress);
             return httpClient;
         }
+
+        public static async Task<string> GetToken(UserLoginDTO getTokenForUser, string endpoint)
+        {
+            List<KeyValuePair<string, string>> pairs = new List<KeyValuePair<string, string>>
+            {
+                new KeyValuePair<string, string>( "grant_type", "password" ), //yetki kodu
+                //new KeyValuePair<string, string>( "username", userName ),
+                //new KeyValuePair<string, string> ( "Password", password )
+            };
+            HttpContent content = new FormUrlEncodedContent(pairs);
+            using (HttpResponseMessage response = await httpClient.PostAsync(endpoint, content))
+                return await response.Content.ReadAsStringAsync();
+        }
+        /*
+        public async TokenDTO GetConvert<T>(string userName, string password, string endpoint,T whoWantNiceToken) where T : class
+        {
+            TokenDTO getTokenDeserialize;
+            string res = GetToken(userName, password, endpoint).Result;
+            whoWantNiceToken.SetToken = res;
+            return getTokenDeserialize = JsonConvert.DeserializeObject<TokenDTO>(res);
+        }*/
         public async Task<T> GetAsync<T>(string endpoint) where T : class
         {
             var response = await httpClient.GetAsync(endpoint);
@@ -126,6 +156,8 @@ namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
                 statusGenerator.GetHttpStatusCodes(414);
         }
 
+
+
         public void Dispose()
         {
             Dispose(true);
@@ -143,7 +175,7 @@ namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
                 disposed = true;
             }
         }
-
+      
         public async Task<T> GetRequest<T>(string endpoint) where T : class
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(endpoint);
@@ -155,6 +187,6 @@ namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
                 string resp = reader.ReadToEnd();
                 return JsonConvert.DeserializeObject<T>(resp);
             }
-        }
+        }   
     }
 }

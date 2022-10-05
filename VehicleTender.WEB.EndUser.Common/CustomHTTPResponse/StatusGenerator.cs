@@ -49,9 +49,7 @@ namespace VehicleTender.WEB.EndUser.Common.CustomHTTPResponse
             bool CheckingIfThereIsSuchAStatusCode = GetHttpStatusCodeInSystem.Contains(desiredStatusCode);
 
             if (CheckingIfThereIsSuchAStatusCode)
-            {
                 return codeDescription;
-            }
             else
                 return null;
         }
