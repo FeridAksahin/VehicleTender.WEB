@@ -14,10 +14,10 @@ namespace VehicleTender.Web.EndUserUI.Controllers
 {
     public class VehicleController : Controller
     {
-        private readonly VehicleApiService _vehicleService;
+        private readonly VehicleService _vehicleService;
         public VehicleController()
         {
-            _vehicleService = new VehicleApiService();
+            _vehicleService = new VehicleService();
         }
 
         // GET: Vehicle
