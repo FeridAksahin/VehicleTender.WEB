@@ -11,10 +11,10 @@ namespace VehicleTender.API.Api.Controllers
         /// </summary>
         /// <returns></returns>
 
-        private readonly ILogger<UserController> _hede;
-        public UserController(ILogger<UserController> hede)
+        private readonly ILogger<UserController> _log;
+        public UserController(ILogger<UserController> log)
         {
-            _hede = hede;
+            _log = log;
         }
 
         [HttpGet("")]

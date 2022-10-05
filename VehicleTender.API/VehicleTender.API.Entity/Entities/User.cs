@@ -31,6 +31,8 @@ namespace VehicleTender.API.Entity.Entities
 
         public bool Kvkk { get; set; } = true;
 
+        public string? RefreshToken { get; set; }
+        public DateTime? RefreshTokenEndDate { get; set; }
         public virtual List<CarDetailInfo> CarDetailInfo { get; set; }
         public virtual List<IndividualVehiclePurchase> IndividualVehiclePurchase { get; set; }
         public virtual List<CorporateDetail> CorporateDetail { get; set; }
