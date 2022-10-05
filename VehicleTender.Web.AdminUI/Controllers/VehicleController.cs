@@ -2,20 +2,20 @@
 
 namespace VehicleTender.Web.AdminUI.Controllers
 {
-    public class DenemeController : Controller
+    public class VehicleController : Controller
     {
+        public IActionResult VehicleList()
+        {
+            return View();
+        }
+        public IActionResult StockList()
+        {
+            return View();
+        }
+        public IActionResult VehicleFeatureList()
+        {
+            return View();
+        }
 
-        public IActionResult AdminHome()
-        {
-            return View();
-        }
-        public IActionResult Login()
-        {
-            return View();
-        }
-        public IActionResult Error()
-        {
-            return View();
-        }
     }
 }

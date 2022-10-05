@@ -30,6 +30,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Deneme}/{action=AdminHome}/{id?}");
+    pattern: "{controller=UserOperations}/{action=UserList}/{id?}");
 
 app.Run();
