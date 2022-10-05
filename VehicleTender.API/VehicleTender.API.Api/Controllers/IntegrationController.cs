@@ -11,11 +11,11 @@ namespace VehicleTender.API.Api.Controllers
         /// </summary>
         /// <returns></returns>
 
-        public IntegrationController()
+        private readonly ILogger<IntegrationController> _hede;
+        public IntegrationController(ILogger<IntegrationController> hede)
         {
-
+            _hede = hede;
         }
-
         [HttpGet("")]
         public IActionResult GetIndex()
 

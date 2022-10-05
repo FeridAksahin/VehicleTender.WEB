@@ -10,10 +10,10 @@ namespace VehicleTender.API.Api.Controllers
         /// All Authority actions will be done here.
         /// </summary>
         /// <returns></returns>
-
-        public AuthController()
+        private readonly ILogger<AuthController> _hede;
+        public AuthController(ILogger<AuthController> hede)
         {
-
+            _hede = hede;
         }
         [HttpGet("")]
         public IActionResult GetIndex()

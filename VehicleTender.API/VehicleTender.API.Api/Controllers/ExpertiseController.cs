@@ -10,9 +10,12 @@ namespace VehicleTender.API.Api.Controllers
         /// All Expertise actions will be done here.
         /// </summary>
         /// <returns></returns>
-        public ExpertiseController()
-        {
+        /// 
 
+        private readonly ILogger<ExpertiseController> _hede;
+        public ExpertiseController(ILogger<ExpertiseController> hede)
+        {
+            _hede = hede;
         }
 
         [HttpGet("")]

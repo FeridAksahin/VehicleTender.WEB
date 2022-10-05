@@ -10,12 +10,12 @@ namespace VehicleTender.API.Api.Controllers
         /// All Login actions will be done here.
         /// </summary>
         /// <returns></returns>
-        
-        public LoginController()
+
+        private readonly ILogger<LoginController> _hede;
+        public LoginController(ILogger<LoginController> hede)
         {
-
+            _hede = hede;
         }
-
         [HttpGet("")]
         public IActionResult GetIndex()
 

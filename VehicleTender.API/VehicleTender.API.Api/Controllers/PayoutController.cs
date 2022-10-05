@@ -11,11 +11,11 @@ namespace VehicleTender.API.Api.Controllers
         /// </summary>
         /// <returns></returns>
 
-        public PayoutController()
+        private readonly ILogger<PayoutController> _hede;
+        public PayoutController(ILogger<PayoutController> hede)
         {
-
+            _hede = hede;
         }
-
         [HttpGet("")]
         public IActionResult GetIndex()
 

@@ -14,17 +14,16 @@ namespace VehicleTender.API.Api.Controllers
         /// </summary>
         /// <returns></returns>
 
-        private readonly ILoggerManager _logger;
-        public HomeController(ILoggerManager logger)
+        private readonly ILogger<HomeController> _hede;
+        public HomeController(ILogger<HomeController> hede)
         {
-            _logger = logger;
+            _hede = hede;
         }
 
         [HttpGet("")]
         public IActionResult GetIndex()
 
         {
-            _logger.Log(new LogDTO() { Date = DateTime.Now,Message="fasdfasd", LogProcess = LogProcess.Info,UserId=null });
             return Ok();
         }
         [HttpPut("")]
