@@ -2,9 +2,9 @@
 {
     public class GetVehicleListInput
     {
-        public string Brand { get; set; }
-        public string Model { get; set; }
+        public string BrandId { get; set; }
+        public string ModelId { get; set; }
         public bool? isIndividual { get; set; }
-        public string Status { get; set; }
+        public string StatusId { get; set; }
     }
 }

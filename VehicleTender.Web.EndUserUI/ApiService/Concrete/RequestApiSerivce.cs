@@ -1,9 +1,12 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Security.Policy;
 using System.Threading.Tasks;
 using System.Web;
 using VehicleTender.Web.EndUserUI.ApiService.Interface;
@@ -28,15 +31,19 @@ namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
             httpClient.BaseAddress = new Uri(serviceBaseAddress);
             return httpClient;
         }
-        public async Task<List<T>> GetRequest<T>(string endpoint) where T : class
+        public async Task<T> GetRequest<T>(string endpoint) where T : class
         {
-            var response = await httpClient.GetAsync(endpoint);  
-            if (response.IsSuccessStatusCode)
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(endpoint);
+
+            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            using (Stream stream = response.GetResponseStream())
+            using (StreamReader reader = new StreamReader(stream))
             {
-                return JsonConvert.DeserializeObject<List<T>>(await response.Content.ReadAsStringAsync());
+                string resp = reader.ReadToEnd();
+                return JsonConvert.DeserializeObject<T>(resp);
             }
-            return null;
         }
+
         public async Task<string> PostAsync<T>(T data, string endpoint) where T : class
         {
             var convertedJsonParameterObject = new StringContent(JsonConvert.SerializeObject(data));

@@ -44,7 +44,10 @@ namespace VehicleTender.API.BusinessLayer.Validation
                         break;
                     }
                 }
-                if (errorList.Count == 0) Console.WriteLine("All tests succesful");
+                if (errorList.Count == 0)
+                {
+                    //todo 
+                }
             }
             return errorList;
         }

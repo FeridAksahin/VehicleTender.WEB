@@ -48,11 +48,14 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         public ActionResult ListVehicle(GetVehicleListInput input)
         {
             string apiUrl = ConfigurationManager.AppSettings["ApiUrl"];
-            string endpoint = apiUrl + "Vehicle/GetIndex?marka=" + input.Brand + "&model=" + input.Model + "&isIndividual=" + input.isIndividual + "&status=" + input.Status;
+            string endpoint = apiUrl + "Vehicle/GetIndex?marka=" + input.BrandId + "&model=" + input.ModelId + "&isIndividual=" + input.isIndividual + "&status=" + input.StatusId;
 
-            var deger = _requestApiService.GetAsync<GetVehicleListInput>(endpoint);
-            return View(deger);
- 
+            List<VehicleListViewModel> list = _requestApiService.GetAsync<List<VehicleListViewModel>>(endpoint).Result;
+            VehicleViewModel vehicleViewModel = new VehicleViewModel
+            {
+                VehicleList = list
+            };
+            return View(vehicleViewModel);
         }
     }
 }
