@@ -10,10 +10,10 @@ namespace VehicleTender.API.Api.Controllers
         /// All Report actions will be done here.
         /// </summary>
         /// <returns></returns>
-        private readonly ILogger<ReportController> _hede;
-        public ReportController(ILogger<ReportController> hede)
+        private readonly ILogger<ReportController> _log;
+        public ReportController(ILogger<ReportController> log)
         {
-            _hede = hede;
+            _log = log;
         }
 
         [HttpGet("")]

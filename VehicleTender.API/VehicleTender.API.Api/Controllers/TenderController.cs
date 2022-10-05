@@ -10,10 +10,10 @@ namespace VehicleTender.API.Api.Controllers
         /// All Tender actions will be done here.
         /// </summary>
         /// <returns></returns>
-        private readonly ILogger<TenderController> _hede;
-        public TenderController(ILogger<TenderController> hede)
+        private readonly ILogger<TenderController> _log;
+        public TenderController(ILogger<TenderController> log)
         {
-            _hede = hede;
+            _log = log;
         }
 
         [HttpGet("")]

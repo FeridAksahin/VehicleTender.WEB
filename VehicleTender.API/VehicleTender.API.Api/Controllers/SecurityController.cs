@@ -10,10 +10,10 @@ namespace VehicleTender.API.Api.Controllers
         /// All Security actions will be done here.
         /// </summary>
         /// <returns></returns>
-        private readonly ILogger<SecurityController> _hede;
-        public SecurityController(ILogger<SecurityController> hede)
+        private readonly ILogger<SecurityController> _log;
+        public SecurityController(ILogger<SecurityController> log)
         {
-            _hede = hede;
+            _log = log;
         }
 
         [HttpGet("")]
