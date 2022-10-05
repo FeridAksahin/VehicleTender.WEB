@@ -11,15 +11,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleTender.API.BusinessL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleTender.API.Common", "VehicleTender.API.Common\VehicleTender.API.Common.csproj", "{9E0219EB-6E66-43A1-8584-67043F245954}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleTender.API.DAL", "VehicleTender.API.DAL\VehicleTender.API.DAL.csproj", "{6A354FE5-C87B-439D-B471-DB77964EFEF8}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleTender.API.DTO", "VehicleTender.API.DTO\VehicleTender.API.DTO.csproj", "{F3F48EA9-5FD1-4952-A0B7-BE5755724484}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleTender.API.UnitTest", "VehicleTender.API.UnitTest\VehicleTender.API.UnitTest.csproj", "{594EDD1C-30EB-4647-9407-69E204F7D51E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleTender.API.ChatBotService", "VehicleTender.API.ChatBotService\VehicleTender.API.ChatBotService.csproj", "{F93618E5-76B5-402C-8546-D4BF3AD617AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleTender.API.ExceptionHandling", "VehicleTender.API.ExceptionHandling\VehicleTender.API.ExceptionHandling.csproj", "{4E9EEB28-37D8-467E-BC46-1B15B8B4DA91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleTender.API.ExceptionHandling", "VehicleTender.API.ExceptionHandling\VehicleTender.API.ExceptionHandling.csproj", "{4E9EEB28-37D8-467E-BC46-1B15B8B4DA91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,10 +41,6 @@ Global
 		{9E0219EB-6E66-43A1-8584-67043F245954}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E0219EB-6E66-43A1-8584-67043F245954}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E0219EB-6E66-43A1-8584-67043F245954}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6A354FE5-C87B-439D-B471-DB77964EFEF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A354FE5-C87B-439D-B471-DB77964EFEF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6A354FE5-C87B-439D-B471-DB77964EFEF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6A354FE5-C87B-439D-B471-DB77964EFEF8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F3F48EA9-5FD1-4952-A0B7-BE5755724484}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F3F48EA9-5FD1-4952-A0B7-BE5755724484}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3F48EA9-5FD1-4952-A0B7-BE5755724484}.Release|Any CPU.ActiveCfg = Release|Any CPU
