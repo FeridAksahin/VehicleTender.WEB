@@ -1,8 +1,16 @@
+using VehicleTender.Web.AdminUI.ApiServices.Base;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddScoped<IBaseApiService<Task>, BaseApiService<Task>>();
+
+builder.Services.AddHttpClient<BaseApiService<Task>>(options =>
+{
+    options.BaseAddress = new Uri(builder.Configuration["apiAddress"]);
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
