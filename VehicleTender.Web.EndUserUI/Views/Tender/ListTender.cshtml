@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "ListTender";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-fluid">
+    <h5 class="mb-3 pb-3 display-5 text-center mt-4">Listeleme</h5>
+    @using (Html.BeginForm("ListVehicle", "Vehicle", FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-4">
+                <label>İhale Adı</label>
+                <select class="form-control">
+                    <option value="value">text</option>
+                </select>
+            </div>
+            <div class="col-4">
+                <label>Bireysel / Kurumsal</label>
+                <select class="form-control">
+                    <option value="value">text</option>
+                </select>
+            </div>
+            <div class="col-4">
+                <label>Statü</label>
+                <select class="form-control">
+                    <option value="value">text</option>
+                </select>
+            </div>
+        </div>
+        <input type="submit" a style="background-color: #2B2E4A;" value="Listele" class="btn btn-info mt-1" />
+    }
+    <hr />
+    <h5 class="mb-3 pb-3 display-5 text-center mt-4">İhale Listesi</h5>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Araç ID</th>
+                <th>Araç Marka</th>
+                <th>Araç Model</th>
+                <th>Statü</th>
+                <th>Bireysel / Kurumsal</th>
+                <th>Kaydeden Kullanıcı</th>
+                <th>Kaydetme Zamanı</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>item.ID</td>
+                <td>item.Name</td>
+                <td>item.VehicleModel</td>
+                <td>item.Statu</td>
+                <td>item.Bireysel</td>
+                <td>item.UserID</td>
+                <td>item.CreatedDate</td>
+                <td><a href="" style="background-color: #2B2E4A;" class="btn btn-info btn-sm">Sil</a></td>
+                <td><a href="" style="background-color: #2B2E4A;" class="btn btn-info btn-sm">Güncelle</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="" style="background-color: #2B2E4A;" class="btn btn-info btn-sm btn-block">Yeni</a>
+    <hr />
+</div>
+

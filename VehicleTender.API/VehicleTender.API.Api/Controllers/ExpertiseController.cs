@@ -12,10 +12,10 @@ namespace VehicleTender.API.Api.Controllers
         /// <returns></returns>
         /// 
 
-        private readonly ILogger<ExpertiseController> _hede;
-        public ExpertiseController(ILogger<ExpertiseController> hede)
+        private readonly ILogger<ExpertiseController> _log;
+        public ExpertiseController(ILogger<ExpertiseController> log)
         {
-            _hede = hede;
+            _log = log;
         }
 
         [HttpGet("")]
