@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -19,10 +20,16 @@ namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
         private HttpClient httpClient;
         private readonly string _baseAddress;//api base adresi - https://localhost:44358/api/ gibi
                                              //  private readonly string _addressSuffix; //https://localhost:44358/api/userproc/ gibi
-        public RequestApiService(string baseAddress)
+        public RequestApiService(string baseAddress = null)
         {
-            _baseAddress = baseAddress;
-            //     _addressSuffix = addressSuffix;
+            
+            if (baseAddress == null)
+               _baseAddress = ConfigurationManager.AppSettings["ApiUrl"];
+            else
+            {
+                _baseAddress = baseAddress;
+                //     _addressSuffix = addressSuffix;
+            }
             httpClient = CreateHttpClient(_baseAddress);
         }
         public HttpClient CreateHttpClient(string serviceBaseAddress)
@@ -44,7 +51,6 @@ namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
         {
             var response = await httpClient.GetAsync($"{endpoint}/{id}");
             return JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync());
-            return null;
         }
         public async Task<List<T>> GetAsyncList<T>(string endpoint) where T : class
         {
