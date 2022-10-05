@@ -124,6 +124,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TenderController.cs" />
     <Compile Include="Controllers\VehicleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -131,9 +132,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
-
     <Compile Include="ViewModels\VehicleAddViewModel.cs" />
-
     <Compile Include="ViewModels\GetVehicleListInput.cs" />
     <Compile Include="ViewModels\VehicleListViewModel.cs" />
     <Compile Include="ViewModels\VehicleViewModel.cs" />
@@ -337,6 +336,8 @@
     <Content Include="Views\Home\ForgotPassword.cshtml" />
     <Content Include="Views\Vehicle\ListVehicle.cshtml" />
     <Content Include="Views\Vehicle\AddVehicle.cshtml" />
+    <Content Include="Views\Tender\CreateTender.cshtml" />
+    <Content Include="Views\Tender\ListTender.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
