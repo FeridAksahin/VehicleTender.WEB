@@ -21,6 +21,7 @@ namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
        //     _addressSuffix = addressSuffix;
             httpClient = CreateHttpClient(_baseAddress);
         }
+
         public HttpClient CreateHttpClient(string serviceBaseAddress)
         {
             httpClient = new HttpClient();
