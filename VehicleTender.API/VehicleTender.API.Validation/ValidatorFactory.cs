@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VehicleTender.API.BusinessLayer.Validation.Attributes;
-using VehicleTender.API.BusinessLayer.Validation.Base;
-using VehicleTender.API.BusinessLayer.Validation.Validators;
+using VehicleTender.API.Validation.Validators;
+using VehicleTender.API.Validation.Validators.Base;
 
-namespace VehicleTender.API.BusinessLayer.Validation
+namespace VehicleTender.API.Validation
 {
     public static class ValidatorFactory<T>
     {
@@ -15,7 +14,7 @@ namespace VehicleTender.API.BusinessLayer.Validation
 
         public static IValidator<T> GetValidator(Type attribute)
         {
-            if (validators.Count==0)
+            if (validators.Count == 0)
             {
                 validators.Add("DateType", new DateValidator<T>());
                 validators.Add("Default", new DefaultValidator<T>());

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using VehicleTender.API.BusinessLayer.Validation.Base;
+using VehicleTender.API.Validation.Validators.Base;
 
-namespace VehicleTender.API.BusinessLayer.Validation.Validators
+namespace VehicleTender.API.Validation.Validators
 {
     public record StringValidator<T>() : Validator, IValidator<T>
     {

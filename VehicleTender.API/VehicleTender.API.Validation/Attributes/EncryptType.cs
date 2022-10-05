@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VehicleTender.API.BusinessLayer.Validation.Attributes
+namespace VehicleTender.API.Validation.Attributes
 {
     [AttributeUsage(AttributeTargets.All)]
-    public class EncryptType:System.Attribute
+    public class EncryptType : Attribute
     {
         public EncryptType()
         {

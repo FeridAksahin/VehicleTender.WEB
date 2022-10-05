@@ -4,14 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VehicleTender.API.BusinessLayer.Validation.Attributes
+namespace VehicleTender.API.Validation.Attributes
 {
     [AttributeUsage(AttributeTargets.All)]
-    public class HashType:System.Attribute
+    public class StringType : Attribute
     {
-        public HashType()
+        public StringType()
         {
 
         }
+        public int Max { get; set; }
+        public int Min { get; set; }
     }
+
 }
