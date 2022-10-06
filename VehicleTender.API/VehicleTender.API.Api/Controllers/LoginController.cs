@@ -2,6 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using VehicleTender.API.Api.TokenHandler;
 using VehicleTender.API.Api.ViewModel;
+using VehicleTender.API.Common.CustomHTTPResponse;
+using VehicleTender.API.Common.CustomHTTPResponse.Concrete;
 using VehicleTender.API.Entity.Context;
 using VehicleTender.API.Entity.Entities;
 
@@ -14,7 +16,7 @@ namespace VehicleTender.API.Api.Controllers
         readonly VehicleTenderContext _context;
         readonly IConfiguration _configuration;
         private readonly ILogger<LoginController> _hede;
-       
+
 
         public LoginController(VehicleTenderContext content, IConfiguration configuration, ILogger<LoginController> hede)
         {
@@ -24,7 +26,7 @@ namespace VehicleTender.API.Api.Controllers
         }
         [HttpPost]
         [Route("SignIn")]
-        public async Task<bool> SignIn([FromBody] UserSignInViewModel Singuser)
+        public async Task<StatusGenerator> SignIn([FromBody] UserSignInViewModel Singuser)
         {
             VehicleTender.API.Entity.Entities.User user = new User();
             user.Name = Singuser.Name;
@@ -32,11 +34,13 @@ namespace VehicleTender.API.Api.Controllers
             user.Mail = Singuser.Mail;
             user.Password = Singuser.Password;
             _context.User.Add(user);
-
-            await _context.SaveChangesAsync();
-            return true;
-
-         
+            CustomResponse customResponse;
+            //custom response ile client tarafına istenilen response türü ve overloadı seçilip gönderme
+            using (customResponse = new CustomResponse())
+            {
+                return await _context.SaveChangesAsync() == 0 ? customResponse.ResponseForDeleteOrPutOrPostRequest(200) :
+            customResponse.ResponseForDeleteOrPutOrPostRequest(404);
+            }
         }
         [HttpPost]
         [Route("Login")]
@@ -79,12 +83,12 @@ namespace VehicleTender.API.Api.Controllers
             return null;
         }
 
-       
+
         [HttpGet("")]
         public IActionResult GetIndex()
-
         {
-            return Ok();
+            StatusGenerator statusGenerator = new StatusGenerator();
+            return Ok(statusGenerator.GetHttpStatusCodes(200));
         }
         [HttpPut("")]
         public IActionResult PutIndex()

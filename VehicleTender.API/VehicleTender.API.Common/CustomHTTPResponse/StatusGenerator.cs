@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using VehicleTender.API.Common.Enums.HttpStatusCode;
 
-namespace VehicleTender.API.Common.Web_Scrap.CustomHTTPResponse
+namespace VehicleTender.API.Common.CustomHTTPResponse
 {
-    public class StatusGenerator
+    public class StatusGenerator : IDisposable
     {
         public string GetHttpStatusCodes(int desiredStatusCode)
         {
@@ -48,6 +48,10 @@ namespace VehicleTender.API.Common.Web_Scrap.CustomHTTPResponse
             }
             bool CheckingIfThereIsSuchAStatusCode = GetHttpStatusCodeInSystem.Contains(desiredStatusCode);
             return CheckingIfThereIsSuchAStatusCode == true ? codeDescription : null;
+        }
+        public void Dispose()
+        {
+            throw new NotImplementedException();
         }
     }
 }
