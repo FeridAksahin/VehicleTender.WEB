@@ -47,11 +47,7 @@ namespace VehicleTender.WEB.Admin.Common.WebScrap.CustomHTTPResponse
                 GetHttpStatusCodeInSystem.Add(Convert.ToInt32(httpStatusCode));
             }
             bool CheckingIfThereIsSuchAStatusCode = GetHttpStatusCodeInSystem.Contains(desiredStatusCode);
-
-            if (CheckingIfThereIsSuchAStatusCode)
-                return codeDescription;
-            else
-                return null;
+            return CheckingIfThereIsSuchAStatusCode == true ? codeDescription : null;
         }
     }
 }
