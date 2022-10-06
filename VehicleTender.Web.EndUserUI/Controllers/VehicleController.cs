@@ -47,7 +47,16 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         {
             return View();
         }
-
+        [HttpGet]
+        public ActionResult UpdateVehicle()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult UpdateVehicle(VehicleAddViewModel vehicleAddViewModel)
+        {
+            return View();
+        }
 
         [HttpPost]
         public async Task<ActionResult> ListVehicle(GetVehicleListInput input)

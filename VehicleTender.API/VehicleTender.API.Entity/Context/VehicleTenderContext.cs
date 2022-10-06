@@ -12,7 +12,7 @@ namespace VehicleTender.API.Entity.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) //startupda adddbcontext kullanıyorsak bunu yazmak zorundayız aynen bu şekil
         {
-            optionsBuilder.UseSqlServer("data source=.;database=VehicleTender;Integrated Security=true;");
+            optionsBuilder.UseSqlServer("data source=DESKTOP-A6E9IGN\\SQLEXPRESS;initial catalog=VehicleTender;user id=sa;password=123;");
         }
 
 
@@ -61,7 +61,6 @@ namespace VehicleTender.API.Entity.Context
         public virtual DbSet<CarFeatureCodeMeaning> CarFeatureCodeMeaning { get; set; }
         public virtual DbSet<CarFeatureValue> CarFeatureValue { get; set; }
         public virtual DbSet<HardwareType> HardwareType { get; set; }
-
 
     }
 }
