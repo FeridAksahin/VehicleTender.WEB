@@ -1,0 +1,62 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="container-fluid">
+    <h5 class="mb-3 pb-3 display-5 text-center mt-4">Kriterler</h5>
+    <div class="row">
+        <div class="col-4">
+            <label>Araç Marka</label>
+            <select class="form-control">
+                <option value="1">BMW</option>
+            </select>
+        </div>
+        <div class="col-4">
+            <label>Model</label>
+            <select class="form-control">
+                <option value="1">320</option>
+            </select>
+        </div>
+        <div class="col-4">
+            <label>Statü</label>
+            <select class="form-control">
+                <option value="1">Satışta</option>
+            </select>
+        </div>
+    </div>
+    <br />
+    <input type="submit" style="background-color: #2B2E4A; color: white; float: right;" value="Listele" class="btn btn-info mt-1" />
+    <br />
+
+    <h5 class="mb-3 pb-3 display-5 text-center mt-4">Araç Listesi</h5>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Araç Marka</th>
+                <th>Araç Model</th>
+                <th>Statü</th>
+                <th>Bireysel / Kurumsal</th>
+                <th>Kaydeden Kullanıcı</th>
+                <th>Kaydetme Zamanı</th>
+                <th>Sil</th>
+                <th>Güncelle</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>Name</td>
+                <td>VehicleModel</td>
+                <td>Statu</td>
+                <td>Bireysel</td>
+                <td>UserID</td>
+                <td>CreatedDate</td>
+                <td><a href="" style="background-color: #2B2E4A; color:white" class="btn btn-info btn-sm">Sil</a></td>
+                <td><a href="" style="background-color: #2B2E4A; color:white" class="btn btn-info btn-sm">Güncelle</a></td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
