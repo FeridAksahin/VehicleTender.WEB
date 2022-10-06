@@ -2,11 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using VehicleTender.WEB.Admin.Common.Enums;
 
-namespace VehicleTender.WEB.EndUser.Common.CustomHTTPResponse
+namespace VehicleTender.WEB.Admin.Common.WebScrap.CustomHTTPResponse
 {
     public class StatusGenerator
     {

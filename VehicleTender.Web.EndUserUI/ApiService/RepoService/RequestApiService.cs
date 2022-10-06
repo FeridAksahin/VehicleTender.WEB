@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Web;
 using VehicleTender.Web.EndUserUI.ApiService.Interface;
 using VehicleTender.WEB.EndUser.Common;
-using VehicleTender.WEB.EndUser.Common.CustomHTTPResponse;
+using VehicleTender.WEB.EndUser.Common.WebScrap.CustomHTTPResponse;
 using VehicleTender.WEB.UserDTO.Concrete;
 
 

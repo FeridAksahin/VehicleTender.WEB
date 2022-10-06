@@ -8,10 +8,10 @@
 
   <ItemGroup>
     <Folder Include="Enums\" />
-    <Folder Include="WebScrap\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.46" />
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
   </ItemGroup>
 
