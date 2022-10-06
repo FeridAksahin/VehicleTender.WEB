@@ -37,7 +37,7 @@ namespace VehicleTender.API.Entity.Entities
         public virtual List<IndividualVehiclePurchase> IndividualVehiclePurchase { get; set; }
         public virtual List<CorporateDetail> CorporateDetail { get; set; }
         public virtual List<IndividualVehicleSales> IndividualVehicleSales { get; set; }
-        public virtual List<Log> Log { get; set; }
+
         public virtual List<Favorite> Favorite { get; set; }
 
         public virtual List<BuyingTenderVehicle> BuyingTenderVehicle { get; set; }

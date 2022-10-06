@@ -1,0 +1,96 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card mb-4">
+                <div class="card-body text-center">
+                    <img src="~/img/user.png" alt="avatar"
+                         class="rounded-circle img-fluid" style="width: 150px;">
+                    <h5>Okan</h5>
+                    <p class="text-muted mb-1">İstanbul</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Ad</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0"><b>Admin_Ad</b></p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Soyad</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0"><b>Admin_Soyad</b></p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Telefon</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0"><b>0000000000</b></p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Email</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0"><b>email</b></p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Adres</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0"><b>İstanbul</b></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <button style="background-color:#2B2E4A; color:  white;" class="btn btn-info btn-lg btn-block col-md-12" type="button" data-toggle="modal" data-target="#exampleModalCenter5">Şifre Değiştir</button>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModalCenter5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Şifre Değiştir</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/" method="post">
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <label>Eski Şifreniz</label>
+                            <input type="text" class="form-control">
+                            <label>Yeni Şifreniz</label>
+                            <input type="text" class="form-control">
+                            <button type="button" class="btn btn-info btn-lg btn-block col-md-12 mt-3" style="background-color: #2B2E4A; color: white;">Kaydet</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

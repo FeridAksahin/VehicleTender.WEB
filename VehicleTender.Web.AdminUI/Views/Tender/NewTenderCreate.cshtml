@@ -1,0 +1,228 @@
+﻿@{
+    ViewData["Title"] = "New Tender Create";
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+
+
+<h5 class="mb-3 pb-3 display-5 text-center mt-4">İhale Ekleme Sayfası</h5>
+<div class="row">
+    <div class="col-4">
+        <label>İhale Adı</label>
+        <input type="text" class="form-control" id="TenderName">
+    </div>
+    <div class="col-4">
+        <label>Bireysel / Kurumsal</label>
+        <select class="form-control">
+            <option value="value">Bireysel</option>
+            <option value="value">Kurumsal</option>
+        </select>
+    </div>
+    <div class="col-4">
+        <label>Şirket Adı</label>
+        <select class="form-control">
+            <option value="value">Şirket Adı</option>
+        </select>
+    </div>
+    <div class="col-4">
+        <label>Statü</label>
+        <select class="form-control">
+            <option value="value">text</option>
+        </select>
+    </div>
+    <div class="col-4">
+        <label>İhale Başlangıç Tarihi</label>
+        <div class="input-group date" id="datepicker">
+            <input type="text" class="form-control">
+            <span class="input-group-append">
+                <span class="input-group-text bg-white">
+                    <i class="fa fa-calendar"></i>
+                </span>
+            </span>
+        </div>
+    </div>
+    <div class="col-4">
+        <label>İhale Başlangıç Saati</label>
+        <input type="text" class="form-control" id="TenderName">
+    </div>
+
+    <div class="col-4">
+        <label>İhale Bitiş Tarihi</label>
+        <div class="input-group date" id="date">
+            <input type="text" class="form-control">
+            <span class="input-group-append">
+                <span class="input-group-text bg-white">
+                    <i class="fa fa-calendar"></i>
+                </span>
+            </span>
+        </div>
+    </div>
+    <div class="col-4">
+        <label>İhale Bitiş Saati</label>
+        <input type="text" class="form-control" id="TenderName">
+    </div>
+
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Araç Listeleme Tablosu
+    </div>
+    <div class="card-body">
+        <table id="datatablesSimple">
+            <thead>
+                <tr>
+                    <th>Araç Id</th>
+                    <th>Araç Marka</th>
+                    <th>Araç Model</th>
+                    <th>Bireysel/Kurumsal</th>
+                    <th>Statü</th>
+                    <th>Kaydeden Kullanıcı</th>
+                    <th>Kaydetme Zamanı</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Name</td>
+                    <td>Position</td>
+                    <td>Model</td>
+                    <td>Office</td>
+                    <td>Age</td>
+                    <td>Start date</td>
+                    <td>sdgasdfsadf</td>
+                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Position</td>
+                    <td>Model</td>
+                    <td>Office</td>
+                    <td>Age</td>
+                    <td>Start date</td>
+                    <td>sdgasdfsadf</td>
+                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Position</td>
+                    <td>Model</td>
+                    <td>Office</td>
+                    <td>Age</td>
+                    <td>Start date</td>
+                    <td>sdgasdfsadf</td>
+                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Position</td>
+                    <td>Model</td>
+                    <td>Office</td>
+                    <td>Age</td>
+                    <td>Start date</td>
+                    <td>sdgasdfsadf</td>
+                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Position</td>
+                    <td>Model</td>
+                    <td>Office</td>
+                    <td>Age</td>
+                    <td>Start date</td>
+                    <td>sdgasdfsadf</td>
+                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Position</td>
+                    <td>Model</td>
+                    <td>Office</td>
+                    <td>Age</td>
+                    <td>Start date</td>
+                    <td>sdgasdfsadf</td>
+                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Position</td>
+                    <td>Model</td>
+                    <td>Office</td>
+                    <td>Age</td>
+                    <td>Start date</td>
+                    <td>sdgasdfsadf</td>
+                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Position</td>
+                    <td>Model</td>
+                    <td>Office</td>
+                    <td>Age</td>
+                    <td>Start date</td>
+                    <td>sdgasdfsadf</td>
+                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Position</td>
+                    <td>Model</td>
+                    <td>Office</td>
+                    <td>Age</td>
+                    <td>Start date</td>
+                    <td>sdgasdfsadf</td>
+                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Position</td>
+                    <td>Model</td>
+                    <td>Office</td>
+                    <td>Age</td>
+                    <td>Start date</td>
+                    <td>sdgasdfsadf</td>
+                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Position</td>
+                    <td>Model</td>
+                    <td>Office</td>
+                    <td>Age</td>
+                    <td>Start date</td>
+                    <td>sdgasdfsadf</td>
+                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                </tr>
+
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="justify-content-md-end text-md-end">
+    <input type="submit" value="Araç Ekle" class="btn btn-secondary col-md-1" />
+    <input type="submit" value="Kaydet" class="btn btn-success col-md-1" />
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#datepicker').datepicker();
+    });
+
+    $(function () {
+        $('#date').datepicker();
+    });
+</script>

@@ -2,7 +2,7 @@
 
 namespace VehicleTender.Web.AdminUI.Controllers
 {
-    public class DenemeController : Controller
+    public class VehicleController : Controller
     {
         [HttpGet]
         public IActionResult AdminHome()
