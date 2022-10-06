@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VehicleTender.API.Common.Enums
+namespace VehicleTender.API.Common.Enums.ChatBot
 {
     public enum ChatBotRequest
     {
