@@ -13,7 +13,7 @@ using VehicleTender.Web.EndUserUI.ApiService.Interface;
 using VehicleTender.WEB.EndUser.Common;
 using VehicleTender.WEB.EndUser.Common.CustomHTTPResponse;
 using VehicleTender.WEB.UserDTO.Concrete;
-//using VehicleTender.WEB.UserDTO.Token;
+
 
 namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
 {
@@ -25,14 +25,14 @@ namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
         private readonly string _baseAddress;//api base adresi - https://localhost:44358/api/ gibi
                                              //  private readonly string _addressSuffix; //https://localhost:44358/api/userproc/ gibi
 
-      /*  static public TokenDTO SetToken
+       static public TokenDTO SetToken
         {
             set
             {
                 if (value != null)
                     httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + value.AccessToken);
             }
-        }*/
+        }
         public RequestApiService(string baseAddress = null)
         {
 
@@ -50,18 +50,13 @@ namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
             return httpClient;
         }
 
-        public static async Task<string> GetToken(UserLoginDTO getTokenForUser, string endpoint)
+        public async Task<TokenDTO> GetToken(UserLoginDTO getTokenForUser, string endpoint)  
         {
-            List<KeyValuePair<string, string>> pairs = new List<KeyValuePair<string, string>>
-            {
-                new KeyValuePair<string, string>( "grant_type", "password" ), //yetki kodu
-                //new KeyValuePair<string, string>( "username", userName ),
-                //new KeyValuePair<string, string> ( "Password", password )
-            };
-            HttpContent content = new FormUrlEncodedContent(pairs);
-            using (HttpResponseMessage response = await httpClient.PostAsync(endpoint, content))
-                return await response.Content.ReadAsStringAsync();
-        }
+            var convertedJsonParameterObject = new StringContent(JsonConvert.SerializeObject(getTokenForUser));
+            convertedJsonParameterObject.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            var response = await httpClient.PostAsync(endpoint, convertedJsonParameterObject);
+            return JsonConvert.DeserializeObject<TokenDTO>(response.Content.ReadAsStringAsync().Result);
+        }   
         /*
         public async TokenDTO GetConvert<T>(string userName, string password, string endpoint,T whoWantNiceToken) where T : class
         {
@@ -74,15 +69,22 @@ namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
         {
             var response = await httpClient.GetAsync(endpoint);
             if (response.IsSuccessStatusCode)
-            {
                 return JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync());
-            }
             return null;
         }
         public async Task<T> GetAsync<T>(string endpoint, string id) where T : class
         {
             var response = await httpClient.GetAsync($"{endpoint}/{id}");
             return JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync());
+        }
+        public async Task<List<T>> GetAsyncList<T>(string endpoint, T data) where T : class
+        {
+            var response = await httpClient.GetAsync(endpoint);
+            if (response.IsSuccessStatusCode)
+            {
+                return JsonConvert.DeserializeObject<List<T>>(await response.Content.ReadAsStringAsync());
+            }
+            return null;
         }
         public async Task<List<T>> GetAsyncList<T>(string endpoint) where T : class
         {
@@ -175,7 +177,7 @@ namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
                 disposed = true;
             }
         }
-      
+
         public async Task<T> GetRequest<T>(string endpoint) where T : class
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(endpoint);
@@ -187,6 +189,7 @@ namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
                 string resp = reader.ReadToEnd();
                 return JsonConvert.DeserializeObject<T>(resp);
             }
-        }   
+        }  
+      
     }
 }

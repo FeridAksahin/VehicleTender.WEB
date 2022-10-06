@@ -118,7 +118,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiService\Concrete\CarService.cs" />
-    <Compile Include="ApiService\Concrete\VehicleService.cs" />
     <Compile Include="ApiService\RepoService\RequestApiService.cs" />
     <Compile Include="ApiService\Interface\IRequestApiService.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
