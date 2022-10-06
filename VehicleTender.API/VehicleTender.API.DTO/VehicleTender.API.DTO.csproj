@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\VehicleTender.API.BusinessLayer\VehicleTender.API.BusinessLayer.csproj" />
     <ProjectReference Include="..\VehicleTender.API.Common\VehicleTender.API.Common.csproj" />
+    <ProjectReference Include="..\VehicleTender.API.Validation\VehicleTender.API.Validation.csproj" />
   </ItemGroup>
 
 </Project>
