@@ -125,6 +125,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TenderController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\VehicleController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -176,6 +177,7 @@
     <Content Include="img\testimonial-2.jpg" />
     <Content Include="img\testimonial-3.jpg" />
     <Content Include="img\testimonial-4.jpg" />
+    <Content Include="img\user.png" />
     <Content Include="img\vendor-1.png" />
     <Content Include="img\vendor-2.png" />
     <Content Include="img\vendor-3.png" />
@@ -340,6 +342,7 @@
     <Content Include="Views\Tender\CreateTender.cshtml" />
     <Content Include="Views\Tender\ListTender.cshtml" />
     <Content Include="Views\Vehicle\PostingSalesAdvertisement.cshtml" />
+    <Content Include="Views\User\UserProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
