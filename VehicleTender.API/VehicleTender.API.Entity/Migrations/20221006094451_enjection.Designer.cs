@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VehicleTender.API.Entity.Context;
 
@@ -11,9 +12,10 @@ using VehicleTender.API.Entity.Context;
 namespace VehicleTender.API.Entity.Migrations
 {
     [DbContext(typeof(VehicleTenderContext))]
-    partial class VehicleTenderContextModelSnapshot : ModelSnapshot
+    [Migration("20221006094451_enjection")]
+    partial class enjection
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -810,6 +812,66 @@ namespace VehicleTender.API.Entity.Migrations
                     b.HasIndex("StatuId");
 
                     b.ToTable("IndividualVehicleSalesStatuHistory");
+                });
+
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.Log", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("CreatedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool?>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("LogProcessId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ModifiedBy")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ModifiedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Page")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LogProcessId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Log");
+                });
+
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.LogProcess", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("LogDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LogType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LogProcess");
                 });
 
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.Message", b =>
@@ -1767,6 +1829,23 @@ namespace VehicleTender.API.Entity.Migrations
                     b.Navigation("Statu");
                 });
 
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.Log", b =>
+                {
+                    b.HasOne("VehicleTender.API.Entity.Entities.LogProcess", "LogProcess")
+                        .WithMany("Log")
+                        .HasForeignKey("LogProcessId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("VehicleTender.API.Entity.Entities.User", "User")
+                        .WithMany("Log")
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("LogProcess");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.Message", b =>
                 {
                     b.HasOne("VehicleTender.API.Entity.Entities.EnumMessage", "EnumMessage")
@@ -2060,6 +2139,11 @@ namespace VehicleTender.API.Entity.Migrations
                     b.Navigation("IndividualVehicleSalesStatuHistory");
                 });
 
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.LogProcess", b =>
+                {
+                    b.Navigation("Log");
+                });
+
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.Notary", b =>
                 {
                     b.Navigation("CarDetailInfo");
@@ -2113,6 +2197,8 @@ namespace VehicleTender.API.Entity.Migrations
                     b.Navigation("IndividualVehiclePurchase");
 
                     b.Navigation("IndividualVehicleSales");
+
+                    b.Navigation("Log");
 
                     b.Navigation("Message");
 

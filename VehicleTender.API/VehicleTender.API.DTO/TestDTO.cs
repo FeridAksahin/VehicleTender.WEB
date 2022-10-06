@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VehicleTender.API.BusinessLayer.Validation.Attributes;
+
+using VehicleTender.API.Validation.Attributes;
 
 namespace VehicleTender.API.DTO
 {
