@@ -61,6 +61,7 @@ namespace VehicleTender.API.Entity.Context
         public virtual DbSet<CarFeatureCodeMeaning> CarFeatureCodeMeaning { get; set; }
         public virtual DbSet<CarFeatureValue> CarFeatureValue { get; set; }
         public virtual DbSet<HardwareType> HardwareType { get; set; }
+        public virtual DbSet<TenderVehicleDetail> TenderVehicleDetail { get; set; }
 
     }
 }

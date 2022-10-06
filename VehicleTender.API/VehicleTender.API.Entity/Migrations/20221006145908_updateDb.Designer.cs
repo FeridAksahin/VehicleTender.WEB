@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VehicleTender.API.Entity.Context;
 
@@ -11,9 +12,10 @@ using VehicleTender.API.Entity.Context;
 namespace VehicleTender.API.Entity.Migrations
 {
     [DbContext(typeof(VehicleTenderContext))]
-    partial class VehicleTenderContextModelSnapshot : ModelSnapshot
+    [Migration("20221006145908_updateDb")]
+    partial class updateDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1912,7 +1914,7 @@ namespace VehicleTender.API.Entity.Migrations
                     b.HasOne("VehicleTender.API.Entity.Entities.CarDetailInfo", "CarDetailInfo")
                         .WithMany("TenderVehicleDetail")
                         .HasForeignKey("CarDetailInfoId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("VehicleTender.API.Entity.Entities.TenderVehicleSales", "TenderVehicleSales")
