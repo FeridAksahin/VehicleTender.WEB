@@ -8,5 +8,10 @@ namespace VehicleTender.Web.AdminUI.Controllers
         {
             return View();
         }
+
+        public IActionResult TenderList2()
+        {
+            return View();
+        }
     }
 }
