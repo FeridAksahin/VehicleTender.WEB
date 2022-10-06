@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -10,6 +12,8 @@ using System.Web;
 using VehicleTender.Web.EndUserUI.ApiService.Interface;
 using VehicleTender.WEB.EndUser.Common;
 using VehicleTender.WEB.EndUser.Common.CustomHTTPResponse;
+using VehicleTender.WEB.UserDTO.Concrete;
+
 
 namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
 {
@@ -17,19 +21,26 @@ namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
     {
         StatusGenerator statusGenerator = new StatusGenerator();
         private bool disposed = false;
-        private HttpClient httpClient;
+        private static HttpClient httpClient;
         private readonly string _baseAddress;//api base adresi - https://localhost:44358/api/ gibi
                                              //  private readonly string _addressSuffix; //https://localhost:44358/api/userproc/ gibi
+
+       static public TokenDTO SetToken
+        {
+            set
+            {
+                if (value != null)
+                    httpClient.DefaultRequestHeaders.Add("Authorization", "Bearer " + value.AccessToken);
+            }
+        }
         public RequestApiService(string baseAddress = null)
         {
-            
+
             if (baseAddress == null)
-               _baseAddress = ConfigurationManager.AppSettings["ApiUrl"];
+                _baseAddress = ConfigurationManager.AppSettings["ApiUrl"];
             else
-            {
                 _baseAddress = baseAddress;
                 //     _addressSuffix = addressSuffix;
-            }
             httpClient = CreateHttpClient(_baseAddress);
         }
         public HttpClient CreateHttpClient(string serviceBaseAddress)
@@ -38,19 +49,42 @@ namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
             httpClient.BaseAddress = new Uri(serviceBaseAddress);
             return httpClient;
         }
+
+        public async Task<TokenDTO> GetToken(UserLoginDTO getTokenForUser, string endpoint)  
+        {
+            var convertedJsonParameterObject = new StringContent(JsonConvert.SerializeObject(getTokenForUser));
+            convertedJsonParameterObject.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            var response = await httpClient.PostAsync(endpoint, convertedJsonParameterObject);
+            return JsonConvert.DeserializeObject<TokenDTO>(response.Content.ReadAsStringAsync().Result);
+        }   
+        /*
+        public async TokenDTO GetConvert<T>(string userName, string password, string endpoint,T whoWantNiceToken) where T : class
+        {
+            TokenDTO getTokenDeserialize;
+            string res = GetToken(userName, password, endpoint).Result;
+            whoWantNiceToken.SetToken = res;
+            return getTokenDeserialize = JsonConvert.DeserializeObject<TokenDTO>(res);
+        }*/
         public async Task<T> GetAsync<T>(string endpoint) where T : class
         {
             var response = await httpClient.GetAsync(endpoint);
             if (response.IsSuccessStatusCode)
-            {
                 return JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync());
-            }
             return null;
         }
         public async Task<T> GetAsync<T>(string endpoint, string id) where T : class
         {
             var response = await httpClient.GetAsync($"{endpoint}/{id}");
             return JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync());
+        }
+        public async Task<List<T>> GetAsyncList<T>(string endpoint, T data) where T : class
+        {
+            var response = await httpClient.GetAsync(endpoint);
+            if (response.IsSuccessStatusCode)
+            {
+                return JsonConvert.DeserializeObject<List<T>>(await response.Content.ReadAsStringAsync());
+            }
+            return null;
         }
         public async Task<List<T>> GetAsyncList<T>(string endpoint) where T : class
         {
@@ -124,6 +158,8 @@ namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
                 statusGenerator.GetHttpStatusCodes(414);
         }
 
+
+
         public void Dispose()
         {
             Dispose(true);
@@ -141,5 +177,19 @@ namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
                 disposed = true;
             }
         }
+
+        public async Task<T> GetRequest<T>(string endpoint) where T : class
+        {
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(endpoint);
+
+            using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+            using (Stream stream = response.GetResponseStream())
+            using (StreamReader reader = new StreamReader(stream))
+            {
+                string resp = reader.ReadToEnd();
+                return JsonConvert.DeserializeObject<T>(resp);
+            }
+        }  
+      
     }
 }

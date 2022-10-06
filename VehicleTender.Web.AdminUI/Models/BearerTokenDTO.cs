@@ -3,6 +3,6 @@
     public class BearerTokenDTO
     {
         public string? TokenUri { get; set; }
-        public DateTime TokenRequestTime { get; set; }
+        public DateTime ExpirationDate { get; set; }
     }
 }

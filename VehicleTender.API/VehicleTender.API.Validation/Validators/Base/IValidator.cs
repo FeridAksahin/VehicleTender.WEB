@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VehicleTender.API.BusinessLayer.Validation.Base
+namespace VehicleTender.API.Validation.Validators.Base
 {
     public interface IValidator<T>
     {

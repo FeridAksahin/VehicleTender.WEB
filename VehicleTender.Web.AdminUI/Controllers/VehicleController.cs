@@ -4,18 +4,25 @@ namespace VehicleTender.Web.AdminUI.Controllers
 {
     public class VehicleController : Controller
     {
-        public IActionResult VehicleList()
+        [HttpGet]
+        public IActionResult AdminHome()
         {
             return View();
         }
-        public IActionResult StockList()
+        [HttpGet]
+        public IActionResult Login()
         {
             return View();
         }
-        public IActionResult VehicleFeatureList()
+        [HttpGet]
+        public IActionResult Error()
         {
             return View();
         }
-
+        [HttpGet]
+        public IActionResult IndividualVehiclePurchaseListing()
+        {
+            return View();
+        }
     }
 }

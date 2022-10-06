@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewBag.Title = "CreateTender";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+    <h4 class="mb-3 pb-3 display-5 text-center">İhale Genel Bilgiler</h4>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="row">
+            <div class="col-sm-4">
+                <label>İhale Adı</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="col-sm-4">
+                <label>Bireysel / Kurumsal</label>
+                <select class="form-control">
+                    <option value="1">Bireysel</option>
+                    <option value="2">Kurumsal</option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+                <label>Şirket Adı</label>
+                <select class="form-control">
+                    <option value="1">X</option>
+                    <option value="2">Y</option>
+                </select>
+            </div>
+        </div>
+    </div><br>
+    <div class="col-12">
+        <div class="row">
+            <div class="col-sm-4">
+                <label>Statü</label>
+                <select class="form-control">
+                    <option value="1">X</option>
+                    <option value="2">Y</option>
+                </select>
+            </div>
+            <div class="col-sm-4">
+                <label>İhale Başlangıç Tarih</label>
+                <input type="datetime-local" class="form-control">
+            </div>
+            <div class="col-sm-4">
+                <label>İhale Başlangıç Saati</label>
+                <input type="time" class="form-control">
+            </div>
+        </div>
+    </div><br>
+    <div class="col-12">
+        <div class="row">
+            <div class="col-sm-4">
+                <label>İhale Bitiş Tarih</label>
+                <input type="datetime-local" class="form-control">
+            </div>
+            <div class="col-sm-4">
+                <label>İhale Bitiş Saati</label>
+                <input type="time" class="form-control">
+            </div>
+        </div>
+    </div>
+    <hr />
+    <h4 class="mb-3 pb-3 display-5 text-center">İhale Araç Listesi</h4>
+    <table class="table table-hover" style="margin-top: 10px">
+        <thead>
+            <tr>
+                <th>Araç ID</th>
+                <th>Araç Marka</th>
+                <th>Araç Model</th>
+                <th>Bireysel / Kurumsal</th>
+                <th>Statü</th>
+                <th>Kaydeden Kullanıcı</th>
+                <th>Kaydetme Zamanı</th>
+                <th>Fiyat</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>123</td>
+                <td>Toyota</td>
+                <td>Yaris</td>
+                <td>Bireysel</td>
+                <td>Satışta</td>
+                <td>Kemal</td>
+                <td>12.08.2020-15:30</td>
+                <td>X</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr />
+    <input type="submit" class="btn btn-outline-primary" value="Araç Ekle" style="float: right; margin-left: 15px;">
+    <input type="submit" class="btn btn-outline-primary" value="Kaydet" style="float: right;">
+    <br /><br />
+</div>
+
