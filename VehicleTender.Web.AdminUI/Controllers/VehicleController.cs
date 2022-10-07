@@ -15,6 +15,21 @@ namespace VehicleTender.Web.AdminUI.Controllers
             return View();
         }
         [HttpGet]
+        public IActionResult VehicleList()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult VehicleFeatureList()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult StockList()
+        {
+            return View();
+        }
+        [HttpGet]
         public IActionResult Error()
         {
             return View();
