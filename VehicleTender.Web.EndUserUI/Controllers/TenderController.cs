@@ -18,6 +18,7 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         {
             return View();
         }
+        
 
         public ActionResult ListTender()
         {
