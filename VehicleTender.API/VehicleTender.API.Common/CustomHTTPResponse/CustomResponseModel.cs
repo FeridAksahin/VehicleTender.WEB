@@ -11,6 +11,8 @@ namespace VehicleTender.API.Common.CustomHTTPResponse
         public StatusGenerator GetResponseStatusWhatDoYouWant_CustomStatuOrDefinedStatus { get; set; }
         public T ResponseData { get; set; }
         public List<T> ListResponseData { get; set; }
+        //stringe çevir
+        //note alanı ekle
         public void Dispose()
         {
             throw new NotImplementedException();

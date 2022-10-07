@@ -38,8 +38,8 @@ namespace VehicleTender.API.Api.Controllers
             //custom response ile client tarafına istenilen response türü ve overloadı seçilip gönderme
             using (customResponse = new CustomResponse())
             {
-                return await _context.SaveChangesAsync() == 0 ? customResponse.ResponseForDeleteOrPutOrPostRequest(200) :
-            customResponse.ResponseForDeleteOrPutOrPostRequest(404);
+                return await _context.SaveChangesAsync() >= 0 ? customResponse.ResponseForDeleteOrPutOrPostRequest(200) :
+            customResponse.ResponseForDeleteOrPutOrPostRequest(500);
             }
         }
         [HttpPost]
