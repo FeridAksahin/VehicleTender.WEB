@@ -344,6 +344,7 @@
     <Content Include="Views\Vehicle\PostingSalesAdvertisement.cshtml" />
     <Content Include="Views\User\UserProfile.cshtml" />
     <Content Include="Views\Vehicle\UpdateVehicle.cshtml" />
+    <Content Include="Views\Home\CorporateRegister.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
