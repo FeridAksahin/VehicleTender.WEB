@@ -12,5 +12,10 @@ namespace VehicleTender.Web.AdminUI.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public IActionResult RoleAndAuthorization()
+        {
+            return View();
+        }
     }
 }

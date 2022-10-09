@@ -1,0 +1,128 @@
+﻿<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+<br />
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Rol ve Yetki Listesi
+    </div>
+    <div class="card-body">
+        <table id="datatablesSimple">
+            <thead>
+                <tr>
+                    <th>Rol Id</th>
+                    <th>Rol İsim</th>
+                    <th>Yetki Id</th>
+                    <th>Yetki</th>
+                    <th>Kaydeden Kullanıcı</th>
+                    <th>Kaydetme Zamanı</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Admin</td>
+                    <td>1</td>
+                    <td>Admin paneli erişim.</td>
+                    <td>Ahmet</td>
+                    <td>9.10.2022</td>
+                    <td style="text-align:center;">
+                        <button type="button" class="btn btn-primary  m-3" data-toggle="modal" data-target="#updateRoleAndAuth">
+                            Güncelle
+                        </button> <button type="button" class="btn btn-danger">Sil</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Kurumsal</td>
+                    <td>2</td>
+                    <td>Son kullanıcı tarafına tam erişim.</td>
+                    <td>Furkan</td>
+                    <td>14.10.2022</td>
+                    <td style="text-align:center;">
+                        <button type="button" class="btn btn-primary  m-3" data-toggle="modal" data-target="#updateRoleAndAuth">
+                            Güncelle
+                        </button>  <button type="button" class="btn btn-danger">Sil</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+<button type="button" class="btn btn-primary  m-3" data-toggle="modal" data-target="#newRole">
+    Rol veya Yetki Tanımla
+</button>
+
+
+
+
+<div class="modal fade" id="updateRoleAndAuth" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">İhale Fiyat</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/" method="post">
+                <div class="modal-body">
+                    <div class="row m-3">
+                        <label>Rol</label>
+                        <select class="form-control">
+                            <option value="1">Admin</option>
+                            <option value="2">Kurumsal</option>
+                            <option value="2">Bireysel</option>
+                        </select>
+                    </div>
+                    <div class="row m-3">
+                        <label>Yetki</label>
+                        <select class="form-control">
+                            <option value="1">Admin paneli erişim.</option>
+                            <option value="2">Son kullanıcı tarafına tam erişim.</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="newRole" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">İhale Fiyat</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/" method="post">
+                <div class="modal-body">
+                    <div class="row m-3">
+                        <label>Rol ismi</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="row m-3">
+                        <label>Yetki</label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
