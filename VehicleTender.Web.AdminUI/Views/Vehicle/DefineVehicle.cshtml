@@ -1,0 +1,380 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@{
+    ViewBag.Title = "UpdateVehicle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form action="/" method="post">
+    <div class="container mt-3">
+        <div class="row">
+            <h4 class="display-5">Araç Detay Bilgileri</h4>
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-4">
+                        <label>Bireysel / Kurumsal</label>
+                        <select class="form-control">
+                            <option value="1">Bireysel</option>
+                            <option value="2">Kurumsal</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label>Kurumsal Şirket Adı</label>
+                        <select class="form-control">
+                            <option value="1">X</option>
+                            <option value="2">Y</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label>Statü</label>
+                        <select class="form-control">
+                            <option value="1">X</option>
+                            <option value="2">Y</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label>Araç Fiyat</label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <h4 style="margin-top:20px;" class="display-5">Araç Detay Bilgileri</h4>
+            <div class="col-12 ">
+                <div class="row">
+                    <div class="col-4">
+                        <label>Araç Marka</label>
+                        <select class="form-control">
+                            <option value="1">BMW</option>
+                            <option value="2">Mercedes</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label>Araç Model</label>
+                        <select class="form-control">
+                            <option value="1">M3</option>
+                            <option value="2">M6</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label>Gövde Tipi</label>
+                        <select class="form-control">
+                            <option value="1">Sedan</option>
+                            <option value="2">Hatchback</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label>Yıl</label>
+                        <select class="form-control">
+                            <option value="1">2022</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label>Yakıt Tipi</label>
+                        <select class="form-control">
+                            <option value="1">Benzin</option>
+                            <option value="2">Dizel</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label>Vites Tipi</label>
+                        <select class="form-control">
+                            <option value="1">Düz</option>
+                            <option value="2">Otomatik</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label>Versiyon</label>
+                        <select class="form-control">
+                            <option value="1">X</option>
+                            <option value="2">Y</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label>KM Bilgisi</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="col-4">
+                        <label>Renk</label>
+                        <select class="form-control">
+                            <option value="1">Kırmızı</option>
+                            <option value="2">Siyah</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label>Donanım</label>
+                        <select class="form-control">
+                            <option value="1">X</option>
+                            <option value="2">Y</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-6">
+                            <label>Fotoğraf Ekle</label>
+                            <input type="file" class="form-control">
+                        </div>
+                        <div class="col-6">
+                            <label>Açıklama</label>
+                            <textarea cols="20" rows="5" class="form-control"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-md-12">
+                            <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModalCenter1">
+                Hemen Al Satışta
+            </button>
+            <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModalCenter2">
+                Komisyon
+            </button>
+            <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModalCenter3">
+                Alıcı Bilgileri
+            </button>
+            <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModalCenter4">
+                Araç Tarihçe
+            </button>
+            <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModalCenter5">
+                Hasar Tramer Bilgileri
+            </button>
+            <button type="button" class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModalCenter6">
+                İlan Bilgileri
+            </button>
+                <button type="submit" class="btn btn-outline-secondary">
+                Kaydet
+            </button>
+            </div>
+
+        </div>
+
+    </div>
+</form>
+
+
+<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Hemen Al Satışta</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Hemen Al Satışta
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                <button type="button" class="btn btn-primary">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Komisyon</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Komisyon
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                <button type="button" class="btn btn-primary">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Alıcı Bilgileri</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Alıcı Bilgileri
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                <button type="button" class="btn btn-primary">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModalCenter4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Araç Tarihçe</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/" method="post">
+                <div class="modal-body">
+                    Araç Tarihçe
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModalCenter5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Hasar Tramer Bilgileri</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/" method="post">
+                <div class="modal-body">
+
+                    <label>Toplam Tramer Tutarı</label>
+                    <input type="text" name="name" class="form-control" />
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Orjinal</th>
+                                <th scope="col">Boyalı</th>
+                                <th scope="col">Değişmiş</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="text-align:center;">
+                                <th scope="row">Sağ Arka Çamurluk</th>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"></td>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"></td>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"></td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <th scope="row">Arka Kaput</th>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1" value="option1"></td>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio2" value="option2"></td>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio3" value="option3"></td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <th scope="row">Sol Arka Çamurluk</th>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio1" value="option1"></td>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio2" value="option2"></td>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio3" value="option3"></td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <th scope="row">Sağ Arka Kapı</th>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio1" value="option1"></td>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio2" value="option2"></td>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio3" value="option3"></td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <th scope="row">Sağ Ön Kapı</th>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio1" value="option1"></td>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio2" value="option2"></td>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio3" value="option3"></td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <th scope="row">Tavan</th>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio1" value="option1"></td>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio2" value="option2"></td>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio3" value="option3"></td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <th scope="row">Sol Arka Kapı</th>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio1" value="option1"></td>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio2" value="option2"></td>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio3" value="option3"></td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <th scope="row">Sol Ön Kapı</th>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions7" id="inlineRadio1" value="option1"></td>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions7" id="inlineRadio2" value="option2"></td>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions7" id="inlineRadio3" value="option3"></td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <th scope="row">Sağ Ön Çamurluk</th>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions8" id="inlineRadio1" value="option1"></td>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions8" id="inlineRadio2" value="option2"></td>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions8" id="inlineRadio3" value="option3"></td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <th scope="row">Motor Kaputu</th>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions9" id="inlineRadio1" value="option1"></td>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions9" id="inlineRadio2" value="option2"></td>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions9" id="inlineRadio3" value="option3"></td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <th scope="row">Sol Ön Çamurluk</th>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions10" id="inlineRadio1" value="option1"></td>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions10" id="inlineRadio2" value="option2"></td>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions10" id="inlineRadio3" value="option3"></td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <th scope="row">Ön Tampon</th>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions11" id="inlineRadio1" value="option1"></td>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions11" id="inlineRadio2" value="option2"></td>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions11" id="inlineRadio3" value="option3"></td>
+                            </tr>
+                            <tr style="text-align:center;">
+                                <th scope="row">Arka Tampon</th>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions12" id="inlineRadio1" value="option1"></td>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions12" id="inlineRadio2" value="option2"></td>
+                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions12" id="inlineRadio3" value="option3"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModalCenter6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">İlan Bilgileri</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/" method="post">
+                <div class="modal-body">
+                    <div class="row m-3">
+                        <input type="text" class="form-control" placeholder="İlan Başlığı">
+                    </div>
+                    <div class="row m-3">
+                        <textarea cols="20" rows="5" class="form-control" placeholder="İlan Açıklama"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+
