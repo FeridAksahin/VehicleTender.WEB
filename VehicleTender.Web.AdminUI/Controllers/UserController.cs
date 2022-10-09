@@ -4,11 +4,17 @@ namespace VehicleTender.Web.AdminUI.Controllers
 {
     public class UserController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Profile()
         {
             return View();
         }
-        public IActionResult Profile()
+        [HttpGet]
+        public IActionResult IndividualVehicleSalesList()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult IndividualVehicleSalesDetail()
         {
             return View();
         }
