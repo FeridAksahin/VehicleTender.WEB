@@ -43,9 +43,5 @@ namespace VehicleTender.Web.AdminUI.Controllers
         {
             return View();
         }
-        public IActionResult DefineVehicle()
-        {
-            return View();
-        }
     }
 }
