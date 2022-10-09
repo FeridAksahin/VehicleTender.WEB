@@ -8,10 +8,8 @@ namespace VehicleTender.API.Common.CustomHTTPResponse.Interface
 {
     public interface ICustomResponse
     {
-        CustomResponseModel<T> ResponseForGetRequest<T>(T responseData, int responseStatuCode) where T : class;
-        CustomResponseModel<T> ResponseForGetRequest<T>(List<T> responseData, int responseStatuCode) where T : class;
-        CustomResponseModel<T> ResponseForGetRequest<T>(T responseData, int responseStatuCode, string whatDoYouWantToSendResponse) where T : class;
-        CustomResponseModel<T> ResponseForGetRequest<T>(List<T> responseData, int responseStatuCode, string whatDoYouWantToSendResponse) where T : class;
+        CustomResponseModel ResponseForGetRequest(string responseData, int responseStatuCode, string whatDoYouWantToSendResponse);
+        CustomResponseModel ResponseForGetRequest(string responseData, int responseStatuCode);
         StatusGenerator ResponseForDeleteOrPutOrPostRequest(int responseStatuCode);
         StatusGenerator ResponseForDeleteOrPutOrPostRequest(int responseStatuCode, string whatDoYouWantToSendResponse);
 
