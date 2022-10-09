@@ -15,6 +15,52 @@ namespace VehicleTender.API.Entity.Context
             optionsBuilder.UseSqlServer("data source=.;database=VehicleTender;Integrated Security=true;");
         }
 
+        #region Change Tracker
+
+        public override int SaveChanges()
+        {
+            var entries = ChangeTracker.Entries();
+            foreach (var entry in entries)
+            {
+                // To these sections,
+                // Each time the SaveChanges() method is used, the actions to be taken before going to dB will be entered.
+                switch (entry.State)
+                {
+                    case EntityState.Detached:
+                        {
+                            //If EntityState is Detached
+                            break;
+                        }
+                       
+                    case EntityState.Unchanged:
+                        {
+                            //If EntityState is unchanged
+                            break;
+                        }
+                        
+                    case EntityState.Deleted:
+                        {
+                            //If EntityState is Deleted
+                            break;
+                        }
+                        
+                    case EntityState.Modified:
+                        {
+                            //If EntityState is Modified
+                            break;
+                        }
+                        
+                    case EntityState.Added:
+                        {
+                            //If EntityState is Added
+                            break;
+                        }                       
+                }
+            }
+            return base.SaveChanges();
+        }
+
+        #endregion
 
         public VehicleTenderContext()
         {
