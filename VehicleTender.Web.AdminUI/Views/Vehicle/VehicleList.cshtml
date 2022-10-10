@@ -4,98 +4,49 @@
 }
 <div>
     <form>
+        <h5 class="mb-3 pb-3 display-5 text-center mt-4">Araçlar</h5>
         <div class="row">
-             <div class="col-3">
-                <div class="row">
-                    <div class="col-md-6">
-                        <label>Araç Marka</label>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="dropdown">
-                            <button class="btn border dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Seçiniz
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-4">
+                <label>Marka</label>
+                <select class="form-control">
+                    <option value="value">text</option>
+                </select>
             </div>
-             <div class="col-3">
-                <div class="row">
-                    <div class="col-md-6">
-                        <label>Araç Marka</label>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="dropdown">
-                            <button class="btn border dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Seçiniz
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-4">
+                <label>Model</label>
+                <select class="form-control">
+                    <option value="value">text</option>
+                </select>
             </div>
-            <div class="col-3">
-                <div class="row">
-                    <div class="col-md-6">
-                        <label>Araç Marka</label>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="dropdown">
-                            <button class="btn border dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Seçiniz
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-4">
+                <label>Bireysel /Kurumsal</label>
+                <select class="form-control">
+                    <option value="value">text</option>
+                </select>
             </div>
-            <div class="col-3">
-                <div class="row">
-                    <div class="col-md-6">
-                        <label>Araç Marka</label>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="dropdown">
-                            <button class="btn border dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Seçiniz
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-4">
+                <label>Statü</label>
+                <select class="form-control">
+                    <option value="value">text</option>
+                </select>
             </div>
         </div>
-        <input style="" type="submit" value="Ara" class="btn btn-primary mt-1" />
+        <input style="float:right;" type="submit" value="Listele" class="btn btn-outline-primary mt-1" />
     </form>
 </div>
+<a class="btn btn-outline-info w-100 p-3 mt-3 mb-3" role="button">Yeni</a>
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
         Araç Listeleme Tablosu
     </div>
     <div class="card-body">
-        <table id="datatablesSimple" >
+        <table id="datatablesSimple">
             <thead>
                 <tr>
                     <th>Araç Id</th>
                     <th>Araç Marka</th>
+                    <th>Araç Model</th>
                     <th>Bireysel/Kurumsal</th>
                     <th>Statü</th>
                     <th>Kaydeden Kullanıcı</th>
@@ -106,6 +57,7 @@
                 <tr>
                     <td>Name</td>
                     <td>Position</td>
+                    <td>Model</td>
                     <td>Office</td>
                     <td>Age</td>
                     <td>Start date</td>
@@ -148,7 +100,7 @@
                     <td>sdgasdfsadf</td>
                     <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
                 </tr>
-                                <tr>
+                <tr>
                     <td>Name</td>
                     <td>Position</td>
                     <td>Office</td>
@@ -157,7 +109,80 @@
                     <td>sdgasdfsadf</td>
                     <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
                 </tr>
-                 <tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Position</td>
+                    <td>Office</td>
+                    <td>Age</td>
+                    <td>Start date</td>
+                    <td>sdgasdfsadf</td>
+                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Position</td>
+                    <td>Office</td>
+                    <td>Age</td>
+                    <td>Start date</td>
+                    <td>sdgasdfsadf</td>
+                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Position</td>
+                    <td>Office</td>
+                    <td>Age</td>
+                    <td>Start date</td>
+                    <td>sdgasdfsadf</td>
+                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Position</td>
+                    <td>Office</td>
+                    <td>Age</td>
+                    <td>Start date</td>
+                    <td>sdgasdfsadf</td>
+                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Position</td>
+                    <td>Office</td>
+                    <td>Age</td>
+                    <td>Start date</td>
+                    <td>sdgasdfsadf</td>
+                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Position</td>
+                    <td>Office</td>
+                    <td>Age</td>
+                    <td>Start date</td>
+                    <td>sdgasdfsadf</td>
+                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Position</td>
+                    <td>Office</td>
+                    <td>Age</td>
+                    <td>Start date</td>
+                    <td>sdgasdfsadf</td>
+                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Position</td>
+                    <td>Office</td>
+                    <td>Age</td>
+                    <td>Start date</td>
+                    <td>sdgasdfsadf</td>
+                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                </tr>
+                <tr>
                     <td>Name</td>
                     <td>Position</td>
                     <td>Office</td>
@@ -249,15 +274,6 @@
                     <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
 
                 </tr>
-                 <tr>
-                    <td>Name</td>
-                    <td>Position</td>
-                    <td>Office</td>
-                    <td>Age</td>
-                    <td>Start date</td>
-                    <td>sdgasdfsadf</td>
-                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
-                </tr>
                 <tr>
                     <td>Name</td>
                     <td>Position</td>
@@ -294,7 +310,7 @@
                     <td>sdgasdfsadf</td>
                     <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
                 </tr>
-                                <tr>
+                <tr>
                     <td>Name</td>
                     <td>Position</td>
                     <td>Office</td>
@@ -303,7 +319,16 @@
                     <td>sdgasdfsadf</td>
                     <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
                 </tr>
-                 <tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Position</td>
+                    <td>Office</td>
+                    <td>Age</td>
+                    <td>Start date</td>
+                    <td>sdgasdfsadf</td>
+                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                </tr>
+                <tr>
                     <td>Name</td>
                     <td>Position</td>
                     <td>Office</td>
@@ -322,15 +347,6 @@
                     <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
 
                 </tr>
-                 <tr>
-                    <td>Name</td>
-                    <td>Position</td>
-                    <td>Office</td>
-                    <td>Age</td>
-                    <td>Start date</td>
-                    <td>sdgasdfsadf</td>
-                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
-                </tr>
                 <tr>
                     <td>Name</td>
                     <td>Position</td>
@@ -367,7 +383,7 @@
                     <td>sdgasdfsadf</td>
                     <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
                 </tr>
-                                <tr>
+                <tr>
                     <td>Name</td>
                     <td>Position</td>
                     <td>Office</td>
@@ -376,7 +392,16 @@
                     <td>sdgasdfsadf</td>
                     <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
                 </tr>
-                 <tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Position</td>
+                    <td>Office</td>
+                    <td>Age</td>
+                    <td>Start date</td>
+                    <td>sdgasdfsadf</td>
+                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                </tr>
+                <tr>
                     <td>Name</td>
                     <td>Position</td>
                     <td>Office</td>
@@ -395,15 +420,6 @@
                     <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
 
                 </tr>
-                 <tr>
-                    <td>Name</td>
-                    <td>Position</td>
-                    <td>Office</td>
-                    <td>Age</td>
-                    <td>Start date</td>
-                    <td>sdgasdfsadf</td>
-                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
-                </tr>
                 <tr>
                     <td>Name</td>
                     <td>Position</td>
@@ -440,7 +456,7 @@
                     <td>sdgasdfsadf</td>
                     <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
                 </tr>
-                                <tr>
+                <tr>
                     <td>Name</td>
                     <td>Position</td>
                     <td>Office</td>
@@ -449,7 +465,16 @@
                     <td>sdgasdfsadf</td>
                     <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
                 </tr>
-                 <tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Position</td>
+                    <td>Office</td>
+                    <td>Age</td>
+                    <td>Start date</td>
+                    <td>sdgasdfsadf</td>
+                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                </tr>
+                <tr>
                     <td>Name</td>
                     <td>Position</td>
                     <td>Office</td>
@@ -468,15 +493,6 @@
                     <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
 
                 </tr>
-                 <tr>
-                    <td>Name</td>
-                    <td>Position</td>
-                    <td>Office</td>
-                    <td>Age</td>
-                    <td>Start date</td>
-                    <td>sdgasdfsadf</td>
-                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
-                </tr>
                 <tr>
                     <td>Name</td>
                     <td>Position</td>
@@ -513,7 +529,7 @@
                     <td>sdgasdfsadf</td>
                     <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
                 </tr>
-                                <tr>
+                <tr>
                     <td>Name</td>
                     <td>Position</td>
                     <td>Office</td>
@@ -522,7 +538,16 @@
                     <td>sdgasdfsadf</td>
                     <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
                 </tr>
-                 <tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Position</td>
+                    <td>Office</td>
+                    <td>Age</td>
+                    <td>Start date</td>
+                    <td>sdgasdfsadf</td>
+                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                </tr>
+                <tr>
                     <td>Name</td>
                     <td>Position</td>
                     <td>Office</td>
@@ -541,15 +566,6 @@
                     <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
 
                 </tr>
-                 <tr>
-                    <td>Name</td>
-                    <td>Position</td>
-                    <td>Office</td>
-                    <td>Age</td>
-                    <td>Start date</td>
-                    <td>sdgasdfsadf</td>
-                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
-                </tr>
                 <tr>
                     <td>Name</td>
                     <td>Position</td>
@@ -586,7 +602,7 @@
                     <td>sdgasdfsadf</td>
                     <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
                 </tr>
-                                <tr>
+                <tr>
                     <td>Name</td>
                     <td>Position</td>
                     <td>Office</td>
@@ -595,7 +611,16 @@
                     <td>sdgasdfsadf</td>
                     <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
                 </tr>
-                 <tr>
+                <tr>
+                    <td>Name</td>
+                    <td>Position</td>
+                    <td>Office</td>
+                    <td>Age</td>
+                    <td>Start date</td>
+                    <td>sdgasdfsadf</td>
+                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                </tr>
+                <tr>
                     <td>Name</td>
                     <td>Position</td>
                     <td>Office</td>
@@ -614,15 +639,6 @@
                     <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
 
                 </tr>
-                 <tr>
-                    <td>Name</td>
-                    <td>Position</td>
-                    <td>Office</td>
-                    <td>Age</td>
-                    <td>Start date</td>
-                    <td>sdgasdfsadf</td>
-                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
-                </tr>
                 <tr>
                     <td>Name</td>
                     <td>Position</td>
@@ -642,52 +658,6 @@
                     <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
                 </tr>
                 <tr>
-                    <td>Name</td>
-                    <td>Position</td>
-                    <td>Office</td>
-                    <td>Age</td>
-                    <td>Start date</td>
-                    <td>sdgasdfsadf</td>
-                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
-                </tr>
-                <tr>
-                    <td>Name</td>
-                    <td>Position</td>
-                    <td>Office</td>
-                    <td>Age</td>
-                    <td>Start date</td>
-                    <td>sdgasdfsadf</td>
-                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
-                </tr>
-                                <tr>
-                    <td>Name</td>
-                    <td>Position</td>
-                    <td>Office</td>
-                    <td>Age</td>
-                    <td>Start date</td>
-                    <td>sdgasdfsadf</td>
-                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
-                </tr>
-                 <tr>
-                    <td>Name</td>
-                    <td>Position</td>
-                    <td>Office</td>
-                    <td>Age</td>
-                    <td>Start date</td>
-                    <td>sdgasdfsadf</td>
-                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
-                </tr>
-                <tr>
-                    <td>Name</td>
-                    <td>Position</td>
-                    <td>Office</td>
-                    <td>Age</td>
-                    <td>Start date</td>
-                    <td>sdgasdfsadf</td>
-                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
-
-                </tr>
-                 <tr>
                     <td>Name</td>
                     <td>Position</td>
                     <td>Office</td>
@@ -732,36 +702,6 @@
                     <td>sdgasdfsadf</td>
                     <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
                 </tr>
-                                <tr>
-                    <td>Name</td>
-                    <td>Position</td>
-                    <td>Office</td>
-                    <td>Age</td>
-                    <td>Start date</td>
-                    <td>sdgasdfsadf</td>
-                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
-                </tr>
-                 <tr>
-                    <td>Name</td>
-                    <td>Position</td>
-                    <td>Office</td>
-                    <td>Age</td>
-                    <td>Start date</td>
-                    <td>sdgasdfsadf</td>
-                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
-                </tr>
-                <tr>
-                    <td>Name</td>
-                    <td>Position</td>
-                    <td>Office</td>
-                    <td>Age</td>
-                    <td>Start date</td>
-                    <td>sdgasdfsadf</td>
-                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
-
-                </tr>
-
-
             </tbody>
         </table>
     </div>
