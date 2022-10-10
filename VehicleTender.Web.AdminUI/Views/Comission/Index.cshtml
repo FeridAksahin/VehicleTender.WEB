@@ -1,0 +1,60 @@
+﻿<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+       Komisyon Ücretleri
+    </div>
+    <div class="card-body">
+        <table id="datatablesSimple" >
+            <thead>
+                <tr>
+                     <th>Fiyat Başlangıç</th>
+                    <th>Fiyat Bitiş</th>
+                    <th>Komisyon Ücreti</th>
+                    <th>Düzenleme</th>
+                   
+          
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0 ₺</td>
+                    <td>100.000 ₺</td>
+                    <td>3000 ₺</td>
+                     <td><a  asp-controller="Comission" asp-action="Delete" asp-route-id="Id" class="btn btn-danger">Sil</a><span>  </span><a asp-action="Update" asp-controller="Comission" asp-route-id="Id" class="btn btn-dark">Güncelle</a></td>
+                 
+                </tr>
+                <tr>
+                    <td>100.000 ₺</td>
+                    <td>300.000 ₺</td>
+                    <td>5000 ₺</td>
+                     <td><a  asp-controller="Comission" asp-action="Delete" asp-route-id="Id" class="btn btn-danger">Sil</a><span>  </span><a asp-action="Update" asp-controller="Comission" asp-route-id="Id" class="btn btn-dark">Güncelle</a></td>
+                 
+                </tr>
+                <tr>
+                    <td>500.000 ₺</td>
+                    <td>1000.000 ₺</td>
+                    <td>8000 ₺</td>
+                     <td><a  asp-controller="Comission" asp-action="Delete" asp-route-id="Id" class="btn btn-danger">Sil</a><span>  </span><a asp-action="Update" asp-controller="Comission" asp-route-id="Id" class="btn btn-dark">Güncelle</a></td>
+                 
+                </tr>
+                <tr>
+                    <td>1000.000 ₺</td>
+                    <td>1500.000 ₺</td>
+                    <td>15000 ₺</td>
+                     <td><a asp-controller="Comission" asp-action="Delete"  asp-route-id="Id" class="btn btn-danger">Sil</a> <span>  </span><a asp-action="Update" asp-controller="Comission" asp-route-id="Id" class="btn btn-dark">Güncelle</a></td>
+                 
+                </tr>
+             
+
+
+            </tbody>
+        </table>
+        </div>
+        </div>
+
+                    <div class="d-grid gap-2">
+   <button class="btn btn-primary" type="button" >  <a asp-controller="Comission" asp-action="Add" class="text-white">Yeni Komisyon Aralığı Ekle</a></button>
+
+  
+  
+</div>
