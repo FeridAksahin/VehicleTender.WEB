@@ -20,7 +20,37 @@ namespace VehicleTender.Web.AdminUI.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult VehicleFeatureList()
+        public IActionResult VehicleBrandList()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult VehicleModelList()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult VehicleBodyTypeList()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult VehicleFuelTypeList()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult VehicleGearTypeList()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult VehicleColorList()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult VehicleHardwareList()
         {
             return View();
         }

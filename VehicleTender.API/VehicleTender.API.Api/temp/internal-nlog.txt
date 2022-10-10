@@ -150,3 +150,7 @@ Error Number:-1,State:0,Class:20
 2022-10-10 01:01:44.3554 Info Loading assembly: NLog.Web.AspNetCore
 2022-10-10 01:01:44.5214 Info Adding target DatabaseTarget(Name=db)
 2022-10-10 01:01:44.5496 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\Ferid\Desktop\VehicleTender.WEB\VehicleTender.API\VehicleTender.API.Api\bin\Debug\net6.0\NLog.config
+2022-10-10 18:18:20.7840 Info Message Template Auto Format enabled
+2022-10-10 18:18:20.8104 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-10 18:18:21.3013 Info Adding target DatabaseTarget(Name=db)
+2022-10-10 18:18:21.3825 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.API\VehicleTender.API.Api\bin\Debug\net6.0\NLog.config

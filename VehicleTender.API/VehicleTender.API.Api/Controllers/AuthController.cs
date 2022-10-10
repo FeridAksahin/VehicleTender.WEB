@@ -18,7 +18,8 @@ namespace VehicleTender.API.Api.Controllers
         [HttpGet("")]
         public IActionResult GetIndex()
 
-        {   
+        {
+            _log.LogError("fasdfasdfasd");
             return Ok();
         }
         [HttpPut("")]
