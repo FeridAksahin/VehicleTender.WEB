@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "CorporateRegister";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-fluid  mt-4">
+    <div class="container">
+        <h3 class="mb-3 pb-3 display-5 text-center">Kurumsal Kayıt</h3>
+        <div class="row">
+            <div class="col-6">
+                <input type="text" class="form-control form-control-lg" placeholder="Ad Soyad">
+                <input type="text" class="form-control form-control-lg mt-2" placeholder="Email">
+                <input type="password" class="form-control form-control-lg mt-2" placeholder="Şifre">
+                <input type="text" class="form-control form-control-lg mt-2" placeholder="Telefon">
+                <input type="text" class="form-control form-control-lg mt-2" placeholder="Şirket Adı">
+                <select class="form-control form-control-lg mt-2">
+                    <option value="1">Anonim</option>
+                </select>
+            </div>
+            <div class="col-6">
+                <textarea rows="3" class="form-control"></textarea>
+                <select class="form-control form-control-lg mt-2">
+                    <option value="1">İstanbul</option>
+                </select>
+                <select class="form-control form-control-lg mt-2">
+                    <option value="1">Kartal</option>
+                </select>
+            </div>
+            <input type="submit" value="Kayıt Ol" style="background-color: #2B2E4A;" class="btn btn-info btn-lg col-md-12 mt-3 mb-3">
+        </div>
+    </div>
+</div>
+

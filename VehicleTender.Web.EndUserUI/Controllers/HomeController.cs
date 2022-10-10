@@ -37,6 +37,11 @@ namespace VehicleTender.Web.EndUserUI.Controllers
             return View();
         }
 
+        public ActionResult CorporateRegister()
+        {
+            return View();
+        }
+
         public ActionResult ForgotPassword()
         {
             return View();

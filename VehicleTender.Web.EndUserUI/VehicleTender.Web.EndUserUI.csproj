@@ -124,6 +124,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NonTenderVehicleController.cs" />
     <Compile Include="Controllers\TenderController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\VehicleController.cs" />
@@ -344,6 +345,11 @@
     <Content Include="Views\Vehicle\PostingSalesAdvertisement.cshtml" />
     <Content Include="Views\User\UserProfile.cshtml" />
     <Content Include="Views\Vehicle\UpdateVehicle.cshtml" />
+    <Content Include="Views\Home\CorporateRegister.cshtml" />
+    <Content Include="Views\Tender\TenderDetail.cshtml" />
+    <Content Include="Views\NonTenderVehicle\BuyAVehicleNow.cshtml" />
+    <Content Include="Views\NonTenderVehicle\VehicleDetail.cshtml" />
+    <Content Include="Views\Tender\TenderCarDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

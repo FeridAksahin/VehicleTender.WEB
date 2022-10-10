@@ -18,9 +18,19 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         {
             return View();
         }
-        
 
+        [HttpGet]
         public ActionResult ListTender()
+        {
+            return View();
+        }
+        [HttpGet]
+        public ActionResult TenderDetail()
+        {
+            return View();
+        }
+        [HttpGet]
+        public ActionResult TenderCarDetail()
         {
             return View();
         }
