@@ -1,0 +1,96 @@
+﻿
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+<h5 class="mb-3 pb-3 display-5 text-center mt-4">İhaleler</h5>
+<div class="row">
+    <div class="col-4">
+        <label>İhale Adı</label>
+        <select class="form-control">
+            <option value="value">text</option>
+        </select>
+    </div>
+    <div class="col-4">
+        <label>Bireysel / Kurumsal</label>
+        <select class="form-control">
+            <option value="value">text</option>
+        </select>
+    </div>
+    <div class="col-4">
+        <label>Statü</label>
+        <select class="form-control">
+            <option value="value">text</option>
+        </select>
+    </div>
+</div>
+<br>
+<input type="submit" a style="float:right;" value="Listele" class="btn btn-info col-md-1" />
+
+<br>
+<br>
+<br>
+<br>
+
+<div class="card mb-4">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        İhale Listesi
+    </div>
+    <div class="card-body">
+        <table id="datatablesSimple">
+            <thead>
+                <tr>
+                    <th>İhale Id</th>
+                    <th>İhale Adı</th>
+                    <th>Bireysel/Kurumsal</th>
+                    <th>İhale Başlangıç</th>
+                    <th>İhale Bitiş</th>
+                    <th>Statü</th>
+                    <th>Kaydeden Kullanıcı</th>
+                    <th>Kaydetme Zamanı</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>İhale ismi</td>
+                    <td>Bireysel</td>
+                    <td>10.10.2022</td>
+                    <td>20.10.2022</td>
+                    <td>Giriş</td>
+                    <td>ferid</td>
+                    <td>9.10.2022</td>
+                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>İhale ismi2</td>
+                    <td>Kurumsal</td>
+                    <td>10.10.2022</td>
+                    <td>20.10.2022</td>
+                    <td>Giriş</td>
+                    <td>ferid</td>
+                    <td>9.10.2022</td>
+                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                </tr>    <tr>
+                    <td>3</td>
+                    <td>İhale ismi3</td>
+                    <td>Bireysel</td>
+                    <td>10.10.2022</td>
+                    <td>20.10.2022</td>
+                    <td>Giriş</td>
+                    <td>ferid</td>
+                    <td>9.10.2022</td>
+                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<a class="btn btn-info w-100 p-3" href="~/tender/NewTenderCreate" role="button">Yeni</a>

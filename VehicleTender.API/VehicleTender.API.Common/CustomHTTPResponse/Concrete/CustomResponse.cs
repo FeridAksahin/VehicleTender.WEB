@@ -9,43 +9,23 @@ namespace VehicleTender.API.Common.CustomHTTPResponse.Concrete
 {
     public class CustomResponse : IDisposable, ICustomResponse
     {
-        public CustomResponseModel<T> ResponseForGetRequest<T>(T responseData, int responseStatuCode) where T : class
+        public CustomResponseModel ResponseForGetRequest(string responseData, int responseStatuCode) 
         {
-            CustomResponseModel<T> customResponse;
-            using (customResponse = new CustomResponseModel<T>())
+            CustomResponseModel customResponse;
+            using (customResponse = new CustomResponseModel())
             {
                 customResponse.GetResponseStatusWhatDoYouWant_CustomStatuOrDefinedStatus.GetHttpStatusCodes(responseStatuCode);
-                customResponse.ResponseData = responseData;
+                customResponse.ResponseDataString = responseData;
             }
             return customResponse;
         }
-        public CustomResponseModel<T> ResponseForGetRequest<T>(List<T> responseData, int responseStatuCode) where T : class
+        public CustomResponseModel ResponseForGetRequest(string responseData, int responseStatuCode, string whatDoYouWantToSendResponse) 
         {
-            CustomResponseModel<T> customResponse;
-            using (customResponse = new CustomResponseModel<T>())
-            {
-                customResponse.GetResponseStatusWhatDoYouWant_CustomStatuOrDefinedStatus.GetHttpStatusCodes(responseStatuCode);
-                customResponse.ListResponseData = responseData;
-            }
-            return customResponse;
-        }
-        public CustomResponseModel<T> ResponseForGetRequest<T>(T responseData, int responseStatuCode, string whatDoYouWantToSendResponse) where T : class
-        {
-            CustomResponseModel<T> customResponse;
-            using (customResponse = new CustomResponseModel<T>())
+            CustomResponseModel customResponse;
+            using (customResponse = new CustomResponseModel())
             {
                 customResponse.GetResponseStatusWhatDoYouWant_CustomStatuOrDefinedStatus.MakeCustomStatuCode(responseStatuCode, whatDoYouWantToSendResponse);
-                customResponse.ResponseData = responseData;
-            }
-            return customResponse;
-        }
-        public CustomResponseModel<T> ResponseForGetRequest<T>(List<T> responseData, int responseStatuCode, string whatDoYouWantToSendResponse) where T : class
-        {
-            CustomResponseModel<T> customResponse;
-            using (customResponse = new CustomResponseModel<T>())
-            {
-                customResponse.GetResponseStatusWhatDoYouWant_CustomStatuOrDefinedStatus.MakeCustomStatuCode(responseStatuCode, whatDoYouWantToSendResponse);
-                customResponse.ListResponseData = responseData;
+                customResponse.ResponseDataString = responseData;
             }
             return customResponse;
         }

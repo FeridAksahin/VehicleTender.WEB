@@ -13,9 +13,15 @@ namespace VehicleTender.Web.AdminUI.Controllers
         {
             return View();
         }
-         public IActionResult NewTenderCreate()
+        [HttpGet]
+        public IActionResult Tender()
         {
             return View();
         }
+        public IActionResult NewTenderCreate()
+        {
+            return View();
+        }
+
     }
 }
