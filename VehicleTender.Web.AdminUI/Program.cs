@@ -27,7 +27,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
-
+app.UseEndpoints(endpoints =>endpoints.MapDefaultControllerRoute());
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=UserOperations}/{action=UserList}/{id?}");

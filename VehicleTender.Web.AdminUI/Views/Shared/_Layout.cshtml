@@ -58,6 +58,14 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Stok
                         </a>
+                        <a class="nav-link" asp-controller="Comission" asp-action="Index">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Komisyon
+                        </a>
+                         <a class="nav-link" asp-controller="Notary" asp-action="Index">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Noter
+                        </a>
 
                         <button type="button" class="btn btn-dark " data-toggle="tooltip" data-placement="bottom" title="@ViewData["InfoTitle"]">
                             Nasıl Kullanılır?
@@ -94,7 +102,7 @@
         </div>
         <div id="layoutSidenav_content">
             <main>
-                <div class="container-fluid px-4">
+                <div class="container-fluid  p-4">
                     @RenderBody()
                 </div>
             </main>
