@@ -68,11 +68,14 @@ namespace VehicleTender.Web.EndUserUI.Controllers
             };
             return View(vehicleViewModel);
         }
-
-
-
         [HttpGet]
         public ActionResult PostingSalesAdvertisement()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Stock()
         {
             return View();
         }

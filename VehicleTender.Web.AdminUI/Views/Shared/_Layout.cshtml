@@ -98,20 +98,19 @@
                         </div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                             <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                            Deneme
+                            Araç Özellikleri
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                    Deneme
-                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                </a>
-                                <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
-                                    <nav class="sb-sidenav-menu-nested nav">
-                                        <a class="nav-link" href="login.html">Deneme</a>
-                                    </nav>
-                                </div>
+
+                                <a class="nav-link" href="~/Vehicle/VehicleBodyTypeList">Araç Gövde Tipleri</a>
+                                <a class="nav-link" href="~/Vehicle/VehicleBrandList">Araç Markaları</a>
+                                <a class="nav-link" href="~/Vehicle/VehicleColorList">Araç Renkleri</a>
+                                <a class="nav-link" href="~/Vehicle/VehicleFuelTypeList">Araç Yakıt Tipleri</a>
+                                <a class="nav-link" href="~/Vehicle/VehicleGearTypeList">Araç Vites Tipleri</a>
+                                <a class="nav-link" href="~/Vehicle/VehicleHardwareList">Araç Donanımları</a>
+                                <a class="nav-link" href="~/Vehicle/VehicleModelList">Araç Modelleri</a>
                             </nav>
                         </div>
 
@@ -144,8 +143,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
     <script src="~/js/layout_js/chart-area-demo.js"></script>
     <script src="~/js/layout_js/chart-bar-demo.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+@*    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>*@
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/layout_js/datatables-simple-demo.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
+    <script>
+        $('#datatablesSimple').DataTable({
+            language: {
+                url: '//cdn.datatables.net/plug-ins/1.12.1/i18n/tr.json'
+            }
+        });
+    </script>
+
 </body>
 </html>

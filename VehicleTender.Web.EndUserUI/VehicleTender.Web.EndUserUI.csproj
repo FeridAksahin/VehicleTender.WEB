@@ -350,6 +350,7 @@
     <Content Include="Views\NonTenderVehicle\BuyAVehicleNow.cshtml" />
     <Content Include="Views\NonTenderVehicle\VehicleDetail.cshtml" />
     <Content Include="Views\Tender\TenderCarDetail.cshtml" />
+    <Content Include="Views\Vehicle\Stock.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

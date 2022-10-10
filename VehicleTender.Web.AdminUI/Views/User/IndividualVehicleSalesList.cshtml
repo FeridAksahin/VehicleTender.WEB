@@ -33,7 +33,7 @@
         Araç Listesi
     </div>
     <div class="card-body">
-        <table id="datatablesSimple">
+        <table id="datatablesSimple" class="table table-hover table-bordered">
             <thead>
                 <tr>
                     <th>Araç Id</th>
@@ -42,27 +42,23 @@
                     <th>Statü</th>
                     <th>Kaydeden Kullanıcı</th>
                     <th>Kaydetme Zamanı</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Position</td>
-                    <td>Model</td>
-                    <td>Satıldı</td>
-                    <td>Ahmet</td>
-                    <td>9.10.2022</td>
-              <td style="text-align:center;"><a href="~/User/IndividualVehicleSalesDetail" class="btn btn-warning">Güncelle</a> <button type="button" class="btn btn-danger">Sil</button></td>
-                </tr>
-                <tr>
-                   <td>1</td>
-                    <td>Position</td>
-                    <td>Model</td>
-                    <td>Satıldı</td>
-                    <td>Ahmet</td>
-                    <td>9.10.2022</td>
-                <td style="text-align:center;"><a href="~/User/IndividualVehicleSalesDetail" class="btn btn-warning">Güncelle</a> <button type="button" class="btn btn-danger">Sil</button></td>
-                </tr>
+                @for (int i = 0; i < 15; i++)
+                {
+                    <tr>
+                        <td>1</td>
+                        <td>Position</td>
+                        <td>Model</td>
+                        <td>Satıldı</td>
+                        <td>Ahmet</td>
+                        <td>9.10.2022</td>
+                        <td style="text-align:center;"><a href="~/User/IndividualVehicleSalesDetail" class="btn btn-warning">Güncelle</a> <button type="button" class="btn btn-danger">Sil</button></td>
+                    </tr>
+                }
+
             </tbody>
         </table>
     </div>
