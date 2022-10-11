@@ -24,6 +24,7 @@
                Value = "1"
            } }, new { @class = "form-control" })
             </div>
+           
             <div class="col-3">
                 <label>Bireysel / Kurumsal</label>
                 @Html.DropDownListFor(x => x.isIndividual, new List<SelectListItem> { new SelectListItem
@@ -41,6 +42,7 @@
            } }, new { @class = "form-control" })
             </div>
         </div>
+
         <input type="submit" a style="background-color: #2B2E4A;" value="Listele" class="btn btn-info mt-1" />
     }
 
