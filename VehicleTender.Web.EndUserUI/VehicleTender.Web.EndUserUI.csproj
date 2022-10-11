@@ -123,7 +123,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AdvertController.cs" />
+    <Compile Include="Controllers\AdvertListController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NonTenderVehicleController.cs" />
     <Compile Include="Controllers\TenderController.cs" />
@@ -352,6 +352,7 @@
     <Content Include="Views\NonTenderVehicle\VehicleDetail.cshtml" />
     <Content Include="Views\Tender\TenderCarDetail.cshtml" />
     <Content Include="Views\Vehicle\Stock.cshtml" />
+    <Content Include="Views\AdvertList\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace VehicleTender.Web.EndUserUI.Controllers
 {
-    public class AdvertController : Controller
+    public class AdvertListController : Controller
     {
-        // GET: Advert
+        // GET: AdvertList
         public ActionResult Index()
         {
             return View();
