@@ -4,7 +4,34 @@
 
 
 <div class="row" style="margin:30px;">
-    <button type="button" class="btn btn-primary">Gövde Tipi Ekle</button>
+    <button type="button" class="btn btn-primary  m-3" data-toggle="modal" data-target="#newRole">
+        Gövde Tipi Ekle
+    </button>
+    
+    <div class="modal fade" id="newRole" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Gövde Tipi Ekle</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="/" method="post">
+                    <div class="modal-body">
+                        <div class="row m-3">
+                            <label>Gövde Tipi </label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                        <button type="submit" class="btn btn-primary">Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="card mb-4">
     <div class="card-header">
