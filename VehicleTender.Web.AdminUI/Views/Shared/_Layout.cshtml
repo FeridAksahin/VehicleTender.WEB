@@ -21,7 +21,7 @@
         <a class="navbar-brand ps-3" asp-controller="Admin" asp-action="AdminHome">Araç İhale</a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
-       
+
         <!-- Navbar-->
         <ul class="navbar-nav ms-auto me-3 me-lg-4">
             <li class="nav-item dropdown">
@@ -39,20 +39,24 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                        
-                        <a class="nav-link" href="~/useroperations/userlist">
+
+                        <a class="nav-link" asp-controller="UserOperations" asp-action="UserList">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Kullanıcılar
+                            Adminler
                         </a>
-                        <a class="nav-link" href="~/vehicle/vehiclelist">
+                        <a class="nav-link" asp-controller="User" asp-action="CorporateUsers">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Kurumsal Kullanıcılar
+                        </a>
+                        <a class="nav-link" asp-controller="Vehicle" asp-action="VehicleList">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Araçlar
                         </a>
-                        <a class="nav-link" href="~/tender/tender">
+                        <a class="nav-link" asp-controller="Tender" asp-action="Tender">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             İhaleler
                         </a>
-                        <a class="nav-link" href="~/vehicle/stocklist">
+                        <a class="nav-link" asp-controller="Vehicle" asp-action="StockList">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Stok
                         </a>
@@ -60,28 +64,28 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Komisyon
                         </a>
-                         <a class="nav-link" asp-controller="Notary" asp-action="Index">
+                        <a class="nav-link" asp-controller="Notary" asp-action="Index">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Noter
                         </a>
-                             <a class="nav-link" href="~/user/IndividualVehicleSalesList">
-                           <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Bireysel Araç Satım   
+                        <a class="nav-link" asp-controller="User" asp-action="IndividualVehicleSalesList">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Bireysel Araç Satım
                         </a>
-                            <a class="nav-link" href="~/user/IndividualVehicleSalesList">
-                           <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Raporlar   
+                        <a class="nav-link" asp-controller="" asp-action="">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Raporlar
                         </a>
-                            </a>
-                            <a class="nav-link" href="~/Admin/RoleAndAuthorization">
-                           <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Rol ve Yetki Tanımlama   
+                        </a>
+                        <a class="nav-link" asp-controller="Admin" asp-action="RoleAndAuthorization">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Rol ve Yetki Tanımlama
                         </a>
 
                         <button type="button" class="btn btn-dark " data-toggle="tooltip" data-placement="bottom" title="@ViewData["InfoTitle"]">
                             Nasıl Kullanılır?
-                            </button>
-                        
+                        </button>
+
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="layout-static.html">Static Navigation</a>
@@ -105,7 +109,7 @@
                                 <a class="nav-link" href="~/Vehicle/VehicleModelList">Araç Modelleri</a>
                             </nav>
                         </div>
-                       
+
                     </div>
                 </div>
             </nav>
