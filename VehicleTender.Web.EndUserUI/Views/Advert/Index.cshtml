@@ -1,0 +1,362 @@
+﻿
+@{
+    ViewBag.Title = "BuyAVehicleNow";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 style="text-align:center;">Hemen Araç Al</h2>
+
+<div class="container-fluid bg-white pt-3 px-lg-5">
+    <div class="row mx-n2">
+        <div class="col-xl-2 col-lg-4 col-md-6 px-2">
+            <select class="custom-select px-4 mb-3" style="height: 50px;">
+                <option selected>Marka</option>
+                <option value="1">Mercedes</option>
+                <option value="2">BMW</option>
+            </select>
+        </div>
+        <div class="col-xl-2 col-lg-4 col-md-6 px-2">
+            <select class="custom-select px-4 mb-3" style="height: 50px;">
+                <option selected>Model</option>
+                <option value="1">R3</option>
+            </select>
+        </div>
+        <div class="col-xl-2 col-lg-4 col-md-6 px-2">
+            <div class="date mb-3" id="date" data-target-input="nearest">
+                <input type="text" class="form-control p-4" placeholder="KM Min" />
+            </div>
+        </div>
+        <div class="col-xl-2 col-lg-4 col-md-6 px-2">
+            <div class="date mb-3" id="date" data-target-input="nearest">
+                <input type="text" class="form-control p-4" placeholder="KM Max" />
+            </div>
+        </div>
+
+        @*İl*@
+        <div class="col-xl-2 col-lg-4 col-md-6 px-2">
+            <select class="custom-select px-4 mb-3" style="height: 50px;">
+                <option selected>İl</option>
+                <option value="1">Ankara</option>
+                <option value="1">Zonguldak</option>
+            </select>
+        </div>
+        @*İlçe*@
+        <div class="col-xl-2 col-lg-4 col-md-6 px-2">
+            <select class="custom-select px-4 mb-3" style="height: 50px;">
+                <option selected>İlçe</option>
+                <option value="1">Beyoğlu</option>
+                <option value="1">Kadiköy</option>
+            </select>
+        </div>
+        @*Min Fiyat*@
+        <div class="col-xl-2 col-lg-4 col-md-6 px-2">
+            <div class="date mb-3" id="date" data-target-input="nearest">
+                <input type="text" class="form-control p-4" placeholder=" Max Fiyat" />
+            </div>
+        </div>
+        @*Max Fiyat*@
+        <div class="col-xl-2 col-lg-4 col-md-6 px-2">
+            <div class="date mb-3" id="date" data-target-input="nearest">
+                <input type="text" class="form-control p-4" placeholder=" Min Fiyat" />
+            </div>
+        </div>
+
+        @*Vites*@
+
+        <div class="col-xl-2 col-lg-4 col-md-6 px-2">
+            <select class="custom-select px-4 mb-3" style="height: 50px;">
+                <option selected>Vites Tipi</option>
+                <option value="1">Otomatik</option>
+                <option value="1">Düz</option>
+
+            </select>
+        </div>
+
+        @*TArih*@
+        <div class="col-xl-2 col-lg-4 col-md-6 px-2">
+            <div class="date mb-3" id="date" data-target-input="nearest">
+                <input type="date" class="form-control p-4" placeholder="İlan Tarihi" />
+            </div>
+        </div>
+
+
+
+
+        <div class="col-xl-2 col-lg-4 col-md-6 px-2">
+            <select class="custom-select px-4 mb-3" style="height: 50px;">
+                <option selected>Yakıt</option>
+                <option value="1">Benzin</option>
+                <option value="2">Elektrik</option>
+            </select>
+        </div>
+        <div class="col-xl-2 col-lg-4 col-md-6 px-2">
+            <select class="custom-select px-4 mb-3" style="height: 50px;">
+                <option selected>Yıl</option>
+                <option value="1">2022</option>
+                <option value="2">2021</option>
+            </select>
+        </div>
+        <div class="col-xl-2 col-lg-4 col-md-6 px-2">
+            <button class="btn btn-primary btn-block mb-3" type="submit" style="height: 50px;">Ara</button>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="container pt-5 pb-3">
+        <h1 class="display-4 text-center mb-5">Araçlar</h1>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-2">
+                <div class="rent-item mb-4">
+                    <img class="img-fluid mb-4" src="~/img/car-rent-1.png" />
+                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
+                    <div class="d-flex justify-content-center mb-4">
+                        <div class="px-2">
+                            <i class="fa fa-car text-primary mr-1"></i>
+                            <span>2015</span>
+                        </div>
+                        <div class="px-2 border-left border-right">
+                            <i class="fa fa-cogs text-primary mr-1"></i>
+                            <span>AUTO</span>
+                        </div>
+                        <div class="px-2">
+                            <i class="fa fa-road text-primary mr-1"></i>
+                            <span>25K</span>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary px-3" href="/NonTenderVehicle/VehicleDetail">Detay</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-2">
+                <div class="rent-item mb-4">
+                    <img class="img-fluid mb-4" src="~/img/car-rent-2.png" />
+                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
+                    <div class="d-flex justify-content-center mb-4">
+                        <div class="px-2">
+                            <i class="fa fa-car text-primary mr-1"></i>
+                            <span>2015</span>
+                        </div>
+                        <div class="px-2 border-left border-right">
+                            <i class="fa fa-cogs text-primary mr-1"></i>
+                            <span>AUTO</span>
+                        </div>
+                        <div class="px-2">
+                            <i class="fa fa-road text-primary mr-1"></i>
+                            <span>25K</span>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary px-3" href="/NonTenderVehicle/VehicleDetail">Detay</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-2">
+                <div class="rent-item mb-4">
+                    <img class="img-fluid mb-4" src="~/img/car-rent-3.png" />
+                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
+                    <div class="d-flex justify-content-center mb-4">
+                        <div class="px-2">
+                            <i class="fa fa-car text-primary mr-1"></i>
+                            <span>2015</span>
+                        </div>
+                        <div class="px-2 border-left border-right">
+                            <i class="fa fa-cogs text-primary mr-1"></i>
+                            <span>AUTO</span>
+                        </div>
+                        <div class="px-2">
+                            <i class="fa fa-road text-primary mr-1"></i>
+                            <span>25K</span>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary px-3" href="/NonTenderVehicle/VehicleDetail">Detay</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-2">
+                <div class="rent-item mb-4">
+                    <img class="img-fluid mb-4" src="~/img/car-rent-4.png" />
+                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
+                    <div class="d-flex justify-content-center mb-4">
+                        <div class="px-2">
+                            <i class="fa fa-car text-primary mr-1"></i>
+                            <span>2015</span>
+                        </div>
+                        <div class="px-2 border-left border-right">
+                            <i class="fa fa-cogs text-primary mr-1"></i>
+                            <span>AUTO</span>
+                        </div>
+                        <div class="px-2">
+                            <i class="fa fa-road text-primary mr-1"></i>
+                            <span>25K</span>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary px-3" href="/NonTenderVehicle/VehicleDetail">Detay</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-2">
+                <div class="rent-item mb-4">
+                    <img class="img-fluid mb-4" src="~/img/car-rent-5.png" />
+                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
+                    <div class="d-flex justify-content-center mb-4">
+                        <div class="px-2">
+                            <i class="fa fa-car text-primary mr-1"></i>
+                            <span>2015</span>
+                        </div>
+                        <div class="px-2 border-left border-right">
+                            <i class="fa fa-cogs text-primary mr-1"></i>
+                            <span>AUTO</span>
+                        </div>
+                        <div class="px-2">
+                            <i class="fa fa-road text-primary mr-1"></i>t
+                            <span>25K</span>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary px-3" href="/NonTenderVehicle/VehicleDetail">Detay</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-2">
+                <div class="rent-item mb-4">
+                    <img class="img-fluid mb-4" src="~/img/car-rent-6.png" />
+                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
+                    <div class="d-flex justify-content-center mb-4">
+                        <div class="px-2">
+                            <i class="fa fa-car text-primary mr-1"></i>
+                            <span>2015</span>
+                        </div>
+                        <div class="px-2 border-left border-right">
+                            <i class="fa fa-cogs text-primary mr-1"></i>
+                            <span>AUTO</span>
+                        </div>
+                        <div class="px-2">
+                            <i class="fa fa-road text-primary mr-1"></i>
+                            <span>25K</span>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary px-3" href="/NonTenderVehicle/VehicleDetail">Detay</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-2">
+                <div class="rent-item mb-4">
+                    <img class="img-fluid mb-4" src="~/img/car-rent-1.png" />
+                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
+                    <div class="d-flex justify-content-center mb-4">
+                        <div class="px-2">
+                            <i class="fa fa-car text-primary mr-1"></i>
+                            <span>2015</span>
+                        </div>
+                        <div class="px-2 border-left border-right">
+                            <i class="fa fa-cogs text-primary mr-1"></i>
+                            <span>AUTO</span>
+                        </div>
+                        <div class="px-2">
+                            <i class="fa fa-road text-primary mr-1"></i>
+                            <span>25K</span>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary px-3" href="/NonTenderVehicle/VehicleDetail">Detay</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-2">
+                <div class="rent-item mb-4">
+                    <img class="img-fluid mb-4" src="~/img/car-rent-1.png" />
+                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
+                    <div class="d-flex justify-content-center mb-4">
+                        <div class="px-2">
+                            <i class="fa fa-car text-primary mr-1"></i>
+                            <span>2015</span>
+                        </div>
+                        <div class="px-2 border-left border-right">
+                            <i class="fa fa-cogs text-primary mr-1"></i>
+                            <span>AUTO</span>
+                        </div>
+                        <div class="px-2">
+                            <i class="fa fa-road text-primary mr-1"></i>
+                            <span>25K</span>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary px-3" href="/NonTenderVehicle/VehicleDetail">Detay</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-2">
+                <div class="rent-item mb-4">
+                    <img class="img-fluid mb-4" src="~/img/car-rent-1.png" />
+                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
+                    <div class="d-flex justify-content-center mb-4">
+                        <div class="px-2">
+                            <i class="fa fa-car text-primary mr-1"></i>
+                            <span>2015</span>
+                        </div>
+                        <div class="px-2 border-left border-right">
+                            <i class="fa fa-cogs text-primary mr-1"></i>
+                            <span>AUTO</span>
+                        </div>
+                        <div class="px-2">
+                            <i class="fa fa-road text-primary mr-1"></i>
+                            <span>25K</span>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary px-3" href="/NonTenderVehicle/VehicleDetail">Detay</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-2">
+                <div class="rent-item mb-4">
+                    <img class="img-fluid mb-4" src="~/img/car-rent-1.png" />
+                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
+                    <div class="d-flex justify-content-center mb-4">
+                        <div class="px-2">
+                            <i class="fa fa-car text-primary mr-1"></i>
+                            <span>2015</span>
+                        </div>
+                        <div class="px-2 border-left border-right">
+                            <i class="fa fa-cogs text-primary mr-1"></i>
+                            <span>AUTO</span>
+                        </div>
+                        <div class="px-2">
+                            <i class="fa fa-road text-primary mr-1"></i>
+                            <span>25K</span>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary px-3" href="/NonTenderVehicle/VehicleDetail">Detay</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-2">
+                <div class="rent-item mb-4">
+                    <img class="img-fluid mb-4" src="~/img/car-rent-1.png" />
+                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
+                    <div class="d-flex justify-content-center mb-4">
+                        <div class="px-2">
+                            <i class="fa fa-car text-primary mr-1"></i>
+                            <span>2015</span>
+                        </div>
+                        <div class="px-2 border-left border-right">
+                            <i class="fa fa-cogs text-primary mr-1"></i>
+                            <span>AUTO</span>
+                        </div>
+                        <div class="px-2">
+                            <i class="fa fa-road text-primary mr-1"></i>
+                            <span>25K</span>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary px-3" href="/NonTenderVehicle/VehicleDetail">Detay</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-2">
+                <div class="rent-item mb-4">
+                    <img class="img-fluid mb-4" src="~/img/car-rent-1.png" />
+                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
+                    <div class="d-flex justify-content-center mb-4">
+                        <div class="px-2">
+                            <i class="fa fa-car text-primary mr-1"></i>
+                            <span>2015</span>
+                        </div>
+                        <div class="px-2 border-left border-right">
+                            <i class="fa fa-cogs text-primary mr-1"></i>
+                            <span>AUTO</span>
+                        </div>
+                        <div class="px-2">
+                            <i class="fa fa-road text-primary mr-1"></i>
+                            <span>25K</span>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary px-3" href="/NonTenderVehicle/VehicleDetail">Detay</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
