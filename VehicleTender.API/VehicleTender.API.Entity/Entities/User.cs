@@ -40,7 +40,7 @@ namespace VehicleTender.API.Entity.Entities
 
         public virtual List<Favorite> Favorite { get; set; }
 
-        public virtual List<BuyingTenderVehicle> BuyingTenderVehicle { get; set; }
+        public virtual List<BuyingTender> BuyingTender { get; set; }
 
         public virtual List<Message> Message { get; set; }
 
@@ -50,5 +50,6 @@ namespace VehicleTender.API.Entity.Entities
         public virtual List<TenderVehicleSales> TenderVehicleSales { get; set; }
         public virtual List<Stock> Stock { get; set; }
         public virtual List<CompanyPacketHistory> CompanyPacketHistory { get; set; }
+        public virtual List<TenderVehicleBid> TenderVehicleBid { get; set; }
     }
 }

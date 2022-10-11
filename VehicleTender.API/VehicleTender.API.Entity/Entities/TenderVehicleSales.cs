@@ -39,7 +39,7 @@ namespace VehicleTender.API.Entity.Entities
 
         [StringLength(50)]
         public string? TenderDuration { get; set; } //ihalede kalma süresi
-        public virtual List<BuyingTenderVehicle> BuyingTenderVehicle { get; set; }
+        public virtual List<BuyingTender> BuyingTender { get; set; }
         public virtual List<TenderVehicleDetail> TenderVehicleDetail { get; set; }
         [ForeignKey("StatuId")]
         public virtual Statu Statu { get; set; }

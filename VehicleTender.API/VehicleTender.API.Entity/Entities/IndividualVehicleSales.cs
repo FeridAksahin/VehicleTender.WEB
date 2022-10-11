@@ -17,7 +17,7 @@ namespace VehicleTender.API.Entity.Entities
         public int? CarDetailInfoId { get; set; }
 
         [Column(TypeName = "money")]
-        public decimal? TenEvaluationPrice { get; set; } //ön değerlendirme fiyatı
+        public decimal? PreAssessmentPrice { get; set; } //ön değerlendirme fiyatı
 
         public int? UserId { get; set; }
 

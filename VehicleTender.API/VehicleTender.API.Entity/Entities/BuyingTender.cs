@@ -8,17 +8,23 @@ using System.Threading.Tasks;
 
 namespace VehicleTender.API.Entity.Entities
 {
-    [Table("TenderVehicleDetail")]
-    public class TenderVehicleDetail : BaseEntity
+    [Table("BuyingTender")] //ihale tüm araç alış
+    public class BuyingTender : BaseEntity
     {
         [Key]
         public int Id { get; set; }
-        public int? CarDetailInfoId { get; set; }
+
+        public int? UserId { get; set; }
+
         public int? TenderVehicleSalesId { get; set; }
-        [ForeignKey("CarDetailInfoId")]
-        public virtual CarDetailInfo CarDetailInfo { get; set; }
+
+        [Column(TypeName = "money")]
+        public decimal? Offer { get; set; }
+
+        public bool? IsItSold { get; set; }
         [ForeignKey("TenderVehicleSalesId")]
         public virtual TenderVehicleSales TenderVehicleSales { get; set; }
-        public virtual List<TenderVehicleBid> TenderVehicleBid { get; set; }
+        [ForeignKey("UserId")]
+        public virtual User User { get; set; }
     }
 }
