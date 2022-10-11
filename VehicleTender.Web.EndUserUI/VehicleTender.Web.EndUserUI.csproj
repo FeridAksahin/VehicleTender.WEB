@@ -136,8 +136,11 @@
     <Compile Include="ViewModels\Account\CorporateRegisterViewModel.cs" />
     <Compile Include="ViewModels\Account\LoginViewModel.cs" />
     <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
+    <Compile Include="ViewModels\Advert\BuyVehicleNowViewModel.cs" />
+    <Compile Include="ViewModels\Contact\ContactViewModel.cs" />
     <Compile Include="ViewModels\PostingSalesAdvertisementViewModel.cs" />
     <Compile Include="ViewModels\Account\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\Tender\SearchTenderViewModel.cs" />
     <Compile Include="ViewModels\VehicleAddViewModel.cs" />
     <Compile Include="ViewModels\GetVehicleListInput.cs" />
     <Compile Include="ViewModels\VehicleListViewModel.cs" />
