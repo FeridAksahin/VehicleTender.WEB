@@ -117,7 +117,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiService\Concrete\AccountService.cs" />
+    <Compile Include="ApiService\Concrete\AdvertService.cs" />
     <Compile Include="ApiService\Concrete\CarService.cs" />
+    <Compile Include="ApiService\Concrete\ContactService.cs" />
+    <Compile Include="ApiService\Concrete\ErrorService.cs" />
+    <Compile Include="ApiService\Concrete\StockService.cs" />
+    <Compile Include="ApiService\Concrete\TenderService.cs" />
+    <Compile Include="ApiService\Concrete\UserServices.cs" />
+    <Compile Include="ApiService\Concrete\VehicleService.cs" />
     <Compile Include="ApiService\RepoService\RequestApiService.cs" />
     <Compile Include="ApiService\Interface\IRequestApiService.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -140,7 +148,6 @@
     <Compile Include="ViewModels\Advert\CarListViewModel.cs" />
     <Compile Include="ViewModels\Contact\ContactViewModel.cs" />
     <Compile Include="ViewModels\Error\ErrorViewModel.cs" />
-    <Compile Include="ViewModels\PostingSalesAdvertisementViewModel.cs" />
     <Compile Include="ViewModels\Account\RegisterViewModel.cs" />
     <Compile Include="ViewModels\Stock\FilterStockViewModel.cs" />
     <Compile Include="ViewModels\Stock\StockListViewModel.cs" />
@@ -154,7 +161,6 @@
     <Compile Include="ViewModels\User\UserViewModel.cs" />
     <Compile Include="ViewModels\User\VehicleBuyViewModel.cs" />
     <Compile Include="ViewModels\User\VehicleSoldViewModel.cs" />
-    <Compile Include="ViewModels\VehicleAddViewModel.cs" />
     <Compile Include="ViewModels\GetVehicleListInput.cs" />
     <Compile Include="ViewModels\VehicleListViewModel.cs" />
     <Compile Include="ViewModels\VehicleViewModel.cs" />
