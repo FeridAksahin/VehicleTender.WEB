@@ -14,40 +14,41 @@
     <link href="~/css/style.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="container-fluid bg-dark py-3 px-lg-5 d-none d-lg-block">
-        <div class="row">
-            <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
-                <div class="d-inline-flex align-items-center">
-                    <a class="text-body pr-3" href=""><i class="fa fa-phone-alt mr-2"></i>+012 345 6789</a>
-                    <span class="text-body">|</span>
-                    <a class="text-body px-3" href=""><i class="fa fa-envelope mr-2"></i>info@example.com</a>
+    @*<div class="container-fluid bg-dark py-3 px-lg-5 d-none d-lg-block">
+            <div class="row">
+                <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="text-body pr-3" href=""><i class="fa fa-phone-alt mr-2"></i>+012 345 6789</a>
+                        <span class="text-body">|</span>
+                        <a class="text-body px-3" href=""><i class="fa fa-envelope mr-2"></i>info@example.com</a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center text-lg-right">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="text-body px-3" href="">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a class="text-body px-3" href="">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a class="text-body px-3" href="">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a class="text-body px-3" href="">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a class="text-body pl-3" href="">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6 text-center text-lg-right">
-                <div class="d-inline-flex align-items-center">
-                    <a class="text-body px-3" href="">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a class="text-body px-3" href="">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a class="text-body px-3" href="">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a class="text-body px-3" href="">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a class="text-body pl-3" href="">
-                        <i class="fab fa-youtube"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid position-relative nav-bar p-0">
-        <div class="position-relative px-lg-5" style="z-index: 9;">
+        </div>*@
+    <div class="container-fluid nav-bar p-0 fixed-top">
+        <div class="position-relative" style="z-index:9;">
             <nav class="navbar navbar-expand-lg bg-secondary navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
                 <a href="" class="navbar-brand">
+
                     <h1 class="text-uppercase text-primary mb-1">@Html.ActionLink("Araçcım", "Index", "Home")</h1>
                 </a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -55,19 +56,38 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
                     <div class="navbar-nav ml-auto py-0">
-                        <button style="background-color: #2B2E4A;" class="nav-item nav-link btn btn-light">@Html.ActionLink("İhaleler", "ListTender", "Tender")</button>
+                        @*<button style="background-color: #2B2E4A;" class="nav-item nav-link btn btn-light">@Html.ActionLink("İhaleler", "ListTender", "Tender")</button>
 
-                        <button style="background-color: #2B2E4A;" class="nav-item nav-link btn btn-light">@Html.ActionLink("Stok Takibi", "Stock", "Vehicle")</button>
-                     
+                    <button style="background-color: #2B2E4A;" class="nav-item nav-link btn btn-light">@Html.ActionLink("Stok Takibi", "Stock", "Vehicle")</button>
 
-                        <button style="background-color: #2B2E4A;" class="nav-item nav-link btn btn-light">@Html.ActionLink("İlan Listesi", "Index", "AdvertList")</button>
 
-                        <button style="background-color: #2B2E4A;" class="nav-item nav-link btn btn-light">@Html.ActionLink("Bireysel Araç Satış", "PostingSalesAdvertisement", "Vehicle")</button>
-                        <button style="background-color: #2B2E4A;" class="nav-item nav-link btn btn-light">@Html.ActionLink("Hemen Araç Al", "BuyAVehicleNow", "NonTenderVehicle")</button>
-                        <button style="background-color: #2B2E4A;" class="nav-item nav-link btn btn-light">@Html.ActionLink("İletişim", "Contact", "Home")</button>
-                        <button style="background-color: #2B2E4A;" class="nav-item nav-link btn btn-light">@Html.ActionLink("Giriş Yap", "Login", "Home")</button>
-                        <button style="background-color: #2B2E4A;" class="nav-item nav-link btn btn-light">@Html.ActionLink("Profil", "UserProfile", "User")</button>
-                        <button style="background-color: #2B2E4A;" class="nav-item nav-link btn btn-light" title="@ViewBag.infoTitle">Nasıl Kullanılır?</button>
+                    <button style="background-color: #2B2E4A;" class="nav-item nav-link btn ">@Html.ActionLink("İlan Listesi", "Index", "AdvertList")</button>
+                    <button style="background-color: #2B2E4A;" class="nav-item nav-link btn ">@Html.ActionLink("Bireysel Araç Satış", "PostingSalesAdvertisement", "Vehicle")</button>
+                    <button style="background-color: #2B2E4A;" class="nav-item nav-link btn ">@Html.ActionLink("Hemen Araç Al", "BuyAVehicleNow", "NonTenderVehicle")</button>
+                    <button style="background-color: #2B2E4A;" class="nav-item nav-link btn ">@Html.ActionLink("İletişim", "Contact", "Home")</button>
+                    <button style="background-color: #2B2E4A;" class="nav-item nav-link btn ">@Html.ActionLink("Giriş Yap", "Login", "Home")</button>*@
+
+                        <a class="av-item nav-link btn" style="background-color: #2B2E4A;" href="~/Tender/ListTender">İhaleler</a>
+                        <a class="av-item nav-link btn" style="background-color: #2B2E4A;" href="~/Vehicle/Stock">Stok Takibi</a>
+                        <a class="av-item nav-link btn" style="background-color: #2B2E4A;" href="~/AdvertList/Index">İlan Listesi</a>
+                        <a class="av-item nav-link btn" style="background-color: #2B2E4A;" href="~/Vehicle/PostingSalesAdvertisement">Bireysel Araç Satış</a>
+                        <a class="av-item nav-link btn" style="background-color: #2B2E4A;" href="~/NonTenderVehicle/BuyAVehicleNow">Hemen Araç Al</a>
+                        <a class="av-item nav-link btn" style="background-color: #2B2E4A;" href="~/Home/Contact">İletişim</a>
+                        <a class="av-item nav-link btn" style="background-color: #2B2E4A;" href="~/Home/Login">Giriş Yap</a>
+                        <button style="background-color: #2B2E4A;" class="nav-item nav-link btn " title="@ViewBag.infoTitle">Nasıl Kullanılır?</button>
+                        <div class="btn-group">
+                            <button class="btn btn-secondary btn-lg dropdown-toggle fas fa-user fa-fw" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:127px">
+                            </button>
+                            <div class="dropdown-menu">
+                            <ul class="list-group" style="list-style-type: none;">
+
+                                <li><h5><a class="dropdown-item text-center text-uppercase" style="height:50px;margin-top:10px" href="~/User/UserProfile">Profİl</a></h5></li>
+                                <li><h5><a class="dropdown-item text-center text-uppercase" style="height:50px" href="~/User/UserProfile">Logout</a></h5></li>
+                            </ul>
+
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </nav>
@@ -75,14 +95,17 @@
     </div>
     <hr>
 
-    <div class="container-fluid">
+    <div class="container-fluid" style="display: flex; flex-direction: column; min-height: 85vh; margin-top:100px">
         @RenderBody()
+    </div>
 
-    </div>
-    <div class="container-fluid bg-dark px-sm-3 px-md-5">
-        <p class="mb-2 text-center text-body">&copy; <a href="#">Ravenclow</a></p>
-    </div>
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+    <footer>
+        <div class="container-fluid bg-dark px-sm-3 px-md-5" style="height:50px">
+            <p class="mb-2 text-center text-body">&copy; <a href="#">Ravenclaw</a></p>
+        </div>
+        @*<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>*@
+    </footer>
+
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="~/Scripts/bootstrap.bundle.min.js"></script>
