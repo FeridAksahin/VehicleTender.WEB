@@ -1,12 +1,14 @@
 ﻿using Newtonsoft.Json;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using VehicleTender.Web.AdminUI.ApiServices.Base.Interface;
 using VehicleTender.Web.AdminUI.Models;
+using VehicleTender.Web.AdminUI.Models.Token;
 using VehicleTender.WEB.Admin.Common.WebScrap.CustomHTTPResponse;
 
-namespace VehicleTender.Web.AdminUI.ApiServices.Base
+namespace VehicleTender.Web.AdminUI.ApiServices.Base.Concrete
 {
-    public class BaseApiService :IBaseApiService 
+    public class BaseApiService : IBaseApiService
     {
         StatusGenerator statusGenerator = new StatusGenerator();
         private readonly HttpClient client = new HttpClient();
@@ -40,7 +42,7 @@ namespace VehicleTender.Web.AdminUI.ApiServices.Base
             var response = await client.GetAsync($"{endpoint}/{id}");
             return JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync());
         }
-        public async Task<T> GetAsync<T,TSearch>(BearerTokenDTO bearerTokenDTO, string endpoint, string id) where T : class
+        public async Task<T> GetAsync<T, TSearch>(BearerTokenDTO bearerTokenDTO, string endpoint, string id) where T : class
         {
             client.DefaultRequestHeaders.Add("Authorization", $"Bearer {bearerTokenDTO.TokenUri}");
             var response = await client.GetAsync($"{endpoint}/{id}");

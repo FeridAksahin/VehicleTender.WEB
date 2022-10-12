@@ -1,6 +1,6 @@
-﻿using VehicleTender.Web.AdminUI.Models;
+﻿using VehicleTender.Web.AdminUI.Models.Token;
 
-namespace VehicleTender.Web.AdminUI.ApiServices.Base
+namespace VehicleTender.Web.AdminUI.ApiServices.Base.Interface
 {
     public interface IBaseApiService
     {
