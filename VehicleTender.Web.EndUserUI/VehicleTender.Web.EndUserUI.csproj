@@ -137,10 +137,23 @@
     <Compile Include="ViewModels\Account\LoginViewModel.cs" />
     <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Advert\BuyVehicleNowViewModel.cs" />
+    <Compile Include="ViewModels\Advert\CarListViewModel.cs" />
     <Compile Include="ViewModels\Contact\ContactViewModel.cs" />
+    <Compile Include="ViewModels\Error\ErrorViewModel.cs" />
     <Compile Include="ViewModels\PostingSalesAdvertisementViewModel.cs" />
     <Compile Include="ViewModels\Account\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\Stock\FilterStockViewModel.cs" />
+    <Compile Include="ViewModels\Stock\StockListViewModel.cs" />
+    <Compile Include="ViewModels\Stock\VehicleInStockViewModel.cs" />
     <Compile Include="ViewModels\Tender\SearchTenderViewModel.cs" />
+    <Compile Include="ViewModels\Tender\TenderListViewModel.cs" />
+    <Compile Include="ViewModels\User\FavoriteListViewModel.cs" />
+    <Compile Include="ViewModels\User\FavoriteViewModel.cs" />
+    <Compile Include="ViewModels\User\MyOffersViewModel.cs" />
+    <Compile Include="ViewModels\User\UserResetPasswordViewModel.cs" />
+    <Compile Include="ViewModels\User\UserViewModel.cs" />
+    <Compile Include="ViewModels\User\VehicleBuyViewModel.cs" />
+    <Compile Include="ViewModels\User\VehicleSoldViewModel.cs" />
     <Compile Include="ViewModels\VehicleAddViewModel.cs" />
     <Compile Include="ViewModels\GetVehicleListInput.cs" />
     <Compile Include="ViewModels\VehicleListViewModel.cs" />
@@ -160,6 +173,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="img\1.jpg" />
+    <Content Include="img\1.png" />
     <Content Include="img\about.png" />
     <Content Include="img\banner-left.png" />
     <Content Include="img\banner-right.png" />
@@ -360,6 +374,7 @@
     <Content Include="Views\Tender\TenderCarDetail.cshtml" />
     <Content Include="Views\Vehicle\Stock.cshtml" />
     <Content Include="Views\AdvertList\Index.cshtml" />
+    <Content Include="Views\Home\ErrorPage500.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
