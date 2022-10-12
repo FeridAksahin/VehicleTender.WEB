@@ -1,7 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Configuration;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using System.Web;
 using VehicleTender.Web.EndUserUI.ApiService.RepoService;
+using VehicleTender.Web.EndUserUI.ViewModels.Vehicle;
 using VehicleTender.Web.EndUserUI.ViewModels;
 using VehicleTender.WEB.UserDTO.Concrete;
 
@@ -9,22 +12,22 @@ namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
 {
     public class VehicleService
     {
-        private readonly RequestApiService _requestApiService;
-        private readonly string _apiUrl;
-        public VehicleService()
+        RequestApiService requestApiService = new RequestApiService("ApiUrl");
+        public async Task<string> IndividualVehicleSale(TokenDTO tokenDTO,IndividualVehicleSaleViewModel individualVehicleSaleViewModel)
         {
-            _apiUrl = ConfigurationManager.AppSettings["ApiUrl"];
-            _requestApiService = new RequestApiService();
+            return await requestApiService.PostAsync<IndividualVehicleSaleViewModel>(tokenDTO, individualVehicleSaleViewModel, "endpointburayagelecek");
         }
-
-        public async Task<List<VehicleListViewModel>> GetListAsync(GetVehicleListInput input)
+        public async Task<string> Tramer(TokenDTO tokenDTO, TramerViewModel tramerViewModel)
         {
-            string endpoint = _apiUrl + "Vehicle/GetIndex";
-            if (input != null)
-            {
-                endpoint += "?marka=" + input.BrandId + "&model=" + input.ModelId + "&isIndividual=" + input.isIndividual + "&status=" + input.StatusId;
-            }
-            return await _requestApiService.GetRequest<List<VehicleListViewModel>>(endpoint);
+            return await requestApiService.PostAsync<TramerViewModel>(tokenDTO,tramerViewModel, "endpointburayagelecek");
         }
+        //public async Task<List<VehicleListViewModel>> VehicleList(TokenDTO tokenDTO)
+        //{
+        //    return await requestApiService.GetAsyncList<VehicleListViewModel>(tokenDTO,"endpointburayagelecek");
+        //}
+        //public async Task<VehicleViewModel> Vehicle(TokenDTO tokenDTO)
+        //{
+        //    return await requestApiService.GetAsync<VehicleViewModel>(tokenDTO,"endpointburayagelecek");
+        //}
     }
 }
