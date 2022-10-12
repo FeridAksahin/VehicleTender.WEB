@@ -4,6 +4,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
 {
     public class VehicleController : Controller
     {
+
         [HttpGet]
         public IActionResult AdminHome()
         {
@@ -74,6 +75,14 @@ namespace VehicleTender.Web.AdminUI.Controllers
             return View();
         }
         public IActionResult VehicleDetailInfo()
+        {
+            return View();
+        }
+        public IActionResult AddVehicle()
+        {
+            return View();
+        }
+        public IActionResult UpdateVehicle()
         {
             return View();
         }

@@ -1,5 +1,11 @@
 ﻿
-<br />
+<h5 class="mb-3 pb-3 display-5 text-center mt-4">Rol Yetki</h5>
+<div class="row m-5">
+    <button type="button" class="btn btn-primary w-100 p-3 mt-3 mb-3" data-toggle="modal" data-target="#newRole">
+        Rol veya Yetki Tanımla
+    </button>
+</div>
+
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
@@ -28,15 +34,13 @@
                         <td>Admin paneli erişim.</td>
                         <td>Ahmet</td>
                         <td>9.10.2022</td>
-                        <td style="text-align:center;">
-                            <button type="button" class="btn btn-primary  m-3" data-toggle="modal" data-target="#updateRoleAndAuth">
+                        <td class="update_delete">
+                            <button type="button" class="btn btn-warning " data-toggle="modal" data-target="#updateRoleAndAuth">
                                 Güncelle
                             </button> <button type="button" class="btn btn-danger">Sil</button>
                         </td>
                     </tr>
                 }
-
-
             </tbody>
         </table>
     </div>
@@ -45,9 +49,7 @@
 
 
 
-<button type="button" class="btn btn-primary  m-3" data-toggle="modal" data-target="#newRole">
-    Rol veya Yetki Tanımla
-</button>
+
 
 
 
@@ -102,13 +104,21 @@
             <form action="/" method="post">
                 <div class="modal-body">
                     <div class="row m-3">
-                        <label>Rol ismi</label>
-                        <input type="text" class="form-control">
+                        <label>Rol</label>
+                        <select class="form-control">
+                            <option value="1">Admin</option>
+                            <option value="2">Kurumsal</option>
+                            <option value="2">Bireysel</option>
+                        </select>
                     </div>
                     <div class="row m-3">
                         <label>Yetki</label>
-                        <input type="text" class="form-control">
+                        <select class="form-control">
+                            <option value="1">Admin paneli erişim.</option>
+                            <option value="2">Son kullanıcı tarafına tam erişim.</option>
+                        </select>
                     </div>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>

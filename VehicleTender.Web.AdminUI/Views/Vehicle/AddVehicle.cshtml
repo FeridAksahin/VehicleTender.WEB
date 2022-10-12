@@ -1,4 +1,8 @@
 ﻿
+
+
+<h5 class="mb-3 pb-3 display-5 text-center mt-4">Araç Ekle</h5>
+
 <form action="/" method="post">
     <div class="container mt-3">
         <div class="row">
@@ -8,7 +12,7 @@
                     <div class="row">
                         <div class="col-4">
                             <label>Üye Ad Soyad</label>
-                           <input type="text" class="form-control">
+                            <input type="text" class="form-control">
                         </div>
                         <div class="col-4">
                             <label>Statü</label>
@@ -19,7 +23,7 @@
                         </div>
                         <div class="col-4">
                             <label>Ön Değerlendirme Fiyat</label>
-                        <input type="text" class="form-control">
+                            <input type="text" class="form-control">
                         </div>
                         <div class="col-4">
                             <label>Teklif Fiyatı</label>
@@ -114,15 +118,27 @@
                 </div>
             </div>
         </div>
-        <!--sorun var pop up larda-->
+
         <div class="row  mt-3">
-            <button type="button" class="btn btn-primary  m-3" data-toggle="modal" data-target="#aracTarihcePopUp">
+            <button type="button" class="btn btn-primary m-1 add_update_vehicle_btn" data-toggle="modal" data-target="#exampleModalCenter">
+                Hemen Al Satışta
+            </button>
+            <button type="button" class="btn btn-primary  m-1 add_update_vehicle_btn" data-toggle="modal" data-target="#exampleModalCenter1">
+                Komisyon
+            </button>
+            <button type="button" class="btn btn-primary  m-1 add_update_vehicle_btn" data-toggle="modal" data-target="#exampleModalCenter2">
+                Alıcı Bilgileri
+            </button>
+            <button type="button" class="btn btn-primary  m-1 add_update_vehicle_btn" data-toggle="modal" data-target="#aracTarihcePopUp">
                 Araç Tarihçe
             </button>
-            <button type="button" class="btn btn-primary  m-3" data-toggle="modal" data-target="#hasarTramerBilgileriPopUp">
+            <button type="button" class="btn btn-primary  m-1 add_update_vehicle_btn" data-toggle="modal" data-target="#hasarTramerBilgileriPopUp">
                 Hasar Tramer Bilgileri
             </button>
-            <button type="submit" class="btn btn-primary  m-3">
+            <button type="button" class="btn btn-primary  m-1 add_update_vehicle_btn" data-toggle="modal" data-target="#exampleModalCenter3">
+                İlan Bilgileri
+            </button>
+            <button type="submit" class="btn btn-primary  m-1 add_update_vehicle_btn">
                 Kaydet
             </button>
         </div>
@@ -131,7 +147,90 @@
 </form>
 
 
-
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Hemen Al Satış</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/" method="post">
+                <div class="modal-body">
+                    Hemen Al Satış
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Komisyon</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/" method="post">
+                <div class="modal-body">
+                    Komisyon
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Alıcı Bilgileri</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/" method="post">
+                <div class="modal-body">
+                    Alıcı Bilgileri
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">İlan Bilgileri</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/" method="post">
+                <div class="modal-body">
+                    İlan Bilgileri
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 <div class="modal fade" id="aracTarihcePopUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -270,7 +369,7 @@
     </div>
 
 </div>
- 
+
 
 
 

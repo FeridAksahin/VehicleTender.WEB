@@ -8,10 +8,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         {
             return View();
         }
-        public IActionResult Add()
-        {
-            return View();
-        }
+
         [HttpPost]
         public IActionResult Add(object Data)
         {
@@ -23,12 +20,6 @@ namespace VehicleTender.Web.AdminUI.Controllers
             return View();
         }
       
-        public IActionResult Update(int id)
-        {
-            return View();
-        }
-
-
         [HttpPut]
         public IActionResult Update(object data)
         {

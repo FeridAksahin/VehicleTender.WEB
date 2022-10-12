@@ -1,15 +1,15 @@
 ﻿@{
     ViewData["Title"] = "User List";
 }
-
+<h5 class="mb-3 pb-3 display-5 text-center mt-4">Kullanıcılar</h5>
 
 <div class="row m-5">
-    <a class="btn btn-primary" asp-controller="Admin" asp-action="AddAdmin" data-toggle="modal" data-target="#exampleModalCenter6">Admin Ekle</a>
+    <a class="btn btn-primary w-100 p-3 mt-3 mb-3" data-toggle="modal" data-target="#exampleModalCenter">Kullanıcı Ekle</a>
 </div>
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
-        Admin Kullanıcıları Tablosu
+        Kullanıcılar Tablosu
     </div>
     <div class="card-body">
         <table id="datatablesSimple" class="table table-hover table-bordered" >
@@ -24,61 +24,26 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Name</td>
-                    <td>Position</td>
-                    <td>Office</td>
-                    <td>Age</td>
-                    <td>Aktif</td>
-                    <td style="text-align:center;">
-                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalCenter8">Güncelle</button>
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter7">Sil</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>İhsan</td>
-                    <td>Konargöçer</td>
-                    <td>ihsanmail.com</td>
-                    <td>000000000000</td>
-                    <td>Aktif</td>
-                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
-                </tr>
-                <tr>
-                    <td>Name</td>
-                    <td>Position</td>
-                    <td>Office</td>
-                    <td>Age</td>
-                    <td>Aktif</td>
-                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
-                </tr>
-                <tr>
-                    <td>Name</td>
-                    <td>Position</td>
-                    <td>Office</td>
-                    <td>Age</td>
-                    <td>Aktif</td>
-                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
-                </tr>
-                <tr>
-                    <td>Name</td>
-                    <td>Position</td>
-                    <td>Office</td>
-                    <td>Age</td>
-                    <td>Aktif</td>
-                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
-                </tr>
-                <tr>
-                    <td>Name</td>
-                    <td>Position</td>
-                    <td>Office</td>
-                    <td>Age</td>
-                    <td>Aktif</td>
-                    <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
-                </tr>
+                @for (int i = 0; i < 15; i++)
+                {
+                    <tr>
+                        <td>Name</td>
+                        <td>Position</td>
+                        <td>Office</td>
+                        <td>Age</td>
+                        <td>Aktif</td>
+                        <td class="update_delete">
+                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalCenter1">Güncelle</button>
+                            <button type="button" class="btn btn-danger">Sil</button>
+                        </td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>
 </div>
+
+
 
 <div class="modal fade" id="exampleModalCenter6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -124,31 +89,13 @@
 </div>
 
 
-<div class="modal fade" id="exampleModalCenter7" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <p>X kişisi silinsin mi?</p>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="container">
-                    <div class="row">
-                        <button class="btn btn-outline-danger btn-block mt-3">Sil</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-<div class="modal fade" id="exampleModalCenter8" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="text-center display-4 modal-title" id="exampleModalLongTitle">Güncelle</h5>
+                <h5 class="text-center display-4 modal-title" id="exampleModalLongTitle">Kullanıcı Ekle</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -172,14 +119,54 @@
                             <option value="1">Aktif</option>
                             <option value="2">Pasif</option>
                         </select>
-                        <button class="btn btn-outline-success btn-block mt-3">Güncelle</button>
                     </div>
                 </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="text-center display-4 modal-title" id="exampleModalLongTitle">Kullanıcı Güncelle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <input type="text" class="form-control form-control-lg mt-3" placeholder="Kullanıcı Adı" />
+
+                        <input type="text" class="form-control form-control-lg mt-3" placeholder="Ad " />
+
+                        <input type="text" class="form-control form-control-lg mt-3" placeholder="Soyad" />
+
+                        <input type="text" class="form-control form-control-lg mt-3" placeholder="Telefon" />
+
+                        <input type="text" class="form-control form-control-lg mt-3" placeholder="Email" />
+
+                        <input type="password" class="form-control form-control-lg mt-3" placeholder="Parola" />
+
+                        <select class="form-control form-control-lg mt-3">
+                            <option value="1">Aktif</option>
+                            <option value="2">Pasif</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                <button type="submit" class="btn btn-primary">Kaydet</button>
             </div>
         </div>
 
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+

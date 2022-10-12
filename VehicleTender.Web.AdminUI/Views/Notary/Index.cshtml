@@ -1,5 +1,7 @@
-﻿
-
+﻿<h5 class="mb-3 pb-3 display-5 text-center mt-4">Noter İşlemleri</h5>
+<div class="row m-5">
+    <a class="btn btn-primary w-100 p-3 mt-3 mb-3" data-toggle="modal" data-target="#exampleModalCenter">Güncelle</a>
+</div>
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
@@ -19,23 +21,45 @@
                 <tr>
                     <td>2000 ₺</td>
                     <td>08.12.2022</td>
-                 
                 </tr>
-             
-
-
             </tbody>
         </table>
-        </div>
-        </div>
-     
-
-<div class="d-grid gap-2">
-   <button class="btn btn-primary" type="button" >  <a asp-controller="Notary" asp-action="Add" class="text-white">Güncelle</a></button>
-
-  
-  
+    </div>
 </div>
+ 
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="text-center display-7 modal-title" id="exampleModalLongTitle">Yeni Komisyon Aralığı Ekle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="mb-3">
+                            <label class="form-label">Yeni Noter Ücreti</label>
+                            <input type="text" class="form-control">
+
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Son Geçerlilik Tarihi</label>
+                            <input type="datetime" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                            <button type="submit" class="btn btn-primary">Kaydet</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 
 

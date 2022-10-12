@@ -7,7 +7,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Dashboard - SB Admin</title>
-
+    <link href="~/css/site.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
@@ -15,7 +15,8 @@
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 
 </head>
-<body class="sb-nav-fixed">
+<body class="sb-nav-fixed" >
+
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
         <a class="navbar-brand ps-3" asp-controller="Admin" asp-action="AdminHome">Araç İhale</a>
@@ -42,7 +43,7 @@
 
                         <a class="nav-link" asp-controller="UserOperations" asp-action="UserList">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Adminler
+                            Kullanıcılar
                         </a>
                         <a class="nav-link" asp-controller="User" asp-action="CorporateUsers">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
@@ -55,10 +56,6 @@
                         <a class="nav-link" asp-controller="Tender" asp-action="Tender">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             İhaleler
-                        </a>
-                        <a class="nav-link" asp-controller="Vehicle" asp-action="StockList">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Araç Özellikler
                         </a>
                       
                         <a class="nav-link" asp-controller="Comission" asp-action="Index">
@@ -77,11 +74,11 @@
                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Bireysel Araç Satım   
                         </a>
-                        <a class="nav-link" asp-controller="" asp-action="">
+ @*                       <a class="nav-link" asp-controller="" asp-action="">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Raporlar
-                        </a>
-                        </a>
+                        </a>*@
+                        
                         <a class="nav-link" asp-controller="Admin" asp-action="RoleAndAuthorization">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Rol ve Yetki Tanımlama
@@ -90,10 +87,6 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Geri Dönüşüm
                         </a>
-
-                        <button type="button" class="btn btn-dark " data-toggle="tooltip" data-placement="bottom" title="@ViewData["InfoTitle"]">
-                            Nasıl Kullanılır?
-                        </button>
 
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
@@ -129,7 +122,7 @@
                     @RenderBody()
                 </div>
             </main>
-            <footer class="py-4 bg-light mt-auto">
+            <footer class="py-4 bg-light mt-auto" style="background-color: #212529 !important;">
                 <div class="container-fluid px-4">
                     <div class="d-flex align-items-center justify-content-between small">
                         <div class="text-muted">Araç İhale</div>

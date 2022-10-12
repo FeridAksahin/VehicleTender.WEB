@@ -3,36 +3,36 @@
 }
 
 
-
-<h5 class="mb-3 pb-3 display-5 text-center mt-4">Silinen Verileri Geri Yükleme Sayfası</h5>
-<div class="row">
-    <div class="col-4">
-        <label>Veri Türü</label>
-        <select class="form-control">
-            <option value="value">text</option>
-        </select>
-    </div>
-    <div class="col-4">
-        <label>Şu Tarihten Bugüne</label>
-        <select class="form-control">
-            <option value="value">text</option>
-        </select>
-    </div>
-    <div class="col-4">
-        <label>Silen Kullanıcı</label>
-        <select class="form-control">
-            <option value="value">text</option>
-        </select>
+<div>
+    <h5 class="mb-3 pb-3 display-5 text-center mt-4">Silinen Verileri Geri Yükleme Sayfası</h5>
+    <div class="row filter">
+        <div class="col-4">
+            <label>Veri Türü</label>
+            <select class="form-control">
+                <option value="value">text</option>
+            </select>
+        </div>
+        <div class="col-4">
+            <label>Şu Tarihten Bugüne</label>
+            <select class="form-control">
+                <option value="value">text</option>
+            </select>
+        </div>
+        <div class="col-4">
+            <label>Silen Kullanıcı</label>
+            <select class="form-control">
+                <option value="value">text</option>
+            </select>
+        </div>
+                    <div class="row">
+                <div class="col-12">
+                    <input type="submit" value="Listele" class="btn btn-primary m-3 list" />
+                </div>
+            </div>
     </div>
 </div>
-<br>
-<input type="submit" a style="float:right;" value="Listele" class="btn btn-info col-md-1" />
-<br>
-<br>
-<br>
-<br>
 
-<div class="card mb-4">
+<div class="card mb-4 m-5">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
        Silinen Veriler Tablosu
@@ -50,56 +50,19 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>İhale</td>
-                    <td>11.10.2022</td>
-                    <td>Can:ServerAdmin</td>
-                    <td style="text-align:center;">
-                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter6">Geri Yükle</button>
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter7">Tamamen Sil</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>İhale</td>
-                    <td>11.10.2022</td>
-                    <td>Can:ServerAdmin</td>
-                    <td style="text-align:center;">
-                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter6">Geri Yükle</button>
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter7">Tamamen Sil</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>İhale</td>
-                    <td>11.10.2022</td>
-                    <td>Can:ServerAdmin</td>
-                    <td style="text-align:center;">
-                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter6">Geri Yükle</button>
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter7">Tamamen Sil</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>İhale</td>
-                    <td>11.10.2022</td>
-                    <td>Can:ServerAdmin</td>
-                    <td style="text-align:center;">
-                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter6">Geri Yükle</button>
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter7">Tamamen Sil</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>İhale</td>
-                    <td>11.10.2022</td>
-                    <td>Can:ServerAdmin</td>
-                    <td style="text-align:center;">
-                        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter6">Geri Yükle</button>
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter7">Tamamen Sil</button>
-                    </td>
-                </tr>
+                @for (int i = 0; i < 15; i++)
+                {
+                    <tr>
+                        <td>1</td>
+                        <td>İhale</td>
+                        <td>11.10.2022</td>
+                        <td>Can:ServerAdmin</td>
+                        <td class="update_delete">
+                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalCenter6">Geri Yükle</button>
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter7">Tamamen Sil</button>
+                        </td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>
