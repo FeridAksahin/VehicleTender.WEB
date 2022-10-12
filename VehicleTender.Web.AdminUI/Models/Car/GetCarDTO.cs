@@ -1,4 +1,4 @@
-﻿namespace VehicleTender.Web.AdminUI.Models
+﻿namespace VehicleTender.Web.AdminUI.Models.Car
 {
     public class GetCarDTO
     {
@@ -9,5 +9,6 @@
         public string Statu { get; set; }
         public string CreatedBy { get; set; }
         public DateTime CreatedDate { get; set; }
+
     }
 }

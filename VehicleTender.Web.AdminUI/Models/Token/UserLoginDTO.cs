@@ -1,4 +1,4 @@
-﻿namespace VehicleTender.Web.AdminUI.Models
+﻿namespace VehicleTender.Web.AdminUI.Models.Token
 {
     public class UserLoginDTO
     {
