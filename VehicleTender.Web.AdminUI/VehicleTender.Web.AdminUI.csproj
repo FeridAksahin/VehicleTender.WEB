@@ -21,4 +21,8 @@
     <PackageReference Include="NLog.Web.AspNetCore" Version="5.1.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\VehicleTender.WEB.Admin.Common\VehicleTender.WEB.Admin.Common.csproj" />
+  </ItemGroup>
+
 </Project>

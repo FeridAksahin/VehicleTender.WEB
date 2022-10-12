@@ -14,9 +14,9 @@ builder.Services.AddControllersWithViews();
 builder.Logging.ClearProviders();
 builder.Host.UseNLog();
 
-builder.Services.AddScoped<IBaseApiService<Task>, BaseApiService<Task>>();
+//builder.Services.AddScoped<IBaseApiService, BaseApiService>();
 
-builder.Services.AddHttpClient<BaseApiService<Task>>(options =>
+builder.Services.AddHttpClient<BaseApiService>(options =>
 {
     options.BaseAddress = new Uri(builder.Configuration["apiAddress"]);
 });

@@ -2,14 +2,21 @@
 
 namespace VehicleTender.Web.AdminUI.ApiServices.Base
 {
-    public interface IBaseApiService<T>
+    public interface IBaseApiService
     {
-        Task<List<T>> GetAllAsync(BearerTokenDTO bearerTokenDTO, string requestUri);
-        Task<T> GetAsync(BearerTokenDTO bearerTokenDTO, string requestUri, object id);
-        Task<List<T>> GetAllAsync(BearerTokenDTO bearerTokenDTO, string requestUri,object id);
-        Task<bool> Post(T item, BearerTokenDTO bearerTokenDTO, string requestUri);
-        Task<bool> Put(T item, BearerTokenDTO bearerTokenDTO, string requestUri);
-        Task<bool> Delete(T item, BearerTokenDTO bearerTokenDTO, string requestUri, object id);
+        //get
+        Task<List<T>> GetAsyncList<T>(BearerTokenDTO bearerTokenDTO, string endpoint) where T : class;
+        Task<T> GetAsync<T>(BearerTokenDTO bearerTokenDTO, string endpoint, string id) where T : class;
+        Task<List<T>> GetAsyncList<T>(BearerTokenDTO bearerTokenDTO, string endpoint, string request) where T : class;
+        //post
+        Task<BearerTokenDTO> GetToken(BearerTokenDTO bearerTokenDTO, UserLoginDTO getTokenForUser, string endpoint);
+        Task<string> PostAsync<T>(BearerTokenDTO bearerTokenDTO, List<T> data, string endpoint) where T : class;
+        Task<string> PostAsync<T>(BearerTokenDTO bearerTokenDTO, T data, string endpoint) where T : class;
+        //delete
+        Task<string> DeleteAsync(BearerTokenDTO bearerTokenDTO, string endpoint, int id);
+        //put
+        Task<string> PutAsync<T>(BearerTokenDTO bearerTokenDTO, T data, string endpoint) where T : class;
+        Task<string> PutAsync<T>(BearerTokenDTO bearerTokenDTO, List<T> data, string endpoint) where T : class;
 
     }
 }
