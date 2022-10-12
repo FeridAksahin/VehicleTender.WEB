@@ -5,9 +5,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddScoped<IBaseApiService<Task>, BaseApiService<Task>>();
+//builder.Services.AddScoped<IBaseApiService, BaseApiService>();
 
-builder.Services.AddHttpClient<BaseApiService<Task>>(options =>
+builder.Services.AddHttpClient<BaseApiService>(options =>
 {
     options.BaseAddress = new Uri(builder.Configuration["apiAddress"]);
 });
