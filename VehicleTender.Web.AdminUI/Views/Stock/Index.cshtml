@@ -1,10 +1,12 @@
-﻿<div class="card mb-4">
+﻿<h5 class="mb-3 pb-3 display-5 text-center mt-4">Stok Yönetimi</h5>
+
+<div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
        Şirketler
     </div>
     <div class="card-body">
-        <table id="datatablesSimple" >
+        <table id="datatablesSimple" class="table table-bordered table-hover" >
             <thead>
                 <tr>
                     <th>Şirket Adı</th>
@@ -13,25 +15,60 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>X Şirketi</td>
-                    <td><a  asp-controller="Stock" asp-action="Detail" asp-route-id="Id" class="btn btn-success">Detaya Git</a></td>
-                 
-                </tr>
-                <tr>
-                    <td>Y Şirketi</td>
-                      <td><a  asp-controller="Stock" asp-action="Detail" asp-route-id="Id" class="btn btn-success">Detaya Git</a></td>
-                 
-                </tr>
-                <tr>
-                    <td>Z Şirketi</td>
-                      <td><a  asp-controller="Stock" asp-action="Detail" asp-route-id="Id" class="btn btn-success">Detaya Git</a></td>
-                 
-                </tr>
-             
-
-
+                @for (int i = 0; i < 15; i++)
+                {
+                    <tr>
+                        <td>X Şirketi</td>
+                        <td class="update_delete"><button type="button" class="btn btn-warning" data-toggle="modal" data-target=".bd-example-modal-lg">Detay</button></td>
+                    </tr>
+                }
             </tbody>
         </table>
+    </div>
+</div>
+
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    Şirketler
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple" class="table table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Araç Marka</th>
+                                <th>Araç Model</th>
+                                <th>Km</th>
+                                <th>Yıl</th>
+                                <th>Plaka</th>
+                                <th>Renk</th>
+                                <th>Garajda</th>
+                                <th>Satılan</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < 15; i++)
+                            {
+                                <tr>
+                                    <td>Jeep</td>
+                                    <td>Şahin</td>
+                                    <td>500.000</td>
+                                    <td>1998</td>
+                                    <td>34 GS 1905</td>
+                                    <td>Beyaz</td>
+                                    <td>25</td>
+                                    <td>2</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-        </div>
+    </div>
+</div>

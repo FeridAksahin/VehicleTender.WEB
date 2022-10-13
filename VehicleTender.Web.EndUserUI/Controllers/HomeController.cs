@@ -52,5 +52,11 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         {
             return View();
         }
+
+        [HandleError]
+        public ActionResult ErrorPage500()
+        {
+            return View();
+        }
     }
 }

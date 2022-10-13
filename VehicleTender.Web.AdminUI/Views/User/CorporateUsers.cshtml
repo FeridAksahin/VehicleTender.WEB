@@ -1,34 +1,39 @@
 ﻿<div class="row">
     <h5 class="mb-3 pb-3 display-5 text-center mt-4">Kurumsal Kullanıcılar</h5>
-    <div class="col-4">
-        <label>Şirket Adı</label>
-        <select class="form-control">
-            <option value="value">Borusan</option>
-            <option value="value">vs</option>
-            <option value="value">vsvs</option>
-        </select>
-    </div>
-    <div class="col-4">
-        <label>Paket Bilgisi</label>
-        <select class="form-control">
-            <option value="value">Altın</option>
-            <option value="value">Gümüş</option>
-            <option value="value">Bronz</option>
-        </select>
-    </div>
+    <form>
+        <div class="row filter">
+            <div class="col-6">
+                <label>Şirket Adı</label>
+                <select class="form-control">
+                    <option value="value">Borusan</option>
+                    <option value="value">vs</option>
+                    <option value="value">vsvs</option>
+                </select>
+            </div>
+            <div class="col-6">
+                <label>Paket Bilgisi</label>
+                <select class="form-control">
+                    <option value="value">Altın</option>
+                    <option value="value">Gümüş</option>
+                    <option value="value">Bronz</option>
+                </select>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <input type="submit" value="Listele" class="btn btn-primary m-3 list" />
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
-<br>
-<input type="submit" a style="float:right;" value="Listele" class="btn btn-info col-md-1" />
 
-<br>
-<br>
-<br>
-<br>
- 
-<div class="card mb-4">
+
+
+
+<div class="card mb-4 m-5">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
-        Kurumsal Kullanıcılar
+        Araç Listeleme Tablosu
     </div>
     <div class="card-body">
         <table id="datatablesSimple" class="table table-hover table-bordered">
@@ -112,6 +117,7 @@
         </table>
     </div>
 </div>
+
 
 
 <div class="modal fade" id="exampleModalCenter7" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

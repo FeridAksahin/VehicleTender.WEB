@@ -86,7 +86,7 @@ namespace VehicleTender.API.Entity.Migrations
                     b.ToTable("Authority");
                 });
 
-            modelBuilder.Entity("VehicleTender.API.Entity.Entities.BuyingTenderVehicle", b =>
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.BuyingTender", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -129,7 +129,7 @@ namespace VehicleTender.API.Entity.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("BuyingTenderVehicle");
+                    b.ToTable("BuyingTender");
                 });
 
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.Car", b =>
@@ -308,6 +308,12 @@ namespace VehicleTender.API.Entity.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<decimal?>("CarPriceEnd")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal?>("CarPriceStarting")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal?>("CommissionPrice")
                         .HasColumnType("money");
@@ -756,7 +762,7 @@ namespace VehicleTender.API.Entity.Migrations
                     b.Property<decimal?>("OfficialOffer")
                         .HasColumnType("money");
 
-                    b.Property<decimal?>("TenEvaluationPrice")
+                    b.Property<decimal?>("PreAssessmentPrice")
                         .HasColumnType("money");
 
                     b.Property<int?>("UserId")
@@ -1210,6 +1216,35 @@ namespace VehicleTender.API.Entity.Migrations
                     b.ToTable("TenderStatuHistory");
                 });
 
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.TenderVehicleBid", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Bid")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("TenderVehicleDetailId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("UserId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TenderVehicleDetailId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("TenderVehicleBid");
+                });
+
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.TenderVehicleDetail", b =>
                 {
                     b.Property<int>("Id")
@@ -1506,16 +1541,16 @@ namespace VehicleTender.API.Entity.Migrations
                     b.ToTable("VehicleStatuHistory");
                 });
 
-            modelBuilder.Entity("VehicleTender.API.Entity.Entities.BuyingTenderVehicle", b =>
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.BuyingTender", b =>
                 {
                     b.HasOne("VehicleTender.API.Entity.Entities.TenderVehicleSales", "TenderVehicleSales")
-                        .WithMany("BuyingTenderVehicle")
+                        .WithMany("BuyingTender")
                         .HasForeignKey("TenderVehicleSalesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("VehicleTender.API.Entity.Entities.User", "User")
-                        .WithMany("BuyingTenderVehicle")
+                        .WithMany("BuyingTender")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1907,12 +1942,31 @@ namespace VehicleTender.API.Entity.Migrations
                     b.Navigation("Statu");
                 });
 
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.TenderVehicleBid", b =>
+                {
+                    b.HasOne("VehicleTender.API.Entity.Entities.TenderVehicleDetail", "TenderVehicleDetail")
+                        .WithMany("TenderVehicleBid")
+                        .HasForeignKey("TenderVehicleDetailId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("VehicleTender.API.Entity.Entities.User", "User")
+                        .WithMany("TenderVehicleBid")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TenderVehicleDetail");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.TenderVehicleDetail", b =>
                 {
                     b.HasOne("VehicleTender.API.Entity.Entities.CarDetailInfo", "CarDetailInfo")
                         .WithMany("TenderVehicleDetail")
                         .HasForeignKey("CarDetailInfoId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("VehicleTender.API.Entity.Entities.TenderVehicleSales", "TenderVehicleSales")
@@ -2084,9 +2138,14 @@ namespace VehicleTender.API.Entity.Migrations
                     b.Navigation("VehicleStatuHistory");
                 });
 
+            modelBuilder.Entity("VehicleTender.API.Entity.Entities.TenderVehicleDetail", b =>
+                {
+                    b.Navigation("TenderVehicleBid");
+                });
+
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.TenderVehicleSales", b =>
                 {
-                    b.Navigation("BuyingTenderVehicle");
+                    b.Navigation("BuyingTender");
 
                     b.Navigation("TenderVehicleDetail");
                 });
@@ -2103,7 +2162,7 @@ namespace VehicleTender.API.Entity.Migrations
 
             modelBuilder.Entity("VehicleTender.API.Entity.Entities.User", b =>
                 {
-                    b.Navigation("BuyingTenderVehicle");
+                    b.Navigation("BuyingTender");
 
                     b.Navigation("CarDetailInfo");
 
@@ -2122,6 +2181,8 @@ namespace VehicleTender.API.Entity.Migrations
                     b.Navigation("RoleUser");
 
                     b.Navigation("Stock");
+
+                    b.Navigation("TenderVehicleBid");
 
                     b.Navigation("TenderVehicleSales");
                 });

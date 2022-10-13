@@ -1,0 +1,789 @@
+2022-10-12 10:14:51.6150 Info Message Template Auto Format enabled
+2022-10-12 10:14:51.6271 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 10:14:51.9222 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 10:14:51.9706 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 10:14:54.0202 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:05:23.0403 Info Message Template Auto Format enabled
+2022-10-12 13:05:23.0522 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:05:23.2326 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:05:23.2895 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:05:24.9513 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:08:33.9885 Info Message Template Auto Format enabled
+2022-10-12 13:08:33.9885 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:08:34.1231 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:08:34.1573 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:08:35.0687 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:10:19.1515 Info Message Template Auto Format enabled
+2022-10-12 13:10:19.1626 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:10:19.2816 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:10:19.3134 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:10:20.3721 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:12:35.5153 Info Message Template Auto Format enabled
+2022-10-12 13:12:35.5281 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:12:35.6376 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:12:35.6702 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:12:36.6773 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:15:02.5108 Info Message Template Auto Format enabled
+2022-10-12 13:15:02.5188 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:15:02.6131 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:15:02.6440 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:15:03.6614 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:17:16.1989 Info Message Template Auto Format enabled
+2022-10-12 13:17:16.2082 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:17:16.3070 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:17:16.3375 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:17:17.2312 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:17:29.9831 Info Message Template Auto Format enabled
+2022-10-12 13:17:29.9924 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:17:30.1089 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:17:30.1612 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:17:31.2324 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:20:02.7270 Info Message Template Auto Format enabled
+2022-10-12 13:20:02.7270 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:20:02.8294 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:20:02.8600 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:20:03.7570 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:21:04.6581 Info Message Template Auto Format enabled
+2022-10-12 13:21:04.6581 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:21:04.7592 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:21:04.7890 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:21:05.9079 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:28:24.8768 Info Message Template Auto Format enabled
+2022-10-12 13:28:24.8768 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:28:24.9808 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:28:25.0130 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:28:25.9215 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:28:39.0093 Info Message Template Auto Format enabled
+2022-10-12 13:28:39.0196 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:28:39.1218 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:28:39.1524 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:28:40.4715 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:28:56.9175 Info Message Template Auto Format enabled
+2022-10-12 13:28:56.9259 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:28:57.0196 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:28:57.0498 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:28:57.9362 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:31:33.6045 Info Message Template Auto Format enabled
+2022-10-12 13:31:33.6147 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:31:33.7102 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:31:33.7401 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:31:34.7451 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:31:53.6139 Info Message Template Auto Format enabled
+2022-10-12 13:31:53.6139 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:31:53.7165 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:31:53.7501 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:31:54.6852 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:37:35.2212 Info Message Template Auto Format enabled
+2022-10-12 13:37:35.2212 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:37:35.3262 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:37:35.3572 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:37:36.2486 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:38:59.7956 Info Message Template Auto Format enabled
+2022-10-12 13:38:59.8040 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:38:59.8984 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:38:59.9279 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:39:00.8351 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:39:36.7374 Info Message Template Auto Format enabled
+2022-10-12 13:39:36.7374 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:39:36.8498 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:39:36.8808 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:39:37.8577 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:44:26.5974 Info Message Template Auto Format enabled
+2022-10-12 13:44:26.5974 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:44:26.7040 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:44:26.7349 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:44:27.7435 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:45:46.3911 Info Message Template Auto Format enabled
+2022-10-12 13:45:46.3911 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:45:46.5079 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:45:46.5387 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:45:47.4409 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:47:28.7293 Info Message Template Auto Format enabled
+2022-10-12 13:47:28.7408 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:47:28.8547 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:47:28.8852 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:47:29.9078 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:47:58.2171 Info Message Template Auto Format enabled
+2022-10-12 13:47:58.2246 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:47:58.3243 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:47:58.3550 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:47:59.3781 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:48:39.3328 Info Message Template Auto Format enabled
+2022-10-12 13:48:39.3328 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:48:39.4450 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:48:39.4798 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:48:40.3752 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:50:45.8315 Info Message Template Auto Format enabled
+2022-10-12 13:50:45.8315 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:50:45.9220 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:50:45.9761 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:50:47.0914 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:52:01.0856 Info Message Template Auto Format enabled
+2022-10-12 13:52:01.0856 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:52:01.1909 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:52:01.2218 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:52:02.2148 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:52:27.2372 Info Message Template Auto Format enabled
+2022-10-12 13:52:27.2372 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:52:27.3284 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:52:27.3735 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:52:28.4707 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:53:03.4944 Info Message Template Auto Format enabled
+2022-10-12 13:53:03.5022 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:53:03.6007 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:53:03.6316 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:53:04.5355 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:53:36.1716 Info Message Template Auto Format enabled
+2022-10-12 13:53:36.1790 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:53:36.2825 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:53:36.3137 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:53:37.3150 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:55:14.8620 Info Message Template Auto Format enabled
+2022-10-12 13:55:14.8620 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:55:14.9616 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:55:14.9910 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:55:15.9299 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:55:59.9778 Info Message Template Auto Format enabled
+2022-10-12 13:55:59.9870 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 13:56:00.0959 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 13:56:00.1261 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 13:56:01.3468 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:19:43.2273 Info Message Template Auto Format enabled
+2022-10-12 14:19:43.2378 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:19:43.3418 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:19:43.3720 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:19:44.3794 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:24:45.8575 Info Message Template Auto Format enabled
+2022-10-12 14:24:45.8656 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:24:45.9594 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:24:45.9891 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:24:46.9411 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:25:05.2230 Info Message Template Auto Format enabled
+2022-10-12 14:25:05.2230 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:25:05.3212 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:25:05.3513 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:25:06.2296 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:27:05.4804 Info Message Template Auto Format enabled
+2022-10-12 14:27:05.4888 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:27:05.5852 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:27:05.6150 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:27:06.5734 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:27:34.7374 Info Message Template Auto Format enabled
+2022-10-12 14:27:34.7374 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:27:34.8440 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:27:34.8762 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:27:35.8687 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:30:07.5252 Info Message Template Auto Format enabled
+2022-10-12 14:30:07.5327 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:30:07.6109 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:30:07.6550 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:30:08.6273 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:30:35.7620 Info Message Template Auto Format enabled
+2022-10-12 14:30:35.7707 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:30:35.8810 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:30:35.9152 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:30:36.9187 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:32:05.0276 Info Message Template Auto Format enabled
+2022-10-12 14:32:05.0361 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:32:05.1343 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:32:05.1674 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:32:06.2541 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:32:53.4035 Info Message Template Auto Format enabled
+2022-10-12 14:32:53.4114 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:32:53.5195 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:32:53.5501 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:32:54.4975 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:33:34.8807 Info Message Template Auto Format enabled
+2022-10-12 14:33:34.8807 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:33:34.9918 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:33:35.0367 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:33:35.9512 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:34:37.4649 Info Message Template Auto Format enabled
+2022-10-12 14:34:37.4775 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:34:37.5801 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:34:37.6101 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:34:38.5087 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:34:56.8270 Info Message Template Auto Format enabled
+2022-10-12 14:34:56.8379 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:34:56.9396 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:34:57.0082 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:34:58.0307 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:36:43.1118 Info Message Template Auto Format enabled
+2022-10-12 14:36:43.1118 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:36:43.2197 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:36:43.2514 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:36:44.3318 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:38:19.4286 Info Message Template Auto Format enabled
+2022-10-12 14:38:19.4286 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:38:19.5502 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:38:19.6094 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:38:20.7642 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:40:49.6782 Info Message Template Auto Format enabled
+2022-10-12 14:40:49.6782 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:40:49.8245 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:40:49.8607 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:40:50.9099 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:41:51.0304 Info Message Template Auto Format enabled
+2022-10-12 14:41:51.0433 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:41:51.1999 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:41:51.2386 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:41:52.3228 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:43:29.4317 Info Message Template Auto Format enabled
+2022-10-12 14:43:29.4393 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:43:29.5339 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:43:29.5663 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:43:30.4523 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:44:01.5119 Info Message Template Auto Format enabled
+2022-10-12 14:44:01.5207 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:44:01.6224 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:44:01.6528 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:44:02.5410 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:44:30.0294 Info Message Template Auto Format enabled
+2022-10-12 14:44:30.0374 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:44:30.1352 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:44:30.1670 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:44:31.0745 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:45:44.4319 Info Message Template Auto Format enabled
+2022-10-12 14:45:44.4422 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:45:44.5516 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:45:44.5812 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:45:45.4587 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:47:27.0654 Info Message Template Auto Format enabled
+2022-10-12 14:47:27.0654 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:47:27.1841 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:47:27.2151 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:47:39.3602 Info Message Template Auto Format enabled
+2022-10-12 14:47:39.3602 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:47:39.4655 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:47:39.4958 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:47:40.7559 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:49:09.9669 Info Message Template Auto Format enabled
+2022-10-12 14:49:09.9795 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:49:10.0782 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:49:10.1150 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:49:10.9993 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:50:01.4756 Info Message Template Auto Format enabled
+2022-10-12 14:50:01.4861 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:50:01.5865 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:50:01.6179 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:50:02.6309 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:50:46.3556 Info Message Template Auto Format enabled
+2022-10-12 14:50:46.3634 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:50:46.4621 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:50:46.4926 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:50:47.4953 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:51:18.0248 Info Message Template Auto Format enabled
+2022-10-12 14:51:18.0323 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:51:18.1255 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:51:18.1561 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:51:19.1878 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:52:33.0887 Info Message Template Auto Format enabled
+2022-10-12 14:52:33.0978 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:52:33.1937 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:52:33.2376 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:52:34.4246 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:53:19.9452 Info Message Template Auto Format enabled
+2022-10-12 14:53:19.9542 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:53:20.0488 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:53:20.0798 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:53:21.0771 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:54:28.2721 Info Message Template Auto Format enabled
+2022-10-12 14:54:28.2721 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:54:28.3824 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:54:28.4171 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:54:29.4857 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:57:51.7881 Info Message Template Auto Format enabled
+2022-10-12 14:57:51.7881 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 14:57:51.9036 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 14:57:51.9342 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 14:57:52.9236 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:06:08.2630 Info Message Template Auto Format enabled
+2022-10-12 15:06:08.2752 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 15:06:08.4014 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 15:06:08.4319 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:06:09.4574 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:07:20.3599 Info Message Template Auto Format enabled
+2022-10-12 15:07:20.3599 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 15:07:20.4659 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 15:07:20.5017 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:07:21.5141 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:11:34.6435 Info Message Template Auto Format enabled
+2022-10-12 15:11:34.6435 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 15:11:34.7486 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 15:11:34.7807 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:11:35.9263 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:12:30.2246 Info Message Template Auto Format enabled
+2022-10-12 15:12:30.2370 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 15:12:30.3433 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 15:12:30.3758 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:12:31.5089 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:21:17.8451 Info Message Template Auto Format enabled
+2022-10-12 15:21:17.8451 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 15:21:17.9933 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 15:21:18.0247 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:21:19.3272 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:22:15.9897 Info Message Template Auto Format enabled
+2022-10-12 15:22:15.9897 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 15:22:16.0778 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 15:22:16.1235 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:22:17.1437 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:23:27.8162 Info Message Template Auto Format enabled
+2022-10-12 15:23:27.8162 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 15:23:27.9304 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 15:23:27.9654 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:23:29.0470 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:23:49.3025 Info Message Template Auto Format enabled
+2022-10-12 15:23:49.3025 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 15:23:49.4129 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 15:23:49.4426 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:23:50.5115 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:27:13.0226 Info Message Template Auto Format enabled
+2022-10-12 15:27:13.0226 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 15:27:13.1246 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 15:27:13.1559 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:27:14.1855 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:29:16.5593 Info Message Template Auto Format enabled
+2022-10-12 15:29:16.5673 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 15:29:16.6618 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 15:29:16.6919 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:29:17.6266 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:30:26.4634 Info Message Template Auto Format enabled
+2022-10-12 15:30:26.4708 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 15:30:26.5696 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 15:30:26.6017 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:30:27.5105 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:35:07.3152 Info Message Template Auto Format enabled
+2022-10-12 15:35:07.3152 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 15:35:07.4248 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 15:35:07.4693 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:35:08.6200 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:36:20.8815 Info Message Template Auto Format enabled
+2022-10-12 15:36:20.8815 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 15:36:20.9951 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 15:36:21.0271 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:36:22.0236 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:38:07.2141 Info Message Template Auto Format enabled
+2022-10-12 15:38:07.2216 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 15:38:07.3188 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 15:38:07.3496 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:38:08.2785 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:39:57.3173 Info Message Template Auto Format enabled
+2022-10-12 15:39:57.3173 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 15:39:57.4589 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 15:39:57.4964 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:39:58.5150 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:40:58.1962 Info Message Template Auto Format enabled
+2022-10-12 15:40:58.2096 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 15:40:58.3164 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 15:40:58.3482 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:40:59.3754 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:42:57.8300 Info Message Template Auto Format enabled
+2022-10-12 15:42:57.8300 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 15:42:57.9469 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 15:42:57.9875 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:42:58.9849 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:43:26.1723 Info Message Template Auto Format enabled
+2022-10-12 15:43:26.1723 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 15:43:26.2698 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 15:43:26.3032 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:43:27.5854 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:48:21.3105 Info Message Template Auto Format enabled
+2022-10-12 15:48:21.3237 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 15:48:21.4504 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 15:48:21.4814 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:48:22.6042 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:49:25.8456 Info Message Template Auto Format enabled
+2022-10-12 15:49:25.8456 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 15:49:25.9484 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 15:49:25.9785 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:49:27.2331 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:50:37.9911 Info Message Template Auto Format enabled
+2022-10-12 15:50:38.0005 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 15:50:38.0955 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 15:50:38.1267 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 15:50:39.1139 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:06:46.7570 Info Message Template Auto Format enabled
+2022-10-12 16:06:46.7570 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 16:06:46.8703 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 16:06:46.9010 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:06:47.9537 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:07:24.2308 Info Message Template Auto Format enabled
+2022-10-12 16:07:24.2421 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 16:07:24.3496 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 16:07:24.3896 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:07:25.4723 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:08:14.5453 Info Message Template Auto Format enabled
+2022-10-12 16:08:14.5558 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 16:08:14.6498 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 16:08:14.6805 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:08:15.7636 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:10:35.4257 Info Message Template Auto Format enabled
+2022-10-12 16:10:35.4474 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 16:10:35.5667 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 16:10:35.6001 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:10:36.8145 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:11:38.2983 Info Message Template Auto Format enabled
+2022-10-12 16:11:38.2983 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 16:11:38.3987 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 16:11:38.4292 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:11:39.4499 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:13:56.1954 Info Message Template Auto Format enabled
+2022-10-12 16:13:56.2066 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 16:13:56.3045 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 16:13:56.3348 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:13:57.3786 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:14:48.7718 Info Message Template Auto Format enabled
+2022-10-12 16:14:48.7811 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 16:14:48.8962 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 16:14:48.9266 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:14:49.9689 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:18:36.4513 Info Message Template Auto Format enabled
+2022-10-12 16:18:36.4595 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 16:18:36.5596 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 16:18:36.5896 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:18:37.7203 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:20:38.4781 Info Message Template Auto Format enabled
+2022-10-12 16:20:38.4882 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 16:20:38.5948 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 16:20:38.6277 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:20:39.5666 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:21:51.4420 Info Message Template Auto Format enabled
+2022-10-12 16:21:51.4420 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 16:21:51.5560 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 16:21:51.5884 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:21:52.6413 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:23:21.7133 Info Message Template Auto Format enabled
+2022-10-12 16:23:21.7222 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 16:23:21.8164 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 16:23:21.8467 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:23:22.8869 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:24:23.3459 Info Message Template Auto Format enabled
+2022-10-12 16:24:23.3459 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 16:24:23.4511 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 16:24:23.4898 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:24:24.4847 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:25:02.2034 Info Message Template Auto Format enabled
+2022-10-12 16:25:02.2034 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 16:25:02.3040 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 16:25:02.3359 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:25:03.3325 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:25:43.7235 Info Message Template Auto Format enabled
+2022-10-12 16:25:43.7235 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 16:25:43.8325 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 16:25:43.8667 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:25:44.9095 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:32:06.2979 Info Message Template Auto Format enabled
+2022-10-12 16:32:06.2979 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 16:32:06.4045 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 16:32:06.4369 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:32:07.5358 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:34:19.5727 Info Message Template Auto Format enabled
+2022-10-12 16:34:19.5840 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 16:34:19.6888 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 16:34:19.7229 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:34:20.8618 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:35:41.8707 Info Message Template Auto Format enabled
+2022-10-12 16:35:41.8806 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 16:35:41.9779 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 16:35:42.0082 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:35:43.1104 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:37:32.7618 Info Message Template Auto Format enabled
+2022-10-12 16:37:32.7716 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 16:37:32.8781 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 16:37:32.9105 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:37:33.9696 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:37:52.1963 Info Message Template Auto Format enabled
+2022-10-12 16:37:52.2044 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 16:37:52.2980 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 16:37:52.3288 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:37:53.3889 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:38:57.3789 Info Message Template Auto Format enabled
+2022-10-12 16:38:57.3789 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 16:38:57.5042 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 16:38:57.5364 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:38:58.6321 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:40:16.7183 Info Message Template Auto Format enabled
+2022-10-12 16:40:16.7265 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 16:40:16.8213 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 16:40:16.8524 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:40:17.9815 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:44:22.2029 Info Message Template Auto Format enabled
+2022-10-12 16:44:22.2029 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 16:44:22.3047 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 16:44:22.3357 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:44:23.2470 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:46:59.6362 Info Message Template Auto Format enabled
+2022-10-12 16:46:59.6441 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 16:46:59.7394 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 16:46:59.7709 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:47:00.7350 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:48:17.8301 Info Message Template Auto Format enabled
+2022-10-12 16:48:17.8301 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 16:48:17.9482 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 16:48:17.9801 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:48:19.5731 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:50:22.9087 Info Message Template Auto Format enabled
+2022-10-12 16:50:22.9087 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 16:50:23.0136 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 16:50:23.0446 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:50:24.0223 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:53:52.1546 Info Message Template Auto Format enabled
+2022-10-12 16:53:52.1641 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 16:53:52.2602 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 16:53:52.2915 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:53:53.2621 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:55:05.6642 Info Message Template Auto Format enabled
+2022-10-12 16:55:05.6721 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 16:55:05.7657 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 16:55:05.7974 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:55:06.7847 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:58:18.8421 Info Message Template Auto Format enabled
+2022-10-12 16:58:18.8510 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 16:58:18.9445 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 16:58:18.9744 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 16:58:20.0252 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:00:51.1162 Info Message Template Auto Format enabled
+2022-10-12 17:00:51.1263 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 17:00:51.2283 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 17:00:51.2611 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:00:52.3541 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:01:23.9644 Info Message Template Auto Format enabled
+2022-10-12 17:01:23.9719 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 17:01:24.0694 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 17:01:24.1010 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:01:25.0507 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:06:06.7390 Info Message Template Auto Format enabled
+2022-10-12 17:06:06.7390 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 17:06:06.8520 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 17:06:06.8839 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:06:07.8207 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:07:00.7369 Info Message Template Auto Format enabled
+2022-10-12 17:07:00.7369 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 17:07:00.8425 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 17:07:00.8738 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:07:02.3531 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:09:18.8162 Info Message Template Auto Format enabled
+2022-10-12 17:09:18.8162 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 17:09:18.9200 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 17:09:18.9514 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:09:20.0201 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:11:34.8542 Info Message Template Auto Format enabled
+2022-10-12 17:11:34.8629 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 17:11:34.9616 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 17:11:34.9955 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:11:36.0458 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:12:07.7412 Info Message Template Auto Format enabled
+2022-10-12 17:12:07.7412 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 17:12:07.8666 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 17:12:07.8980 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:12:08.9776 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:13:07.4487 Info Message Template Auto Format enabled
+2022-10-12 17:13:07.4598 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 17:13:07.5710 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 17:13:07.6048 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:13:08.7828 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:14:31.1069 Info Message Template Auto Format enabled
+2022-10-12 17:14:31.1164 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 17:14:31.2077 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 17:14:31.2380 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:14:32.3724 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:15:32.5168 Info Message Template Auto Format enabled
+2022-10-12 17:15:32.5168 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 17:15:32.6195 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 17:15:32.6502 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:15:33.6698 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:18:29.7299 Info Message Template Auto Format enabled
+2022-10-12 17:18:29.7406 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 17:18:29.8466 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 17:18:29.8776 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:18:31.2658 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:19:31.9911 Info Message Template Auto Format enabled
+2022-10-12 17:19:32.0001 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 17:19:32.0960 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 17:19:32.1263 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:19:33.0753 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:20:30.0497 Info Message Template Auto Format enabled
+2022-10-12 17:20:30.0497 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 17:20:30.1559 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 17:20:30.1864 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:20:31.2750 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:44:48.4111 Info Message Template Auto Format enabled
+2022-10-12 17:44:48.4270 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 17:44:48.6142 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 17:44:48.6526 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:44:49.7258 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:45:48.0252 Info Message Template Auto Format enabled
+2022-10-12 17:45:48.0333 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 17:45:48.1298 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 17:45:48.1644 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:45:49.1207 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:46:52.1781 Info Message Template Auto Format enabled
+2022-10-12 17:46:52.1781 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 17:46:52.2793 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 17:46:52.3111 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:46:53.2890 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:47:29.2708 Info Message Template Auto Format enabled
+2022-10-12 17:47:29.2708 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 17:47:29.3789 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 17:47:29.4098 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:47:30.5550 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:49:30.3400 Info Message Template Auto Format enabled
+2022-10-12 17:49:30.3485 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 17:49:30.4469 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 17:49:30.4781 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:49:31.5818 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:50:15.3013 Info Message Template Auto Format enabled
+2022-10-12 17:50:15.3013 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 17:50:15.4112 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 17:50:15.4440 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:50:16.4867 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:50:48.8210 Info Message Template Auto Format enabled
+2022-10-12 17:50:48.8288 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 17:50:48.9258 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 17:50:48.9566 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:50:49.9257 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:51:18.5472 Info Message Template Auto Format enabled
+2022-10-12 17:51:18.5472 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 17:51:18.6567 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 17:51:18.6898 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:51:19.7593 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:55:46.0464 Info Message Template Auto Format enabled
+2022-10-12 17:55:46.0551 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 17:55:46.1519 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 17:55:46.1834 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:55:47.1213 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:57:47.8626 Info Message Template Auto Format enabled
+2022-10-12 17:57:47.8626 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 17:57:47.9758 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 17:57:48.0162 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:57:48.9815 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:58:55.4253 Info Message Template Auto Format enabled
+2022-10-12 17:58:55.4253 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 17:58:55.5454 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 17:58:55.5800 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 17:58:56.6787 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:00:34.5400 Info Message Template Auto Format enabled
+2022-10-12 18:00:34.5483 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 18:00:34.6563 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 18:00:34.6897 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:00:35.6185 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:03:38.0002 Info Message Template Auto Format enabled
+2022-10-12 18:03:38.0099 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 18:03:38.1074 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 18:03:38.1409 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:03:39.2115 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:04:23.9525 Info Message Template Auto Format enabled
+2022-10-12 18:04:23.9613 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 18:04:24.0580 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 18:04:24.0923 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:04:25.0760 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:04:56.5617 Info Message Template Auto Format enabled
+2022-10-12 18:04:56.5699 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 18:04:56.6678 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 18:04:56.6989 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:04:57.7911 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:06:30.5899 Info Message Template Auto Format enabled
+2022-10-12 18:06:30.5994 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 18:06:30.7008 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 18:06:30.7310 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:06:31.8746 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:09:57.3188 Info Message Template Auto Format enabled
+2022-10-12 18:09:57.3188 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 18:09:57.4284 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 18:09:57.4594 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:09:58.5064 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:11:36.6827 Info Message Template Auto Format enabled
+2022-10-12 18:11:36.6930 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 18:11:36.7818 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 18:11:36.8285 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:11:37.7630 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:13:06.7231 Info Message Template Auto Format enabled
+2022-10-12 18:13:06.7231 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 18:13:06.8381 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 18:13:06.8702 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:13:07.9479 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:13:41.8140 Info Message Template Auto Format enabled
+2022-10-12 18:13:41.8140 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 18:13:41.9071 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 18:13:41.9533 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:13:43.0075 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:14:28.0972 Info Message Template Auto Format enabled
+2022-10-12 18:14:28.0972 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 18:14:28.2076 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 18:14:28.2374 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:14:29.1418 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:15:09.7806 Info Message Template Auto Format enabled
+2022-10-12 18:15:09.7886 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 18:15:09.8833 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 18:15:09.9146 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:15:11.7569 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:15:51.1646 Info Message Template Auto Format enabled
+2022-10-12 18:15:51.1722 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 18:15:51.2514 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 18:15:51.2966 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:15:52.2345 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:16:24.5633 Info Message Template Auto Format enabled
+2022-10-12 18:16:24.5633 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 18:16:24.6639 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 18:16:24.6936 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:16:25.8039 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:17:03.7436 Info Message Template Auto Format enabled
+2022-10-12 18:17:03.7518 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 18:17:03.8475 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 18:17:03.8780 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:17:04.8156 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:17:31.4503 Info Message Template Auto Format enabled
+2022-10-12 18:17:31.4578 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 18:17:31.5486 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 18:17:31.5794 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:17:32.6308 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:18:50.3336 Info Message Template Auto Format enabled
+2022-10-12 18:18:50.3336 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 18:18:50.4310 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 18:18:50.4610 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:18:51.4963 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:22:00.1442 Info Message Template Auto Format enabled
+2022-10-12 18:22:00.1442 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 18:22:00.2459 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 18:22:00.2758 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:22:01.3476 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:24:39.5306 Info Message Template Auto Format enabled
+2022-10-12 18:24:39.5418 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 18:24:39.6558 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 18:24:39.6908 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:24:40.7431 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:25:07.3558 Info Message Template Auto Format enabled
+2022-10-12 18:25:07.3756 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 18:25:07.5374 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 18:25:07.5821 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:25:08.9812 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:25:44.2278 Info Message Template Auto Format enabled
+2022-10-12 18:25:44.2381 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 18:25:44.3353 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 18:25:44.3677 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:25:45.4704 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:26:44.7968 Info Message Template Auto Format enabled
+2022-10-12 18:26:44.8045 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 18:26:44.9065 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 18:26:44.9563 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:26:46.2535 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:27:10.2413 Info Message Template Auto Format enabled
+2022-10-12 18:27:10.2413 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 18:27:10.3453 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 18:27:10.3777 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:27:12.0924 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:28:13.8089 Info Message Template Auto Format enabled
+2022-10-12 18:28:13.8166 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 18:28:13.9142 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 18:28:13.9445 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:28:14.8441 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:29:15.1062 Info Message Template Auto Format enabled
+2022-10-12 18:29:15.1179 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 18:29:15.2209 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 18:29:15.2508 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:29:16.4202 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:31:00.1441 Info Message Template Auto Format enabled
+2022-10-12 18:31:00.1441 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-12 18:31:00.2602 Info Adding target DatabaseTarget(Name=db)
+2022-10-12 18:31:00.2915 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-12 18:31:01.2336 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config

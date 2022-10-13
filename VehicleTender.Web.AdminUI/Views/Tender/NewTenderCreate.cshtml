@@ -1,14 +1,9 @@
-﻿@*
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>*@
+﻿
 
 
 
 <h5 class="mb-3 pb-3 display-5 text-center mt-4">İhale Ekleme Sayfası</h5>
-<div class="row">
+<div class="row add_tender m-5">
     <div class="col-4">
         <label>İhale Adı</label>
         <input type="text" class="form-control" id="TenderName">
@@ -67,12 +62,8 @@
 
 </div>
 
-<br>
-<br>
-<br>
-<br>
 
-<div class="card mb-4">
+<div class="card mb-4 m-5">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
         İhale Araç Listesi
@@ -88,11 +79,12 @@
                     <th>Statü</th>
                     <th>Kaydeden Kullanıcı</th>
                     <th>Kaydetme Zamanı</th>
-                    <th></th>
+                    <th>Fiyat</th>
+                    <th>İhaleye Ekle</th>
                 </tr>
             </thead>
             <tbody>
-                @for (int i = 0; i < 15; i++)
+                @for (int i = 0; i < 2; i++)
                 {
                     <tr>
                         <td>Name</td>
@@ -102,19 +94,19 @@
                         <td>Age</td>
                         <td>Start date</td>
                         <td>sdgasdfsadf</td>
-                        <td style="text-align:center;">
-                            <button type="button" class="btn btn-primary  m-3" data-toggle="modal" data-target="#addTenderCarPricePopUp">
+                        <td class="tender_table_btn">
+                            <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#addTenderCarPricePopUp">
                                 Fiyat
                             </button>
                         </td>
+                        <td class="tender_table_btn"><input type="checkbox" /></td>
                     </tr>
                 }              
             </tbody>
         </table>
     </div>
 </div>
-<div class="justify-content-md-end text-md-end">
-    <input type="submit" value="Araç Ekle" class="btn btn-secondary col-md-1" />
+<div class="justify-content-md-end text-md-end m-5">
     <input type="submit" value="Kaydet" class="btn btn-success col-md-1" />
 </div>
 

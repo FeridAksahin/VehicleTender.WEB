@@ -2,10 +2,10 @@
     ViewData["Title"] = "Vehicle List";
     ViewData["InfoTitle"] = "Bu sayfada admin kullanıcılar araçları listeleyebilirler...";
 }
-<div>
+<div> 
+    <h5 class="mb-3 pb-3 display-5 text-center mt-4">Araçlar</h5>
     <form>
-        <h5 class="mb-3 pb-3 display-5 text-center mt-4">Araçlar</h5>
-        <div class="row">
+        <div class="row filter">
             <div class="col-4">
                 <label>Marka</label>
                 <select class="form-control">
@@ -30,12 +30,16 @@
                     <option value="value">text</option>
                 </select>
             </div>
+            <div class="row">
+                <div class="col-12">
+                    <input type="submit" value="Listele" class="btn btn-primary m-3 list" />
+                </div>
+            </div>
         </div>
-        <input style="float:right;" type="submit" value="Listele" class="btn btn-outline-primary mt-1" />
     </form>
 </div>
-<a class="btn btn-outline-info w-100 p-3 mt-3 mb-3" role="button">Yeni</a>
-<div class="card mb-4">
+
+<div class="card mb-4 m-5">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
         Araç Listeleme Tablosu
@@ -65,7 +69,8 @@
                         <td>Age</td>
                         <td>Start date</td>
                         <td>sdgasdfsadf</td>
-                        <td style="text-align:center;"><button type="button" class="btn btn-warning">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                        <td>sdgasdfsadf</td>
+                        <td class="update_delete"><a asp-controller="Vehicle" asp-action="UpdateVehicle" class="btn btn-warning">Güncelle</a> <button type="button" class="btn btn-danger">Sil</button></td>
                     </tr>
                 }
 
@@ -73,3 +78,4 @@
         </table>
     </div>
 </div>
+<a class="btn btn-primary w-100 p-3 mt-3 mb-3" asp-controller="Vehicle" asp-action="AddVehicle" role="button">Yeni Araç Ekle</a>

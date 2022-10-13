@@ -14,5 +14,61 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+}
+td .btn{
+    width:120px !important;
+    color:white;
+    margin:2px;
+}
+td .btn:hover {
+    color: black !important;
+    background-color: white !important;
+}
+
+.dataTables_wrapper {
+
+    /*border:1px solid gray !important;*/
+    padding: 50px;
+}
+.btn {
+    background-color: #212529 !important;
+}
+.btn:hover {
+    color: black !important;
+    background-color: white !important;
+}
+table {
+    color: #212529 !important;
+}
+.paginate_button a {
+    background-color:white !important;
+    color:black !important;
+}
+.filter {
+    border: 1px solid #dddddd;
+    padding: 20px;
+}
+.list {
+    float: right;
+}
+.update_delete {
+    text-align: center !important;
+    width: 300px;
+}
+.vehicle_update {
+    border: 1px solid #dddddd !important;
+    padding:30px;
+}
+
+.add_tender {
+    border: 1px solid #dddddd !important;
+    padding: 30px;
+}
+.tender_table_btn{
+    text-align:center;
+}
+.add_update_vehicle_btn {
+    width: 177px !important;
+    display: inline !important;
 }

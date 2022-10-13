@@ -77,7 +77,7 @@ namespace VehicleTender.API.Entity.Context
         public virtual DbSet<EnumPacket> EnumPacket { get; set; }
         public virtual DbSet<EnumStatuType> EnumStatuType { get; set; }
         public virtual DbSet<Favorite> Favorite { get; set; }
-        public virtual DbSet<BuyingTenderVehicle> BuyingTenderVehicle { get; set; }
+        public virtual DbSet<BuyingTender> BuyingTender { get; set; }
         public virtual DbSet<TenderVehicleSales> TenderVehicleSales { get; set; }
         public virtual DbSet<AdvertInfo> AdvertInfo { get; set; }
         public virtual DbSet<Commission> Commission { get; set; }
@@ -108,6 +108,7 @@ namespace VehicleTender.API.Entity.Context
         public virtual DbSet<CarFeatureValue> CarFeatureValue { get; set; }
         public virtual DbSet<HardwareType> HardwareType { get; set; }
         public virtual DbSet<TenderVehicleDetail> TenderVehicleDetail { get; set; }
+        public virtual DbSet<TenderVehicleBid> TenderVehicleBid { get; set; }
 
     }
 }

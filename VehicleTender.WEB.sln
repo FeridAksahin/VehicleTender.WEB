@@ -13,9 +13,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleTender.WEB.AdminDTO"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleTender.WEB.EndUser.Common", "VehicleTender.WEB.EndUser.Common\VehicleTender.WEB.EndUser.Common.csproj", "{63EE4E5E-7704-42A2-8607-FCCB1EFAFA29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleTender.WEB.Admin.Common", "VehicleTender.WEB.Admin.Common\VehicleTender.WEB.Admin.Common.csproj", "{01AD44EA-BCC4-4376-8BBE-1EAD5A85AD58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleTender.WEB.Admin.Common", "VehicleTender.WEB.Admin.Common\VehicleTender.WEB.Admin.Common.csproj", "{01AD44EA-BCC4-4376-8BBE-1EAD5A85AD58}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleTender.WEB.UserDTO", "VehicleTender.WEB.UserDTO\VehicleTender.WEB.UserDTO.csproj", "{CDE75240-D855-4BC8-AAA3-1794E5778313}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleTender.WEB.Admin.Validation", "VehicleTender.WEB.Admin.Validation\VehicleTender.WEB.Admin.Validation.csproj", "{DACA73F4-ACFA-4CB1-9B79-B7BD60CED1B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleTender.WEB.EndUser.Validation", "VehicleTender.WEB.EndUser.Validation\VehicleTender.WEB.EndUser.Validation.csproj", "{BA9118E2-E61F-4911-8C91-8FF3198E5F47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,14 @@ Global
 		{CDE75240-D855-4BC8-AAA3-1794E5778313}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDE75240-D855-4BC8-AAA3-1794E5778313}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDE75240-D855-4BC8-AAA3-1794E5778313}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DACA73F4-ACFA-4CB1-9B79-B7BD60CED1B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DACA73F4-ACFA-4CB1-9B79-B7BD60CED1B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DACA73F4-ACFA-4CB1-9B79-B7BD60CED1B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DACA73F4-ACFA-4CB1-9B79-B7BD60CED1B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA9118E2-E61F-4911-8C91-8FF3198E5F47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA9118E2-E61F-4911-8C91-8FF3198E5F47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA9118E2-E61F-4911-8C91-8FF3198E5F47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA9118E2-E61F-4911-8C91-8FF3198E5F47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,10 @@
-﻿<div class="card mb-4">
+﻿<h5 class="mb-3 pb-3 display-5 text-center mt-4">Komisyon İşlemleri</h5>
+
+<div class="row m-5">
+    <a class="btn btn-primary w-100 p-3 mt-3 mb-3" data-toggle="modal" data-target="#exampleModalCenter">Yeni Komisyon Aralığı Ekle</a>
+</div>
+
+<div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
        Komisyon Ücretleri
@@ -21,19 +27,84 @@
                         <td>0 ₺</td>
                         <td>100.000 ₺</td>
                         <td>3000 ₺</td>
-                        <td style="text-align:center;"><a asp-controller="Comission" asp-action="Delete" asp-route-id="Id" class="btn btn-danger">Sil</a><span>  </span><a asp-action="Update" asp-controller="Comission" asp-route-id="Id" class="btn btn-dark">Güncelle</a></td>
+                        <td class="update_delete"><button type="button" class="btn btn-warning"data-toggle="modal" data-target="#exampleModalCenter1">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
 
                     </tr>
                 }         
 
             </tbody>
         </table>
-        </div>
-        </div>
+    </div>
+</div>
 
-                    <div class="d-grid gap-2">
-   <button class="btn btn-primary" type="button" >  <a asp-controller="Comission" asp-action="Add" class="text-white">Yeni Komisyon Aralığı Ekle</a></button>
 
-  
-  
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="text-center display-7 modal-title" id="exampleModalLongTitle">Yeni Komisyon Aralığı Ekle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="mb-3">
+                            <label class="form-label">Başlangıç Fiyat Araloğı</label>
+                            <input type="text" class="form-control">
+
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Bitiş Fiyat Aralığı</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Komisyon Ücreti</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                            <button type="submit" class="btn btn-primary">Kaydet</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="text-center display-7 modal-title" id="exampleModalLongTitle">Komisyon Aralığı Güncelle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="mb-3">
+                            <label class="form-label">Başlangıç Fiyat Araloğı</label>
+                            <input type="text" class="form-control">
+
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Bitiş Fiyat Aralığı</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Komisyon Ücreti</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                            <button type="submit" class="btn btn-primary">Kaydet</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

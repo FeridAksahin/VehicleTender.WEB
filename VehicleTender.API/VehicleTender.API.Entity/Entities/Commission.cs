@@ -19,6 +19,8 @@ namespace VehicleTender.API.Entity.Entities
         public decimal? CommissionPrice { get; set; }
 
         public DateTime? EndDate { get; set; }
+        public decimal? CarPriceStarting { get; set; }  
+        public decimal? CarPriceEnd { get; set; }
 
 
     }

@@ -14,23 +14,18 @@ namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
     public class CarService
     {
         RequestApiService requestApiService = new RequestApiService("https://localhost:7256/api/");
-        static public TokenDTO SetToken
+        public async Task<List<CarDTO>> GetCarAsync(TokenDTO bearerTokenDTO)
         {
-            set
-            {
-                RequestApiService.SetToken = value;
-            }
+             //testlik
+            return await requestApiService.GetAsyncList<CarDTO>(bearerTokenDTO,"endpoint yolu gelmeli");
         }
-        public async Task<List<CarDTO>> GetCarAsync()
-        {
-            return await requestApiService.GetAsyncList<CarDTO>("endpoint yolu gelmeli");
-
-        }
+        /*
         public async Task<TokenDTO> GetToken(UserLoginDTO userLoginDTO, string endpoint)
         {
             var jsonToken = await requestApiService.GetToken(userLoginDTO, endpoint);
-            return SetToken = jsonToken;
+            return jsonToken;
         }
+        */
         public async Task<List<VehicleListViewModel>> GetListAsync(GetVehicleListInput input)
         {
             string endpoint = "Vehicle/GetIndex";

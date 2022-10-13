@@ -4,15 +4,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
 {
     public class TenderController : Controller
     {
-        public IActionResult TenderList()
-        {
-            return View();
-        }
 
-        public IActionResult TenderList2()
-        {
-            return View();
-        }
         [HttpGet]
         public IActionResult Tender()
         {
@@ -22,6 +14,11 @@ namespace VehicleTender.Web.AdminUI.Controllers
         {
             return View();
         }
+        public IActionResult UpdateTender()
+        {
+            return View();
+        }
+
 
     }
 }

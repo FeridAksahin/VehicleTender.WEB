@@ -1,13 +1,22 @@
-using VehicleTender.Web.AdminUI.ApiServices.Base;
+using NLog;
+using NLog.Web;
+using VehicleTender.Web.AdminUI.ApiServices.Base.Concrete;
 
+var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
+logger.Debug("init main");
+
+try
+{
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Logging.ClearProviders();
+builder.Host.UseNLog();
 
-builder.Services.AddScoped<IBaseApiService<Task>, BaseApiService<Task>>();
+//builder.Services.AddScoped<IBaseApiService, BaseApiService>();
 
-builder.Services.AddHttpClient<BaseApiService<Task>>(options =>
+builder.Services.AddHttpClient<BaseApiService>(options =>
 {
     options.BaseAddress = new Uri(builder.Configuration["apiAddress"]);
 });
@@ -33,3 +42,15 @@ app.MapControllerRoute(
     pattern: "{controller=UserOperations}/{action=UserList}/{id?}");
 
 app.Run();
+}
+catch (Exception exception)
+{
+    // NLog: catch setup errors
+    logger.Error(exception, "Stopped program because of exception");
+    throw;
+}
+finally
+{
+    // Ensure to flush and stop internal timers/threads before application-exit (Avoid segmentation fault on Linux)
+    NLog.LogManager.Shutdown();
+}

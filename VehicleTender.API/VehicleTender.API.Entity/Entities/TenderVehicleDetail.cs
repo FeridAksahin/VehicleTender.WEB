@@ -19,5 +19,6 @@ namespace VehicleTender.API.Entity.Entities
         public virtual CarDetailInfo CarDetailInfo { get; set; }
         [ForeignKey("TenderVehicleSalesId")]
         public virtual TenderVehicleSales TenderVehicleSales { get; set; }
+        public virtual List<TenderVehicleBid> TenderVehicleBid { get; set; }
     }
 }
