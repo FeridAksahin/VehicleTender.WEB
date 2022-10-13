@@ -4,41 +4,55 @@ namespace VehicleTender.API.Api.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class ExpertiseController : Controller
+    public class ExpertiseController : ControllerBase
     {
-        /// <summary>
-        /// All Expertise actions will be done here.
-        /// </summary>
-        /// <returns></returns>
-        /// 
-
-        private readonly ILogger<ExpertiseController> _log;
-        public ExpertiseController(ILogger<ExpertiseController> log)
+        private readonly ILogger<VehicleController> _log;
+        public ExpertiseController(ILogger<VehicleController> log)
         {
             _log = log;
         }
 
-        [HttpGet("")]
-        public IActionResult GetIndex()
 
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
         {
-            _log.LogError("asdfasdfasd");
+
             return Ok();
         }
-        [HttpPut("")]
-        public IActionResult PutIndex()
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
         {
+
             return Ok();
         }
-        [HttpPost("")]
-        public IActionResult PostIndex()
+        [HttpGet]
+        public async Task<IActionResult> Count()
         {
+
             return Ok();
+
         }
-        [HttpDelete("")]
-        public IActionResult DeleteIndex()
+
+        [HttpPost]
+        public async Task<IActionResult> Create()
         {
-            return Ok();
+
+            return Created(String.Empty, null);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Update()
+        {
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Remove(int id)
+        {
+
+
+            return NoContent();
         }
     }
 }

@@ -4,7 +4,7 @@ namespace VehicleTender.API.Api.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class StockController : Controller
+    public class StockController : ControllerBase
     {
         /// <summary>
         /// All Stock actions will be done here.

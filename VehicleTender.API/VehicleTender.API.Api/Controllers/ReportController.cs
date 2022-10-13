@@ -4,7 +4,7 @@ namespace VehicleTender.API.Api.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class ReportController : Controller
+    public class ReportController : ControllerBase
     {
         /// <summary>
         /// All Report actions will be done here.
@@ -16,26 +16,47 @@ namespace VehicleTender.API.Api.Controllers
             _log = log;
         }
 
-        [HttpGet("")]
-        public IActionResult GetIndex()
 
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
         {
+
             return Ok();
         }
-        [HttpPut("")]
-        public IActionResult PutIndex()
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
         {
+
             return Ok();
         }
-        [HttpPost("")]
-        public IActionResult PostIndex()
+        [HttpGet]
+        public async Task<IActionResult> Count()
         {
+
             return Ok();
+
         }
-        [HttpDelete("")]
-        public IActionResult DeleteIndex()
+
+        [HttpPost]
+        public async Task<IActionResult> Create()
         {
-            return Ok();
+
+            return Created(String.Empty, null);
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> Update()
+        {
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Remove(int id)
+        {
+
+
+            return NoContent();
         }
     }
 }

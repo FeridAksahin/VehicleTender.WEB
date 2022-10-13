@@ -4,10 +4,10 @@ namespace VehicleTender.API.Api.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class TenderController : ControllerBase
+    public class AdvertController : ControllerBase
     {
         private readonly ILogger<VehicleController> _log;
-        public TenderController(ILogger<VehicleController> log)
+        public AdvertController(ILogger<VehicleController> log)
         {
             _log = log;
         }

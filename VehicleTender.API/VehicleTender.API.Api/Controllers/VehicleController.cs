@@ -5,44 +5,55 @@ namespace VehicleTender.API.Api.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class VehicleController : Controller
+    public class VehicleController : ControllerBase
     {
-        /// <summary>
-        /// All Vehicle actions will be done here.
-        /// </summary>
-        /// <returns></returns>
-
         private readonly ILogger<VehicleController> _log;
         public VehicleController(ILogger<VehicleController> log)
         {
             _log = log;
         }
 
-        [HttpGet("")]
-        public IActionResult GetIndex([FromQuery] GetVehicleListInput input)
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
         {
-            List<VehicleViewModel> vehicleList = new List<VehicleViewModel>
-            {
-                new VehicleViewModel{ ID = 1, CreatedDate = DateTime.Now, Bireysel = true, Name="BMW", Statu="Satışta", UserID = 1, VehicleModel = "3.20"},
-                 new VehicleViewModel{ ID = 2, CreatedDate = DateTime.Now, Bireysel = true, Name="Mercedes", Statu="Satışta", UserID = 1, VehicleModel = "E250"}
-            };
-            return Ok(vehicleList);
+            
+            return Ok();
+        }
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+           
+            return Ok();
+        }
+        [HttpGet]
+        public async Task<IActionResult> Count()
+        {
+         
+            return Ok();
+
+        }
+     
+        [HttpPost]
+        public async Task<IActionResult> Create()
+        {
+            
+            return Created(String.Empty,null);
+        }
+   
+        [HttpPut]
+        public async Task<IActionResult> Update()
+        {
+           
+            return NoContent();
         }
 
-        [HttpPut("")]
-        public IActionResult PutIndex()
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Remove(int id)
         {
-            return Ok();
-        }
-        [HttpPost("")]
-        public IActionResult PostIndex()
-        {
-            return Ok();
-        }
-        [HttpDelete("")]
-        public IActionResult DeleteIndex()
-        {
-            return Ok();
+
+           
+            return NoContent();
         }
     }
 }

@@ -1,42 +1,85 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using VehicleTender.API.Api.ViewModel;
+using VehicleTender.API.Entity.Context;
+using VehicleTender.API.Entity.Entities;
 
 namespace VehicleTender.API.Api.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class UserController : Controller
+    public class UserController : ControllerBase
     {
-        /// <summary>
-        /// All User actions will be done here.
-        /// </summary>
-        /// <returns></returns>
+        readonly VehicleTenderContext _context;
+        readonly IConfiguration _configuration;
+       
 
-        private readonly ILogger<UserController> _log;
-        public UserController(ILogger<UserController> log)
+
+        public UserController(VehicleTenderContext content, IConfiguration configuration)
         {
-            _log = log;
+            _context = content;
+            _configuration = configuration;
+           
         }
 
-        [HttpGet("")]
-        public IActionResult GetIndex()
 
+        [HttpPost]
+        [Route("SignIn")]
+        public async Task<bool> SignIn([FromBody] UserSignInViewModel Singuser)
+        {
+            VehicleTender.API.Entity.Entities.User user = new User();
+            user.Name = Singuser.Name;
+            user.UserName = Singuser.UserName;
+            user.Mail = Singuser.Mail;
+            user.Password = Singuser.Password;
+            await _context.User.AddAsync(user);
+            if (_context.SaveChanges() > 0)
+            {
+                return true;
+            }
+            else return false;
+
+        }
+        public async Task<IActionResult> SignOut()
         {
             return Ok();
         }
-        [HttpPut("")]
-        public IActionResult PutIndex()
+
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
         {
+
             return Ok();
         }
-        [HttpPost("")]
-        public IActionResult PostIndex()
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
         {
+
             return Ok();
         }
-        [HttpDelete("")]
-        public IActionResult DeleteIndex()
+        [HttpGet]
+        public async Task<IActionResult> Count()
         {
+
             return Ok();
+
         }
+
+        [HttpPut]
+        public async Task<IActionResult> Update()
+        {
+
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Remove(int id)
+        {
+
+
+            return NoContent();
+        }
+
+
     }
 }
