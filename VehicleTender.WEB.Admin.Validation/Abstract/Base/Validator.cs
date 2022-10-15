@@ -6,7 +6,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VehicleTender.WEB.Admin.Common.Validation.Validators.Base
+namespace VehicleTender.API.Validation.Validators.Base
 {
     public record Validator
     {

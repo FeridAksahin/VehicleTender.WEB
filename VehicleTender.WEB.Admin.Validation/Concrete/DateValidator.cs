@@ -4,13 +4,14 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using VehicleTender.WEB.Admin.Common.Validation.Validators.Base;
+using VehicleTender.API.Validation.Validators.Abstract;
+using VehicleTender.API.Validation.Validators.Base;
 
-namespace VehicleTender.WEB.Admin.Common.Validation.Validators
+namespace VehicleTender.API.Validation.Validators.Concrete
 {
-    public record DateValidator<T>() : Validator, IValidator<T>
+    public record DateValidator<T>() : IDateValidator<T>
     {
-        public List<(bool, Exception)> Validate(T value, int? value2, int? value3, string value4, PropertyInfo? info, object? model)
+        public List<(bool, Exception)> Validate(T value, int? value2, string value4)
         {
             var errorList = new List<(bool, Exception)>();
             if (!DateTime.TryParse(value.ToString(), out DateTime temp))

@@ -4,13 +4,14 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using VehicleTender.WEB.Admin.Common.Validation.Validators.Base;
+using VehicleTender.API.Validation.Validators.Abstract;
+using VehicleTender.API.Validation.Validators.Base;
 
-namespace VehicleTender.WEB.Admin.Common.Validation.Validators
+namespace VehicleTender.API.Validation.Validators.Concrete
 {
-    public record StringValidator<T>() : Validator, IValidator<T>
+    public record StringValidator<T>() : Validator, IStringValidator<T>
     {
-        public List<(bool, Exception)> Validate(T value, int? max, int? min, string source, PropertyInfo? info, object? model)
+        public List<(bool, Exception)> Validate(T value, int? max, int? min, string source)
         {
             var errorList = new List<(bool, Exception)>();
             if (!typeof(T).IsValueType && typeof(T) != typeof(string))

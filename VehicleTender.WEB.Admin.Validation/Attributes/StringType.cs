@@ -4,16 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VehicleTender.WEB.Admin.Common.Validation.Attributes
+namespace VehicleTender.API.Validation.Attributes
 {
     [AttributeUsage(AttributeTargets.All)]
-    public class DateType : Attribute
+    public class StringType : Attribute
     {
-        public DateType()
+        public StringType()
         {
 
         }
-        public int MinimumYear { get; set; }
-
+        public int Max { get; set; }
+        public int Min { get; set; }
     }
+
 }

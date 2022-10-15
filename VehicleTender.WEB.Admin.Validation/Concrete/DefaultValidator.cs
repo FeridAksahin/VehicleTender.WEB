@@ -4,11 +4,11 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using VehicleTender.WEB.Admin.Common.Validation.Validators.Base;
+using VehicleTender.API.Validation.Validators.Base;
 
-namespace VehicleTender.WEB.Admin.Common.Validation.Validators
+namespace VehicleTender.API.Validation.Validators.Concrete
 {
-    public record DefaultValidator<T>() : Validator, IValidator<T>
+    public record DefaultValidator<T>() : IValidator<T>
     {
         public List<(bool, Exception)> Validate(T value, int? value2, int? value3, string value4, PropertyInfo? info, object? model)
         {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VehicleTender.WEB.Admin.Common.Validation.Attributes
+namespace VehicleTender.API.Validation.Attributes
 {
     [AttributeUsage(AttributeTargets.All)]
     public class EncryptType : Attribute

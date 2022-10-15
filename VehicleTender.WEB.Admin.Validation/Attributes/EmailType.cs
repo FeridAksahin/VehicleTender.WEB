@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VehicleTender.WEB.Admin.Common.Validation.Attributes
+namespace VehicleTender.API.Validation.Attributes
 {
     public enum EmailValidateType
     {
@@ -14,6 +14,7 @@ namespace VehicleTender.WEB.Admin.Common.Validation.Attributes
         Hotmail = 4,
         Outlook = 5,
         Syntax = 6,
+        General= 7,
     }
     [AttributeUsage(AttributeTargets.All)]
     public class EmailType : Attribute
