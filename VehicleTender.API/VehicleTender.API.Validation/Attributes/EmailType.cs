@@ -14,6 +14,7 @@ namespace VehicleTender.API.Validation.Attributes
         Hotmail = 4,
         Outlook = 5,
         Syntax = 6,
+        General= 7,
     }
     [AttributeUsage(AttributeTargets.All)]
     public class EmailType : Attribute

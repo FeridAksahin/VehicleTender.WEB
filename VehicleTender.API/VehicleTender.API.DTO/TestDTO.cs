@@ -13,7 +13,7 @@ namespace VehicleTender.API.DTO
         public string name { get; set; }
         [DateType(MinimumYear =2000)]
         public DateTime date { get; set; }
-        [EmailType(EmailValidateType =EmailValidateType.Gmail)]
+        [EmailType(EmailValidateType =EmailValidateType.General)]
         public string Email { get; set; }
 
 

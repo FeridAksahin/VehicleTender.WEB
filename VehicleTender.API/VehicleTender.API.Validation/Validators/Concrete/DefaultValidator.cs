@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using VehicleTender.API.Validation.Validators.Base;
 
-namespace VehicleTender.API.Validation.Validators
+namespace VehicleTender.API.Validation.Validators.Concrete
 {
-    public record DefaultValidator<T>() : Validator, IValidator<T>
+    public record DefaultValidator<T>() : IValidator<T>
     {
         public List<(bool, Exception)> Validate(T value, int? value2, int? value3, string value4, PropertyInfo? info, object? model)
         {

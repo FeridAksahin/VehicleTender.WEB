@@ -6,13 +6,14 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using VehicleTender.API.Validation.Attributes;
+using VehicleTender.API.Validation.Validators.Abstract;
 using VehicleTender.API.Validation.Validators.Base;
 
-namespace VehicleTender.API.Validation.Validators
+namespace VehicleTender.API.Validation.Validators.Concrete
 {
-    public record EmailValidator<T>() : Validator, IValidator<T>
+    public record EmailValidator<T>() : IEmailValidator<T>
     {
-        public List<(bool, Exception)> Validate(T value, int? validateType, int? value3, string source, PropertyInfo? info, object? model)
+        public List<(bool, Exception)> Validate(T value, int? validateType, string source)
         {
             var errorList = new List<(bool, Exception)>();
             if (!typeof(T).IsValueType && typeof(T) != typeof(string))
@@ -72,6 +73,15 @@ namespace VehicleTender.API.Validation.Validators
                     case EmailValidateType.Syntax:
                         {
                             Regex mailRegex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+                            if (!mailRegex.Match(emailValue).Success)
+                            {
+                                errorList.Add((false, new Exception("Email is not correct") { Source = source }));
+                            }
+                            break;
+                        }
+                    case EmailValidateType.General:
+                        {
+                            Regex mailRegex = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
                             if (!mailRegex.Match(emailValue).Success)
                             {
                                 errorList.Add((false, new Exception("Email is not correct") { Source = source }));
