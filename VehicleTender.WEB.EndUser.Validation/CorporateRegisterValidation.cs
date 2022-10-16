@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
-using VehicleTender.Web.EndUserUI.ViewModels;
+using VehicleTender.WEB.UserDTO.VM.Account;
 
-namespace VehicleTender.WEB.EndUser.Validation.Validation
+namespace VehicleTender.WEB.EndUser.Validation
 {
-    public class CorporateRegisterValidation : AbstractValidator<CorporateRegisterViewModel>
+    public class CorporateRegisterValidation : AbstractValidator<CorporateRegisterVM>
     {
         public CorporateRegisterValidation()
         {

@@ -4,22 +4,21 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using VehicleTender.Web.EndUserUI.ApiService.RepoService;
-using VehicleTender.Web.EndUserUI.ViewModels.Vehicle;
-using VehicleTender.Web.EndUserUI.ViewModels;
 using VehicleTender.WEB.UserDTO.Concrete;
+using VehicleTender.WEB.UserDTO.VM.Vehicle;
 
 namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
 {
     public class VehicleService
     {
         RequestApiService requestApiService = new RequestApiService("ApiUrl");
-        public async Task<string> IndividualVehicleSale(TokenDTO tokenDTO,IndividualVehicleSaleViewModel individualVehicleSaleViewModel)
+        public async Task<string> IndividualVehicleSale(TokenDTO tokenDTO,IndividualVehicleSaleVM individualVehicleSaleViewModel)
         {
-            return await requestApiService.PostAsync<IndividualVehicleSaleViewModel>(tokenDTO, individualVehicleSaleViewModel, "endpointburayagelecek");
+            return await requestApiService.PostAsync<IndividualVehicleSaleVM>(tokenDTO, individualVehicleSaleViewModel, "endpointburayagelecek");
         }
-        public async Task<string> Tramer(TokenDTO tokenDTO, TramerViewModel tramerViewModel)
+        public async Task<string> Tramer(TokenDTO tokenDTO, TramerVM tramerViewModel)
         {
-            return await requestApiService.PostAsync<TramerViewModel>(tokenDTO,tramerViewModel, "endpointburayagelecek");
+            return await requestApiService.PostAsync<TramerVM>(tokenDTO,tramerViewModel, "endpointburayagelecek");
         }
         //public async Task<List<VehicleListViewModel>> VehicleList(TokenDTO tokenDTO)
         //{

@@ -4,41 +4,41 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using VehicleTender.Web.EndUserUI.ApiService.RepoService;
-using VehicleTender.Web.EndUserUI.ViewModels.User;
 using VehicleTender.WEB.UserDTO.Concrete;
+using VehicleTender.WEB.UserDTO.VM.User;
 
 namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
 {
     public class UserServices
     {
         RequestApiService requestApiService = new RequestApiService("ApiUrl");
-        public async Task<List<FavoriteListViewModel>> FavoriteList(TokenDTO tokenDTO)
+        public async Task<List<FavoriteListVM>> FavoriteList(TokenDTO tokenDTO)
         {
-            return await requestApiService.GetAsyncList<FavoriteListViewModel>(tokenDTO,"endpointburayagelecek");
+            return await requestApiService.GetAsyncList<FavoriteListVM>(tokenDTO,"endpointburayagelecek");
         }
-        public async Task<string> Favorite(TokenDTO tokenDTO, FavoriteViewModel favoriteViewModel)
+        public async Task<string> Favorite(TokenDTO tokenDTO, FavoriteVM favoriteViewModel)
         {
-            return await requestApiService.PostAsync<FavoriteViewModel>(tokenDTO,favoriteViewModel,"endpointburayagelecek");
+            return await requestApiService.PostAsync<FavoriteVM>(tokenDTO,favoriteViewModel,"endpointburayagelecek");
         }
-        public async Task<List<MyOffersViewModel>> MyOffers(TokenDTO tokenDTO)
+        public async Task<List<MyOffersVM>> MyOffers(TokenDTO tokenDTO)
         {
-            return await requestApiService.GetAsyncList<MyOffersViewModel>(tokenDTO,"endpointburayagelecek");
+            return await requestApiService.GetAsyncList<MyOffersVM>(tokenDTO,"endpointburayagelecek");
         }
-        public async Task<string> UserResetPassword(TokenDTO tokenDTO, UserResetPasswordViewModel userResetPasswordViewModel)
+        public async Task<string> UserResetPassword(TokenDTO tokenDTO, UserResetPasswordVM userResetPasswordViewModel)
         {
-            return await requestApiService.PutAsync<UserResetPasswordViewModel>(tokenDTO,userResetPasswordViewModel, "endpointburayagelecek");
+            return await requestApiService.PutAsync<UserResetPasswordVM>(tokenDTO,userResetPasswordViewModel, "endpointburayagelecek");
         }
-        public async Task<UserViewModel> User(TokenDTO tokenDTO)
+        public async Task<UserVM> User(TokenDTO tokenDTO)
         {
-            return await requestApiService.GetAsync<UserViewModel>(tokenDTO,"endpointburayagelecek");
+            return await requestApiService.GetAsync<UserVM>(tokenDTO,"endpointburayagelecek");
         }
-        public async Task<List<VehicleBuyViewModel>> VehicleBuy(TokenDTO tokenDTO)
+        public async Task<List<VehicleBuyVM>> VehicleBuy(TokenDTO tokenDTO)
         {
-            return await requestApiService.GetAsyncList<VehicleBuyViewModel>(tokenDTO,"endpointburayagelecek");
+            return await requestApiService.GetAsyncList<VehicleBuyVM>(tokenDTO,"endpointburayagelecek");
         }
-        public async Task<List<VehicleSoldViewModel>> VehicleSold(TokenDTO tokenDTO)
+        public async Task<List<VehicleSoldVM>> VehicleSold(TokenDTO tokenDTO)
         {
-            return await requestApiService.GetAsyncList<VehicleSoldViewModel>(tokenDTO,"endpointburayagelecek");
+            return await requestApiService.GetAsyncList<VehicleSoldVM>(tokenDTO,"endpointburayagelecek");
         }
     }
 }
