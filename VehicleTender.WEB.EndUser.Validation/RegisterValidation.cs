@@ -1,8 +1,10 @@
 ﻿using FluentValidation;
-using VehicleTender.Web.EndUserUI.ViewModels;
-namespace VehicleTender.WEB.EndUser.Validation.Validation
+using System;
+using VehicleTender.WEB.UserDTO.VM.Account;
+
+namespace VehicleTender.WEB.EndUser.Validation
 {
-    public class RegisterValidation : AbstractValidator<RegisterViewModel>
+    public class RegisterValidation : AbstractValidator<RegisterVM>
     {
         public RegisterValidation()
         {
@@ -25,7 +27,7 @@ namespace VehicleTender.WEB.EndUser.Validation.Validation
             RuleFor(x => x.Telephone).NotEmpty().Length(10, 10);
 
 
-            RuleFor(x => x.Mail).NotEmpty().EmailAddress();
+            RuleFor(x => x.Mail).NotEmpty().EmailAddress().WithMessage("Email boş olamaz!");
 
 
             RuleFor(x => x.Password).NotEmpty().WithMessage("Şifre boş olamaz!");

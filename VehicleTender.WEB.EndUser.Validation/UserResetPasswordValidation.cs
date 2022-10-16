@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
-using VehicleTender.Web.EndUserUI.ViewModels.User;
+using VehicleTender.WEB.UserDTO.VM.User;
 
-namespace VehicleTender.WEB.EndUser.Validation.Validation
+namespace VehicleTender.WEB.EndUser.Validation
 {
-    public class UserResetPasswordValidation : AbstractValidator<UserResetPasswordViewModel>
+    public class UserResetPasswordValidation : AbstractValidator<UserResetPasswordVM>
     {
         public UserResetPasswordValidation()
         {

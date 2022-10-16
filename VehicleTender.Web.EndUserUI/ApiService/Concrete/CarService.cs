@@ -5,7 +5,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using VehicleTender.Web.EndUserUI.ApiService.RepoService;
-using VehicleTender.Web.EndUserUI.ViewModels;
 using VehicleTender.WEB.UserDTO.Concrete;
 
 
@@ -26,15 +25,17 @@ namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
             return jsonToken;
         }
         */
-        public async Task<List<VehicleListViewModel>> GetListAsync(GetVehicleListInput input)
-        {
-            string endpoint = "Vehicle/GetIndex";
-            if (input != null)
-            {
-                endpoint += "?marka=" + input.BrandId + "&model=" + input.ModelId + "&isIndividual=" + input.isIndividual + "&status=" + input.StatusId;
-            }
-            return await requestApiService.GetRequest<List<VehicleListViewModel>>(endpoint);
-        }
+
+        //public async Task<List<VehicleListViewModel>> GetListAsync(GetVehicleListInput input)
+        //{
+        //    string endpoint = "Vehicle/GetIndex";
+        //    if (input != null)
+        //    {
+        //        endpoint += "?marka=" + input.BrandId + "&model=" + input.ModelId + "&isIndividual=" + input.isIndividual + "&status=" + input.StatusId;
+        //    }
+        //    return await requestApiService.GetRequest<List<VehicleListViewModel>>(endpoint);
+        //}
+
         public void Dispose()
         {
             requestApiService.Dispose();

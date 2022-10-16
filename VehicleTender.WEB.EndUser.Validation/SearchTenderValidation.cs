@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
-using VehicleTender.Web.EndUserUI.ViewModels.Tender;
+using VehicleTender.WEB.UserDTO.VM.Tender;
 
-namespace VehicleTender.WEB.EndUser.Validation.Validation
+namespace VehicleTender.WEB.EndUser.Validation
 {
-    public class SearchTenderValidation : AbstractValidator<SearchTenderViewModel>
+    public class SearchTenderValidation : AbstractValidator<SearchTenderVM>
     {
         public SearchTenderValidation()
         {

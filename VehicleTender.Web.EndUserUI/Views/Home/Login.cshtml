@@ -1,4 +1,4 @@
-﻿
+﻿@model VehicleTender.WEB.UserDTO.VM.Account.LoginVM
 @{
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,21 +8,24 @@
         <div class="row">
             <div class="col-6 col-md-4"></div>
             <div class="col-6 col-md-4">
-                <form>
+                @using (Html.BeginForm("Login", "Home", FormMethod.Post))
+                {
                     <h3 class="mb-3 pb-3 display-4 text-center mt-5">Giriş Yap</h3>
                     <div class="mt-4">
-                        <input type="text" class="form-control form-control-lg" placeholder="Kullanıcı Adı">
+                        @Html.TextBoxFor(x => x.Username, new { placeholder = "Kullanıcı Adı", @class = "form-control form-control-lg" })
+                        @Html.ValidationMessageFor(x => x.Username)
                     </div>
                     <div class="mt-4">
-                        <input type="password" class="form-control form-control-lg" placeholder="Şifre" />
+                        @Html.TextBoxFor(x => x.Password, new { placeholder = "Şifre", @class = "form-control form-control-lg" })
+                        @Html.ValidationMessageFor(x => x.Password)
                     </div>
                     <div class="mt-4">
-                        <button style="background-color: #2B2E4A;" class="btn btn-info btn-lg btn-block col-md-12" type="button">Giriş Yap</button>
+                        <button style="background-color: #2B2E4A;" class="btn btn-info btn-lg btn-block col-md-12" type="submit">Giriş Yap</button>
                     </div>
 
                     <p class="small pb-lg-2"><a class="text-muted" href="forgot-password.html">@Html.ActionLink("Şifremi Unuttum!", "ForgotPassword", "Home")</a></p>
                     <p class="mb-4">Hesabınız yok mu? <a href="" class="link-info">@Html.ActionLink("Kayıt Ol", "Register", "Home")</a></p>
-                </form>
+                }
             </div>
         </div>
     </div>

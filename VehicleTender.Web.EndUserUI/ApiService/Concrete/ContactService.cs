@@ -4,17 +4,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using VehicleTender.Web.EndUserUI.ApiService.RepoService;
-using VehicleTender.Web.EndUserUI.ViewModels.Contact;
 using VehicleTender.WEB.UserDTO.Concrete;
+using VehicleTender.WEB.UserDTO.VM.Contact;
 
 namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
 {
     public class ContactService
     {
         RequestApiService requestApiService = new RequestApiService("ApiUrl");
-        public async Task<string> Contact(TokenDTO tokenDTO, ContactViewModel contactViewModel)
+        public async Task<string> Contact(TokenDTO tokenDTO, ContactVM contactViewModel)
         {
-            return await requestApiService.PostAsync<ContactViewModel>(tokenDTO, contactViewModel, "endpointburayagelecek");
+            return await requestApiService.PostAsync<ContactVM>(tokenDTO, contactViewModel, "endpointburayagelecek");
         }
     }
 }

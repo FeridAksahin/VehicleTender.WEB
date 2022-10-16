@@ -4,17 +4,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using VehicleTender.Web.EndUserUI.ApiService.RepoService;
-using VehicleTender.Web.EndUserUI.ViewModels.Error;
 using VehicleTender.WEB.UserDTO.Concrete;
+using VehicleTender.WEB.UserDTO.VM.Error;
 
 namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
 {
     public class ErrorService
     {
         RequestApiService requestApiService = new RequestApiService("ApiUrl");
-        public async Task<ErrorViewModel> Error(TokenDTO tokenDTO,ErrorViewModel errorViewModel)
+        public async Task<ErrorVM> Error(TokenDTO tokenDTO,ErrorVM errorViewModel)
         {
-            return await requestApiService.GetAsync<ErrorViewModel>(tokenDTO,"endpointburayagelecek");
+            return await requestApiService.GetAsync<ErrorVM>(tokenDTO,"endpointburayagelecek");
         }
     }
 }

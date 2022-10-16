@@ -1,4 +1,4 @@
-﻿
+﻿@model VehicleTender.WEB.UserDTO.VM.Account.RegisterVM
 @{
     ViewBag.Title = "Register";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,36 +7,44 @@
     <div class="row">
         <div class="col-6 col-md-4"></div>
         <div class="col-6 col-md-4">
-            <form>
+            @Html.BeginForm("Register", "Home", FormMethod.Post)
+            {
                 <h3 class="mb-3 pb-3 display-4 text-center">Kayıt Ol</h3>
                 <div class="mb-4">
-                    <input type="text" class="form-control form-control-lg" placeholder="Kullanıcı Adı">
+                    @Html.TextBoxFor(x => x.Username, new { placeholder = "Kullanıcı Adı", @class = "form-control form-control-lg" })
+                    @Html.ValidationMessageFor(x => x.Username)
                 </div>
                 <div class="mb-4">
-                    <input type="text" class="form-control form-control-lg" placeholder="Ad">
+                    @Html.TextBoxFor(x => x.Name, new { placeholder = "Ad", @class = "form-control form-control-lg" })
+                    @Html.ValidationMessageFor(x => x.Name)
                 </div>
                 <div class="mb-4">
-                    <input type="text" class="form-control form-control-lg" placeholder="Soyad">
+                    @Html.TextBoxFor(x => x.Surname, new { placeholder = "Soyad", @class = "form-control form-control-lg" })
+                    @Html.ValidationMessageFor(x => x.Surname)
                 </div>
                 <div class="mb-4">
-                    <input type="email" class="form-control form-control-lg" placeholder="Email">
+                    @Html.TextBoxFor(x => x.Mail, new { placeholder = "Email", @class = "form-control form-control-lg" })
+                    @Html.ValidationMessageFor(x => x.Mail)
                 </div>
                 <div class="mb-4">
-                    <input type="password" class="form-control form-control-lg" placeholder="Şifre" />
+                    @Html.TextBoxFor(x => x.Password, new { placeholder = "Şifre", @class = "form-control form-control-lg" })
+                    @Html.ValidationMessageFor(x => x.Password)
                 </div>
                 <div class="mb-4">
-                    <input type="text" class="form-control form-control-lg" placeholder="Telefon">
+                    @Html.TextBoxFor(x => x.Telephone, new { placeholder = "Telefon", @class = "form-control form-control-lg" })
+                    @Html.ValidationMessageFor(x => x.Telephone)
                 </div>
                 <div class="mb-4">
-                    <input type="checkbox">
+                    @Html.CheckBoxFor(x => x.Kvkk)
+                    @Html.ValidationMessageFor(x => x.Kvkk)
                     <label><a href="#"><strong>Kullanım sözleşmesini</strong></a> onaylıyorum!</label>
                 </div>
 
                 <div class="mb-2">
                     <p class="small pb-lg-2"><a class="text-muted">@Html.ActionLink("Kurumsal Kayıt!", "CorporateRegister", "Home")</a></p>
-                    <button style="background-color: #2B2E4A;" class="btn btn-info btn-lg col-md-12" type="button">Kayıt Ol</button>
+                    <button style="background-color: #2B2E4A;" class="btn btn-info btn-lg col-md-12" type="submit">Kayıt Ol</button>
                 </div>
-            </form>
+            }
         </div>
     </div>
 </div>
