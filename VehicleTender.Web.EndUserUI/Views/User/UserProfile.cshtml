@@ -17,6 +17,9 @@
                             <button style="width:200px;" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Favoriler</button>
                         </div>
                         <div class="d-flex justify-content-center mb-2">
+                            <button style="width:200px;" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg5">İhaleye Çıkan Araçlarım</button>
+                        </div>
+                        <div class="d-flex justify-content-center mb-2">
                             <button style="width:200px;" type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg1">Satılan Araçlarım</button>
                         </div>
                         <div class="d-flex justify-content-center mb-2">
@@ -322,6 +325,46 @@
                             <td>@i</td>
                             <td>Buraya mesaj gelecek</td>
                             <td><button class="btn btn-danger" type="button">Sil</button></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade bd-example-modal-lg5" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+
+                        <th style="color:black;">Sıra</th>
+                        <th style="color:black;">Araç Marka</th>
+                        <th style="color:black;">Araç Model</th>
+                        <th style="color:black;">Statü</th>
+                        <th style="color:black;">Kaydedilme Zamanı</th>
+                        <th style="color:black;">İhalede Kalma Süresi</th>
+                        <th style="color:black;">Ön Değerlendirme Fiyatı</th>
+
+                        <th></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < 15; i++)
+                    {
+
+                        <tr>
+                            <td>@i</td>
+                            <td>Ford</td>
+                            <td>Mustang</td>
+                            <td>Başladı</td>
+                            <td>15.10.2022</td>
+                            <td>10 Gün</td>
+                            <td>3500000TL</td>
+                            <td><button class="btn btn-primary">Detay</button></td>
                         </tr>
                     }
                 </tbody>
