@@ -381,6 +381,7 @@
     <Content Include="Views\Vehicle\Stock.cshtml" />
     <Content Include="Views\AdvertList\Index.cshtml" />
     <Content Include="Views\Home\ErrorPage500.cshtml" />
+    <Content Include="Views\Home\Expertise.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
