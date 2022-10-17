@@ -1,0 +1,154 @@
+﻿@{
+    ViewData["Title"] = "Vehicle List";
+    ViewData["InfoTitle"] = "Ekspertiz ile ilgili işlemleri burada yapılır...";
+}
+<div>
+    <h5 class="mb-3 pb-3 display-5 text-center mt-4">Araçlar</h5>
+    <form>
+        <div class="row filter">
+            <div class="col-4">
+                <label>Ekspertiz Şube Adı</label>
+                    <input type="text" class="form-control">
+            </div>
+            <div class="col-4">
+                <label>İl</label>
+                <select class="form-control">
+                    <option value="value">text</option>
+                </select>
+            </div>
+            <div class="col-4">
+                <label>İlçe</label>
+                <select class="form-control">
+                    <option value="value">text</option>
+                </select>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <input type="submit" value="Listele" class="btn btn-primary m-3 list" />
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="card mb-4 m-5">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Ekspertiz Servisi Listeleme Tablosu 
+    </div>
+    <div class="card-body">
+        <table id="datatablesSimple" class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>Servis No</th>
+                    <th>Servis Adı</th>
+                    <th>Servis İl</th>
+                    <th>Servis İlçe</th>
+                    <th>Servis telefon Numarası</th>
+                    <th>Adres</th>
+                    <th></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < 5; i++)
+                {
+                    <tr>
+                        <td>1</td>
+                        <td>A Servisi/Şirketi</td>
+                        <td>İstanbul</td>
+                        <td>Maslak</td>
+                        <td>05000000000</td>
+                        <td>Buraya Adres Gelecek...</td>
+                        <td class="update_delete">
+                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalCenter1">Güncelle</button>
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter2">Sil</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<button type="button" class="btn btn-primary w-100 p-3 mt-3 mb-3" data-toggle="modal" data-target="#exampleModalCenter">Yeni Ekspertiz Servisi Ekle</button>
+
+
+
+
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="text-center display-4 modal-title" id="exampleModalLongTitle">Servis Ekle</p>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <input type="text" class="form-control form-control-lg mt-3" placeholder="Servis Adı" />
+                        <input type="text" class="form-control form-control-lg mt-3" placeholder="Servis İl" />
+                        <input type="text" class="form-control form-control-lg mt-3" placeholder="Servis İlçe" />
+                        <input type="text" class="form-control form-control-lg mt-3" placeholder="Servis telefon Numarası" />
+                        <input type="text" class="form-control form-control-lg mt-3" placeholder="Adres" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="text-center display-4 modal-title" id="exampleModalLongTitle">Servisi Güncelle</p>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <input type="text" class="form-control form-control-lg mt-3" placeholder="Servis Adı" />
+                        <input type="text" class="form-control form-control-lg mt-3" placeholder="Servis İl" />
+                        <input type="text" class="form-control form-control-lg mt-3" placeholder="Servis İlçe" />
+                        <input type="text" class="form-control form-control-lg mt-3" placeholder="Servis telefon Numarası" />
+                        <input type="text" class="form-control form-control-lg mt-3" placeholder="Adres" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p>X Servisi silinsin mi?</p>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <button class="btn btn-outline-danger btn-block mt-3">Sil</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
