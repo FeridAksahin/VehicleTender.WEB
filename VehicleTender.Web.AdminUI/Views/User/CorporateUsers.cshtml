@@ -1,21 +1,33 @@
-﻿<div class="row">
+﻿@using VehicleTender.Web.AdminUI.Models.PageModel
+@model CorporateUserPage;
+
+<div class="row">
     <h5 class="mb-3 pb-3 display-5 text-center mt-4">Kurumsal Kullanıcılar</h5>
-    <form>
+    <form method="get"> <!--Query string ile alıyoruz yani urlden o yüzden get (filtreleme için)-->
         <div class="row filter">
             <div class="col-6">
                 <label>Şirket Adı</label>
-                <select class="form-control">
-                    <option value="value">Borusan</option>
-                    <option value="value">vs</option>
-                    <option value="value">vsvs</option>
+                <select class="form-control" name="companyType">
+                    <option value="Borusan">Borusan</option>
+                    <option value="vs">vs</option>
+                    <option value="vsvs">vsvs</option>
                 </select>
+
+                <!-- şuan şirketleri db den çekmedigimiz için commentta alındı
+                <select class="form-control" name="companyType">
+                    foreach(var item in Model.getAllCorporateUser)
+                    {
+                        <option value="item.CompanyName">item.CompanyName</option>
+                    }
+                </select>
+                -->
             </div>
             <div class="col-6">
                 <label>Paket Bilgisi</label>
-                <select class="form-control">
-                    <option value="value">Altın</option>
-                    <option value="value">Gümüş</option>
-                    <option value="value">Bronz</option>
+                <select class="form-control" name="packetType">
+                    <option value="Altın">Altın</option>
+                    <option value="Gümüş">Gümüş</option>
+                    <option value="Bronz">Bronz</option>
                 </select>
             </div>
             <div class="row">
@@ -33,7 +45,7 @@
 <div class="card mb-4 m-5">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
-        Araç Listeleme Tablosu
+        Kurumsal Kullanıcılar
     </div>
     <div class="card-body">
         <table id="datatablesSimple" class="table table-hover table-bordered">
@@ -56,63 +68,51 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>borusanoto</td>
-                    <td>Elif</td>
-                    <td>Beyaz</td>
-                    <td>borusan_elif@borusan.oto.com</td>
-                    <td>00000000</td>
-                    <td>Borusan</td>
-                    <td>Anonim</td>
-                    <td>vsvsvssvsvvsvsvsvsvsvsvs</td>
-                    <td>İstanbul</td>
-                    <td>Ataşehir</td>
-                    <td>Deaktif</td>
-                    <td style="text-align:center;">
-                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalCenter8">Paket</button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalCenter7">Üyelik</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>borusanoto</td>
-                    <td>Elif</td>
-                    <td>Beyaz</td>
-                    <td>borusan_elif@borusan.oto.com</td>
-                    <td>00000000</td>
-                    <td>Borusan</td>
-                    <td>Anonim</td>
-                    <td>vsvsvssvsvvsvsvsvsvsvsvs</td>
-                    <td>İstanbul</td>
-                    <td>Ataşehir</td>
-                    <td>Deaktif</td>
-                    <td style="text-align:center;">
-                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalCenter8">Paket</button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalCenter7">Üyelik</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>borusanoto</td>
-                    <td>Elif</td>
-                    <td>Beyaz</td>
-                    <td>borusan_elif@borusan.oto.com</td>
-                    <td>00000000</td>
-                    <td>Borusan</td>
-                    <td>Anonim</td>
-                    <td>vsvsvssvsvvsvsvsvsvsvsvs</td>
-                    <td>İstanbul</td>
-                    <td>Ataşehir</td>
-                    <td>Deaktif</td>
-                    <td style="text-align:center;">
-                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalCenter8">Paket</button>
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalCenter7">Üyelik</button>
-                    </td>
-                </tr>
+                @foreach (var item in Model.getAllCorporateUser)
+                {
+                    <tr>
+                        <td>
+                            @item.Username
+                        </td>
+                        <td>
+                            @item.Name
+                        </td>
+                        <td>
+                            @item.Surname
+                        </td>
+                        <td>
+                            @item.Mail
+                        </td>
+                        <td>
+                            @item.Telephone
+                        </td>
+                        <td>
+                            @item.CompanyName
+                        </td>
+                        <td>
+                            @item.CompanyType
+                        </td>
+                        <td>
+                            @item.Address
+                        </td>
+                        <td>
+                            @item.Province
+                        </td>
+                        <td>
+                            @item.District
+                        </td>
+                        <td>
+                            @item.isActive
+                        </td>
+                        <td style="text-align:center;">
+                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalCenter8">Paket</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn bt n-warning" data-toggle="modal" data-target="#exampleModalCenter7">Üyelik</button>
+                        </td>
+                    </tr>
+
+                }
             </tbody>
         </table>
     </div>
