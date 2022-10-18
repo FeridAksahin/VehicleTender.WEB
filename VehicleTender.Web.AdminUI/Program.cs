@@ -1,6 +1,7 @@
 using NLog;
 using NLog.Web;
 using VehicleTender.Web.AdminUI.ApiServices.Base.Concrete;
+using VehicleTender.WEB.Admin.Common.WebScrap.CustomHTTPResponse;
 
 var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
 logger.Debug("init main");

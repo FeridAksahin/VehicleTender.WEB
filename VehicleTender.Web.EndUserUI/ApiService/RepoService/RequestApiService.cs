@@ -107,8 +107,10 @@ namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
             var convertedJsonParameterObject = new StringContent(JsonConvert.SerializeObject(data));
             convertedJsonParameterObject.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             var response = await httpClient.PostAsync(endpoint, convertedJsonParameterObject);
-            return response.Content.ReadAsStringAsync().Result == statusGenerator.GetHttpStatusCodes(200) ? statusGenerator.GetHttpStatusCodes(201) : 
-                statusGenerator.GetHttpStatusCodes(426);
+            /*  return response.Content.ReadAsStringAsync().Result == statusGenerator.GetHttpStatusCodes(200) ? statusGenerator.GetHttpStatusCodes(201) : 
+                  statusGenerator.GetHttpStatusCodes(426);*/
+            return response.Content.ReadAsStringAsync().Result;
+            //return response.Content.ReadAsStringAsync().Result.ToString();
             /*
             return response.Content.ReadAsStringAsync().Result;
             if (response.IsSuccessStatusCode)
@@ -123,14 +125,18 @@ namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
             var convertedJsonParameterObject = new StringContent(JsonConvert.SerializeObject(data));
             convertedJsonParameterObject.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             var response = await httpClient.PostAsync(endpoint, convertedJsonParameterObject);
-            return response.Content.ReadAsStringAsync().Result == statusGenerator.GetHttpStatusCodes(200) ? statusGenerator.GetHttpStatusCodes(200) : statusGenerator.GetHttpStatusCodes(404);
+            // return response.Content.ReadAsStringAsync().Result == statusGenerator.GetHttpStatusCodes(200) ? statusGenerator.GetHttpStatusCodes(200) : statusGenerator.GetHttpStatusCodes(404);
+            return response.Content.ReadAsStringAsync().Result;
+            //return response.Content.ReadAsStringAsync().Result.ToString();
         }
         public async Task<string> DeleteAsync(TokenDTO bearerTokenDTO, string endpoint, int id)
         {
             httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {bearerTokenDTO.AccessToken}");
             var response = await httpClient.DeleteAsync($"{endpoint}/{id}");
-            return response.Content.ReadAsStringAsync().Result == statusGenerator.GetHttpStatusCodes(200) ? statusGenerator.MakeCustomStatuCode(410, "Belirtilen veri başarıyla silindi") :
-                statusGenerator.MakeCustomStatuCode(403, "Buna yetkiniz yok");
+            /*return response.Content.ReadAsStringAsync().Result == statusGenerator.GetHttpStatusCodes(200) ? statusGenerator.MakeCustomStatuCode(410, "Belirtilen veri başarıyla silindi") :
+                statusGenerator.MakeCustomStatuCode(403, "Buna yetkiniz yok");*/
+            return response.Content.ReadAsStringAsync().Result;
+            //return response.Content.ReadAsStringAsync().Result.ToString();
             /*
             if (response.IsSuccessStatusCode)
                 statusGenerator.MakeCustomStatuCode(410, "Belirtilen veri başarıyla silindi.");
@@ -144,7 +150,9 @@ namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
             var convertedJsonParameterObject = new StringContent(JsonConvert.SerializeObject(data));
             convertedJsonParameterObject.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             var response = await httpClient.PutAsync(endpoint, convertedJsonParameterObject);
-            return response.Content.ReadAsStringAsync().Result == statusGenerator.GetHttpStatusCodes(200) ? statusGenerator.GetHttpStatusCodes(201) : statusGenerator.GetHttpStatusCodes(404); 
+            //   return response.Content.ReadAsStringAsync().Result == statusGenerator.GetHttpStatusCodes(200) ? statusGenerator.GetHttpStatusCodes(201) : statusGenerator.GetHttpStatusCodes(404); 
+            return response.Content.ReadAsStringAsync().Result;
+            //return response.Content.ReadAsStringAsync().Result.ToString();
         }
         public async Task<string> PutAsync<T>(TokenDTO bearerTokenDTO, List<T> data, string endpoint) where T : class
         {
@@ -152,7 +160,9 @@ namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
             var convertedJsonParameterObject = new StringContent(JsonConvert.SerializeObject(data));
             convertedJsonParameterObject.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             var response = await httpClient.PutAsync(endpoint, convertedJsonParameterObject);
-            return response.Content.ReadAsStringAsync().Result == statusGenerator.GetHttpStatusCodes(200) ? statusGenerator.GetHttpStatusCodes(201) : statusGenerator.GetHttpStatusCodes(414); ;
+            //   return response.Content.ReadAsStringAsync().Result == statusGenerator.GetHttpStatusCodes(200) ? statusGenerator.GetHttpStatusCodes(201) : statusGenerator.GetHttpStatusCodes(414); ;
+            return response.Content.ReadAsStringAsync().Result;
+            //return response.Content.ReadAsStringAsync().Result.ToString();
         }
         public void Dispose()
         {

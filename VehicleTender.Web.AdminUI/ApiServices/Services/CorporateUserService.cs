@@ -11,9 +11,13 @@ namespace VehicleTender.Web.AdminUI.ApiServices.Services
         {//https://localhost:7011/User/CorporateUsers
             return await baseApiService.GetAsyncList<GetCorporateUserDTO>(token, "endpoint route gelmeli");
         }
-        public async Task<List<GetCorporateUserDTO>> CorporateUserListBySearchFiltering(BearerTokenDTO token, string searchFilterValues)
+        public async Task<List<GetCorporateUserDTO>> CorporateUserListBySearchFiltering(BearerTokenDTO token, string packetName)
         {//https://localhost:7011/User/CorporateUsers
-            return await baseApiService.GetAsyncList<GetCorporateUserDTO>(token, "endpoint route", searchFilterValues);
+            return await baseApiService.GetAsyncList<GetCorporateUserDTO>(token, "endpoint route", packetName);
+        }
+        public async Task<GetCorporateUserDTO> CorporateUserByCompanyNameFiltering(BearerTokenDTO token, string companyName)
+        {//https://localhost:7011/User/CorporateUsers
+            return await baseApiService.GetAsync<GetCorporateUserDTO>(token, "endpoint route", companyName);
         }
         public async Task<string> UpdateCorporateUserPacketType(BearerTokenDTO token, CorporateUserPacketType updateCorporateUserPacket)
         {//https://localhost:7011/User/CorporateUsers
