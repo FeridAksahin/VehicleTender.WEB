@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PswHash\PasswordHash.cs" />
     <Compile Include="WebScrap\CustomHTTPResponse\StatusGenerator.cs" />
     <Compile Include="Enums\HttpStatusCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
