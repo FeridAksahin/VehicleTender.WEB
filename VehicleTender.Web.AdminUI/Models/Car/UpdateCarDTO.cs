@@ -22,10 +22,11 @@
         public string CreatedBy { get; set; }
         public DateTime CreatedDate { get; set; }
         public double TotalSumTramer { get; set; }
+        public string ComissionPrice { get; set; }
+        public string NotaryPrice { get; set; }
         public bool BuyNowSell { get; set; } //hemen al sat aktifmi
         public Dictionary<TramerDTO, TramerValueDTO> TramerInformation { get; set; }
         public AdvertInformationDTO AdvertInformation { get; set; }
-        public ComissionAndNotaryDTO ComissionAndNotary { get; set; }
         public List<CarStatuHistoryDTO> CarStatuHistory { get; set; }
         public CarBuyerInformationDTO CarBuyerInformationDTO { get; set; }
     }

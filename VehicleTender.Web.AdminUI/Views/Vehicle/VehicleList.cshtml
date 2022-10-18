@@ -1,32 +1,34 @@
-﻿@{
+﻿@using VehicleTender.Web.AdminUI.Models.PageModel
+@{
     ViewData["Title"] = "Vehicle List";
     ViewData["InfoTitle"] = "Bu sayfada admin kullanıcılar araçları listeleyebilirler...";
 }
-<div> 
+@model AllCarPage
+<div>
     <h5 class="mb-3 pb-3 display-5 text-center mt-4">Araçlar</h5>
-    <form>
+    <form method="get">
         <div class="row filter">
             <div class="col-4">
                 <label>Marka</label>
-                <select class="form-control">
+                <select class="form-control" name="brandName">
                     <option value="value">text</option>
                 </select>
             </div>
             <div class="col-4">
                 <label>Model</label>
-                <select class="form-control">
+                <select class="form-control" name="modelName">
                     <option value="value">text</option>
                 </select>
             </div>
             <div class="col-4">
                 <label>Bireysel /Kurumsal</label>
-                <select class="form-control">
+                <select class="form-control" name="individualOrCorparate">
                     <option value="value">text</option>
                 </select>
             </div>
             <div class="col-4">
                 <label>Statü</label>
-                <select class="form-control">
+                <select class="form-control" name="statu">
                     <option value="value">text</option>
                 </select>
             </div>
@@ -56,24 +58,40 @@
                     <th>Kaydeden Kullanıcı</th>
                     <th>Kaydetme Zamanı</th>
                     <th></th>
-                    
+
                 </tr>
             </thead>
             <tbody>
-                @for (int i = 0; i < 15; i++)
+                @foreach (var item in Model.GetAllCar)
                 {
                     <tr>
-                        <td>Name</td>
-                        <td>Position</td>
-                        <td>Office</td>
-                        <td>Age</td>
-                        <td>Start date</td>
-                        <td>sdgasdfsadf</td>
-                        <td>sdgasdfsadf</td>
-                        <td class="update_delete"><a asp-controller="Vehicle" asp-action="UpdateVehicle" class="btn btn-warning">Güncelle</a> <button type="button" class="btn btn-danger">Sil</button></td>
+                        <td>
+                            @item.CarId
+                        </td>
+                        <td>
+                            @item.CarBrand
+                        </td>
+                        <td>
+                            @item.CarModel
+                        </td>
+                        <td>
+                            @item.IndividualOrCorparate
+                        </td>
+                        <td>
+                            @item.Statu
+                        </td>
+                        <td>
+                            @item.CreatedBy
+                        </td>
+                        <td>
+                            @item.CreatedDate
+                        </td>
+                        <td class="update_delete">
+                            <a asp-controller="Vehicle" asp-action="UpdateVehicle" class="btn btn-warning">Güncelle</a>
+                            <button type="button" class="btn btn-danger">Sil</button>
+                        </td>
                     </tr>
                 }
-
             </tbody>
         </table>
     </div>
