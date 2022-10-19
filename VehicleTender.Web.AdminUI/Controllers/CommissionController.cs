@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using VehicleTender.API.Validation;
 using VehicleTender.Web.AdminUI.ApiServices.Services;
+using VehicleTender.Web.AdminUI.Models.Admin;
 using VehicleTender.Web.AdminUI.Models.Commission;
 using VehicleTender.Web.AdminUI.Models.PageModel;
 using VehicleTender.Web.AdminUI.Models.Token;
@@ -16,7 +18,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         public async Task<IActionResult> Commission()
         {
             commissionPageModel.CommissionList = new List<CommissionDTO>();
-            commissionPageModel.CommissionList = await commissionService.GetAllCommission(token);
+            //commissionPageModel.CommissionList = await commissionService.GetAllCommission(token);
             CommissionDTO commissionDTO = new CommissionDTO()
             {
                 ID=1,
@@ -26,7 +28,8 @@ namespace VehicleTender.Web.AdminUI.Controllers
                 EndDate= DateTime.Now.AddDays(500),
             };
             commissionPageModel.CommissionList.Add(commissionDTO);
-            return View(commissionPageModel.CommissionList);
+
+            return View(commissionPageModel);
         }
         [HttpPost]
         public async Task<IActionResult> AddCommission(CommissionPageModel commissionPageModel)

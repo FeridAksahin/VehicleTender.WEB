@@ -55,6 +55,7 @@ namespace VehicleTender.API.Validation
                         }
                         else if (type.Name.Contains("String"))
                         {
+
                             foreach ((bool, Exception) error in getStringValidator.Validate(propertyValue, firstAttibuteValue, secondAttibuteValue, property.Name))
                             {
                                 isError = true;
