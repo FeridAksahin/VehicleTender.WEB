@@ -1,9 +1,10 @@
-﻿
+﻿@using VehicleTender.Web.AdminUI.Models.Car
 
 
+@model UpdateCarDTO
 <h5 class="mb-3 pb-3 display-5 text-center mt-4">Araç Güncelle</h5>
 
-<form action="/" method="post">
+<form asp-action="UpdateVehicle" asp-controller="Vehicle" method="post">
     <div class="container mt-3">
         <div class="row">
             <div class="m-3 vehicle_update">
@@ -12,7 +13,7 @@
                     <div class="row">
                         <div class="col-4">
                             <label>Üye Ad Soyad</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" value="@Model.CompanyName" asp-for="CompanyName">
                         </div>
                         <div class="col-4">
                             <label>Statü</label>
@@ -23,11 +24,11 @@
                         </div>
                         <div class="col-4">
                             <label>Ön Değerlendirme Fiyat</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" value="@Model.PreAssesmentPrice" asp-for="PreAssesmentPrice">
                         </div>
                         <div class="col-4">
                             <label>Teklif Fiyatı</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" value="@Model.Price" asp-for="Price">
                         </div>
                     </div>
                 </div>
@@ -86,7 +87,7 @@
                         </div>
                         <div class="col-4">
                             <label>KM Bilgisi</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" value="@Model.KM" asp-for="KM">
                         </div>
                         <div class="col-4">
                             <label>Renk</label>
@@ -111,7 +112,7 @@
                             </div>
                             <div class="col-6">
                                 <label>Açıklama</label>
-                                <textarea cols="20" rows="5" class="form-control"></textarea>
+                                <textarea cols="20" rows="5" class="form-control" value="@Model.Description" asp-for="Description"></textarea>
                             </div>
                         </div>
                     </div>
@@ -144,7 +145,7 @@
         </div>
 
     </div>
-</form>
+
 
 
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -156,15 +157,15 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/" method="post">
+          
                 <div class="modal-body">
                     Hemen Al Satış
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                    <button type="submit" class="btn btn-primary">Kaydet</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Kaydet</button>
                 </div>
-            </form>
+         
         </div>
     </div>
 </div>
@@ -177,15 +178,15 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/" method="post">
+        
                 <div class="modal-body">
                     Komisyon
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                    <button type="submit" class="btn btn-primary">Kaydet</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Kaydet</button>
                 </div>
-            </form>
+           
         </div>
     </div>
 </div>
@@ -198,15 +199,15 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/" method="post">
+         
                 <div class="modal-body">
                     Alıcı Bilgileri
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                    <button type="submit" class="btn btn-primary">Kaydet</button>
+               <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Kaydet</button>
                 </div>
-            </form>
+        
         </div>
     </div>
 </div>
@@ -219,15 +220,17 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/" method="post">
+           
                 <div class="modal-body">
-                    İlan Bilgileri
+                    <label>İlan Başlığı</label>
+                    <input type="text" class="form-control" asp-for="AdvertHeader" value="@Model.AdvertHeader">
+                    <label>İlan Açıklaması</label>
+                    <textarea cols="20" rows="5" class="form-control" asp-for="@Model.AdvertDescription" value="@Model.AdvertDescription"></textarea>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Kaydet</button>
                 </div>
-            </form>
         </div>
     </div>
 </div>
@@ -241,15 +244,15 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/" method="post">
+            
                 <div class="modal-body">
                     Araç Tarihçe
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Kaydet</button>
                 </div>
-            </form>
+         
         </div>
     </div>
 </div>
@@ -263,7 +266,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/" method="post">
+       
                 <div class="modal-body">
 
                     <label>Toplam Tramer Tutarı</label>
@@ -361,15 +364,15 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                    <button type="submit" class="btn btn-primary">Kaydet</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Kaydet</button>
                 </div>
-            </form>
+           
         </div>
     </div>
 
 </div>
 
-
+ </form>
 
 

@@ -87,7 +87,9 @@
                             @item.CreatedDate
                         </td>
                         <td class="update_delete">
-                            <a asp-controller="Vehicle" asp-action="UpdateVehicle" class="btn btn-warning">Güncelle</a>
+                            <form method="get">
+                                <button type="submit" class="btn btn-warning" asp-action="UpdateVehicle" asp-controller="Vehicle" asp-route-ID="@item.CarId">Güncelle</button>
+                            </form>
                             <button type="button" class="btn btn-danger">Sil</button>
                         </td>
                     </tr>

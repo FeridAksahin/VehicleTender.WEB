@@ -25,7 +25,7 @@ namespace VehicleTender.Web.AdminUI.ApiServices.Services
         }
         public async Task<UpdateTenderDTO> GetTenderById(BearerTokenDTO token, string id)
         {//https://localhost:7011/Tender/UpdateTender
-            return await baseApiService.GetAsync<UpdateTenderDTO>(token, id, "endpoint route gelmeli");
+            return await baseApiService.GetAsync<UpdateTenderDTO>(token, "endpoint route gelmeli",id);
         }
         public async Task<string> UpdateTender(BearerTokenDTO token, UpdateTenderDTO updateTender)
         {//https://localhost:7011/Tender/UpdateTender

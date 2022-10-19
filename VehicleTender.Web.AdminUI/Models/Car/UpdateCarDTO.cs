@@ -2,12 +2,13 @@
 {
     public class UpdateCarDTO
     {
-        public int CarId { get; set; }
+        public string CarId { get; set; }
         public string CarBrand { get; set; }
         public string CarModel { get; set; }
         public string IndividualOrCorparate { get; set; }
         public double Price { get; set; }
-        public string CompanyName { get; set; }
+        public double PreAssesmentPrice { get; set; }
+        public string CompanyName { get; set; } //bireysel ise onun ismi kurumsalsa şirket ismi
         public string BodyType { get; set; }
         public string TransmissionType { get; set; }
         public string Color { get; set; }
@@ -25,9 +26,15 @@
         public string ComissionPrice { get; set; }
         public string NotaryPrice { get; set; }
         public bool BuyNowSell { get; set; } //hemen al sat aktifmi
+        public string AdvertHeader { get; set; }
+        public string AdvertDescription { get; set; }
+        //--
+        public string BuyerName { get; set; }
+        public string BuyerSurname { get; set; }
+        public string BuyerTelephone { get; set; }
+        public string BuyerCompanyName { get; set; } //kurumsalsa
         public Dictionary<TramerDTO, TramerValueDTO> TramerInformation { get; set; }
-        public AdvertInformationDTO AdvertInformation { get; set; }
         public List<CarStatuHistoryDTO> CarStatuHistory { get; set; }
-        public CarBuyerInformationDTO CarBuyerInformationDTO { get; set; }
+      
     }
 }

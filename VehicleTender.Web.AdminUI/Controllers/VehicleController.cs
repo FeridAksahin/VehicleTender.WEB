@@ -120,8 +120,39 @@ namespace VehicleTender.Web.AdminUI.Controllers
             return View();
         }
         [HttpGet]
-        public IActionResult UpdateVehicle()
+        public IActionResult UpdateVehicle(string id)
         {
+            UpdateCarDTO updateCarViewModel = new UpdateCarDTO();
+            updateCarViewModel.KM = "egrerg";
+            updateCarViewModel.Version = "gafg";
+            updateCarViewModel.CompanyName = "farg";
+            updateCarViewModel.IndividualOrCorparate = "Corparate";
+            updateCarViewModel.Year = "2005";
+            updateCarViewModel.Price = 342;
+            updateCarViewModel.ComissionPrice = "argearg";
+            updateCarViewModel.AdvertHeader = "argerg";
+            updateCarViewModel.AdvertDescription = "argaeaergeargaergeagreargggggggggggggggggggggggggggggggggggggggggggg";
+            updateCarViewModel.BodyType = "Sedan";
+            updateCarViewModel.BuyNowSell = false;
+            updateCarViewModel.CarBrand = "gaerg";
+            updateCarViewModel.BuyerName = "aregaerg";
+            updateCarViewModel.BuyerSurname = "artharth";
+            updateCarViewModel.BuyerTelephone = "trhsrthrsth";
+            updateCarViewModel.BuyerCompanyName = "athrtharth";
+            updateCarViewModel.Description = "ahaeth";
+            updateCarViewModel.Statu = "arg";
+            updateCarViewModel.PreAssesmentPrice = 232;
+            updateCarViewModel.CarId = id;
+
+            //carService.GetCarDetailForIntoUpdateButton(token, id);
+            return View(updateCarViewModel);
+        }
+        [HttpPost]
+        public IActionResult UpdateVehicle(UpdateCarDTO updateCarViewModel)
+        {
+
+            carService.UpdateCar(token, updateCarViewModel);
+            //carService.GetCarDetailForIntoUpdateButton(token, id);
             return View();
         }
         /*
