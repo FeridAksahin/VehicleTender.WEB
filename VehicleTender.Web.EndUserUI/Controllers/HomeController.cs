@@ -61,7 +61,7 @@ namespace VehicleTender.Web.EndUserUI.Controllers
             if (HttpContext.Request.Cookies["token"] != null)
             {
                 HttpCookie httpCookie = HttpContext.Request.Cookies["token"];
-                string token = httpCookie.Values["token"];
+                string token = httpCookie.Values["value"];
             }
             return View();
         }

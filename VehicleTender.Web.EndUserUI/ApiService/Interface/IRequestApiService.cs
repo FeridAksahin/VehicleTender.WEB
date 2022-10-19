@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using VehicleTender.WEB.UserDTO.Concrete;
+using VehicleTender.WEB.UserDTO.VM.Account;
 
 namespace VehicleTender.Web.EndUserUI.ApiService.Interface
 {
@@ -16,7 +17,7 @@ namespace VehicleTender.Web.EndUserUI.ApiService.Interface
         Task<T> GetAsync<T>(TokenDTO bearerTokenDTO, string endpoint, string id) where T : class;
         Task<List<T>> GetAsyncList<T>(TokenDTO bearerTokenDTO, string endpoint, string request) where T : class;
         //post
-        Task<TokenDTO> GetToken(TokenDTO bearerTokenDTO, UserLoginDTO getTokenForUser, string endpoint);
+        Task<TokenDTO> GetToken(TokenDTO bearerTokenDTO, LoginVM getTokenForUser, string endpoint);
         Task<string> PostAsync<T>(TokenDTO bearerTokenDTO, List<T> data, string endpoint) where T : class;
         Task<string> PostAsync<T>(TokenDTO bearerTokenDTO, T data, string endpoint) where T : class;
         //delete
