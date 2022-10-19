@@ -2,6 +2,7 @@
 using VehicleTender.Web.AdminUI.ApiServices.Services;
 using VehicleTender.Web.AdminUI.Models.Car;
 using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Brand;
+using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Fuel;
 using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Hardware;
 using VehicleTender.Web.AdminUI.Models.Commission;
 using VehicleTender.Web.AdminUI.Models.PageModel;
@@ -94,7 +95,22 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public IActionResult VehicleFuelTypeList()
         {
-            return View();
+            FuelTypePage model = new FuelTypePage();
+            model.GetAllFuelTypes = new List<FuelType>();
+            //model.GetAllFuelTypes = await identifyingCehicleFaturesService.GetFuelType(token);
+            FuelType fuelType = new FuelType()
+            {
+                Id = 1,
+                FuelTypeName = "Benzinli"
+            };
+            model.GetAllFuelTypes.Add(fuelType);
+            return View(model);
+        }
+        [HttpPost]
+        public async Task<IActionResult> VehicleFuelTypeList(FuelTypePage fuelType)
+        {
+            await identifyingCehicleFaturesService.AddNewFuelType(token, fuelType.FuelType.FuelTypeName);
+            return RedirectToAction(nameof(VehicleFuelTypeList));
         }
         [HttpGet]
         public IActionResult VehicleGearTypeList()

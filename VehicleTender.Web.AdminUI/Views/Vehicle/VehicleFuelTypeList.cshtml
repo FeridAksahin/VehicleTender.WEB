@@ -1,8 +1,10 @@
-﻿@{
+﻿@using VehicleTender.Web.AdminUI.Models.PageModel
+@model FuelTypePage
+@{
     ViewData["Title"] = "Vehicle Fuel Type List";
 }
 <h5 class="mb-3 pb-3 display-5 text-center mt-4">Yakıt Tipleri</h5>
-<div class="row m-3" >
+<div class="row m-3">
     <button type="button" class="btn btn-primary w-100 p-3 mt-3 mb-3" data-toggle="modal" data-target="#newRole">
         Yakıt Tipi Ekle
     </button>
@@ -16,49 +18,47 @@
         <table id="datatablesSimple" class="table table-hover table-bordered">
             <thead>
                 <tr>
-                    <th>Sıra</th>
                     <th>Araç Yakıt Tipi</th>
                     <th></th>
 
                 </tr>
             </thead>
             <tbody>
-                @for (int i = 0; i < 15; i++)
+                @foreach (var item in Model.GetAllFuelTypes)
                 {
                     <tr>
-                        <td>@i</td>
-                        <td>fasdfasd</td>
-                        <td class="update_delete"><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#newRole1">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                        <td>@item.FuelTypeName</td>
+                        <td class="update_delete"><button type="button" class="btn btn-danger">Sil</button></td>
                     </tr>
                 }
             </tbody>
         </table>
     </div>
 </div>
- <div class="modal fade" id="newRole" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Yakıt Tipi Ekle</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form action="/" method="post">
-                    <div class="modal-body">
-                        <div class="row m-3">
-                            <label>Yakıt Tipi </label>
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                        <button type="submit" class="btn btn-primary">Kaydet</button>
-                    </div>
-                </form>
+<div class="modal fade" id="newRole" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Yakıt Tipi Ekle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
+            <form method="post" asp-action="VehicleFuelTypeList" asp-controller="Vehicle">
+                <div class="modal-body">
+                    <div class="row m-3">
+                        <label>Yakıt Tipi </label>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                </div>
+            </form>
         </div>
     </div>
+</div>
 <div class="modal fade" id="newRole1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
