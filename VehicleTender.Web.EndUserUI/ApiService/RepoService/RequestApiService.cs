@@ -13,7 +13,7 @@ using VehicleTender.Web.EndUserUI.ApiService.Interface;
 using VehicleTender.WEB.EndUser.Common; 
 using VehicleTender.WEB.EndUser.Common.WebScrap.CustomHTTPResponse;
 using VehicleTender.WEB.UserDTO.Concrete;
-
+using VehicleTender.WEB.UserDTO.VM.Account;
 
 namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
 {
@@ -42,7 +42,7 @@ namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
             return httpClient;
         }
 
-        public async Task<TokenDTO> GetToken(TokenDTO bearerTokenDTO,UserLoginDTO getTokenForUser, string endpoint)  
+        public async Task<TokenDTO> GetToken(TokenDTO bearerTokenDTO,LoginVM getTokenForUser, string endpoint)  
         {
             var convertedJsonParameterObject = new StringContent(JsonConvert.SerializeObject(getTokenForUser));
             convertedJsonParameterObject.Headers.ContentType = new MediaTypeHeaderValue("application/json");

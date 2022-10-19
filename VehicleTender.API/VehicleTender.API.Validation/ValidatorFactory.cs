@@ -47,7 +47,11 @@ namespace VehicleTender.API.Validation
         {
             if (attribute.Name.Contains("String"))
             {
-                stringValidator.Add("StringType", new StringValidator<T>());
+                if (stringValidator.Count==0)
+                {
+                    stringValidator.Add("StringType", new StringValidator<T>());
+                }
+               
                 return stringValidator["StringType"];
             }
             return null;

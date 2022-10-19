@@ -31,10 +31,10 @@ namespace VehicleTender.API.Validation.Validators.Concrete
                 {
                     errorList.Add((false, new Exception($"String is too Short. Text Must Longer Than >= {min}") { Source = source }));
                 }
-                if (!!stringValue.Equals(stringValue.ToLower()))
-                {
-                    errorList.Add((false, new Exception("Requres at least one uppercase") { Source = source }));
-                }
+                //if (!!stringValue.Equals(stringValue.ToLower()))
+                //{
+                //    errorList.Add((false, new Exception("Requres at least one uppercase") { Source = source }));
+                //}
                 foreach (string invalidChar in invalidChars)
                 {
                     if (stringValue.Contains(invalidChar))

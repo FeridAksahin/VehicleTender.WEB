@@ -1,25 +1,35 @@
-﻿<h5 class="mb-3 pb-3 display-5 text-center mt-4">Stok Yönetimi</h5>
+﻿@using VehicleTender.Web.AdminUI.Models.PageModel
+@model StockPage
+<h5 class="mb-3 pb-3 display-5 text-center mt-4">Stok Yönetimi</h5>
 
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
-       Şirketler
+        Şirketler
     </div>
     <div class="card-body">
-        <table id="datatablesSimple" class="table table-bordered table-hover" >
+        <table id="datatablesSimple" class="table table-bordered table-hover">
             <thead>
                 <tr>
                     <th>Şirket Adı</th>
                     <th>Detay</th>
-          
+
                 </tr>
             </thead>
             <tbody>
-                @for (int i = 0; i < 15; i++)
+                @foreach (var item in Model.GetAllCompanyName)
                 {
                     <tr>
-                        <td>X Şirketi</td>
-                        <td class="update_delete"><button type="button" class="btn btn-warning" data-toggle="modal" data-target=".bd-example-modal-lg">Detay</button></td>
+                        <td>
+                            @item.CompanyName
+                        </td>
+@*                        <td class="update_delete">
+                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target=".bd-example-modal-lg">Detay</button>
+                        </td>*@
+                        <td>
+                            <a class="btn btn-warning" asp-action="Detail" asp-controller="Stock" asp-route-ID="@item.CompanyName">Detay</a>
+                        </td>
+
                     </tr>
                 }
             </tbody>
@@ -52,19 +62,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @for (int i = 0; i < 15; i++)
+@*                            @foreach (var item in Model.GetStockDTO)
                             {
                                 <tr>
-                                    <td>Jeep</td>
-                                    <td>Şahin</td>
-                                    <td>500.000</td>
-                                    <td>1998</td>
-                                    <td>34 GS 1905</td>
-                                    <td>Beyaz</td>
-                                    <td>25</td>
-                                    <td>2</td>
+                                    <td>@item.CarBrand</td>
+                                    <td>@item.CarModel</td>
+                                    <td>@item.KM</td>
+                                    <td>@item.Year</td>
+                                    <td>@item.Plaka</td>
+                                    <td>@item.Color</td>
+                                    <td>@item.GarageCount</td>
+                                    <td>@item.SaleCount</td>
                                 </tr>
-                            }
+                            }*@
                         </tbody>
                     </table>
                 </div>
