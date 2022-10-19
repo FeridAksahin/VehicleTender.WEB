@@ -1,31 +1,35 @@
-﻿
+﻿@using VehicleTender.Web.AdminUI.Models.Tender
+@model TenderDTO
 <div>
-    <h5 class="mb-3 pb-3 display-5 text-center mt-4">İhaleler</h5>
-    <div class="row filter">
-        <div class="col-4">
-            <label>İhale Adı</label>
-            <select class="form-control">
-                <option value="value">text</option>
-            </select>
-        </div>
-        <div class="col-4">
-            <label>Bireysel / Kurumsal</label>
-            <select class="form-control">
-                <option value="value">text</option>
-            </select>
-        </div>
-        <div class="col-4">
-            <label>Statü</label>
-            <select class="form-control">
-                <option value="value">text</option>
-            </select>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <input type="submit" value="Listele" class="btn btn-primary m-3 list" />
+    <form method="post">
+        <div class="row filter">
+            <div class="col-4">
+                <label>İhale Adı</label>
+                <select class="form-control" name="tenderName">
+                    <option value="value">text</option>
+                </select>
+            </div>
+            <div class="col-4">
+                <label>Bireysel / Kurumsal</label>
+                <select class="form-control" name="isIndividual">
+                    <option value="value">text</option>
+                </select>
+            </div>
+            <div class="col-4">
+                <label>Statü</label>
+                <select class="form-control" name="statu">
+                    <option value="value">text</option>
+                </select>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <input type="submit" value="Listele" class="btn btn-primary m-3 list" />
+                </div>
             </div>
         </div>
-    </div>
+    </form>
+    <h5 class="mb-3 pb-3 display-5 text-center mt-4">İhaleler</h5>
+
 
 </div>
 
@@ -52,22 +56,21 @@
             </thead>
 
             <tbody>
-                @for (int i = 0; i < 15; i++)
+                @foreach (var item in Model.TenderList)
                 {
                     <tr>
-                        <td>1</td>
-                        <td>İhale ismi</td>
-                        <td>Bireysel</td>
-                        <td>10.10.2022</td>
-                        <td>20.10.2022</td>
-                        <td>Giriş</td>
-                        <td>ferid</td>
-                        <td>9.10.2022</td>
-                        <td class="update_delete"><a type="button" asp-controller="Tender" asp-action="UpdateTender" class="btn btn-warning">Güncelle</a> <button type="button" class="btn btn-danger">Sil</button></td>
+                        <td>@item.TenderId</td>
+                        <td>@item.TenderName</td>
+                        <td>@item.IndivudualOrCorparate</td>
+                        <td>@item.TenderStart</td>
+                        <td>@item.TenderEndTime</td>
+                        <td>@item.Statu</td>
+                        <td>@item.CreatedBy</td>
+                        <td>@item.CreatedDate</td>
+                        <td class="update_delete"><a type="button" asp-controller="Tender" asp-action="UpdateTender" asp-route-ID="@item.TenderId" class="btn btn-warning">Güncelle</a> <button type="button" class="btn btn-danger">Sil</button></td>
+
                     </tr>
                 }
-               
-               
             </tbody>
         </table>
     </div>
