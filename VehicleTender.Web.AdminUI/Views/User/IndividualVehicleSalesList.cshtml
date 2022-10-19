@@ -1,33 +1,38 @@
-﻿<div>
-    <h5 class="mb-3 pb-3 display-5 text-center mt-4">Bireysel Araç Satım</h5>
-    <div class="row filter">
-        <div class="col-4">
-            <label>Araç Marka</label>
-            <select class="form-control">
-                <option value="value">text</option>
-            </select>
-        </div>
-        <div class="col-4">
-            <label>Araç Model</label>
-            <select class="form-control">
-                <option value="value">text</option>
-            </select>
-        </div>
-        <div class="col-4">
-            <label>Statü</label>
-            <select class="form-control">
-                <option value="value">text</option>
-            </select>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <input type="submit" value="Listele" class="btn btn-primary m-3 list" />
+﻿@using VehicleTender.Web.AdminUI.Models.PageModel
+@model IndividualVehiclePage
+<div>
+    <form method="get">
+        <h5 class="mb-3 pb-3 display-5 text-center mt-4">Bireysel Araç Satım</h5>
+        <div class="row filter">
+
+            <div class="col-4">
+                <label>Araç Marka</label>
+                <select class="form-control" name="brand">
+                    <option value="text">text</option>
+                </select>
+            </div>
+            <div class="col-4">
+                <label>Araç Model</label>
+                <select class="form-control" name="model">
+                    <option value="text">text</option>
+                </select>
+            </div>
+            <div class="col-4">
+                <label>Statü</label>
+                <select class="form-control" name="statu">
+                    <option value="text">text</option>
+                </select>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <input type="submit" value="Listele" class="btn btn-primary m-3 list" />
+                </div>
             </div>
         </div>
-    </div>
+    </form>
 </div>
 
- 
+
 <div class="card mb-4 m-5">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
@@ -47,19 +52,33 @@
                 </tr>
             </thead>
             <tbody>
-                @for (int i = 0; i < 15; i++)
+     @foreach (var item in Model.GetIndividualCarSaleList)
                 {
                     <tr>
-                        <td>1</td>
-                        <td>Position</td>
-                        <td>Model</td>
-                        <td>Satıldı</td>
-                        <td>Ahmet</td>
-                        <td>9.10.2022</td>
-                        <td class="update_delete"><a href="~/User/IndividualVehicleSalesDetail" class="btn btn-warning">Güncelle</a> <button type="button" class="btn btn-danger">Sil</button></td>
+                        <td>
+                            @item.CarId
+                        </td>
+                        <td>
+                            @item.CarBrand
+                        </td>
+                        <td>
+                            @item.CarModel
+                        </td>
+                        <td>
+                            @item.Statu
+                        </td>
+                        <td>
+                            @item.CreatedBy
+                        </td>
+                        <td>
+                            @item.CreatedDate
+                        </td> 
+                          <td class="update_delete"><form method="get"><button type="submit" class="btn btn-warning" asp-action="IndividualVehicleSalesDetail" asp-controller="User" asp-route-ID ="@item.CarId">Güncelle</button></form>
+                               <form method="post">
+                                <button type="submit" class="btn btn-danger" asp-action="DeleteIndividualVehicleSales" asp-controller="User" asp-route-ID="@item.CarId">Sil</button>
+                             </form></td>
                     </tr>
                 }
-
             </tbody>
         </table>
     </div>
