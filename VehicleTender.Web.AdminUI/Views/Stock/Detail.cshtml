@@ -1,0 +1,34 @@
+﻿@using VehicleTender.Web.AdminUI.Models.PageModel
+@model StockPage
+<div class="container">
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>Araç Marka</th>
+                <th>Araç Model</th>
+                <th>Km</th>
+                <th>Yıl</th>
+                <th>Plaka</th>
+                <th>Renk</th>
+                <th>Garajda</th>
+                <th>Satılan</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                @foreach (var item in Model.GetStockDTO)
+                {
+                    <td>@item.CarBrand</td>
+                    <td>@item.CarModel</td>
+                    <td>@item.KM</td>
+                    <td>@item.Year</td>
+                    <td>@item.Plaka</td>
+                    <td>@item.Color</td>
+                    <td>@item.GarageCount</td>
+                    <td>@item.SaleCount</td>
+                }
+            </tr>
+        </tbody>
+    </table>
+</div>
