@@ -1,6 +1,8 @@
-﻿@{
+﻿@using VehicleTender.Web.AdminUI.Models.PageModel
+@{
     ViewData["Title"] = "Vehicle Hardware List";
 }
+@model HardwareListPageModel;
 <h5 class="mb-3 pb-3 display-5 text-center mt-4">Donanımlar</h5>
 
 <div class="row m-3">
@@ -8,7 +10,7 @@
         Donanım Ekle
     </button>
 
-    
+
 </div>
 <div class="card mb-4 m-5">
     <div class="card-header">
@@ -22,18 +24,23 @@
                     <th>Sıra</th>
                     <th>Araç Donanım</th>
                     <th></th>
-
                 </tr>
             </thead>
             <tbody>
-                @for (int i = 0; i < 15; i++)
+                
+                @foreach (var item in Model.HardwareList)
                 {
                     <tr>
-                        <td>@i</td>
-                        <td>fasdfasd</td>
-                        <td class="update_delete"><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#newRole1">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                        <td>@item.Id</td>
+                        <td>@item.HardwareName</td>
+                        <td class="update_delete">
+                            <form method="post">
+                            <button type="submit" class="btn btn-danger" asp-action="DeleteVehicleHardware" asp-controller="Vehicle" asp-route-ID="@item.Id">Sil</button>
+                            </form>
+                        </td>
                     </tr>
                 }
+                
             </tbody>
         </table>
     </div>
@@ -48,43 +55,19 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/" method="post">
+            <form action="AddVehicleHardware" method="post">
                 <div class="modal-body">
                     <div class="row m-3">
                         <label>Donanım </label>
-                        <input type="text" class="form-control">
+                        <input class="form-control" type="text" asp-for="Hardware.HardwareName">
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                    <button type="submit" class="btn btn-primary" asp-action="AddVehicleHardware" asp-controller="Vehicle">Kaydet</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="newRole1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Donanım Güncelle</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form action="/" method="post">
-                <div class="modal-body">
-                    <div class="row m-3">
-                        <label>Donanım </label>
-                        <input type="text" class="form-control">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                    <button type="submit" class="btn btn-primary">Kaydet</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>

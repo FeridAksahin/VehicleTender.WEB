@@ -23,5 +23,9 @@ namespace VehicleTender.Web.AdminUI.ApiServices.Services
         {//https://localhost:7011/Comission
             return await baseApiService.PostAsync<CommissionDTO>(token, newCommission, "endpoint route gelmeli");
         }
+        public async Task<CommissionDTO> GetCommissionById(BearerTokenDTO token,string id)
+        {
+            return await baseApiService.GetAsync<CommissionDTO>(token, id, "endpoint buraya gelecek");
+        }
     }
 }
