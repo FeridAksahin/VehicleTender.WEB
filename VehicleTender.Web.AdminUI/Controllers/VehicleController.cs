@@ -2,6 +2,7 @@
 using VehicleTender.Web.AdminUI.ApiServices.Services;
 using VehicleTender.Web.AdminUI.Models.Car;
 using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Brand;
+using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Color;
 using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Fuel;
 using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Hardware;
 using VehicleTender.Web.AdminUI.Models.Commission;
@@ -120,7 +121,26 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public IActionResult VehicleColorList()
         {
+            ColorPageModel colorPage = new ColorPageModel();
+            Color c = new Color();
+            c.ColorId = 2;
+            c.ColorName = "Yeşil";
+            List<Color> test = new List<Color>();
+            test.Add(c);
+            colorPage.GetColorList = test;
+            return View(colorPage);
+        }
+        [HttpPost]
+        public async Task<IActionResult> VehicleColorList(ColorPageModel addColor) //add color
+        {
+            //await identifyingCehicleFaturesService.AddNewColor(token, addColor.Color.ColorName);
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> DeleteColor(int id)
+        {
+            // await identifyingCehicleFaturesService.DeleteColor(token, id);
+            return RedirectToAction("VehicleColorList");
         }
         [HttpGet]
         public async Task<IActionResult> VehicleHardwareList()

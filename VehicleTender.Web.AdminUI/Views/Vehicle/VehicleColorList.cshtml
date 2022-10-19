@@ -1,8 +1,10 @@
-﻿@{
+﻿@using VehicleTender.Web.AdminUI.Models.PageModel
+@model ColorPageModel
+@{
     ViewData["Title"] = "Vehicle Color List";
 }
 <h5 class="mb-3 pb-3 display-5 text-center mt-4">Renkler</h5>
-<div class="row m-3" >
+<div class="row m-3">
     <button type="button" class="btn btn-primary w-100 p-3 mt-3 mb-3" data-toggle="modal" data-target="#newRole">
         Renk Ekle
     </button>
@@ -16,19 +18,21 @@
         <table id="datatablesSimple" class="table table-hover table-bordered">
             <thead>
                 <tr>
-                    <th>Sıra</th>
                     <th>Renk</th>
                     <th></th>
 
                 </tr>
             </thead>
             <tbody>
-                @for (int i = 0; i < 15; i++)
+                @foreach (var i in @Model.GetColorList)
                 {
                     <tr>
-                        <td>@i</td>
-                        <td>fasdfasd</td>
-                        <td class="update_delete"><button type="button" class="btn btn-danger">Sil</button></td>
+                        <td>@i.ColorName</td>
+                        <td class="update_delete">
+                            <form method="post">
+                                <button type="submit" class="btn btn-danger" asp-action="DeleteColor" asp-controller="Vehicle" asp-route-ID="@i.ColorId">Sil</button>
+                            </form>
+                        </td>
                     </tr>
                 }
             </tbody>
@@ -36,52 +40,29 @@
     </div>
 </div>
 
-<div class="modal fade" id="newRole" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Renk Ekle</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form action="/" method="post">
-                <div class="modal-body">
-                    <div class="row m-3">
-                        <label>Renk Adı </label>
-                        <input type="text" class="form-control">
-                    </div>
+<form action="VehicleColorList" method="post">
+    <div class="modal fade" id="newRole" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Renk Ekle</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                    <button type="submit" class="btn btn-primary">Kaydet</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
 
-<div class="modal fade" id="newRole1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Renk Ekle</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form action="/" method="post">
                 <div class="modal-body">
                     <div class="row m-3">
                         <label>Renk Adı </label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" asp-for="Color.ColorName">
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
                     <button type="submit" class="btn btn-primary">Kaydet</button>
                 </div>
-            </form>
+
+            </div>
         </div>
     </div>
-</div>
+</form>
