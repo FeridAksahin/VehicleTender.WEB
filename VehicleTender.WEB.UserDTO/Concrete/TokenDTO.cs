@@ -10,6 +10,6 @@ namespace VehicleTender.WEB.UserDTO.Concrete
     {
         public string AccessToken { get; set; }
         public string TokenType { get; set; }
-        public string ExpiresIn { get; set; }
+        public DateTime ExpiresIn { get; set; }
     }
 }
