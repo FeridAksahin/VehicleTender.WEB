@@ -56,11 +56,11 @@
 
                         <td style="text-align:center;">
                             <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#UpdateModal">Güncelle</button>
-                        </td>
+                        </td><!--data targetla gönder verileri-->
                         <td>
                             <form method="post">
                                 <button type="submit" class="btn btn-danger" asp-action="DeleteAdmin" asp-controller="UserOperations" asp-route-ID="@item.UserId">Sil</button>
-                            </form>
+                            </form> <!--a kullan-->
                         </td>
                     </tr>
 
@@ -151,7 +151,6 @@
                     <button type="submit" class="btn btn-primary">Kaydet</button>
                 </div>
             </div>
-
         </div>
     </div>
 </form>

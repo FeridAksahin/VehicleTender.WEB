@@ -29,32 +29,6 @@ namespace VehicleTender.Web.AdminUI.Controllers
             return View(adminsPageModel);
         }
         [HttpPost]
-        public async Task<IActionResult> updateTest(string id)
-        {
-            var a = adminService.GetAdminById(token, id);
-            GetAdminDTO testlik = new GetAdminDTO();
-            testlik.isActive = true;
-            testlik.Telephone = "gearg";
-            testlik.Email = "asdf";
-            testlik.Surname = "vs";
-            testlik.Username = "agaraerg";
-            testlik.UserId = 4;
-            testlik.Name = "gagarge";
-            return RedirectToAction("UserList");
-        }
-        /*
-        [HttpPost]
-        public async Task<IActionResult> UserList(string id)
-        {
-            AdminsPage adminsPageModele = new AdminsPage();
-            //adminService.GetAdminById(token, id);
-
-            //  adminsPageModel.getAdminDTO = await adminService.GetAllAdmin(token);  -- db den çekilmediginde null hatası veriyor 
-
-            return RedirectToAction("",adminsPageModele);
-        }
-        */
-        [HttpPost]
         public IActionResult AddNewAdmin(AdminsPage admin)
         {
             var a = 4;
