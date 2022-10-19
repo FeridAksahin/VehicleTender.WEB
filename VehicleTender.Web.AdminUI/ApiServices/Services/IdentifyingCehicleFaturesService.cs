@@ -24,9 +24,9 @@ namespace VehicleTender.Web.AdminUI.ApiServices.Services
         {//https://localhost:7011/Vehicle/VehicleBodyTypeList
             return await baseApiService.DeleteAsync(token, "endpoint route gelmeli", id);
         }
-        public async Task<List<string>> GetAllCarBrand(BearerTokenDTO token)
+        public async Task<List<Brand>> GetAllCarBrand(BearerTokenDTO token)
         {//https://localhost:7011/Vehicle/VehicleBrandList
-            return await baseApiService.GetAsyncList<string>(token, "endpoint route");
+            return await baseApiService.GetAsyncList<Brand>(token, "endpoint route");
         }
         public async Task<string> AddNewCarBrand(BearerTokenDTO token, string brandName)
         {//https://localhost:7011/Vehicle/VehicleBrandList
@@ -88,9 +88,9 @@ namespace VehicleTender.Web.AdminUI.ApiServices.Services
         {//https://localhost:7011/Vehicle/VehicleGearTypeList
             return await baseApiService.DeleteAsync(token, "endpoint route gelmeli", id);
         }
-        public async Task<List<string>> GetAllHardware(BearerTokenDTO token)
+        public async Task<List<Hardware>> GetAllHardware(BearerTokenDTO token)
         {//https://localhost:7011/Vehicle/VehicleHardwareList
-            return await baseApiService.GetAsyncList<string>(token, "endpoint route");
+            return await baseApiService.GetAsyncList<Hardware>(token, "endpoint route");
         }
         public async Task<string> AddNewHardware(BearerTokenDTO token, string newHardware)
         {//https://localhost:7011/Vehicle/VehicleHardwareList
