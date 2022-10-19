@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using VehicleTender.Web.AdminUI.ApiServices.Services;
 using VehicleTender.Web.AdminUI.Models.Car;
+
+
+
 using VehicleTender.Web.AdminUI.Models.PageModel;
 using VehicleTender.Web.AdminUI.Models.Token;
 
@@ -122,6 +125,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public IActionResult UpdateVehicle(string id)
         {
+          // carService.GetCarDetailForIntoUpdateButton(token, id);
             UpdateCarDTO updateCarViewModel = new UpdateCarDTO();
             updateCarViewModel.KM = "egrerg";
             updateCarViewModel.Version = "gafg";
