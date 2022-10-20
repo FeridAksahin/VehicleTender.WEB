@@ -16,6 +16,7 @@ namespace VehicleTender.Web.AdminUI.Models.Admin
         public string Telephone { get; set; }
         [EmailType(EmailValidateType =EmailValidateType.General)]
         public string Email { get; set; }
+        public string Password { get; set; }
         public bool isActive { get; set; }
     }
 }

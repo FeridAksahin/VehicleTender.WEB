@@ -55,7 +55,7 @@
                          </td>-->
 
                         <td style="text-align:center;">
-                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#UpdateModal">Güncelle</button>
+                       <a asp-action="UpdateUser" asp-controller="UserOperations" asp-route-id="@item.UserId" class="btn btn-warning">Güncelle</a>
                         </td><!--data targetla gönder verileri-->
                         <td>
                             <form method="post">
@@ -96,11 +96,11 @@
 
                             <input type="text" class="form-control form-control-lg mt-3" placeholder="Email" asp-for="addAdminDTO.Email" />
 
-                            <input type="password" class="form-control form-control-lg mt-3" placeholder="Parola" />
+                            <input type="password" class="form-control form-control-lg mt-3" placeholder="Parola" asp-for="addAdminDTO.Password"/>
 
                             <select class="form-control form-control-lg mt-3">
-                                <option value="1">Aktif</option>
-                                <option value="2">Pasif</option>
+                                <option value="@true">Aktif</option>
+                                <option value="@false">Pasif</option>
                             </select>
                         </div>
                     </div>
@@ -114,44 +114,5 @@
     </div>
 </form>
 
-<form asp-action="UpdateAdmin" asp-controller="UserOperations" method="post">
-    <div class="modal fade" id="UpdateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="text-center display-4 modal-title" id="exampleModalLongTitle">Kullanıcı Güncelle</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="container">
-                        <div class="row">
-                            <input type="text" class="form-control form-control-lg mt-3" placeholder="Kullanıcı Adı" />
 
-                            <input type="text" class="form-control form-control-lg mt-3" placeholder="Ad " />
-
-                            <input type="text" class="form-control form-control-lg mt-3" placeholder="Soyad" />
-
-                            <input type="text" class="form-control form-control-lg mt-3" placeholder="Telefon" />
-
-                            <input type="text" class="form-control form-control-lg mt-3" placeholder="Email" />
-
-                            <input type="password" class="form-control form-control-lg mt-3" placeholder="Parola" />
-
-                            <select class="form-control form-control-lg mt-3">
-                                <option value="1">Aktif</option>
-                                <option value="2">Pasif</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                    <button type="submit" class="btn btn-primary">Kaydet</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</form>
 

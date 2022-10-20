@@ -6,7 +6,5 @@ namespace VehicleTender.Web.AdminUI.Models.PageModel
     {
         public AddAdminDTO addAdminDTO { get; set; }
         public List<GetAdminDTO> getAdminDTO { get; set; }  
-        public UpdateAdmin updateAdmin { get; set; }  
-
     }
 }

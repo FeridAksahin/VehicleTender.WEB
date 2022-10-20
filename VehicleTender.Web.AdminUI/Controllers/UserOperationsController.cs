@@ -28,6 +28,26 @@ namespace VehicleTender.Web.AdminUI.Controllers
             adminsPageModel.getAdminDTO = listAdmin;
             return View(adminsPageModel);
         }
+        [HttpGet]
+        public async Task<IActionResult> UpdateUser(int id)
+        {
+            UpdateAdmin updateAdmin = new UpdateAdmin();
+            updateAdmin.isActive = false;
+            updateAdmin.Telephone = "345345";
+            updateAdmin.Email = "athatrh@gmail.com";
+            updateAdmin.Username = "atharth";
+            updateAdmin.Surname = "atharth";
+            updateAdmin.UserId = id;
+            updateAdmin.Password = "garehg";
+            updateAdmin.Name = "gaerhae";
+
+            return View(updateAdmin);
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdateUser(UpdateAdmin updateAdmin)
+        {
+            return RedirectToAction("UserList");
+        }
         [HttpPost]
         public IActionResult AddNewAdmin(AdminsPage admin)
         {

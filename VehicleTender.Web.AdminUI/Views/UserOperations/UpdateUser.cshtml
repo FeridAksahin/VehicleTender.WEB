@@ -1,0 +1,54 @@
+﻿@using VehicleTender.Web.AdminUI.Models.Admin
+@model UpdateAdmin
+
+<form asp-action="UpdateUser" asp-controller="UserOperations" method="post">
+
+
+    <div class="row filter">
+        <div class="row">
+            <div class="col-4">
+                <label>Araç Id</label>
+                <input asp-for="UserId" readonly class="form-control" />
+            </div>
+            <div class="col-4">
+
+                <label>Kullanıcı Adı</label>
+                <input type="text" class="form-control form-control-lg mt-3" placeholder="Kullanıcı Adı" asp-for="Username" />
+            </div>
+            <div class="col-4">
+
+                <label>Ad</label>
+                <input type="text" class="form-control form-control-lg mt-3" placeholder="Ad" asp-for="Name" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <label>Soyad</label>
+                <input type="text" class="form-control form-control-lg mt-3" placeholder="Soyad" asp-for="Surname" />
+            </div>
+            <div class="col-4">
+
+                <label>Telefon</label>
+                <input type="text" class="form-control form-control-lg mt-3" placeholder="Telefon" asp-for="Telephone" />
+            </div>
+            <div class="col-4">
+                <label>Email</label>
+                <input type="text" class="form-control form-control-lg mt-3" placeholder="Email" asp-for="Email" />
+            </div>
+        </div>
+        <div class="col-4">
+            <label>Parola</label>
+            <input type="text" class="form-control form-control-lg mt-3" placeholder="Parola" asp-for="Password" />
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary m-3">Kaydet</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</form>
+
