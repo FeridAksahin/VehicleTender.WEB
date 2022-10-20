@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VehicleTender.API.Validation.Attributes
+namespace VehicleTender.WEB.Admin.Validation.Attributes
 {
     [AttributeUsage(AttributeTargets.All)]
     public class StringType : Attribute

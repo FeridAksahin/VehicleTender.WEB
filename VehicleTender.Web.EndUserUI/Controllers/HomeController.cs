@@ -7,7 +7,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls;
+using VehicleTender.Web.EndUserUI.ApiService.Concrete;
 using VehicleTender.WEB.EndUser.Validation;
+using VehicleTender.WEB.UserDTO.Concrete;
 using VehicleTender.WEB.UserDTO.VM.Account;
 using VehicleTender.WEB.UserDTO.VM.Contact;
 
@@ -15,6 +17,7 @@ namespace VehicleTender.Web.EndUserUI.Controllers
 {
     public class HomeController : Controller
     {
+        
         public ActionResult Index()
         {
             return View();
@@ -55,22 +58,37 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         [HttpGet]
         public ActionResult Login()
         {
+            if (HttpContext.Request.Cookies["token"] != null)
+            {
+                HttpCookie httpCookie = HttpContext.Request.Cookies["token"];
+                string token = httpCookie.Values["value"];
+            }
             return View();
         }
 
         [HttpPost]
-        public ActionResult Login(LoginVM loginVM)
+        public ActionResult Login(TokenDTO tokenDTO,LoginVM loginVM)
         {
+            AccountService accountService = new AccountService();
             LoginValidation loginValidation = new LoginValidation();
             ValidationResult result = loginValidation.Validate(loginVM);
+
             if (result.IsValid)
             {
-                return RedirectToAction("Index");
+                //var token=accountService.GetToken(tokenDTO, loginVM);
+
+                HttpCookie httpCookie = new HttpCookie("token");
+                httpCookie.Expires = DateTime.Now.AddDays(1);
+                httpCookie.Values.Add("token","value");
+                HttpContext.Response.Cookies.Add(httpCookie);
+
+                return RedirectToAction(nameof(Login));
             }
             foreach (var item in result.Errors)
             {
                 ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
             }
+            
             return View();
         }
 

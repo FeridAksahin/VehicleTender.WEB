@@ -1,7 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using VehicleTender.Web.AdminUI.ApiServices.Services;
 using VehicleTender.Web.AdminUI.Models.Car;
-using VehicleTender.Web.AdminUI.Models.Car.Model;
+using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Brand;
+using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Color;
+using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Fuel;
+using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Hardware;
+using VehicleTender.Web.AdminUI.Models.Commission;
 using VehicleTender.Web.AdminUI.Models.PageModel;
 using VehicleTender.Web.AdminUI.Models.Token;
 
@@ -11,7 +15,10 @@ namespace VehicleTender.Web.AdminUI.Controllers
     public class VehicleController : Controller
     {
         BearerTokenDTO token = new BearerTokenDTO();
+        
         CarService carService = new CarService();
+        IdentifyingCehicleFaturesService identifyingCehicleFaturesService = new();
+
         [HttpGet]
         public async Task<IActionResult> VehicleList(string? brandName, string? modelName, string? individualOrCorparate, string? statu)
         {
@@ -50,11 +57,31 @@ namespace VehicleTender.Web.AdminUI.Controllers
             return View(allCarPageModel);
         }
         [HttpGet]
-        public IActionResult VehicleBrandList()
+        public async Task<IActionResult> VehicleBrandList()
         {
-            return View();
+            BrandListPageModel model = new BrandListPageModel();
+            model.BrandList = new List<Brand>();
+            //model.BrandList = await identifyingCehicleFaturesService.GetAllCarBrand(token);
+            Brand brand = new Brand()
+            {
+                Id=1,
+                BrandName = "deneme"
+            };
+            model.BrandList.Add(brand);
+            return View(model);
         }
-
+        [HttpPost]
+        public async Task<IActionResult> AddVehicleBrand(BrandListPageModel brandListPageModel)
+        {
+            await identifyingCehicleFaturesService.AddNewCarBrand(token, brandListPageModel.Brand.BrandName);
+            return RedirectToAction(nameof(VehicleBrandList));
+        }
+        [HttpPost]
+        public async Task<IActionResult> DeleteVehicleBrand(int id)
+        {
+            await identifyingCehicleFaturesService.DeleteCarBrand(token,id);
+            return RedirectToAction(nameof(VehicleBrandList));
+        }
 
         [HttpGet]
         public IActionResult VehicleModelList()
@@ -108,7 +135,22 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public IActionResult VehicleFuelTypeList()
         {
-            return View();
+            FuelTypePage model = new FuelTypePage();
+            model.GetAllFuelTypes = new List<FuelType>();
+            //model.GetAllFuelTypes = await identifyingCehicleFaturesService.GetFuelType(token);
+            FuelType fuelType = new FuelType()
+            {
+                Id = 1,
+                FuelTypeName = "Benzinli"
+            };
+            model.GetAllFuelTypes.Add(fuelType);
+            return View(model);
+        }
+        [HttpPost]
+        public async Task<IActionResult> VehicleFuelTypeList(FuelTypePage fuelType)
+        {
+            await identifyingCehicleFaturesService.AddNewFuelType(token, fuelType.FuelType.FuelTypeName);
+            return RedirectToAction(nameof(VehicleFuelTypeList));
         }
         [HttpGet]
         public IActionResult VehicleGearTypeList()
@@ -118,12 +160,52 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public IActionResult VehicleColorList()
         {
+            ColorPageModel colorPage = new ColorPageModel();
+            Color c = new Color();
+            c.ColorId = 2;
+            c.ColorName = "Yeşil";
+            List<Color> test = new List<Color>();
+            test.Add(c);
+            colorPage.GetColorList = test;
+            return View(colorPage);
+        }
+        [HttpPost]
+        public async Task<IActionResult> VehicleColorList(ColorPageModel addColor) //add color
+        {
+            //await identifyingCehicleFaturesService.AddNewColor(token, addColor.Color.ColorName);
             return View();
         }
-        [HttpGet]
-        public IActionResult VehicleHardwareList()
+        [HttpPost]
+        public async Task<IActionResult> DeleteColor(int id)
         {
-            return View();
+            // await identifyingCehicleFaturesService.DeleteColor(token, id);
+            return RedirectToAction("VehicleColorList");
+        }
+        [HttpGet]
+        public async Task<IActionResult> VehicleHardwareList()
+        {
+            HardwareListPageModel model = new HardwareListPageModel();
+            model.HardwareList = new List<Hardware>();
+            //model.HardwareList = await identifyingCehicleFaturesService.GetAllHardware(token);
+            Hardware hardware = new Hardware()
+            {
+                Id=1,
+                HardwareName = "deneme"
+            };
+            model.HardwareList.Add(hardware);
+            return View(model);
+        }
+        [HttpPost]
+        public async Task<IActionResult> AddVehicleHardware(HardwareListPageModel hardwareListPageModel)
+        {
+            await identifyingCehicleFaturesService.AddNewHardware(token, hardwareListPageModel.Hardware.HardwareName);
+            return RedirectToAction(nameof(VehicleHardwareList));
+        }
+        [HttpPost]
+        public async Task<IActionResult> DeleteVehicleHardware(int id)
+        {
+            await identifyingCehicleFaturesService.DeleteHardware(token, id);
+            return RedirectToAction(nameof(VehicleHardwareList));
         }
         [HttpGet]
         public IActionResult StockList()
@@ -164,6 +246,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public IActionResult UpdateVehicle(string id)
         {
+          // carService.GetCarDetailForIntoUpdateButton(token, id);
             UpdateCarDTO updateCarViewModel = new UpdateCarDTO();
             updateCarViewModel.KM = "egrerg";
             updateCarViewModel.Version = "gafg";

@@ -1,4 +1,6 @@
 ﻿using VehicleTender.Web.AdminUI.ApiServices.Base.Concrete;
+using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Brand;
+using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Hardware;
 using VehicleTender.Web.AdminUI.Models.Token;
 
 namespace VehicleTender.Web.AdminUI.ApiServices.Services
@@ -22,17 +24,17 @@ namespace VehicleTender.Web.AdminUI.ApiServices.Services
         {//https://localhost:7011/Vehicle/VehicleBodyTypeList
             return await baseApiService.DeleteAsync(token, "endpoint route gelmeli", id);
         }
-        public async Task<List<string>> GetAllCarBrand(BearerTokenDTO token)
+        public async Task<List<Brand>> GetAllCarBrand(BearerTokenDTO token)
         {//https://localhost:7011/Vehicle/VehicleBrandList
-            return await baseApiService.GetAsyncList<string>(token, "endpoint route");
+            return await baseApiService.GetAsyncList<Brand>(token, "endpoint route");
         }
         public async Task<string> AddNewCarBrand(BearerTokenDTO token, string brandName)
         {//https://localhost:7011/Vehicle/VehicleBrandList
             return await baseApiService.PostAsync<string>(token, brandName, "endpoint route gelmeli");
         }
-        public async Task<string> UpdateCarBrand(BearerTokenDTO token, string idAndBrand) //url kısmından gönderilip, api tarafında ayrılıp değerlendirilmeli
+        public async Task<string> UpdateCarBrand(BearerTokenDTO token, UpdateBrand updateBrand) //url kısmından gönderilip, api tarafında ayrılıp değerlendirilmeli
         {//https://localhost:7011/Vehicle/VehicleBrandList
-            return await baseApiService.PutAsync<string>(token, idAndBrand, "endpoint gelmeli");
+            return await baseApiService.PutAsync<UpdateBrand>(token, updateBrand, "endpoint gelmeli");
         }
         public async Task<string> DeleteCarBrand(BearerTokenDTO token, int id)
         {//https://localhost:7011/Vehicle/VehicleBrandList
@@ -86,17 +88,17 @@ namespace VehicleTender.Web.AdminUI.ApiServices.Services
         {//https://localhost:7011/Vehicle/VehicleGearTypeList
             return await baseApiService.DeleteAsync(token, "endpoint route gelmeli", id);
         }
-        public async Task<List<string>> GetHardware(BearerTokenDTO token)
+        public async Task<List<Hardware>> GetAllHardware(BearerTokenDTO token)
         {//https://localhost:7011/Vehicle/VehicleHardwareList
-            return await baseApiService.GetAsyncList<string>(token, "endpoint route");
+            return await baseApiService.GetAsyncList<Hardware>(token, "endpoint route");
         }
         public async Task<string> AddNewHardware(BearerTokenDTO token, string newHardware)
         {//https://localhost:7011/Vehicle/VehicleHardwareList
             return await baseApiService.PostAsync<string>(token, newHardware, "endpoint route gelmeli");
         }
-        public async Task<string> UpdateHardware(BearerTokenDTO token, string idAndHardware) //url kısmından gönderilip, api tarafında ayrılıp değerlendirilmeli
+        public async Task<string> UpdateHardware(BearerTokenDTO token, UpdateHardware updateHardware) //url kısmından gönderilip, api tarafında ayrılıp değerlendirilmeli
         {//https://localhost:7011/Vehicle/VehicleHardwareList
-            return await baseApiService.PutAsync<string>(token, idAndHardware, "endpoint gelmeli");
+            return await baseApiService.PutAsync<UpdateHardware>(token, updateHardware, "endpoint gelmeli");
         }
         public async Task<string> DeleteHardware(BearerTokenDTO token, int id)
         {//https://localhost:7011/Vehicle/VehicleHardwareList

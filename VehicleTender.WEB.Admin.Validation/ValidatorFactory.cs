@@ -29,7 +29,11 @@ namespace VehicleTender.API.Validation
         {
             if (attribute.Name.Contains("Date"))
             {
-                dateValidator.Add("DateType", new DateValidator<T>());
+                if (dateValidator.Count==0)
+                {
+                    dateValidator.Add("DateType", new DateValidator<T>());
+                    
+                }
                 return dateValidator["DateType"];
             }
             return null;
@@ -38,7 +42,11 @@ namespace VehicleTender.API.Validation
         {
             if (attribute.Name.Contains("Email"))
             {
-                emailValidator.Add("EmailType", new EmailValidator<T>());
+                if (emailValidator.Count==0)
+                {
+                    emailValidator.Add("EmailType", new EmailValidator<T>());
+                    
+                }
                 return emailValidator["EmailType"];
             }
             return null;
@@ -47,7 +55,11 @@ namespace VehicleTender.API.Validation
         {
             if (attribute.Name.Contains("String"))
             {
-                stringValidator.Add("StringType", new StringValidator<T>());
+                if (stringValidator.Count==0)
+                {
+                    stringValidator.Add("StringType", new StringValidator<T>());
+                    
+                }
                 return stringValidator["StringType"];
             }
             return null;

@@ -1,5 +1,6 @@
-﻿
-<form action="/" method="post">
+﻿@using VehicleTender.Web.AdminUI.Models.IndividualCar
+@model IndividualCarSaleUpdateDetailPageDTO
+<form asp-action="IndividualVehicleSalesDetail" asp-controller="User" method="post">
     <div class="container mt-3">
         <div class="row">
             <div class="m-3 vehicle_update">
@@ -8,22 +9,22 @@
                     <div class="row">
                         <div class="col-4">
                             <label>Üye Ad Soyad</label>
-                           <input type="text" class="form-control">
+                            <input type="text" class="form-control" asp-for="MemberNameSurname">
                         </div>
                         <div class="col-4">
                             <label>Statü</label>
-                            <select class="form-control">
+                            <select class="form-control" asp-for="Statu">
                                 <option value="1">X</option>
                                 <option value="2">Y</option>
                             </select>
                         </div>
                         <div class="col-4">
                             <label>Ön Değerlendirme Fiyat</label>
-                        <input type="text" class="form-control">
+                            <input type="text" class="form-control" asp-for="PreAssesmentPrice">
                         </div>
                         <div class="col-4">
                             <label>Teklif Fiyatı</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" asp-for="Offer">
                         </div>
                     </div>
                 </div>
@@ -34,66 +35,66 @@
                     <div class="row">
                         <div class="col-4">
                             <label>Araç Marka</label>
-                            <select class="form-control">
+                            <select class="form-control" asp-for="CarBrand">
                                 <option value="1">BMW</option>
                                 <option value="2">Mercedes</option>
                             </select>
                         </div>
                         <div class="col-4">
                             <label>Araç Model</label>
-                            <select class="form-control">
+                            <select class="form-control" asp-for="CarModel">
                                 <option value="1">M3</option>
                                 <option value="2">M6</option>
                             </select>
                         </div>
                         <div class="col-4">
                             <label>Gövde Tipi</label>
-                            <select class="form-control">
+                            <select class="form-control" asp-for="BodyType">
                                 <option value="1">Sedan</option>
                                 <option value="2">Hatchback</option>
                             </select>
                         </div>
                         <div class="col-4">
                             <label>Yıl</label>
-                            <select class="form-control">
+                            <select class="form-control" asp-for="Year">
                                 <option value="1">2022</option>
                             </select>
                         </div>
                         <div class="col-4">
                             <label>Yakıt Tipi</label>
-                            <select class="form-control">
+                            <select class="form-control" asp-for="FuelType">
                                 <option value="1">Benzin</option>
                                 <option value="2">Dizel</option>
                             </select>
                         </div>
                         <div class="col-4">
                             <label>Vites Tipi</label>
-                            <select class="form-control">
+                            <select class="form-control" asp-for="TransmissionType">
                                 <option value="1">Düz</option>
                                 <option value="2">Otomatik</option>
                             </select>
                         </div>
                         <div class="col-4">
                             <label>Versiyon</label>
-                            <select class="form-control">
+                            <select class="form-control" asp-for="Version">
                                 <option value="1">X</option>
                                 <option value="2">Y</option>
                             </select>
                         </div>
                         <div class="col-4">
                             <label>KM Bilgisi</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" asp-for="KM">
                         </div>
                         <div class="col-4">
                             <label>Renk</label>
-                            <select class="form-control">
+                            <select class="form-control" asp-for="Color">
                                 <option value="1">Kırmızı</option>
                                 <option value="2">Siyah</option>
                             </select>
                         </div>
                         <div class="col-4">
                             <label>Donanım</label>
-                            <select class="form-control">
+                            <select class="form-control" asp-for="Hardware">
                                 <option value="1">X</option>
                                 <option value="2">Y</option>
                             </select>
@@ -107,7 +108,7 @@
                             </div>
                             <div class="col-6">
                                 <label>Açıklama</label>
-                                <textarea cols="20" rows="5" class="form-control"></textarea>
+                                <textarea cols="20" rows="5" class="form-control" asp-for="Description"></textarea>
                             </div>
                         </div>
                     </div>
@@ -128,43 +129,40 @@
         </div>
 
     </div>
-</form>
 
 
 
 
-<div class="modal fade" id="aracTarihcePopUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Araç Tarihçe</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form action="/" method="post">
+
+    <div class="modal fade" id="aracTarihcePopUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Araç Tarihçe</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
                 <div class="modal-body">
                     Araç Tarihçe
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Kaydet</button>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="modal fade" id="hasarTramerBilgileriPopUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Hasar Tramer Bilgileri</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <form action="/" method="post">
+    <div class="modal fade" id="hasarTramerBilgileriPopUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Hasar Tramer Bilgileri</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
                 <div class="modal-body">
 
                     <label>Toplam Tramer Tutarı</label>
@@ -263,14 +261,10 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Kaydet</button>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
-
-</div>
- 
-
-
+</form>
 

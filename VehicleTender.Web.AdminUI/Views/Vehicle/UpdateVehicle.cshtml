@@ -13,7 +13,7 @@
                     <div class="row">
                         <div class="col-4">
                             <label>Üye Ad Soyad</label>
-                            <input type="text" class="form-control" value="@Model.CompanyName" asp-for="CompanyName">
+                            <input type="text" class="form-control" asp-for="CompanyName">
                         </div>
                         <div class="col-4">
                             <label>Statü</label>
@@ -24,11 +24,11 @@
                         </div>
                         <div class="col-4">
                             <label>Ön Değerlendirme Fiyat</label>
-                            <input type="text" class="form-control" value="@Model.PreAssesmentPrice" asp-for="PreAssesmentPrice">
+                            <input type="text" class="form-control" asp-for="PreAssesmentPrice">
                         </div>
                         <div class="col-4">
                             <label>Teklif Fiyatı</label>
-                            <input type="text" class="form-control" value="@Model.Price" asp-for="Price">
+                            <input type="text" class="form-control" asp-for="Price">
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                         </div>
                         <div class="col-4">
                             <label>KM Bilgisi</label>
-                            <input type="text" class="form-control" value="@Model.KM" asp-for="KM">
+                            <input type="text" class="form-control" asp-for="KM">
                         </div>
                         <div class="col-4">
                             <label>Renk</label>
@@ -98,7 +98,7 @@
                         </div>
                         <div class="col-4">
                             <label>Donanım</label>
-                            <select class="form-control">
+                            <select class="form-control" asp-for="BodyType">
                                 <option value="1">X</option>
                                 <option value="2">Y</option>
                             </select>
@@ -112,7 +112,7 @@
                             </div>
                             <div class="col-6">
                                 <label>Açıklama</label>
-                                <textarea cols="20" rows="5" class="form-control" value="@Model.Description" asp-for="Description"></textarea>
+                                <textarea cols="20" rows="5" class="form-control" asp-for="Description"></textarea>
                             </div>
                         </div>
                     </div>
@@ -223,9 +223,9 @@
            
                 <div class="modal-body">
                     <label>İlan Başlığı</label>
-                    <input type="text" class="form-control" asp-for="AdvertHeader" value="@Model.AdvertHeader">
+                    <input type="text" class="form-control" asp-for="AdvertHeader">
                     <label>İlan Açıklaması</label>
-                    <textarea cols="20" rows="5" class="form-control" asp-for="@Model.AdvertDescription" value="@Model.AdvertDescription"></textarea>
+                    <textarea cols="20" rows="5" class="form-control" asp-for="@Model.AdvertDescription"></textarea>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>

@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\VehicleTender.WEB.Admin.Common\VehicleTender.WEB.Admin.Common.csproj" />
+    <ProjectReference Include="..\VehicleTender.WEB.Admin.Validation\VehicleTender.WEB.Admin.Validation.csproj" />
   </ItemGroup>
 
 </Project>
