@@ -31,8 +31,8 @@
                         <td>@bodyType.Id</td>
                         <td>@bodyType.BodyTypeName</td>
                         <td class="update_delete" a">
-                            <form method="post">
-                                <button type="submit" class="btn btn-danger" asp-action="DeleteBodyType" asp-controller="Vehicle" asp-route-ID="@bodyType.Id.">Sil</button>
+                            <form>
+                                <button type="submit" class="btn btn-danger" asp-action="DeleteBodyType" asp-controller="Vehicle" asp-route-ID="@bodyType.Id">Sil</button>
                             </form>
                         </td>
                     </tr>
@@ -51,7 +51,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="VehicleAddBodyType" method="post">
+            <form asp-action="VehicleAddBodyType" method="post">
                 <div class="modal-body">
                     <div class="row m-3">
                         <label>Gövde Tipi </label>

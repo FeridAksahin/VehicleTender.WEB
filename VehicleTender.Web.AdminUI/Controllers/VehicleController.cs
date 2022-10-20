@@ -5,6 +5,7 @@ using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Body;
 using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Brand;
 using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Color;
 using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Fuel;
+using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Gear;
 using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Hardware;
 using VehicleTender.Web.AdminUI.Models.Commission;
 using VehicleTender.Web.AdminUI.Models.PageModel;
@@ -140,10 +141,27 @@ namespace VehicleTender.Web.AdminUI.Controllers
             return RedirectToAction(nameof(VehicleFuelTypeList));
         }
         [HttpGet]
-        public IActionResult VehicleGearTypeList()
+        public async Task<IActionResult> VehicleGearTypeList()
         {
-            return View();
+            List<GearType> gearTypes = new List<GearType>()
+            {
+                new GearType(){Id=1,GearTypeName="Otomatik"}
+            };
+            //await identifyingCehicleFaturesService.GetAllGearType(token);
+            return View(gearTypes);
         }
+        [HttpPost]
+        public async Task<IActionResult> VehicleAddGearType(string gearType)
+        {
+            //await identifyingCehicleFaturesService.AddNewCarGearType(token, gearType);
+            return RedirectToAction("VehicleGearTypeList");
+        }
+        //[HttpPost]
+        //public async Task<IActionResult> GearTypeDelete(int id)
+        //{
+        //    //await identifyingCehicleFaturesService.DeleteGearType(token, id);
+        //    return RedirectToAction("VehicleGearTypeList");
+        //}
         [HttpGet]
         public IActionResult VehicleColorList()
         {
