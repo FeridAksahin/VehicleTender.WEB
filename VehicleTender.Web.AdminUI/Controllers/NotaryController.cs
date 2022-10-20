@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using VehicleTender.Web.AdminUI.Models.Notary;
 
 namespace VehicleTender.Web.AdminUI.Controllers
