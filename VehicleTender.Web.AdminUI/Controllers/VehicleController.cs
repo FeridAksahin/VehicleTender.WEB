@@ -299,12 +299,8 @@ namespace VehicleTender.Web.AdminUI.Controllers
             updateCarViewModel.AdvertHeader = "argerg";
             updateCarViewModel.AdvertDescription = "argaeaergeargaergeagreargggggggggggggggggggggggggggggggggggggggggggg";
             updateCarViewModel.BodyType = "Sedan";
-            updateCarViewModel.BuyNowSell = false;
+            updateCarViewModel.BuyNowSell = true;
             updateCarViewModel.CarBrand = "gaerg";
-            updateCarViewModel.BuyerName = "aregaerg";
-            updateCarViewModel.BuyerSurname = "artharth";
-            updateCarViewModel.BuyerTelephone = "trhsrthrsth";
-            updateCarViewModel.BuyerCompanyName = "athrtharth";
             updateCarViewModel.Description = "ahaeth";
             updateCarViewModel.Statu = "arg";
             updateCarViewModel.PreAssesmentPrice = 232;

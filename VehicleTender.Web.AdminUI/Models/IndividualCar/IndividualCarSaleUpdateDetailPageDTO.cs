@@ -5,6 +5,7 @@ namespace VehicleTender.Web.AdminUI.Models.IndividualCar
 {
     public class IndividualCarSaleUpdateDetailPageDTO
     {//araç tarihçe eksik 
+        public int CarId { get; set; }
         [StringType(Max = 20, Min = 1)]
         public string MemberNameSurname { get; set; }
         [StringType(Max = 20, Min = 1)]
