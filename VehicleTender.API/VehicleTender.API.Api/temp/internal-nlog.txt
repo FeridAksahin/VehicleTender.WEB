@@ -240,3 +240,32 @@ Error Number:-1,State:0,Class:20
 ClientConnectionId:00000000-0000-0000-0000-000000000000
 Error Number:-1,State:0,Class:20
 2022-10-10 20:36:12.2499 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\Ferid\Desktop\VehicleTender.WEB\VehicleTender.API\VehicleTender.API.Api\bin\Debug\net6.0\NLog.config
+2022-10-20 23:19:29.8774 Info Message Template Auto Format enabled
+2022-10-20 23:19:29.8902 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-20 23:19:30.3820 Info Adding target DatabaseTarget(Name=db)
+2022-10-20 23:19:30.4717 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.API\VehicleTender.API.Api\bin\Debug\net6.0\NLog.config
+2022-10-20 23:20:12.7780 Info Message Template Auto Format enabled
+2022-10-20 23:20:12.7780 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-20 23:20:12.9102 Info Adding target DatabaseTarget(Name=db)
+2022-10-20 23:20:12.9434 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.API\VehicleTender.API.Api\bin\Debug\net6.0\NLog.config
+2022-10-20 23:20:14.4408 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.API\VehicleTender.API.Api\bin\Debug\net6.0\NLog.config
+2022-10-20 23:30:06.6009 Info Message Template Auto Format enabled
+2022-10-20 23:30:06.6096 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-20 23:30:06.7488 Info Adding target DatabaseTarget(Name=db)
+2022-10-20 23:30:06.7914 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.API\VehicleTender.API.Api\bin\Debug\net6.0\NLog.config
+2022-10-20 23:30:08.1103 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.API\VehicleTender.API.Api\bin\Debug\net6.0\NLog.config
+2022-10-20 23:34:46.5674 Info Message Template Auto Format enabled
+2022-10-20 23:34:46.5759 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-20 23:34:46.6992 Info Adding target DatabaseTarget(Name=db)
+2022-10-20 23:34:46.7395 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.API\VehicleTender.API.Api\bin\Debug\net6.0\NLog.config
+2022-10-20 23:34:47.7872 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.API\VehicleTender.API.Api\bin\Debug\net6.0\NLog.config
+2022-10-21 00:00:50.4869 Info Message Template Auto Format enabled
+2022-10-21 00:00:50.5082 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-21 00:00:50.6952 Info Adding target DatabaseTarget(Name=db)
+2022-10-21 00:00:50.7369 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.API\VehicleTender.API.Api\bin\Debug\net6.0\NLog.config
+2022-10-21 00:00:52.3858 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.API\VehicleTender.API.Api\bin\Debug\net6.0\NLog.config
+2022-10-21 00:02:40.2215 Info Message Template Auto Format enabled
+2022-10-21 00:02:40.2303 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-21 00:02:40.3690 Info Adding target DatabaseTarget(Name=db)
+2022-10-21 00:02:40.4081 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.API\VehicleTender.API.Api\bin\Debug\net6.0\NLog.config
+2022-10-21 00:02:41.8055 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.API\VehicleTender.API.Api\bin\Debug\net6.0\NLog.config

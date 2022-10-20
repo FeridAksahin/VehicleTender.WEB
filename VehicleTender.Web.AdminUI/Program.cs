@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Builder;
 using NLog;
 using NLog.Web;
 using VehicleTender.Web.AdminUI.ApiServices.Base.Concrete;
@@ -15,9 +17,10 @@ builder.Services.AddControllersWithViews();
 builder.Logging.ClearProviders();
 builder.Host.UseNLog();
 
-//builder.Services.AddScoped<IBaseApiService, BaseApiService>();
 
-builder.Services.AddHttpClient<BaseApiService>(options =>
+    //builder.Services.AddScoped<IBaseApiService, BaseApiService>();
+
+    builder.Services.AddHttpClient<BaseApiService>(options =>
 {
     options.BaseAddress = new Uri(builder.Configuration["apiAddress"]);
 });
@@ -36,7 +39,10 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
+    app.UseAuthorization();
+
+
+
 app.UseEndpoints(endpoints =>endpoints.MapDefaultControllerRoute());
 app.MapControllerRoute(
     name: "default",
