@@ -1,4 +1,4 @@
-﻿    @using VehicleTender.Web.AdminUI.Models.Car
+﻿@using VehicleTender.Web.AdminUI.Models.Car
 
 
 @model UpdateCarDTO
@@ -6,11 +6,16 @@
 
 <form asp-action="UpdateVehicle" asp-controller="Vehicle" method="post">
     <div class="container mt-3">
+     
         <div class="row">
             <div class="m-3 vehicle_update">
                 <h4>Bireysel Araç Satım Detay Bilgisi</h4>
                 <div class="col-12">
                     <div class="row">
+                        <div class="col-4">
+                            <label>Araç Id</label>
+                               <input asp-for="CarId" readonly class="form-control"/>
+                        </div>
                         <div class="col-4">
                             <label>Üye Ad Soyad</label>
                             <input type="text" class="form-control" asp-for="CompanyName">
@@ -124,9 +129,6 @@
             <button type="button" class="btn btn-primary m-1 add_update_vehicle_btn" data-toggle="modal" data-target="#exampleModalCenter">
                 Hemen Al Satışta
             </button>
-            <button type="button" class="btn btn-primary  m-1 add_update_vehicle_btn" data-toggle="modal" data-target="#exampleModalCenter2">
-                Alıcı Bilgileri
-            </button>
             <button type="button" class="btn btn-primary  m-1 add_update_vehicle_btn" data-toggle="modal" data-target="#aracTarihcePopUp">
                 Araç Tarihçe
             </button>
@@ -145,211 +147,189 @@
 
 
 
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Hemen Al Satış</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-          
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Hemen Al Satış</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
                 <div class="modal-body">
-                    Hemen Al Satış
+                    <div class="container">
+                        <div class="row">
+                            <select class="form-control form-control-lg mt-3" asp-for="BuyNowSell">
+                                <option value="@true">Çıkar</option>
+                                <option value="@false">Çıkarma</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Kaydet</button>
-                </div>
-         
-        </div>
-    </div>
-</div>
 
-<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Alıcı Bilgileri</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-         
-                <div class="modal-body">
-                    Alıcı Bilgileri
-                </div>
-                <div class="modal-footer">
-               <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Kaydet</button>
-                </div>
-        
-        </div>
-    </div>
-</div>
-<div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">İlan Bilgileri</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-           
-                <div class="modal-body">
-                    <label>İlan Başlığı</label>
-                    <input type="text" class="form-control" asp-for="AdvertHeader">
-                    <label>İlan Açıklaması</label>
-                    <textarea cols="20" rows="5" class="form-control" asp-for="@Model.AdvertDescription"></textarea>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Kaydet</button>
-                </div>
-        </div>
-    </div>
-</div>
+                <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">İlan Bilgileri</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
 
-<div class="modal fade" id="aracTarihcePopUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Araç Tarihçe</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            
-                <div class="modal-body">
-                    Araç Tarihçe
+                            <div class="modal-body">
+                                <label>İlan Başlığı</label>
+                                <input type="text" class="form-control" asp-for="AdvertHeader">
+                                <label>İlan Açıklaması</label>
+                                <textarea cols="20" rows="5" class="form-control" asp-for="@Model.AdvertDescription"></textarea>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Kaydet</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Kaydet</button>
+
+                <div class="modal fade" id="aracTarihcePopUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Araç Tarihçe</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
+                            <div class="modal-body">
+                                Araç Tarihçe
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Kaydet</button>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
-         
-        </div>
-    </div>
-</div>
 
-<div class="modal fade" id="hasarTramerBilgileriPopUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Hasar Tramer Bilgileri</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-       
-                <div class="modal-body">
+                <div class="modal fade" id="hasarTramerBilgileriPopUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Hasar Tramer Bilgileri</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
 
-                    <label>Toplam Tramer Tutarı</label>
-                    <input type="text" name="name" />
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col"></th>
-                                <th scope="col">Orjinal</th>
-                                <th scope="col">Boyalı</th>
-                                <th scope="col">Değişmiş</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr style="text-align:center;">
-                                <th scope="row">Sağ Arka Çamurluk</th>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"></td>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"></td>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"></td>
-                            </tr>
-                            <tr style="text-align:center;">
-                                <th scope="row">Arka Kaput</th>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1" value="option1"></td>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio2" value="option2"></td>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio3" value="option3"></td>
-                            </tr>
-                            <tr style="text-align:center;">
-                                <th scope="row">Sol Arka Çamurluk</th>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio1" value="option1"></td>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio2" value="option2"></td>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio3" value="option3"></td>
-                            </tr>
-                            <tr style="text-align:center;">
-                                <th scope="row">Sağ Arka Kapı</th>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio1" value="option1"></td>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio2" value="option2"></td>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio3" value="option3"></td>
-                            </tr>
-                            <tr style="text-align:center;">
-                                <th scope="row">Sağ Ön Kapı</th>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio1" value="option1"></td>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio2" value="option2"></td>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio3" value="option3"></td>
-                            </tr>
-                            <tr style="text-align:center;">
-                                <th scope="row">Tavan</th>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio1" value="option1"></td>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio2" value="option2"></td>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio3" value="option3"></td>
-                            </tr>
-                            <tr style="text-align:center;">
-                                <th scope="row">Sol Arka Kapı</th>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio1" value="option1"></td>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio2" value="option2"></td>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio3" value="option3"></td>
-                            </tr>
-                            <tr style="text-align:center;">
-                                <th scope="row">Sol Ön Kapı</th>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions7" id="inlineRadio1" value="option1"></td>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions7" id="inlineRadio2" value="option2"></td>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions7" id="inlineRadio3" value="option3"></td>
-                            </tr>
-                            <tr style="text-align:center;">
-                                <th scope="row">Sağ Ön Çamurluk</th>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions8" id="inlineRadio1" value="option1"></td>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions8" id="inlineRadio2" value="option2"></td>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions8" id="inlineRadio3" value="option3"></td>
-                            </tr>
-                            <tr style="text-align:center;">
-                                <th scope="row">Motor Kaputu</th>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions9" id="inlineRadio1" value="option1"></td>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions9" id="inlineRadio2" value="option2"></td>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions9" id="inlineRadio3" value="option3"></td>
-                            </tr>
-                            <tr style="text-align:center;">
-                                <th scope="row">Sol Ön Çamurluk</th>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions10" id="inlineRadio1" value="option1"></td>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions10" id="inlineRadio2" value="option2"></td>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions10" id="inlineRadio3" value="option3"></td>
-                            </tr>
-                            <tr style="text-align:center;">
-                                <th scope="row">Ön Tampon</th>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions11" id="inlineRadio1" value="option1"></td>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions11" id="inlineRadio2" value="option2"></td>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions11" id="inlineRadio3" value="option3"></td>
-                            </tr>
-                            <tr style="text-align:center;">
-                                <th scope="row">Arka Tampon</th>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions12" id="inlineRadio1" value="option1"></td>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions12" id="inlineRadio2" value="option2"></td>
-                                <td><input class="form-check-input" type="radio" name="inlineRadioOptions12" id="inlineRadio3" value="option3"></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                            <div class="modal-body">
+
+                                <label>Toplam Tramer Tutarı</label>
+                                <input type="text" name="name" />
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col"></th>
+                                            <th scope="col">Orjinal</th>
+                                            <th scope="col">Boyalı</th>
+                                            <th scope="col">Değişmiş</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="text-align:center;">
+                                            <th scope="row">Sağ Arka Çamurluk</th>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"></td>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"></td>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"></td>
+                                        </tr>
+                                        <tr style="text-align:center;">
+                                            <th scope="row">Arka Kaput</th>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1" value="option1"></td>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio2" value="option2"></td>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio3" value="option3"></td>
+                                        </tr>
+                                        <tr style="text-align:center;">
+                                            <th scope="row">Sol Arka Çamurluk</th>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio1" value="option1"></td>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio2" value="option2"></td>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio3" value="option3"></td>
+                                        </tr>
+                                        <tr style="text-align:center;">
+                                            <th scope="row">Sağ Arka Kapı</th>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio1" value="option1"></td>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio2" value="option2"></td>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio3" value="option3"></td>
+                                        </tr>
+                                        <tr style="text-align:center;">
+                                            <th scope="row">Sağ Ön Kapı</th>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio1" value="option1"></td>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio2" value="option2"></td>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio3" value="option3"></td>
+                                        </tr>
+                                        <tr style="text-align:center;">
+                                            <th scope="row">Tavan</th>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio1" value="option1"></td>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio2" value="option2"></td>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio3" value="option3"></td>
+                                        </tr>
+                                        <tr style="text-align:center;">
+                                            <th scope="row">Sol Arka Kapı</th>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio1" value="option1"></td>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio2" value="option2"></td>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio3" value="option3"></td>
+                                        </tr>
+                                        <tr style="text-align:center;">
+                                            <th scope="row">Sol Ön Kapı</th>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions7" id="inlineRadio1" value="option1"></td>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions7" id="inlineRadio2" value="option2"></td>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions7" id="inlineRadio3" value="option3"></td>
+                                        </tr>
+                                        <tr style="text-align:center;">
+                                            <th scope="row">Sağ Ön Çamurluk</th>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions8" id="inlineRadio1" value="option1"></td>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions8" id="inlineRadio2" value="option2"></td>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions8" id="inlineRadio3" value="option3"></td>
+                                        </tr>
+                                        <tr style="text-align:center;">
+                                            <th scope="row">Motor Kaputu</th>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions9" id="inlineRadio1" value="option1"></td>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions9" id="inlineRadio2" value="option2"></td>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions9" id="inlineRadio3" value="option3"></td>
+                                        </tr>
+                                        <tr style="text-align:center;">
+                                            <th scope="row">Sol Ön Çamurluk</th>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions10" id="inlineRadio1" value="option1"></td>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions10" id="inlineRadio2" value="option2"></td>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions10" id="inlineRadio3" value="option3"></td>
+                                        </tr>
+                                        <tr style="text-align:center;">
+                                            <th scope="row">Ön Tampon</th>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions11" id="inlineRadio1" value="option1"></td>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions11" id="inlineRadio2" value="option2"></td>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions11" id="inlineRadio3" value="option3"></td>
+                                        </tr>
+                                        <tr style="text-align:center;">
+                                            <th scope="row">Arka Tampon</th>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions12" id="inlineRadio1" value="option1"></td>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions12" id="inlineRadio2" value="option2"></td>
+                                            <td><input class="form-check-input" type="radio" name="inlineRadioOptions12" id="inlineRadio3" value="option3"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Kaydet</button>
+                            </div>
+
+                        </div>
+                    </div>
 
                 </div>
-                <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Kaydet</button>
-                </div>
-           
-        </div>
-    </div>
 
-</div>
-
- </form>
+</form>
 
 
