@@ -58,7 +58,18 @@ namespace VehicleTender.Web.AdminUI.Controllers
           
             return View(corporateUserPageModel);
         }
-
+        [HttpPost]
+        public async Task<IActionResult> UpdateAccountSituation(CorporateUserPage updateIsActive)
+        {
+            var d = updateIsActive.isActive;
+            return RedirectToAction("CorporateUsers");
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdatePacketType(CorporateUserPage updateIsActive)
+        {
+            var d = updateIsActive.PacketId;
+            return RedirectToAction("CorporateUsers");
+        }
         public IActionResult Profile()
         {
             return View();

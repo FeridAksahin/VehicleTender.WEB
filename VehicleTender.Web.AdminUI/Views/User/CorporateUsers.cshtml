@@ -118,8 +118,7 @@
     </div>
 </div>
 
-
-
+<form asp-action="UpdateAccountSituation" asp-controller="User" method="post">
 <div class="modal fade" id="exampleModalCenter7" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -132,9 +131,9 @@
             <div class="modal-body">
                 <div class="container">
                     <div class="row">
-                        <select class="form-control form-control-lg mt-3">
-                            <option value="1">Aktif</option>
-                            <option value="2">Deaktif</option>
+                        <select class="form-control form-control-lg mt-3" asp-for="isActive">
+                            <option value="@true">Aktif</option>
+                            <option value="@false">Deaktif</option>
                         </select>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
@@ -146,7 +145,8 @@
         </div>
     </div>
 </div>
-
+</form>
+<form asp-action="UpdatePacketType" asp-controller="User" method="post">
 <div class="modal fade" id="exampleModalCenter8" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -160,10 +160,10 @@
                 <div class="container">
                     <div class="row">
 
-                        <select class="form-control form-control-lg mt-3">
+                        <select class="form-control form-control-lg mt-3" asp-for="PacketId">
                             <option value="1">Altın</option>
                             <option value="2">Gümüş</option>
-                            <option value="2">Bronz</option>
+                            <option value="3">Bronz</option>
                         </select>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
@@ -175,6 +175,6 @@
         </div>
     </div>
 </div>
-
+</form>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
