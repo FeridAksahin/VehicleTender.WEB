@@ -29,17 +29,19 @@
                 @foreach(var item in Model.CommissionList)
                 {
                     <tr>
-                        <td>@item.ID</td>
+                        <td>@item.ID</td>   
                         <td>@item.CarStartingPrice ₺</td>
                         <td>@item.CarEndingPrice ₺</td>
                         <td>@item.CommissionPrice ₺</td>
                         <td class="update_delete">
-                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalCenter1">Güncelle</button>
+                            
+                            <form method="get">
+                                <button type="submit" class="btn btn-warning" asp-action="UpdateCommission" asp-controller="Commission" asp-route-ID="@item.ID">Güncelle</button>
+                            </form>
                             <form method="post">
                             <button type="submit" class="btn btn-danger" asp-action="DeleteCommission" asp-controller="Commission" asp-route-ID="@item.ID">Sil</button>
                             </form>
                         </td>
-
                      
                     </tr>
                 }
@@ -65,7 +67,6 @@
                     <div class="row">
                         <div class="mb-3">
                             <label class="form-label">Başlangıç Fiyat Araloğı</label>
-                            <input type="text" class="form-control">
                             <input class="form-control" type="text" asp-for="AddCommission.CarStartingPrice">
                         </div>
                         <div class="mb-3">
