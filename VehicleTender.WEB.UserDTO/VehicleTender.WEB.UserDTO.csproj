@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="Concrete\CarDTO.cs" />
     <Compile Include="Concrete\TokenDTO.cs" />
-    <Compile Include="Concrete\UserLoginDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VM\Account\CorporateRegisterVM.cs" />
     <Compile Include="VM\Account\LoginVM.cs" />
