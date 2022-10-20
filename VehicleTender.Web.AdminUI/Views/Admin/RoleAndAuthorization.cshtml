@@ -1,4 +1,5 @@
-﻿
+﻿@model VehicleTender.Web.AdminUI.Models.RoleAndAuthorization.RoleAndAuthorizationDto
+
 <h5 class="mb-3 pb-3 display-5 text-center mt-4">Rol Yetki</h5>
 <div class="row m-5">
     <button type="button" class="btn btn-primary w-100 p-3 mt-3 mb-3" data-toggle="modal" data-target="#newRole">
@@ -37,7 +38,7 @@
                         <td class="update_delete">
                             <button type="button" class="btn btn-warning " data-toggle="modal" data-target="#updateRoleAndAuth">
                                 Güncelle
-                            </button> <button type="button" class="btn btn-danger">Sil</button>
+                            </button> <a asp-action="RoleAndAuthorizationDelete" asp-controller="Admin" asp-route-id="id" class="btn btn-danger">Sil</a>
                         </td>
                     </tr>
                 }
@@ -101,7 +102,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/" method="post">
+            <form asp-action="RoleAndAuthorizationAdd" asp-controller="Admin" method="post">
                 <div class="modal-body">
                     <div class="row m-3">
                         <label>Rol</label>
