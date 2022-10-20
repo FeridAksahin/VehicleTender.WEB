@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<BodyType>
+@{
     ViewData["Title"] = "Vehicle Body Type List";
 }
 
@@ -24,12 +25,16 @@
                 </tr>
             </thead>
             <tbody>
-                @for (int i = 0; i < 15; i++)
+                @foreach (BodyType bodyType in @Model)
                 {
                     <tr>
-                        <td>@i</td>
-                        <td>fasdfasd</td>
-                        <td class="update_delete" a"><button type="button" class="btn btn-danger">Sil</button></td>
+                        <td>@bodyType.Id</td>
+                        <td>@bodyType.BodyTypeName</td>
+                        <td class="update_delete" a">
+                            <form method="post">
+                                <button type="submit" class="btn btn-danger" asp-action="DeleteBodyType" asp-controller="Vehicle" asp-route-ID="@bodyType.Id.">Sil</button>
+                            </form>
+                        </td>
                     </tr>
                 }
             </tbody>
@@ -46,11 +51,11 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/" method="post">
+            <form action="VehicleAddBodyType" method="post">
                 <div class="modal-body">
                     <div class="row m-3">
                         <label>Gövde Tipi </label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" name="bodyType">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -70,7 +75,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/" method="post">
+            <form action="" method="post">
                 <div class="modal-body">
                     <div class="row m-3">
                         <label>Gövde Tipi </label>
