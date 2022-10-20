@@ -1,10 +1,16 @@
-﻿namespace VehicleTender.Web.AdminUI.Models.Tender
+﻿using VehicleTender.WEB.Admin.Validation.Attributes;
+
+namespace VehicleTender.Web.AdminUI.Models.Tender
 {
     public class UpdateTenderDTO
     {
+        [StringType(Max = 20, Min = 1)]
         public string TenderName { get; set; }
+        [StringType(Max = 20, Min = 1)]
         public string IndividualOrCorparate { get; set; }
+        [StringType(Max = 20, Min = 1)]
         public string CompanyName { get; set; }
+        [StringType(Max = 20, Min = 1)]
         public string Statu { get; set; }
         public DateTime TenderStartDate { get; set; }
         public DateTime TenderStartHour { get; set; }
