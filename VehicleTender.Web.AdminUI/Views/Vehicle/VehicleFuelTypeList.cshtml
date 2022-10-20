@@ -44,16 +44,16 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="post" asp-action="VehicleFuelTypeList" asp-controller="Vehicle">
+            <form method="post">
                 <div class="modal-body">
                     <div class="row m-3">
                         <label>Yakıt Tipi </label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" asp-for="FuelType.FuelTypeName">
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                    <button type="submit" class="btn btn-primary" asp-action="VehicleFuelTypeList" asp-controller="Vehicle">Kaydet</button>
                 </div>
             </form>
         </div>

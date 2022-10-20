@@ -123,18 +123,22 @@
             </div>
             <form action="/" method="post">
                 <div class="modal-body">
-                    <div class="row m-3">
-                        <label>Araç Id</label>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="row m-3">
-                        <label>İhale Başlangıç Fiyatı</label>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="row m-3">
-                        <label>Minumum Alım Fiyatı</label>
-                        <input type="text" class="form-control">
-                    </div>
+                    @foreach (var item in Model.TenderCar)
+                    {
+                        <div class="row m-3">
+                            <label>Araç Id</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="row m-3">
+                            <label>İhale Başlangıç Fiyatı</label>
+                            <input type="text" class="form-control" value="@item.TenderStartCarPrice">
+                        </div>
+                        <div class="row m-3">
+                            <label>Minumum Alım Fiyatı</label>
+                            <input type="text" class="form-control" value="@item.TenderMinumumCarPrice">
+                        </div>
+                    }
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
