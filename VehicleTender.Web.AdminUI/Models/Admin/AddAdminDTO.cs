@@ -1,7 +1,10 @@
-﻿namespace VehicleTender.Web.AdminUI.Models.Admin
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace VehicleTender.Web.AdminUI.Models.Admin
 {
     public class AddAdminDTO
     {
+        [Required(ErrorMessage ="Boş geçilemez.")]
         public string Username { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }

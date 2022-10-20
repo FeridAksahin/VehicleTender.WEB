@@ -1,4 +1,5 @@
-﻿@{
+﻿@model RegisterModel
+@{
     Layout = null;
     ViewData["Title"] = "Login";
 
@@ -25,25 +26,39 @@
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
                                 <div class="card-header"><h3 class="text-center font-weight-light my-4">Kayıt Ol</h3></div>
                                 <div class="card-body">
-                                    <form>
+                                    <form asp-action="Register" method="post">
                                         <div class="form-floating mb-3">
-                                            <input class="form-control" id="" type="text" placeholder="name@example.com" />
-                                            <label for="inputEmail">Ad</label>
+                                            <input class="form-control" type="text" asp-for="@Model.FirstName" />
+                                            <label for="Ad">Ad</label>
+                                            <span asp-validation-for="@Model.FirstName" class="alert-danger"></span>
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <input class="form-control" id="" type="text" placeholder="name@example.com" />
-                                            <label for="inputEmail">Soyad</label>
+                                            <input class="form-control" type="text" asp-for="@Model.LastName" />
+                                            <label for="Soyad">Soyad</label>
+                                            <span asp-validation-for="@Model.LastName" class="alert-danger"></span>
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <input class="form-control" id="inputEmail" type="email" placeholder="name@example.com" />
-                                            <label for="inputEmail">Email adres</label>
+                                            <input class="form-control" type="text" asp-for="@Model.Email" />
+                                            <label for="Email">Email adres</label>
+                                            <span asp-validation-for="@Model.Email" class="alert-danger"></span>
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <input class="form-control" id="inputPassword" type="password" placeholder="Password" />
-                                            <label for="inputPassword">Parola</label>
+                                            <input class="form-control" type="text" asp-for="@Model.PhoneNumber" />
+                                            <label for="Phone">Telefon Numarası</label>
+                                            <span asp-validation-for="@Model.PhoneNumber" class="alert-danger"></span>
                                         </div>
-                                        <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                            <a class="btn btn-primary" href="index.html">Kayıt Ol</a>
+                                        <div class="form-floating mb-3">
+                                            <textarea class="form-control" type="text" asp-for="@Model.Address"></textarea>
+                                            <label for="Adres">Adres</label>
+                                            <span asp-validation-for="@Model.Address" class="alert-danger"></span>
+                                        </div>
+                                        <div class="form-floating mb-3">
+                                            <input class="form-control" type="password" asp-for="@Model.Password" />
+                                            <label for="Password">Parola</label>
+                                            <span asp-validation-for="@Model.Password" class="alert-danger"></span>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-end mt-4 mb-0">
+                                            <button type="submit" class="btn btn-primary">Kayıt Ol</button>
                                         </div>
                                     </form>
                                 </div>
