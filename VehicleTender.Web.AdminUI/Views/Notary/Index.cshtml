@@ -1,4 +1,6 @@
-﻿<h5 class="mb-3 pb-3 display-5 text-center mt-4">Noter İşlemleri</h5>
+﻿@model VehicleTender.Web.AdminUI.Models.Notary.NotaryDTO
+
+<h5 class="mb-3 pb-3 display-5 text-center mt-4">Noter İşlemleri</h5>
 <div class="row m-5">
     <a class="btn btn-primary w-100 p-3 mt-3 mb-3" data-toggle="modal" data-target="#exampleModalCenter">Güncelle</a>
 </div>
@@ -19,8 +21,8 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>2000 ₺</td>
-                    <td>08.12.2022</td>
+                    <td>@Model.NotaryPrice</td>
+                    <td>@Model.EndDate</td>
                 </tr>
             </tbody>
         </table>
@@ -39,19 +41,26 @@
             <div class="modal-body">
                 <div class="container">
                     <div class="row">
+
+                        <form asp-action="Update" asp-controller="Notary">
                         <div class="mb-3">
                             <label class="form-label">Yeni Noter Ücreti</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" asp-for="NotaryPrice">
 
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Son Geçerlilik Tarihi</label>
-                            <input type="datetime" class="form-control" id="exampleInputPassword1">
+                            <input type="datetime" class="form-control" asp-for="EndDate">
+                        </div>
+                        <div class="mb-3">
+                        
+                            <input type="hidden" class="form-control" asp-for="Id">
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
                             <button type="submit" class="btn btn-primary">Kaydet</button>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
