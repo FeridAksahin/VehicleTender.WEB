@@ -153,15 +153,15 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> VehicleAddGearType(string gearType)
         {
-            //await identifyingCehicleFaturesService.AddNewCarGearType(token, gearType);
+            await identifyingCehicleFaturesService.AddNewCarGearType(token, gearType);
             return RedirectToAction("VehicleGearTypeList");
         }
-        //[HttpPost]
-        //public async Task<IActionResult> GearTypeDelete(int id)
-        //{
-        //    //await identifyingCehicleFaturesService.DeleteGearType(token, id);
-        //    return RedirectToAction("VehicleGearTypeList");
-        //}
+        [HttpPost]
+        public async Task<IActionResult> DeleteGearType(int id)
+        {
+            await identifyingCehicleFaturesService.DeleteGearType(token, id);
+            return RedirectToAction("VehicleGearTypeList");
+        }
         [HttpGet]
         public IActionResult VehicleColorList()
         {

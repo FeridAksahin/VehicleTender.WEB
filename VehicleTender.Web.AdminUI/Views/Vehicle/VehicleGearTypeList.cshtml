@@ -19,21 +19,21 @@
         <table id="datatablesSimple" class="table table-hover table-bordered">
             <thead>
                 <tr>
-                    <th>Sıra</th>
+                    <th>Id</th>
                     <th>Vites Tipi</th>
                     <th></th>
 
                 </tr>
             </thead>
             <tbody>
-                @foreach (GearType item in @Model)
+                @foreach (GearType gearType in @Model)
                 {
                     <tr>
-                        <td>@item.Id</td>
-                        <td>@item.GearTypeName</td>
+                        <td>@gearType.Id</td>
+                        <td>@gearType.GearTypeName</td>
                         <td class="update_delete">
-                            <form>
-                                <button type="submit" class="btn btn-danger" asp-controller="Vehicle" asp-action="GearTypeDelete" asp-route-ID="@item.Id">Sil</button>
+                            <form method="post">
+                                <button type="submit" class="btn btn-danger" asp-action="DeleteGearType" asp-controller="Vehicle" asp-route-ID="@gearType.Id">Sil</button>
                             </form>
                         </td>
                     </tr>
