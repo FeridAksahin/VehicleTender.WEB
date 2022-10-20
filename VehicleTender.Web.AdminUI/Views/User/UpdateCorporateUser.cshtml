@@ -1,0 +1,74 @@
+﻿@using VehicleTender.Web.AdminUI.Models.CorporateUser
+@model UpdateUser
+
+
+<form asp-action="UpdateCorporateUser" asp-controller="User" method="post">
+<div class="row">
+    <div class="m-3 vehicle_update">
+        <h4>Kullanıcı Paket ve Üyelim Durumu Güncelleme</h4>
+        <div class="col-12">
+            <div class="row">
+                <div class="col-4">
+                    <label>Kullanıcı Id</label>
+                    <input asp-for="UserId" readonly class="form-control" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row  mt-3">
+    <button type="button" class="btn btn-primary  m-1 add_update_vehicle_btn" data-toggle="modal" data-target="#exampleModalCenter8">Paket</button>
+    <button type="button" class="btn btn-primary  m-1 add_update_vehicle_btn" data-toggle="modal" data-target="#exampleModalCenter7">Üyelik</button>
+    <button type="submit" class="btn btn-primary  m-1 add_update_vehicle_btn">Kaydet</button>
+</div>
+
+
+    <div class="modal fade" id="exampleModalCenter7" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="text-center display-7 modal-title" id="exampleModalLongTitle">Üyelik Aktiflik</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <select class="form-control form-control-lg mt-3" asp-for="isActive">
+                                <option value="@true">Aktif</option>
+                                <option value="@false">Deaktif</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModalCenter8" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="text-center display-7 modal-title" id="exampleModalLongTitle">Paket Tanımlama||Güncelleme</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+
+                            <select class="form-control form-control-lg mt-3" asp-for="PacketId">
+                                <option value="1">Altın</option>
+                                <option value="2">Gümüş</option>
+                                <option value="3">Bronz</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

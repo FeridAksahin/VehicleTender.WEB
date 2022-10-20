@@ -16,11 +16,10 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public async Task<IActionResult> CorporateUsers(string? companyType, string? packetType) //filtrelemeyi query string ile aldgımız için
         {
-            CorporateUserPage corporateUserPageModel = new CorporateUserPage();
+            List<GetCorporateUserDTO> listCorporateUser = new List<GetCorporateUserDTO>();
             if (companyType != null)
             {
-                //corporateUserPageModel.getAllCorporateUser = await corporateUservice.CorporateUserListBySearchFiltering(token,packetType); //paket tipi için
-                List<GetCorporateUserDTO> listCorporateUser = new List<GetCorporateUserDTO>();
+                //listCorporateUser = await corporateUservice.CorporateUserListBySearchFiltering(token,packetType); //paket tipi için
                 GetCorporateUserDTO testlik = new GetCorporateUserDTO();  
                 testlik.isActive = true;
                 testlik.Telephone = "test";
@@ -34,12 +33,11 @@ namespace VehicleTender.Web.AdminUI.Controllers
                 testlik.CompanyType = "vs";
                 testlik.District = "22";
                 listCorporateUser.Add(testlik);
-                corporateUserPageModel.getAllCorporateUser = listCorporateUser;
             }
             else
             {
-                // corporateUserPageModel.getAllCorporateUser = await corporateUservice.GetAllCorporateUser(token); // -- db den çekilmediginde null hatası veriyor 
-                List<GetCorporateUserDTO> listCorporateUser = new List<GetCorporateUserDTO>();
+                //listCorporateUser = await corporateUservice.GetAllCorporateUser(token); // -- db den çekilmediginde null hatası veriyor 
+
                 GetCorporateUserDTO testlik = new GetCorporateUserDTO(); //o yüzden testlik 
                 testlik.isActive = true;
                 testlik.Telephone = "gearg";
@@ -53,21 +51,24 @@ namespace VehicleTender.Web.AdminUI.Controllers
                 testlik.CompanyType = "Kurumsal";
                 testlik.District = "gaerg";
                 listCorporateUser.Add(testlik);
-                corporateUserPageModel.getAllCorporateUser = listCorporateUser;
             }
           
-            return View(corporateUserPageModel);
+            return View(listCorporateUser);
+        }
+        [HttpGet]
+        public async Task<IActionResult> UpdateCorporateUser(int id)
+        {
+            // var d = updateIsActive.isActive;
+            UpdateUser updateUser = new UpdateUser();
+            updateUser.isActive = false;
+            updateUser.PacketId = 2;
+            updateUser.UserId = id;
+            return View(updateUser);
         }
         [HttpPost]
-        public async Task<IActionResult> UpdateAccountSituation(CorporateUserPage updateIsActive)
+        public async Task<IActionResult> UpdateCorporateUser(UpdateUser updateUser)
         {
-            var d = updateIsActive.isActive;
-            return RedirectToAction("CorporateUsers");
-        }
-        [HttpPost]
-        public async Task<IActionResult> UpdatePacketType(CorporateUserPage updateIsActive)
-        {
-            var d = updateIsActive.PacketId;
+            //var d = updateIsActive.PacketId;
             return RedirectToAction("CorporateUsers");
         }
         public IActionResult Profile()
@@ -124,6 +125,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
             individualCarSaleUpdateDetailPageDTO.Description = "ahaeth";
             individualCarSaleUpdateDetailPageDTO.Statu = "arg";
             individualCarSaleUpdateDetailPageDTO.PreAssesmentPrice = "4353";
+            individualCarSaleUpdateDetailPageDTO.CarId = id;
             return View(individualCarSaleUpdateDetailPageDTO);
         }
         [HttpPost]
