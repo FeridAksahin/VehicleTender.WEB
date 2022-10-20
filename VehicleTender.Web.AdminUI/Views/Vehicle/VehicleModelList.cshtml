@@ -1,14 +1,18 @@
 ﻿@{
     ViewData["Title"] = "Vehicle Model List";
 }
+
+@model VehicleTender.Web.AdminUI.Models.Car.Model.CarModelPagedDto;
+
 <h5 class="mb-3 pb-3 display-5 text-center mt-4">Modeller</h5>
 <div class="row" style="margin:30px;">
     <button type="button" class="btn btn-primary  m-3" data-toggle="modal" data-target="#newRole">
-       Model Ekle
+        Model Ekle
     </button>
 
-  
+
 </div>
+<div id="Getir"></div>
 <div class="card mb-4 m-5">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
@@ -18,51 +22,57 @@
         <table id="datatablesSimple" class="table table-hover table-bordered">
             <thead>
                 <tr>
-                    <th>Sıra</th>
+
                     <th>Araç Model</th>
-                    <th></th>
+                    <th>Düzenle</th>
 
                 </tr>
             </thead>
             <tbody>
-                @for (int i = 0; i < 15; i++)
+                @foreach (var item in Model.CarModelDtos)
                 {
                     <tr>
-                        <td>@i</td>
-                        <td>fasdfasd</td>
-                        <td class="update_delete"><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#newRole1">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
+                        <td>@item.Name</td>
+                        @*td><a class="btn btn-danger" asp-action="VehicleModelDelete" asp-controller="Vehicle" asp-route-id="@item.Id">Sil</a><span></span> <button class="btn btn-warning" data-toggle="modal" onclick="MarkaGuncellenecekVeriGetir(@item.Id)">Güncelle</button></td>*@
+
+
+                         <td ><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#newRole1" onclick="MarkaGuncellenecekVeriGetir(@item.Id)">Güncelle</button> <button type="button" class="btn btn-danger">Sil</button></td>
                     </tr>
                 }
+
+
+
             </tbody>
         </table>
     </div>
 </div>
-
-
 <div class="modal fade" id="newRole" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Model Ekle</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Renk Ekle</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/" method="post">
+             <form  asp-action="VehicleModelAdd" asp-controller="Vehicle"  method="post">
                 <div class="modal-body">
                     <div class="row m-3">
                         <label>Model </label>
-                        <input type="text" class="form-control">
+                        <input  type="text" value="Model" class="form-control" asp-for=CarModelDto.Name>
+                       
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                   
                     <button type="submit" class="btn btn-primary">Kaydet</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
+
 <div class="modal fade" id="newRole1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -72,18 +82,49 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="/" method="post">
+
+
+            <form  asp-action="VehicleModelUpdate" asp-controller="Vehicle"  method="post">
                 <div class="modal-body">
                     <div class="row m-3">
                         <label>Model </label>
-                        <input type="text" class="form-control">
+                        <input id="Model" type="text" value="Model" class="form-control" asp-for=CarModelDto.Name>
+                        <input type="hidden" value="Id"  id="Id" asp-for=CarModelDto.Id/>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                   
                     <button type="submit" class="btn btn-primary">Kaydet</button>
                 </div>
             </form>
+
+
+
         </div>
     </div>
 </div>
+
+<script>
+    function MarkaGuncellenecekVeriGetir(id) {
+
+        
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+
+                  const obj=  JSON.parse(this.responseText);
+                document.getElementById("Model").value =obj["name"]
+                document.getElementById("Id").value =obj["id"]
+
+                
+                console.log(this.responseText);
+            }
+        };
+        xhttp.open("GET", " https://localhost:7011/Vehicle/VehicleModelGetById/" + id, true);
+        xhttp.setRequestHeader("Content-Type", "application/json");
+        
+
+       
+        xhttp.send();
+    }
+</script>

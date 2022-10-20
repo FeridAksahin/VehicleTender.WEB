@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using VehicleTender.Web.AdminUI.ApiServices.Services;
 using VehicleTender.Web.AdminUI.Models.Car;
+using VehicleTender.Web.AdminUI.Models.Car.Model;
 using VehicleTender.Web.AdminUI.Models.PageModel;
 using VehicleTender.Web.AdminUI.Models.Token;
 
@@ -53,11 +54,52 @@ namespace VehicleTender.Web.AdminUI.Controllers
         {
             return View();
         }
+
+
         [HttpGet]
         public IActionResult VehicleModelList()
         {
-            return View();
+            List<CarModelDto> carModelDtos = new List<CarModelDto>()
+            {
+                new CarModelDto{Id=1, Name="Tofaş"},
+                new CarModelDto{Id=2, Name="Fiat"},
+                new CarModelDto{Id=3,Name="Renault"}
+            };
+
+            CarModelPagedDto carModelPagedDto = new CarModelPagedDto();
+            carModelPagedDto.CarModelDtos = carModelDtos;
+
+
+            
+            return View(carModelPagedDto);
         }
+
+        public IActionResult VehicleModelGetById(int id)
+        {
+            return Json(new CarModelDto { Id = 1, Name = "Tofaş" });
+        }
+
+        [HttpGet]
+        public IActionResult VehicleModelDelete(int id)
+        {
+
+            return RedirectToAction("VehicleModelList", "VehicleController");
+        }
+        [HttpPost]
+        public IActionResult VehicleModelUpdate(CarModelPagedDto carModelPagedDto)
+        {
+
+            return RedirectToAction("VehicleModelList", "VehicleController");
+        }
+        public IActionResult VehicleModelAdd(CarModelPagedDto carModelPagedDto)
+        {
+
+            return RedirectToAction("VehicleModelList", "VehicleController");
+        }
+
+
+
+
         [HttpGet]
         public IActionResult VehicleBodyTypeList()
         {
@@ -155,6 +197,10 @@ namespace VehicleTender.Web.AdminUI.Controllers
             //carService.GetCarDetailForIntoUpdateButton(token, id);
             return View();
         }
+
+
+
+
         /*
         [HttpPost]
         public IActionResult UpdateVehicle()
