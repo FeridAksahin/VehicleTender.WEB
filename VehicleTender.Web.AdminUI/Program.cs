@@ -40,7 +40,7 @@ app.UseAuthorization();
 app.UseEndpoints(endpoints =>endpoints.MapDefaultControllerRoute());
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=UserOperations}/{action=UserList}/{id?}");
+    pattern: "{controller=Auth}/{action=Login}/{id?}");
 
 app.Run();
 }

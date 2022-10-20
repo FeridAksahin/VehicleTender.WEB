@@ -8,6 +8,19 @@ namespace VehicleTender.Web.AdminUI.ApiServices.Services
     public class IdentifyingCehicleFaturesService
     {
         BaseApiService baseApiService = new BaseApiService();
+        public async Task<List<string>> GetAllGearType(BearerTokenDTO token)
+        {//https://localhost:7011/Vehicle/VehicleGearTypeList
+            return await baseApiService.GetAsyncList<string>(token, "endpoint route");
+        }
+        public async Task<string> AddNewCarGearType(BearerTokenDTO token, string gearType)
+        {//https://localhost:7011/Vehicle/VehicleGearTypeList
+            return await baseApiService.PostAsync<string>(token, gearType, "endpoint route gelmeli");
+        }
+        public async Task<string> DeleteGearType(BearerTokenDTO token, int id)
+        {//https://localhost:7011/Vehicle/VehicleGearTypeList
+            return await baseApiService.DeleteAsync(token, "endpoint route gelmeli", id);
+        }
+
         public async Task<List<string>> GetAllBodyType(BearerTokenDTO token)
         {//https://localhost:7011/Vehicle/VehicleBodyTypeList
             return await baseApiService.GetAsyncList<string>(token, "endpoint route");

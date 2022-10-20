@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using VehicleTender.Web.AdminUI.ApiServices.Services;
 using VehicleTender.Web.AdminUI.Models.Car;
+using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Body;
 using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Brand;
 using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Color;
 using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Fuel;
+using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Gear;
 using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Hardware;
 using VehicleTender.Web.AdminUI.Models.Car.Model;
 using VehicleTender.Web.AdminUI.Models.Commission;
@@ -125,13 +127,34 @@ namespace VehicleTender.Web.AdminUI.Controllers
             return RedirectToAction("VehicleModelList", "VehicleController");
         }
 
-
-
-
         [HttpGet]
-        public IActionResult VehicleBodyTypeList()
+        public async Task<IActionResult> VehicleBodyTypeList()
         {
-            return View();
+            List<BodyType> bodyTypes = new List<BodyType>() {
+                new BodyType() { Id=1,BodyTypeName="Sedan"},
+                new BodyType() { Id=2,BodyTypeName="Copue"},
+                new BodyType() { Id=3,BodyTypeName="Hatchback 3 Kapı"},
+                new BodyType() { Id=4,BodyTypeName="Hatchback 5 Kapı"},
+                new BodyType() { Id=5,BodyTypeName="Station Wagon"},
+                new BodyType() { Id=6,BodyTypeName="MPV"},
+                new BodyType() { Id=7,BodyTypeName="Roadster"},
+                new BodyType() { Id=8,BodyTypeName="SUV"},
+                new BodyType() { Id=9,BodyTypeName="Cabrio"},
+            };
+            //await identifyingCehicleFaturesService.GetAllBodyType(token);
+            return View(bodyTypes);
+        }
+        [HttpPost]
+        public async Task<IActionResult> VehicleAddBodyType(string bodyType)
+        {
+            await identifyingCehicleFaturesService.AddNewCarBodyType(token, bodyType);
+            return RedirectToAction("VehicleBodyTypeList");
+        }
+        [HttpPost]
+        public async Task<IActionResult> DeleteBodyType(int id)
+        {
+            await identifyingCehicleFaturesService.DeleteBodyType(token, id);
+            return RedirectToAction("VehicleBodyTypeList");
         }
         [HttpGet]
         public IActionResult VehicleFuelTypeList()
@@ -154,9 +177,26 @@ namespace VehicleTender.Web.AdminUI.Controllers
             return RedirectToAction(nameof(VehicleFuelTypeList));
         }
         [HttpGet]
-        public IActionResult VehicleGearTypeList()
+        public async Task<IActionResult> VehicleGearTypeList()
         {
-            return View();
+            List<GearType> gearTypes = new List<GearType>()
+            {
+                new GearType(){Id=1,GearTypeName="Otomatik"}
+            };
+            //await identifyingCehicleFaturesService.GetAllGearType(token);
+            return View(gearTypes);
+        }
+        [HttpPost]
+        public async Task<IActionResult> VehicleAddGearType(string gearType)
+        {
+            await identifyingCehicleFaturesService.AddNewCarGearType(token, gearType);
+            return RedirectToAction("VehicleGearTypeList");
+        }
+        [HttpPost]
+        public async Task<IActionResult> DeleteGearType(int id)
+        {
+            await identifyingCehicleFaturesService.DeleteGearType(token, id);
+            return RedirectToAction("VehicleGearTypeList");
         }
         [HttpGet]
         public IActionResult VehicleColorList()
