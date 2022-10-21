@@ -1,114 +1,122 @@
-﻿
+﻿@using VehicleTender.Web.AdminUI.Models.Tender
 
+
+@model AddNewTenderDTO
 
 
 <h5 class="mb-3 pb-3 display-5 text-center mt-4">İhale Ekleme Sayfası</h5>
-<div class="row add_tender m-5">
-    <div class="col-4">
-        <label>İhale Adı</label>
-        <input type="text" class="form-control" id="TenderName">
-    </div>
-    <div class="col-4">
-        <label>Bireysel / Kurumsal</label>
-        <select class="form-control">
-            <option value="value">Bireysel</option>
-            <option value="value">Kurumsal</option>
-        </select>
-    </div>
-    <div class="col-4">
-        <label>Şirket Adı</label>
-        <select class="form-control">
-            <option value="value">Şirket Adı</option>
-        </select>
-    </div>
-    <div class="col-4">
-        <label>Statü</label>
-        <select class="form-control">
-            <option value="value">text</option>
-        </select>
-    </div>
-    <div class="col-4">
-        <label>İhale Başlangıç Tarihi</label>
-        <div class="input-group date" id="datepicker">
-            <input type="text" class="form-control">
-            <span class="input-group-append">
-                <span class="input-group-text bg-white">
-                    <i class="fa fa-calendar"></i>
+<form method="post" action="NewTenderCreate">
+    <div class="row add_tender m-5">
+
+        <div class="col-4">
+            <label>İhale Adı</label>
+            <input type="text" class="form-control" id="TenderName" asp-for="TenderName">
+            <span asp-validation-for="TenderName"></span>
+        </div>
+        <div class="col-4">
+            <label>Bireysel / Kurumsal</label>
+            <select class="form-control" asp-for="IndividualOrCorparate">
+                <option value="value">Bireysel</option>
+            </select>
+        </div>
+        <div class="col-4">
+            <label>Şirket Adı</label>
+            <select class="form-control" asp-for="CompanyName">
+                <option value="value">Şirket Adı</option>
+            </select>
+        </div>
+        <div class="col-4">
+            <label>Statü</label>
+            <select class="form-control" asp-for="Statu">
+                <option value="value">text</option>
+            </select>
+        </div>
+        <div class="col-4">
+            <label>İhale Başlangıç Tarihi</label>
+            <div class="input-group date" id="datepicker">
+                <input type="text" class="form-control" asp-for="TenderStartDate">
+                <span class="input-group-append">
+                    <span class="input-group-text bg-white">
+                        <i class="fa fa-calendar"></i>
+                    </span>
                 </span>
-            </span>
+            </div>
+        </div>
+        <div class="col-4">
+            <label>İhale Başlangıç Saati</label>
+            <input type="text" class="form-control" id="TenderName" asp-for="TenderStartHour">
+        </div>
+
+        <div class="col-4">
+            <label>İhale Bitiş Tarihi</label>
+            <div class="input-group date" id="date">
+                <input type="text" class="form-control" asp-for="TenderEndTime">
+                <span class="input-group-append">
+                    <span class="input-group-text bg-white">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="col-4">
+            <label>İhale Bitiş Saati</label>
+            <input type="text" class="form-control" id="TenderName" asp-for="TenderEndHour">
         </div>
     </div>
-    <div class="col-4">
-        <label>İhale Başlangıç Saati</label>
-        <input type="text" class="form-control" id="TenderName">
-    </div>
 
-    <div class="col-4">
-        <label>İhale Bitiş Tarihi</label>
-        <div class="input-group date" id="date">
-            <input type="text" class="form-control">
-            <span class="input-group-append">
-                <span class="input-group-text bg-white">
-                    <i class="fa fa-calendar"></i>
-                </span>
-            </span>
+
+
+    <div class="card mb-4 m-5">
+        <div class="card-header">
+            <i class="fas fa-table me-1"></i>
+            İhale Araç Listesi
         </div>
-    </div>
-    <div class="col-4">
-        <label>İhale Bitiş Saati</label>
-        <input type="text" class="form-control" id="TenderName">
-    </div>
-
-
-</div>
-
-
-<div class="card mb-4 m-5">
-    <div class="card-header">
-        <i class="fas fa-table me-1"></i>
-        İhale Araç Listesi
-    </div>
-    <div class="card-body">
-        <table id="datatablesSimple" class="table table-hover table-bordered">
-            <thead>
-                <tr>
-                    <th>Araç Id</th>
-                    <th>Araç Marka</th>
-                    <th>Araç Model</th>
-                    <th>Bireysel/Kurumsal</th>
-                    <th>Statü</th>
-                    <th>Kaydeden Kullanıcı</th>
-                    <th>Kaydetme Zamanı</th>
-                    <th>Fiyat</th>
-                    <th>İhaleye Ekle</th>
-                </tr>
-            </thead>
-            <tbody>
-                @for (int i = 0; i < 2; i++)
-                {
+        <div class="card-body">
+            <table id="datatablesSimple" class="table table-hover table-bordered">
+                <thead>
                     <tr>
-                        <td>Name</td>
-                        <td>Position</td>
-                        <td>Model</td>
-                        <td>Office</td>
-                        <td>Age</td>
-                        <td>Start date</td>
-                        <td>sdgasdfsadf</td>
-                        <td class="tender_table_btn">
-                            <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#addTenderCarPricePopUp">
-                                Fiyat
-                            </button>
-                        </td>
-                        <td class="tender_table_btn"><input type="checkbox" /></td>
+                        <th>Araç Id</th>
+                        <th>Araç Marka</th>
+                        <th>Araç Model</th>
+                        <th>Statü</th>
+                        <th>Kaydeden Kullanıcı</th>
+                        <th>Kaydetme Zamanı</th>
+                        <th>Fiyat</th>
+                        <th>İhaleye Ekle</th>
+                        <th>İhaleden Çıkar</th>
                     </tr>
-                }              
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.GetAllCars)
+                    {
+                        <tr>
+                            <td>@item.CarId</td>
+                            <td>@item.CarBrand</td>
+                            <td>@item.CarModel</td>
+                            <td>@item.Statu</td>
+                            <td>@item.CreatedBy</td>
+                            <td>@item.CreatedDate</td>
+                            <td class="tender_table_btn">
+                                <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#addTenderCarPricePopUp">
+                                    Fiyat
+                                </button>
+                            </td>
+                            <td class="tender_table_btn">
+                                <input type="button" value="Ekle" class="btn btn-primary"/>
+                            </td>
+                            <td class="tender_table_btn">
+                                <input type="button" value="Çıkar" class="btn btn-primary" />
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
-<div class="justify-content-md-end text-md-end m-5">
-    <input type="submit" value="Kaydet" class="btn btn-success col-md-1" />
-</div>
+    <div class="justify-content-md-end text-md-end m-5">
+        <input type="submit" value="Kaydet" class="btn btn-success col-md-1" />
+    </div>
+</form>
 
 <!--pop up start-->
 
@@ -136,6 +144,7 @@
                         <input type="text" class="form-control">
                     </div>
                 </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
                     <button type="button" class="btn btn-primary">Kaydet</button>
@@ -144,15 +153,3 @@
         </div>
     </div>
 </div>
-
-<!--pop up end-->
-
-@*<script type="text/javascript">
-    $(function() {
-        $('#datepicker').datepicker();
-    });
-
-    $(function() {
-        $('#date').datepicker();
-    });
-</script>*@
