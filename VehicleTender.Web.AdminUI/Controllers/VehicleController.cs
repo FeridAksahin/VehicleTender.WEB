@@ -328,6 +328,22 @@ namespace VehicleTender.Web.AdminUI.Controllers
             updateCarViewModel.Statu = "arg";
             updateCarViewModel.PreAssesmentPrice = 232;
             updateCarViewModel.CarId = id;
+            TramerDTO tramerDTO = new TramerDTO();
+            tramerDTO.RightRearFender = "Orjinal";
+            tramerDTO.ReadHood = "Değişmiş";
+            tramerDTO.LeftRearFender = "Orjinal";
+            tramerDTO.RightRearDoor = "Boyalı";
+            tramerDTO.RightFrontDoor = "Değişmiş";
+            tramerDTO.Ceiling = "Orjinal";
+            tramerDTO.LeftRearDoor = "Orjinal";
+            tramerDTO.LeftFrontDoor = "Boyalı";
+            tramerDTO.RightFrontFender = "Değişmiş";
+            tramerDTO.EngineBonnet = "Orjinal";
+            tramerDTO.LeftFrontFender = "Orjinal";
+            tramerDTO.FrontBumper = "Boyalı";
+            tramerDTO.RearBumper = "Boyalı";
+            updateCarViewModel.Tramer = tramerDTO;
+            updateCarViewModel.TotalSumTramer = 21;
 
             //carService.GetCarDetailForIntoUpdateButton(token, id);
             return View(updateCarViewModel);

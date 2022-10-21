@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using VehicleTender.Web.AdminUI.ApiServices.Services;
+using VehicleTender.Web.AdminUI.Models.Car;
 using VehicleTender.Web.AdminUI.Models.CorporateUser;
 using VehicleTender.Web.AdminUI.Models.IndividualCar;
 using VehicleTender.Web.AdminUI.Models.PageModel;
@@ -127,6 +128,22 @@ namespace VehicleTender.Web.AdminUI.Controllers
             individualCarSaleUpdateDetailPageDTO.Statu = "arg";
             individualCarSaleUpdateDetailPageDTO.PreAssesmentPrice = "4353";
             individualCarSaleUpdateDetailPageDTO.CarId = id;
+            TramerDTO tramerDTO = new TramerDTO();
+            tramerDTO.RightRearFender = "Orjinal";
+            tramerDTO.ReadHood = "Değişmiş";
+            tramerDTO.LeftRearFender = "Orjinal";
+            tramerDTO.RightRearDoor = "Boyalı";
+            tramerDTO.RightFrontDoor = "Değişmiş";
+            tramerDTO.Ceiling = "Orjinal";
+            tramerDTO.LeftRearDoor = "Orjinal";
+            tramerDTO.LeftFrontDoor = "Boyalı";
+            tramerDTO.RightFrontFender = "Değişmiş";
+            tramerDTO.EngineBonnet = "Orjinal";
+            tramerDTO.LeftFrontFender = "Orjinal";
+            tramerDTO.FrontBumper = "Boyalı";
+            tramerDTO.RearBumper = "Boyalı";
+            individualCarSaleUpdateDetailPageDTO.Tramer = tramerDTO;
+            individualCarSaleUpdateDetailPageDTO.TotalSumTramer = 234;
             return View(individualCarSaleUpdateDetailPageDTO);
         }
         [HttpPost]

@@ -9,7 +9,7 @@ namespace VehicleTender.Web.AdminUI.Models.Car
         [StringType(Max = 20, Min = 1)]
         public string ReadHood { get; set; } //arka kaput
         [StringType(Max = 20, Min = 1)]
-        public string LeftReadFender { get; set; } //sol arka çamurluk
+        public string LeftRearFender { get; set; } //sol arka çamurluk
         [StringType(Max = 20, Min = 1)]
         public string RightRearDoor { get; set; } // sağ arka kapı
         [StringType(Max = 20, Min = 1)]
@@ -17,7 +17,7 @@ namespace VehicleTender.Web.AdminUI.Models.Car
         [StringType(Max = 20, Min = 1)]
         public string Ceiling { get; set; } //tavan
         [StringType(Max = 20, Min = 1)]
-        public string LeftReadDoor { get; set; } //sol arka kapı
+        public string LeftRearDoor { get; set; } //sol arka kapı
         [StringType(Max = 20, Min = 1)]
         public string LeftFrontDoor { get; set; }
         [StringType(Max = 20, Min = 1)]
