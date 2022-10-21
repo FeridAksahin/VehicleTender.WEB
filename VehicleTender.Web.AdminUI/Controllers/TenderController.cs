@@ -1,15 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
 using System.Reflection;
 using VehicleTender.Web.AdminUI.ApiServices.Services;
 using VehicleTender.Web.AdminUI.Models.Car;
+using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Body;
 using VehicleTender.Web.AdminUI.Models.PageModel;
 using VehicleTender.Web.AdminUI.Models.Stock;
 using VehicleTender.Web.AdminUI.Models.Tender;
+using VehicleTender.Web.AdminUI.Models.Token;
 
 namespace VehicleTender.Web.AdminUI.Controllers
 {
     public class TenderController : Controller
     {
+        BearerTokenDTO token = new BearerTokenDTO();
         TenderService tenderService = new TenderService();
         [HttpGet]
         public IActionResult Tender()
@@ -52,9 +56,44 @@ namespace VehicleTender.Web.AdminUI.Controllers
             }
             return View(tenderDTO);
         }
+        [HttpGet]
         public IActionResult NewTenderCreate()
         {
-            return View();
+            AddNewTenderDTO addNewTender = new AddNewTenderDTO();
+            TenderCarPriceAndTenderCar tenderCarPriceAndTenderCar = new TenderCarPriceAndTenderCar();
+            List<TenderCar> tenderCarList = new List<TenderCar>();
+            tenderCarList.Add(new TenderCar()
+            {
+                CarId = 1,
+                CarBrand = "Mercedes",
+                CarModel = "CLA",
+                CreatedBy = "Okan",
+                CreatedDate = DateTime.Now,
+                Statu = "Satışta",
+                TenderStartCarPrice = 100,
+                TenderMinumumCarPrice = 1500
+            });
+            tenderCarList.Add(new TenderCar()
+            {
+                CarId = 1,
+                CarBrand = "Mercedes",
+                CarModel = "CLA",
+                CreatedBy = "Okan",
+                CreatedDate = DateTime.Now,
+                Statu = "Satışta",
+                TenderStartCarPrice = 100,
+                TenderMinumumCarPrice = 1500
+            });
+            //await tenderService.AddNewTender(token, addNewTender);
+            addNewTender.GetAllCars = tenderCarList;
+            return View(addNewTender);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> NewTenderCreate(AddNewTenderDTO addNewTenderDTO)
+        {
+            await tenderService.AddNewTender(token, addNewTenderDTO);
+            return RedirectToAction("Tender");
         }
 
         [HttpGet]
@@ -80,7 +119,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
                 CreatedBy = "Okan",
                 CreatedDate = DateTime.Now,
                 TenderMinumumCarPrice = 100,
-                TenderStartCarPrice = 150
+                TenderStartCarPrice = 150,
             });
 
             return View(updateTender);
@@ -89,20 +128,37 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public IActionResult UpdateTender(int id)
         {
+            
             UpdateTenderDTO updateTender = new UpdateTenderDTO();
+            //await tenderService.UpdateTender(token, updateTender);
             updateTender.CompanyName = "A";
-            updateTender.TenderName = "İhaleAdi";
+            updateTender.TenderName = "Yeniİhale";
             updateTender.IndividualOrCorparate = "Bireysel";
             updateTender.Statu = "Başladı";
             updateTender.TenderStartDate = DateTime.Now;
             updateTender.TenderStartHour = DateTime.Now;
             updateTender.TenderEndTime = DateTime.Now;
             updateTender.TenderEndHour = DateTime.Now;
-            return View(updateTender);
+            updateTender.TenderCar = new List<TenderCar>();
+            updateTender.TenderCar.Add(new TenderCar()
+            {
+                CarId = 1,
+                CarBrand = "BMW",
+                CarModel = "320",
+                Statu = "Satışta",
+                CreatedBy = "Okan",
+                CreatedDate = DateTime.Now,
+                TenderMinumumCarPrice = 100,
+                TenderStartCarPrice = 150,
+            });
+            return RedirectToAction("Tender");
         }
 
-
-
+        public async Task<IActionResult> DeleteTender(int id)
+        {
+            await tenderService.DeleteTender(token, id);
+            return RedirectToAction("Tender");
+        }
 
     }
 }

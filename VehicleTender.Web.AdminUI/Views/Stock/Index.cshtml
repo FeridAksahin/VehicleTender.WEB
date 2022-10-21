@@ -17,68 +17,22 @@
                 </tr>
             </thead>
             <tbody>
+
                 @foreach (var item in Model.GetAllCompanyName)
                 {
                     <tr>
                         <td>
                             @item.CompanyName
                         </td>
-@*                        <td class="update_delete">
-                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target=".bd-example-modal-lg">Detay</button>
-                        </td>*@
                         <td>
-                            <a class="btn btn-warning" asp-action="Detail" asp-controller="Stock" asp-route-ID="@item.CompanyName">Detay</a>
-                        </td>
+                            <form method="get">
 
+                                <button type="submit" class="btn btn-warning" asp-action="Detail" asp-controller="Stock" name="companyId" value="@item.CompanyId" asp-route-ID="@item.CompanyId">Detay</button>
+                            </form>
+                        </td>
                     </tr>
                 }
             </tbody>
         </table>
-    </div>
-</div>
-
-
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="card mb-4">
-                <div class="card-header">
-                    <i class="fas fa-table me-1"></i>
-                    Şirketler
-                </div>
-                <div class="card-body">
-                    <table id="datatablesSimple" class="table table-hover table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Araç Marka</th>
-                                <th>Araç Model</th>
-                                <th>Km</th>
-                                <th>Yıl</th>
-                                <th>Plaka</th>
-                                <th>Renk</th>
-                                <th>Garajda</th>
-                                <th>Satılan</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-@*                            @foreach (var item in Model.GetStockDTO)
-                            {
-                                <tr>
-                                    <td>@item.CarBrand</td>
-                                    <td>@item.CarModel</td>
-                                    <td>@item.KM</td>
-                                    <td>@item.Year</td>
-                                    <td>@item.Plaka</td>
-                                    <td>@item.Color</td>
-                                    <td>@item.GarageCount</td>
-                                    <td>@item.SaleCount</td>
-                                </tr>
-                            }*@
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
     </div>
 </div>

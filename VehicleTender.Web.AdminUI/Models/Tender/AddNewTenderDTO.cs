@@ -1,4 +1,5 @@
-﻿using VehicleTender.WEB.Admin.Validation.Attributes;
+﻿using VehicleTender.Web.AdminUI.Models.Car;
+using VehicleTender.WEB.Admin.Validation.Attributes;
 
 namespace VehicleTender.Web.AdminUI.Models.Tender
 {
@@ -17,6 +18,6 @@ namespace VehicleTender.Web.AdminUI.Models.Tender
         public DateTime TenderEndTime { get; set; }
         public DateTime TenderEndHour { get; set; }
         public List<TenderCarPriceAndTenderCar> VehiclesIdSelectedForInclusionInTheTender { get; set; }
-
+        public List<TenderCar> GetAllCars { get; set; }
     }
 }

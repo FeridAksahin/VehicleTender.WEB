@@ -7,6 +7,7 @@ using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Color;
 using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Fuel;
 using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Gear;
 using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Hardware;
+using VehicleTender.Web.AdminUI.Models.Car.Model;
 using VehicleTender.Web.AdminUI.Models.Commission;
 using VehicleTender.Web.AdminUI.Models.PageModel;
 using VehicleTender.Web.AdminUI.Models.Token;
