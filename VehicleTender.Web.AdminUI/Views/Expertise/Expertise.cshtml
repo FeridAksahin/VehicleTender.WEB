@@ -1,0 +1,117 @@
+﻿@using VehicleTender.Web.AdminUI.Models.Expertise
+@using VehicleTender.Web.AdminUI.Models.PageModel
+@{
+    ViewData["Title"] = "Vehicle List";
+    ViewData["InfoTitle"] = "Ekspertiz ile ilgili işlemleri burada yapılır...";
+}
+@model ExpertisePageModel;
+
+<div>
+    <h5 class="mb-3 pb-3 display-5 text-center mt-4">Ekspertiz Servisleri</h5>
+    <form method="get">
+        <div class="row filter">
+            <div class="col-4">
+                <label>Ekspertiz Şube Adı</label>
+                <input type="text" class="form-control" name="name" asp-for="expertiseSearch.ExpertiseName">
+            </div>
+            <div class="col-4">
+                <label>İl</label>
+                <select class="form-control" name="city">
+                    <option value="value">text</option>
+                </select>
+            </div>
+            <div class="col-4">
+                <label>İlçe</label>
+                <select class="form-control" name="district">
+                    <option value="value">text</option>
+                </select>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <input type="submit" value="Listele" class="btn btn-primary m-3 list" />
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="card mb-4 m-5">
+    <div class="card-header">
+        <i class="fas fa-table me-1"></i>
+        Ekspertiz Servisi Listeleme Tablosu
+    </div>
+    <div class="card-body">
+        <table id="datatablesSimple" class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>Servis No</th>
+                    <th>Servis Adı</th>
+                    <th>Servis İl</th>
+                    <th>Servis İlçe</th>
+                    <th>Servis telefon Numarası</th>
+                    <th>Adres</th>
+                    <th></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.getExpertiseList)
+                {
+                    <tr>
+                        <td>@item.ExpertiseId</td>
+                        <td>@item.ExpertiseName</td>
+                        <td>@item.City</td>
+                        <td>@item.District</td>
+                        <td>@item.Telephone</td>
+                        <td>@item.Address</td>
+                        <td class="update_delete">
+                            <form method="get">
+                            <button class="btn btn-warning" asp-controller="Expertise" asp-action="UpdateExpertise" asp-route-ID="@item.ExpertiseId">Güncelle</button>
+                            </form>
+                            <form method="post"> 
+                            <button class="btn btn-outline-danger btn-block mt-3" asp-action="DeleteExpertise" asp-controller="Expertise" asp-route-ID="@item.ExpertiseId">Sil</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+<button type="button" class="btn btn-primary w-100 p-3 mt-3 mb-3" data-toggle="modal" data-target="#exampleModalCenter">Yeni Ekspertiz Servisi Ekle</button>
+
+
+
+
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p class="text-center display-4 modal-title" id="exampleModalLongTitle">Servis Ekle</p>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="post">
+            <div class="modal-body">
+                <div class="container">
+                    
+                    <div class="row">
+                        <input type="text" class="form-control form-control-lg mt-3" placeholder="Servis Adı" asp-for="getExpertise.ExpertiseName" />
+                        <input type="text" class="form-control form-control-lg mt-3" placeholder="Servis İl" asp-for="getExpertise.City"/>
+                        <input type="text" class="form-control form-control-lg mt-3" placeholder="Servis İlçe" asp-for="getExpertise.District" />
+                        <input type="text" class="form-control form-control-lg mt-3" placeholder="Servis telefon Numarası" asp-for="getExpertise.Telephone" />
+                        <input type="text" class="form-control form-control-lg mt-3" placeholder="Adres" asp-for="getExpertise.Address"/>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    <button type="submit" class="btn btn-primary" asp-action="AddExpertise" asp-controller="Expertise">Kaydet</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

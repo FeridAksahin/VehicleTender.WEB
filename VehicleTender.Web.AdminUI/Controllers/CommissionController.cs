@@ -38,6 +38,21 @@ namespace VehicleTender.Web.AdminUI.Controllers
             await commissionService.AddNewCommission(token, commissionPageModel.AddCommission);
             return RedirectToAction(nameof(Commission));
         }
+
+        [HttpGet]
+        public async Task<IActionResult> UpdateCommission(string id)
+        {
+            UpdateCommission update = new UpdateCommission()
+            {
+                CommissionId = int.Parse(id),
+                CarEndingPrice = "0",
+                CarStartingPrice = "0",
+                CommissionPrice = 0,
+
+            };
+            return View(update);
+        }
+
         [HttpPost]
         public async Task<IActionResult> UpdateCommission(CommissionPageModel commissionPageModel)
         {

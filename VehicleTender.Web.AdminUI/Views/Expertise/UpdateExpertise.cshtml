@@ -1,0 +1,20 @@
+﻿@using VehicleTender.Web.AdminUI.Models.PageModel
+@model ExpertisePageModel;
+
+<form method="post">
+<div class="modal-body">
+    <div class="container">
+        <div class="row">
+            <input type="text" class="form-control form-control-lg mt-3" placeholder="Servis Adı" asp-for="getExpertise.ExpertiseName" />
+            <input type="text" class="form-control form-control-lg mt-3" placeholder="Servis İl" asp-for="getExpertise.City" />
+            <input type="text" class="form-control form-control-lg mt-3" placeholder="Servis İlçe" asp-for="getExpertise.District" />
+            <input type="text" class="form-control form-control-lg mt-3" placeholder="Servis telefon Numarası" asp-for="getExpertise.Telephone" />
+            <input type="text" class="form-control form-control-lg mt-3" placeholder="Adres" asp-for="getExpertise.Address" />
+        </div>
+    </div>
+</div>
+    <div class="update_delete">
+        <a class="btn btn-warning" asp-controller="Expertise" asp-action="Expertise">Geri Dön</a>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</div>
+</form>

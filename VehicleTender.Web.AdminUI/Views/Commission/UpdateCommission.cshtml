@@ -1,0 +1,31 @@
+﻿@using VehicleTender.Web.AdminUI.Models.Commission
+@model UpdateCommission;
+
+
+<div class="container">
+    <form method="post" action="UpdateCommission">
+        <div class="row">
+            <div class="mb-3">
+                <label class="form-label">Başlangıç Fiyat Araloğı</label>
+                <input class="form-control" type="text" asp-for="CarStartingPrice">
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Bitiş Fiyat Aralığı</label>
+            <input class="form-control" type="text" asp-for="CarEndingPrice">
+            <div class="mb-3">
+                <label class="form-label">Komisyon Ücreti</label>
+                <input class="form-control" type="text" asp-for="CommissionPrice">
+            </div>
+            <div class="modal-footer">
+                <form action="post" class="update_delete">
+                    <button type="submit" class="btn btn-primary" asp-action="UpdateCommission" asp-controller="Commission">Kaydet</button>
+                </form>
+            </div>
+        </div>
+    </form>
+
+    <form action="get" class="update_delete">
+        <button type="submit" class="btn btn-primary" asp-action="Commission" asp-controller="Commission">Geri Dön</button>
+    </form>
+</div>
