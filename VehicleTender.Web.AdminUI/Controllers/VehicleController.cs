@@ -5,6 +5,7 @@ using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Brand;
 using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Color;
 using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Fuel;
 using VehicleTender.Web.AdminUI.Models.Car.CarFeatures.Hardware;
+using VehicleTender.Web.AdminUI.Models.Car.Model;
 using VehicleTender.Web.AdminUI.Models.Commission;
 using VehicleTender.Web.AdminUI.Models.PageModel;
 using VehicleTender.Web.AdminUI.Models.Token;
@@ -237,10 +238,33 @@ namespace VehicleTender.Web.AdminUI.Controllers
             return View(addVehicleViewModel);
         }
         [HttpPost]
-        public IActionResult AddVehicle(AddCarDTO addVehicleViewModel)
+        public  IActionResult AddVehicle(AddCarDTO addVehicleViewModel)
         {//tramer bilgilerini alma ve fotoğraf alma kısmı, hemen al satış butonu kısmı eksiktir 
-            //carService.AddNewCar(token,addVehicleViewModel); //komisyon ve noter ücreti api tarafında belirlenecektir. bireysel ya da kurumsal olup olmadıgı api 
-            //tarafında yazılan isme göre aratılıp db ye kaydedilcektir
+         //carService.AddNewCar(token,addVehicleViewModel); //komisyon ve noter ücreti api tarafında belirlenecektir. bireysel ya da kurumsal olup olmadıgı api 
+         //tarafında yazılan isme göre aratılıp db ye kaydedilcektir
+
+            List<string> images = new List<string>();//fotoğrafların yolları
+
+            if (addVehicleViewModel.Picture != null)
+            {
+                for (int i = 0; i < addVehicleViewModel.Picture.Count; i++)
+                {
+                    var fileName = Guid.NewGuid().ToString() + Path.GetExtension(addVehicleViewModel.Picture[i].FileName);
+                    var x = Directory.GetCurrentDirectory();
+                    var path = Path.Combine("wwwroot/carimages", fileName);
+
+                    using (var stream = new FileStream(path, FileMode.Create))
+                    {
+                        //await addVehicleViewModel.Picture.CopyToAsync(stream);
+                         addVehicleViewModel.Picture[i].CopyTo(stream);
+                        images.Add(fileName);
+                        images.Add(fileName);
+                    }
+                }
+               
+
+            
+            }
             return View();
         }
         [HttpGet]

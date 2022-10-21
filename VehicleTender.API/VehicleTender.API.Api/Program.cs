@@ -22,7 +22,7 @@ try
     builder.Host.UseNLog();
 
     builder.Services.AddEndpointsApiExplorer();
-    builder.Services.AddSwaggerGen();
+   
     builder.Services.AddDbContext<VehicleTenderContext>();
 
     //token
@@ -47,8 +47,8 @@ try
     // Configure the HTTP request pipeline.
     if (app.Environment.IsDevelopment())
     {
-        app.UseSwagger();
-        app.UseSwaggerUI();
+        
+      
     }
 
 
@@ -58,8 +58,9 @@ try
     app.UseRouting();
 
     app.UseAuthorization();
-    app.MapControllers();
-
+   
+    //app.MapControllers();
+    app.UseEndpoints(endpoints => endpoints.MapDefaultControllerRoute());
     app.Run();
 }
 catch (Exception exception)

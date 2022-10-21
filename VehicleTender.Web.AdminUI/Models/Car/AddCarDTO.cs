@@ -2,6 +2,10 @@
 {
     public class AddCarDTO
     {
+        public AddCarDTO()
+        {
+            Picture = new List<IFormFile>();
+        }
         public string CarBrand { get; set; }
         public string CarModel { get; set; }
         public string IndividualOrCorparate { get; set; }
@@ -15,7 +19,7 @@
         public string Hardware { get; set; }
         public string FuelType { get; set; }
         public string KM { get; set; }
-        public string[] Picture { get; set; }
+        public List<IFormFile> Picture  { get; set; }
         public string Description { get; set; }
         public string Statu { get; set; }
         public string CreatedBy { get; set; }

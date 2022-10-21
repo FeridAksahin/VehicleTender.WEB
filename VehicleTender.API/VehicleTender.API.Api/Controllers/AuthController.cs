@@ -24,7 +24,7 @@ namespace VehicleTender.API.Api.Controllers
         }
 
         [HttpPost]
-        [Route("Login")]
+      
         public async Task<Models.Token> Login([FromBody] UserLoginDto userLogin)
         {
             User user = await _context.User.FirstOrDefaultAsync(u => userLogin.Password == u.Password);
@@ -45,7 +45,7 @@ namespace VehicleTender.API.Api.Controllers
         }
 
         [HttpGet]
-        [Route("RefreshLogin")]
+        
         public async Task<Models.Token> RefreshTokenLogin([FromBody] string refreshToken)
         {
             User user = await _context.User.FirstOrDefaultAsync(x => x.RefreshToken == refreshToken);

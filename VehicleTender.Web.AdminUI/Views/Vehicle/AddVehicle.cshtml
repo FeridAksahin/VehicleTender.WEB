@@ -1,11 +1,10 @@
 ﻿@using VehicleTender.Web.AdminUI.Models.Car
-
-
-
 @model AddCarDTO
+
+
 <h5 class="mb-3 pb-3 display-5 text-center mt-4">Araç Ekle</h5>
 
-<form action="AddVehicle" method="post">
+<form  asp-action="AddVehicle" asp-controller="Vehicle" method="post" enctype="multipart/form-data">
     <div class="container mt-3">
         <div class="row">
             <div class="m-3 vehicle_update">
@@ -14,7 +13,7 @@
                     <div class="row">
                         <div class="col-4">
                             <label>Üye Ad Soyad</label>
-                            <input type="text" class="form-control" asp-for="Name">
+                            <input type="text"  class="form-control" asp-for="Name">
                         </div>
                         <div class="col-4">
                             <label>Statü</label>
@@ -110,8 +109,11 @@
                     <div class="col-12">
                         <div class="row">
                             <div class="col-6">
+                               
                                 <label>Fotoğraflar</label>
-                                <input type="file" class="form-control">
+                                <input type="file" class="form-control"   asp-for="Picture" multiple>
+                          
+                            
                             </div>
                             <div class="col-6">
                                 <label>Açıklama</label>
