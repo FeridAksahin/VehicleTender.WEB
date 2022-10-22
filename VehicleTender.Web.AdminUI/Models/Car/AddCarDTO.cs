@@ -50,9 +50,10 @@ namespace VehicleTender.Web.AdminUI.Models.Car
         public string ComissionPrice { get; set; }
         [StringType(Max = 20, Min = 1)]
         public string NotaryPrice { get; set; }
-        public Dictionary<TramerDTO, TramerValueDTO> TramerInformation { get; set; }
+        //public Dictionary<TramerDTO, TramerValueDTO> TramerInformation { get; set; }
+        public TramerDTO Tramer { get; set; }
         public AdvertInformationDTO AdvertInformation { get; set; }
-        public bool SaleNow { get; set; } //hemen al satışta
+        public bool BuyNowSell { get; set; } //hemen al satışta
         public double PreAssesmentPrice { get; set; } //hemen al satışta
 
     }
