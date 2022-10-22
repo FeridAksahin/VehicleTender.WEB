@@ -6,9 +6,10 @@
 <div class="container-fluid  mt-4">
     <div class="container">
         <h3 class="mb-3 pb-3 display-5 text-center">Kurumsal Kayıt</h3>
-        <div class="row">
-            @using (Html.BeginForm("CorporateRegister", "Home", FormMethod.Post))
-            {
+        @using (Html.BeginForm("CorporateRegister", "Home", FormMethod.Post))
+        {
+            <div class="row">
+
                 <div class="col-6">
                     @Html.TextBoxFor(x => x.Username, new { placeholder = "Kullanıcı Adı", @class = "form-control form-control-lg" })
                     @Html.ValidationMessageFor(x => x.Username)
@@ -49,7 +50,8 @@
                     <label><a href="#"><strong>Kullanım sözleşmesini</strong></a> onaylıyorum!</label>
                 </div>
                 <button style="background-color: #2B2E4A;" class="btn btn-info btn-lg btn-block col-md-12" type="submit">Kayıt Ol</button>
-            }
-        </div>
+
+            </div>
+        }
     </div>
 </div>
