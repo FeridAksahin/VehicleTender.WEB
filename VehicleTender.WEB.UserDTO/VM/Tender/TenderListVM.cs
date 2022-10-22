@@ -5,11 +5,11 @@ namespace VehicleTender.WEB.UserDTO.VM.Tender
     {
         public int Id { get; set; }
         public string TenderName { get; set; }
-        public bool isIndividual { get; set; }
-        public DateTime TenderStartDate { get; set; }
-        public DateTime TenderEndDate { get; set; }
-        public int UserId { get; set; }
-        public int StatuId { get; set; }
-        public DateTime CreatedDate { get; set; }
+        public string IndividualOrCorparate { get; set; }
+        public string TenderStartDate { get; set; }
+        public string TenderEndDate { get; set; }
+        public string CreatedBy { get; set; }
+        public string Statu { get; set; }
+        public string CreatedDate { get; set; }
     }
 }
