@@ -6,6 +6,10 @@ namespace VehicleTender.Web.AdminUI.Models.Car
 {
     public class AddCarDTO
     {
+        public AddCarDTO()
+        {
+            Picture = new List<IFormFile>();
+        }
         [StringType(Max = 20, Min = 2)]
         public string CarBrand { get; set; }
         [StringType(Max = 20, Min = 2)]
@@ -32,7 +36,8 @@ namespace VehicleTender.Web.AdminUI.Models.Car
         public string FuelType { get; set; }
         [StringType(Max = 20, Min = 1)]
         public string KM { get; set; }
-        public string[] Picture { get; set; }
+        public List<IFormFile> Picture { get; set; }
+     
         [StringType(Max = 20, Min = 3)]
         public string Description { get; set; }
         [StringType(Max = 20, Min = 2)]

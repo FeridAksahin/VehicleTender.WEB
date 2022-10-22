@@ -287,7 +287,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
 
             if (addVehicleViewModel.Picture != null)
             {
-                for (int i = 0; i < addVehicleViewModel.Picture.Count; i++)
+                for (int i = 0; i < addVehicleViewModel.Picture.Count(); i++)
                 {
                     var fileName = Guid.NewGuid().ToString() + Path.GetExtension(addVehicleViewModel.Picture[i].FileName);
                     var x = Directory.GetCurrentDirectory();
@@ -297,7 +297,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
                     {
                         //await addVehicleViewModel.Picture.CopyToAsync(stream);
                          addVehicleViewModel.Picture[i].CopyTo(stream);
-                        images.Add(fileName);
+                        
                         images.Add(fileName);
                     }
                 }
