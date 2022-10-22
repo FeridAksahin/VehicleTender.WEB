@@ -1,64 +1,50 @@
-﻿
+﻿@model VehicleTender.Web.EndUserUI.Models.StockPageModel
 @{
     ViewBag.Title = "Stock";
+
 }
 
 <div class="container-fluid">
-    <h5 class="mb-3 pb-3 display-5 text-center mt-4">Kurumsal Stok Ara</h5> 
+    <h5 class="mb-3 pb-3 display-5 text-center mt-4">Kurumsal Stok Ara</h5>
+    <form method="get">
         <div class="row">
             <div class="col-4">
                 <label>Şirket Adı</label>
-                <input type="text" class="form-control" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" aria-describedby="basic-addon1" name="companyName">
             </div>
             <div class="col-4">
                 <label>Stoktaki Araç Sayısı</label>
-                <input type="text" class="form-control" aria-describedby="basic-addon1">
-            </div>
-            <div class="col-4">
-                <label>Son Güncellenme Tarihi</label>
-                <input type="date" class="form-control" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" aria-describedby="basic-addon1" name="count">
             </div>
         </div>
         <hr />
         <input type="submit" a style="background-color: #2B2E4A; float:right;" value="Listele" class="btn btn-info mt-1" />
-        <br />
-        <h5 class="mb-3 pb-3 display-5 text-center mt-4">Stok Listesi</h5>
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th style="color:black;">Stok No</th>
-                    <th style="color:black;">Stok Sahibi Şirket</th>
-                    <th style="color:black;">Stokta bulunan araç sayısı</th>
-                    <th style="color:black;">Stoktaki Tutarı</th>
-                    <th style="color:black;">Son Güncellenme Tarihi</th>
-                </tr>
-            </thead>
-            <tbody>
+    </form>
+    <br />
+    <h5 class="mb-3 pb-3 display-5 text-center mt-4">Stok Listesi</h5>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th style="color:black;">Stok No</th>
+                <th style="color:black;">Stok Sahibi Şirket</th>
+                <th style="color:black;">Stokta bulunan araç sayısı</th>
+                <th style="color:black;">Son Güncellenme Tarihi</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            @foreach (var item in Model.stockList)
+            {
+                @Html.BeginForm("GetVehicleInStock", "Vehicle", new { id = item.StockNo }, FormMethod.Get);
+            <tr>
+                <td>@item.StockNo</td>
+                <td>@item.CompanyName</td>
+                <td>@item.VehicleCount</td>
+                <td>@item.LastModifiedDate</td>
 
-                <tr>
-                    <td>1</td>
-                    <td>A şirketi</td>
-                    <td>11</td>
-                    <td>3.256.000TL</td>
-                    <td>05.09.2022</td>
-                    <td><input type="button" a style="background-color: #2B2E4A; float:right;" value="Detay" class="btn btn-info mt-1" data-toggle="modal" data-target="#exampleModalCenter1" /></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>B Şirketi</td>
-                    <td>7</td>
-                    <td>2.050.000TL</td>
-                    <td>10.10.2022</td>
-                    <td><input type="button" a style="background-color: #2B2E4A; float:right;" value="Detay" class="btn btn-info mt-1" data-toggle="modal" data-target="#exampleModalCenter1" /></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>C Şirketi</td>
-                    <td>42</td>
-                    <td>11.690.000TL</td>
-                    <td>01.10.2022</td>
-                    <td><input type="button" a style="background-color: #2B2E4A; float:right;" value="Detay" class="btn btn-info mt-1"  data-toggle="modal" data-target="#exampleModalCenter1"/></td>
-                </tr>
+                <td><button type="submit" a style="background-color: #2B2E4A; float:right;" value="Stok Detay" class="btn btn-info mt-1" />Stok Detay</td>
+            </tr>
+        }
         </tbody>
     </table>
 </div>
@@ -81,7 +67,6 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th style="color:black;">Araç ID</th>
                                         <th style="color:black;">Araç Marka</th>
                                         <th style="color:black;">Araç Model</th>
                                         <th style="color:black;">Statü</th>
@@ -91,22 +76,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Ford</td>
-                                        <td>Mustang</td>
-                                        <td>Giriş</td>
-                                        <td>15.10.2022</td>
-                                        <td>3500000TL</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Renault</td>
-                                        <td>Megane</td>
-                                        <td>Giriş</td>
-                                        <td>16.10.2022</td>
-                                        <td>100000TL</td>
-                                    </tr>
+                                    @foreach (var item in Model.vehicleInStock)
+                                    {
+                                        <tr>
+                                            <td>@item.Id</td>
+                                            <td>@item.Brand</td>
+                                            <td>@item.Model</td>
+                                            <td>@item.Statu</td>
+                                            <td>@item.CreatedDate</td>
+                                            <td>@item.PreAssessmentPrice</td>
+                                        </tr>
+                                    }
                                 </tbody>
                             </table>
                             <hr />
@@ -116,5 +96,5 @@
         </div>
     </div>
 </div>
-</div>
+
 

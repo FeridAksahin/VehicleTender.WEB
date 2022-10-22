@@ -131,6 +131,7 @@
     <Compile Include="ApiService\Concrete\CarService.cs" />
     <Compile Include="ApiService\Concrete\ContactService.cs" />
     <Compile Include="ApiService\Concrete\ErrorService.cs" />
+    <Compile Include="ApiService\Concrete\ExpertiseService.cs" />
     <Compile Include="ApiService\Concrete\StockService.cs" />
     <Compile Include="ApiService\Concrete\TenderService.cs" />
     <Compile Include="ApiService\Concrete\UserServices.cs" />
@@ -149,6 +150,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\StockPageModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -315,7 +317,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Views\Stock\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="lib\owlcarousel\LICENSE" />
@@ -366,6 +368,7 @@
     <Content Include="Views\AdvertList\Index.cshtml" />
     <Content Include="Views\Home\ErrorPage500.cshtml" />
     <Content Include="Views\Home\Expertise.cshtml" />
+    <Content Include="Views\Vehicle\GetVehicleInStock.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
