@@ -1,84 +1,46 @@
-﻿
+﻿@using VehicleTender.WEB.UserDTO.VM.Tender
+@model List<TenderCar>
 @{
     ViewBag.Title = "TenderDetail";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<hr />
+<h4 class="mb-3 pb-3 display-5 text-center">İhale Araç Listesi</h4>
+<table class="table table-hover" style="margin-top: 10px">
+    <thead>
+        <tr>
+            <th style="color:black;">Araç Id</th>
+            <th style="color:black;">Araç Marka</th>
+            <th style="color:black;">Araç Model</thstyle="color:black;">
+            <th style="color:black;">Bireysel / Kurumsal</th>
+            <th style="color:black;">Statü</th>
+            <th style="color:black;">Kaydeden Kullanıcı</th>
+            <th style="color:black;">Kaydetme Zamanı</th>
+            <th style="color:black;">Fiyat</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.CarId</td>
+                <td>@i.Brand</td>
+                <td>@i.Model</td>
+                <td>@i.IndividualOrCorparate</td>
+                <td>@i.Statu</td>
+                <td>@i.CreatedBy</td>
+                <td>@i.CreatedDate</td>
+                <td>@i.Price</td>
+                <td>
+                    @using (Html.BeginForm("TenderCarDetail", "Tender", new { id = i.CarId }, FormMethod.Get))
+                    {
+                        <a href="/Tender/TenderCarDetail"><input type="submit" a style="background-color: #2B2E4A; float:right;" value="Araç Detay" class="btn btn-info mt-1" href="~/Tender/TenderDetail" /></a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
 
-
-    <hr />
-    <h4 class="mb-3 pb-3 display-5 text-center">İhale Araç Listesi</h4>
-    <table class="table table-hover" style="margin-top: 10px">
-        <thead>
-            <tr>
-                <th style="color:black;">Araç Id</th>
-                <th style="color:black;">Araç Marka</th>
-                <th style="color:black;">Araç Model</thstyle="color:black;">
-                <th style="color:black;">Bireysel / Kurumsal</th>
-                <th style="color:black;">Statü</th>
-                <th style="color:black;">Kaydeden Kullanıcı</th>
-                <th style="color:black;">Kaydetme Zamanı</th>
-                <th style="color:black;">Fiyat</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>3</td>
-                <td>Ford</td>
-                <td>Focus</td>
-                <td>Kurumsal</td>
-                <td>Satışta</td>
-                <td>Ferid</td>
-                <td>9.10.2022</td>
-                <td><a href="/Tender/TenderCarDetail"><input type="submit" a style="background-color: #2B2E4A; float:right;" value="Araç Detay" class="btn btn-info mt-1" href="~/Tender/TenderDetail" /></a>
-               380.000</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Ford</td>
-                <td>Focus</td>
-                <td>Kurumsal</td>
-                <td>Satışta</td>
-                <td>Ferid</td>
-                <td>9.10.2022</td>
-                <td><a href="/Tender/TenderCarDetail"><input type="submit" a style="background-color: #2B2E4A; float:right;" value="Araç Detay" class="btn btn-info mt-1" href="~/Tender/TenderDetail" /></a>
-                380.000</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Ford</td>
-                <td>Focus</td>
-                <td>Kurumsal</td>
-                <td>Satışta</td>
-                <td>Ferid</td>
-                <td>9.10.2022</td>
-                <td><a href="/Tender/TenderCarDetail"><input type="submit" a style="background-color: #2B2E4A; float:right;" value="Araç Detay" class="btn btn-info mt-1" href="~/Tender/TenderDetail" /></a>
-               380.000</td>
-            <tr>
-                <td>3</td>
-                <td>Ford</td>
-                <td>Focus</td>
-                <td>Kurumsal</td>
-                <td>Satışta</td>
-                <td>Ferid</td>
-                <td>9.10.2022</td>
-                <td><a href="/Tender/TenderCarDetail"><input type="submit" a style="background-color: #2B2E4A; float:right;" value="Araç Detay" class="btn btn-info mt-1" href="~/Tender/TenderDetail" /></a>
-               380.000</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Ford</td>
-                <td>Focus</td>
-                <td>Kurumsal</td>
-                <td>Satışta</td>
-                <td>Ferid</td>
-                <td>9.10.2022</td>
-                <td><a href="/Tender/TenderCarDetail"><input type="submit" a style="background-color: #2B2E4A; float:right;" value="Araç Detay" class="btn btn-info mt-1" href="~/Tender/TenderDetail" /></a>
-                380.000</td>
-            </tr>
-
-            </tr>
-        </tbody>
-    </table>
-</div>
 
 

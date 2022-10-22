@@ -278,10 +278,33 @@ namespace VehicleTender.Web.AdminUI.Controllers
             return View(addVehicleViewModel);
         }
         [HttpPost]
-        public IActionResult AddVehicle(AddCarDTO addVehicleViewModel)
+        public  IActionResult AddVehicle(AddCarDTO addVehicleViewModel)
         {//tramer bilgilerini alma ve fotoğraf alma kısmı, hemen al satış butonu kısmı eksiktir 
-            //carService.AddNewCar(token,addVehicleViewModel); //komisyon ve noter ücreti api tarafında belirlenecektir. bireysel ya da kurumsal olup olmadıgı api 
-            //tarafında yazılan isme göre aratılıp db ye kaydedilcektir
+         //carService.AddNewCar(token,addVehicleViewModel); //komisyon ve noter ücreti api tarafında belirlenecektir. bireysel ya da kurumsal olup olmadıgı api 
+         //tarafında yazılan isme göre aratılıp db ye kaydedilcektir
+
+            List<string> images = new List<string>();//fotoğrafların yolları
+
+            if (addVehicleViewModel.Picture != null)
+            {
+                for (int i = 0; i < addVehicleViewModel.Picture.Count(); i++)
+                {
+                    var fileName = Guid.NewGuid().ToString() + Path.GetExtension(addVehicleViewModel.Picture[i].FileName);
+                    var x = Directory.GetCurrentDirectory();
+                    var path = Path.Combine("wwwroot/carimages", fileName);
+
+                    using (var stream = new FileStream(path, FileMode.Create))
+                    {
+                        //await addVehicleViewModel.Picture.CopyToAsync(stream);
+                         addVehicleViewModel.Picture[i].CopyTo(stream);
+                        
+                        images.Add(fileName);
+                    }
+                }
+               
+
+            
+            }
             return View();
         }
         [HttpGet]
@@ -305,6 +328,22 @@ namespace VehicleTender.Web.AdminUI.Controllers
             updateCarViewModel.Statu = "arg";
             updateCarViewModel.PreAssesmentPrice = 232;
             updateCarViewModel.CarId = id;
+            TramerDTO tramerDTO = new TramerDTO();
+            tramerDTO.RightRearFender = "Orjinal";
+            tramerDTO.ReadHood = "Değişmiş";
+            tramerDTO.LeftRearFender = "Orjinal";
+            tramerDTO.RightRearDoor = "Boyalı";
+            tramerDTO.RightFrontDoor = "Değişmiş";
+            tramerDTO.Ceiling = "Orjinal";
+            tramerDTO.LeftRearDoor = "Orjinal";
+            tramerDTO.LeftFrontDoor = "Boyalı";
+            tramerDTO.RightFrontFender = "Değişmiş";
+            tramerDTO.EngineBonnet = "Orjinal";
+            tramerDTO.LeftFrontFender = "Orjinal";
+            tramerDTO.FrontBumper = "Boyalı";
+            tramerDTO.RearBumper = "Boyalı";
+            updateCarViewModel.Tramer = tramerDTO;
+            updateCarViewModel.TotalSumTramer = 21;
 
             //carService.GetCarDetailForIntoUpdateButton(token, id);
             return View(updateCarViewModel);
