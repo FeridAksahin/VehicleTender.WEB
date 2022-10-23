@@ -9,8 +9,18 @@ namespace VehicleTender.Web.AdminUI.Controllers
 {
     public class StockController : Controller
     {
+        IHttpContextAccessor _httpContextAccessor;
+        public StockController(IHttpContextAccessor httpContextAccessor)
+        {
+            _httpContextAccessor = httpContextAccessor;
+        }
+
         public IActionResult Index()
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             StockPage companyName = new StockPage();
             List<StockCompanyNameDTO> testlikCompanyNameList = new List<StockCompanyNameDTO>();
             StockCompanyNameDTO testlik = new StockCompanyNameDTO();
@@ -24,6 +34,10 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public IActionResult Detail(string companyName)
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             StockPage stock = new StockPage();
             List<StockDTO> testlikStockList = new List<StockDTO>();
             StockDTO testlik = new StockDTO();
