@@ -32,7 +32,10 @@ namespace VehicleTender.Web.AdminUI.Controllers
             if (ModelState.IsValid)
             {
 
-                _httpContextAccessor.HttpContext.Response.Cookies.Append("deger", "ihsan");
+                _httpContextAccessor.HttpContext.Response.Cookies.Append("deger", "ihsan",new CookieOptions()
+                    { 
+                    Expires = DateTime.Now.AddDays(1),
+                    });
 
                 return RedirectToAction("AdminHome", "Admin");
             }
