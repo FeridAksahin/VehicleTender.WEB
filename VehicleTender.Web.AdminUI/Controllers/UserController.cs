@@ -12,11 +12,19 @@ namespace VehicleTender.Web.AdminUI.Controllers
     {
         CorporateUserService corporateUservice = new CorporateUserService();
         BearerTokenDTO token = new BearerTokenDTO(); //durumluk 
-        IndividualCarService individualCarService = new IndividualCarService(); 
-
+        IndividualCarService individualCarService = new IndividualCarService();
+        IHttpContextAccessor _httpContextAccessor;
+        public UserController(IHttpContextAccessor httpContextAccessor)
+        {
+            _httpContextAccessor = httpContextAccessor;
+        }
         [HttpGet]
         public async Task<IActionResult> CorporateUsers(string? companyType, string? packetType) //filtrelemeyi query string ile aldgımız için
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             List<GetCorporateUserDTO> listCorporateUser = new List<GetCorporateUserDTO>();
             if (companyType != null)
             {
@@ -59,6 +67,10 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public async Task<IActionResult> UpdateCorporateUser(int id)
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             // var d = updateIsActive.isActive;
             UpdateUser updateUser = new UpdateUser();
             updateUser.isActive = false;
@@ -69,16 +81,28 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> UpdateCorporateUser(UpdateUser updateUser)
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             //var d = updateIsActive.PacketId;
             return RedirectToAction("CorporateUsers");
         }
         public IActionResult Profile()
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             return View();
         }
         [HttpGet]
         public async Task<IActionResult> IndividualVehicleSalesList(string? brand, string? model, string? statu)
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             IndividualVehiclePage individualVehiclePage = new IndividualVehiclePage();
             List<GetIndividualCarSaleDTO> getIndividualCarSaleList = new List<GetIndividualCarSaleDTO>();
            
@@ -115,6 +139,10 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public async Task<IActionResult> IndividualVehicleSalesDetail(int id)
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             IndividualCarSaleUpdateDetailPageDTO individualCarSaleUpdateDetailPageDTO = new IndividualCarSaleUpdateDetailPageDTO();
             //individualCarSaleUpdateDetailPageDTO= await individualCarService.GetIndividualCarDetailForIntoUpdateButton(token, id.ToString());
             individualCarSaleUpdateDetailPageDTO.KM = "egrerg";
@@ -132,12 +160,20 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> IndividualVehicleSalesDetail(IndividualCarSaleUpdateDetailPageDTO updateCar)
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             //await individualCarService.UpdateIndividualCar(token, updateCar);
             return View();
         }
         [HttpPost]
         public async Task<IActionResult> DeleteIndividualVehicleSales(int id)
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             await individualCarService.DeleteIndividualCar(token, id);
             return RedirectToAction("IndividualVehicleSalesList");
         }
