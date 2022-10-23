@@ -11,10 +11,19 @@ namespace VehicleTender.Web.AdminUI.Controllers
 {
     public class TenderController : Controller
     {
+        IHttpContextAccessor _httpContextAccessor;
         TenderService tenderService = new TenderService();
+        public TenderController(IHttpContextAccessor httpContextAccessor)
+        {
+            _httpContextAccessor = httpContextAccessor;
+        }
         [HttpGet]
         public IActionResult Tender()
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             TenderDTO tenderDTO = new TenderDTO();
             List<GetTenderDTO> testlikTenderList = new List<GetTenderDTO>();
             GetTenderDTO tender = new GetTenderDTO();
@@ -35,6 +44,10 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public IActionResult Tender(string? tenderName, string? isIndividual, string? statu)
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             TenderDTO tenderDTO = new TenderDTO();
             if (tenderName != null || isIndividual != null || statu != null)
             {
@@ -55,12 +68,20 @@ namespace VehicleTender.Web.AdminUI.Controllers
         }
         public IActionResult NewTenderCreate()
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             return View();
         }
 
         [HttpGet]
         public IActionResult UpdateTender()
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
 
             UpdateTenderDTO updateTender = new UpdateTenderDTO();
             updateTender.CompanyName = "BilgeAdam";
@@ -90,6 +111,10 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public IActionResult UpdateTender(int id)
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             UpdateTenderDTO updateTender = new UpdateTenderDTO();
             updateTender.CompanyName = "A";
             updateTender.TenderName = "İhaleAdi";
