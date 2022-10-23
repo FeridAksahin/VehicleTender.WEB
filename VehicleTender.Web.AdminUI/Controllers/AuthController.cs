@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -66,6 +67,11 @@ namespace VehicleTender.Web.AdminUI.Controllers
                 return RedirectToAction("Login");
             }
             return View();
+        }
+        public IActionResult LogOut()
+        {
+            _httpContextAccessor.HttpContext.Response.Cookies.Delete("deger");
+            return RedirectToAction("Login");
         }
     }
 }
