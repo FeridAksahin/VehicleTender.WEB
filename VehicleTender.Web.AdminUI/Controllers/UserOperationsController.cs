@@ -11,9 +11,18 @@ namespace VehicleTender.Web.AdminUI.Controllers
     {
         AdminService adminService = new AdminService();
         BearerTokenDTO token = new BearerTokenDTO(); //durumluk 
+        IHttpContextAccessor _httpContextAccessor;
+        public UserOperationsController(IHttpContextAccessor httpContextAccessor)
+        {
+            _httpContextAccessor = httpContextAccessor;
+        }
         [HttpGet]
         public async Task<IActionResult> UserList()
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             AdminsPage adminsPageModel = new AdminsPage();
             //adminsPageModel.getAdminDTO = await adminService.GetAllAdmin(token);  -- db den çekilmediginde null hatası veriyor 
             List<GetAdminDTO> listAdmin = new List<GetAdminDTO>();
@@ -32,6 +41,10 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public IActionResult AddNewAdmin(AdminsPage admin)
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             var a = 4;
             Console.WriteLine(admin.getAdminDTO);
             adminService.AddNewAdmin(token, admin.addAdminDTO);
@@ -41,6 +54,10 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public IActionResult DeleteAdmin(int id)
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             var a = 4;
             Console.WriteLine(id);
             adminService.DeleteAdmin(token, id);
