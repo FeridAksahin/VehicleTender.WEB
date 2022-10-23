@@ -1,4 +1,4 @@
-﻿
+﻿@model VehicleTender.WEB.UserDTO.VM.Tender.PageModelTender
 @{
     ViewBag.Title = "ListTender";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,7 +11,7 @@
         <div class="row">
             <div class="col-4">
                 <label>İhale Adı</label>
-                <select class="form-control">
+                <select class="form-control" >
                     <option value="value">text</option>
                 </select>
             </div>
@@ -36,7 +36,6 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th style="color:black;">İhale ID</th>
                 <th style="color:black;">İhale Adı</th>
                 <th style="color:black;">Bireysel / Kurumsal</th>
                 <th style="color:black;">İhale Başlangıç</th>
@@ -47,40 +46,24 @@
             </tr>
         </thead>
         <tbody>
+            @foreach (var i in Model.TenderList)
+            {
+                <tr>
+                    <td>@i.TenderName</td>
+                    <td>@i.IndividualOrCorparate</td>
+                    <td>@i.TenderStartDate</td>
+                    <td>@i.TenderEndDate</td>
+                    <td>@i.Statu</td>
+                    <td>@i.CreatedBy</td>
+                    <td>@i.CreatedDate</td>
+                    @using (Html.BeginForm("TenderDetail", "Tender",new {id=i.Id},FormMethod.Get))
+                    {
+                    <td><a href="~/Tender/TenderDetail"><input type="submit" a style="background-color: #2B2E4A; float:right;" value="Detay" class="btn btn-info mt-1" href="~/Tender/TenderDetail" /></a></td>
+                    }
+                </tr>
+            }
 
-            <tr>
-                <td>1</td>
-                <td>Çözüm Ford İhalesi</td>
-                <td>Kurumsal</td>
-                <td>15.10.2022</td>
-                <td>9.10.2026</td>
-                <td>Giriş</td>
-                <td>Ferid</td>
-                <td>9.10.2022</td>
-                <td><a href="~/Tender/TenderDetail"><input type="submit" a style="background-color: #2B2E4A; float:right;" value="Detay" class="btn btn-info mt-1" href="~/Tender/TenderDetail" /></a></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Demir Hyundai İhalesi</td>
-                <td>Kurumsal</td>
-                <td>15.10.2022</td>
-                <td>9.10.2026</td>
-                <td>Giriş</td>
-                <td>x</td>
-                <td>9.10.2022</td>
-                <td><a href="~/Tender/TenderDetail"><input type="submit" a style="background-color: #2B2E4A; float:right;" value="Detay" class="btn btn-info mt-1" href="~/Tender/TenderDetail" /></a></td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Se Mercedes İhalesi</td>
-                <td>Kurumsal</td>
-                <td>15.10.2022</td>
-                <td>9.10.2026</td>
-                <td>Giriş</td>
-                <td>y</td>
-                <td>9.10.2022</td>
-                <td><a href="~/Tender/TenderDetail"><input type="submit" a style="background-color: #2B2E4A; float:right;" value="Detay" class="btn btn-info mt-1" href="~/Tender/TenderDetail" /></a></td>
-            </tr>
+
         </tbody>
     </table>
     <hr />

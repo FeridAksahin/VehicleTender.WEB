@@ -67,7 +67,12 @@
                         <td>@item.Statu</td>
                         <td>@item.CreatedBy</td>
                         <td>@item.CreatedDate</td>
-                        <td class="update_delete"><a type="button" asp-controller="Tender" asp-action="UpdateTender" asp-route-ID="@item.TenderId" class="btn btn-warning">Güncelle</a> <button type="button" class="btn btn-danger">Sil</button></td>
+                        <td class="update_delete">
+                            <a type="button" asp-controller="Tender" asp-action="UpdateTender" asp-route-ID="@item.TenderId" class="btn btn-warning">Güncelle
+
+                            </a>
+                            <a type="submit" class="btn btn-danger" asp-action="DeleteTender" asp-controller="Tender" asp-route-ID="@item.TenderId">Sil</a>
+                        </td>
 
                     </tr>
                 }

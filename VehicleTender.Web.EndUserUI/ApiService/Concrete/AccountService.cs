@@ -11,7 +11,7 @@ namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
 {
     public class AccountService
     {
-        RequestApiService requestApiService = new RequestApiService("ApiUrl");
+        RequestApiService requestApiService = new RequestApiService();
         public async Task<string> CorporateRegister(TokenDTO tokenDTO, CorporateRegisterVM corporateRegisterViewModel)
         {
             return await requestApiService.PostAsync<CorporateRegisterVM>(tokenDTO, corporateRegisterViewModel, "burayaendpointgelecek");

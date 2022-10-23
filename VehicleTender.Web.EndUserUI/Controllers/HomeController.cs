@@ -4,6 +4,7 @@ using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls;
@@ -17,7 +18,8 @@ namespace VehicleTender.Web.EndUserUI.Controllers
 {
     public class HomeController : Controller
     {
-        
+      //  AccountService accountService = new AccountService();
+      //  ContactService contactService = new ContactService();
         public ActionResult Index()
         {
             return View();
@@ -39,12 +41,13 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Contact(ContactVM contactVM)
+        public ActionResult Contact(TokenDTO token, ContactVM contactVM)
         {
             ContactValidation contactValidation = new ContactValidation();
             ValidationResult result = contactValidation.Validate(contactVM);
             if (result.IsValid)
             {
+              //  await contactService.Contact(token, contactVM);
                 return RedirectToAction("Index");
             }
             foreach (var item in result.Errors)
@@ -69,7 +72,7 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         [HttpPost]
         public ActionResult Login(TokenDTO tokenDTO,LoginVM loginVM)
         {
-            AccountService accountService = new AccountService();
+
             LoginValidation loginValidation = new LoginValidation();
             ValidationResult result = loginValidation.Validate(loginVM);
 
@@ -100,12 +103,14 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Register(RegisterVM registerVM)
+        public ActionResult Register(TokenDTO token, RegisterVM registerVM)
         {
             RegisterValidation registerValidation = new RegisterValidation();
             ValidationResult result = registerValidation.Validate(registerVM);
+
             if (result.IsValid)
             {
+              //  await accountService.Register(token, registerVM);
                 return RedirectToAction("Login");
             }
             foreach (var item in result.Errors)
@@ -128,12 +133,13 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult CorporateRegister(CorporateRegisterVM corporateRegisterVM)
+        public ActionResult CorporateRegister(TokenDTO token, CorporateRegisterVM corporateRegisterVM)
         {
             CorporateRegisterValidation corporateRegisterValidation = new CorporateRegisterValidation();
             ValidationResult result = corporateRegisterValidation.Validate(corporateRegisterVM);
             if (result.IsValid)
             {
+             //   await accountService.CorporateRegister(token, corporateRegisterVM);
                 return RedirectToAction("Login");
             }
             foreach (var item in result.Errors)
@@ -151,12 +157,13 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult ForgotPassword(ResetPasswordVM resetPasswordVM)
+        public ActionResult ForgotPassword(TokenDTO token, ResetPasswordVM resetPasswordVM)
         {
             ResetPasswordValidation resetPasswordValidation = new ResetPasswordValidation();
             ValidationResult result = resetPasswordValidation.Validate(resetPasswordVM);
             if (result.IsValid)
             {
+            //    await accountService.ResetPassword(token, resetPasswordVM);
                 return RedirectToAction("Login");
             }
             foreach (var item in result.Errors)

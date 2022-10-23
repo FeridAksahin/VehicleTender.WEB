@@ -1,28 +1,37 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using VehicleTender.Web.AdminUI.ApiServices.Services;
 using VehicleTender.Web.AdminUI.Models.Car;
 using VehicleTender.Web.AdminUI.Models.PageModel;
 using VehicleTender.Web.AdminUI.Models.Stock;
+using VehicleTender.Web.AdminUI.Models.Token;
 
 namespace VehicleTender.Web.AdminUI.Controllers
 {
     public class StockController : Controller
     {
+        BearerTokenDTO token = new BearerTokenDTO();
+        StockService stockService = new StockService();
+        [HttpGet]
         public IActionResult Index()
         {
             StockPage companyName = new StockPage();
             List<StockCompanyNameDTO> testlikCompanyNameList = new List<StockCompanyNameDTO>();
-            StockCompanyNameDTO testlik = new StockCompanyNameDTO();
-            testlik.CompanyName = "BilgeAdam";
-            testlik.CompanyId = 1;
-            testlikCompanyNameList.Add(testlik);
+            companyName.GetAllCompanyName = new List<StockCompanyNameDTO>();
+            testlikCompanyNameList.Add(new StockCompanyNameDTO()
+            {
+                CompanyId = 1,
+                CompanyName = "BilgeAdam"
+            });
             companyName.GetAllCompanyName = testlikCompanyNameList;
+
+         //   await stockService.GetAllStock(token);
             return View(companyName);
         }
 
         [HttpGet]
-        public IActionResult Detail(string companyName)
+        public IActionResult Detail(int companyId)
         {
             StockPage stock = new StockPage();
             List<StockDTO> testlikStockList = new List<StockDTO>();
@@ -37,6 +46,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
             testlik.SaleCount = "5";
             testlikStockList.Add(testlik);
             stock.GetStockDTO = testlikStockList;
+           // await stockService.GetStockById(token, companyName);
             
             return View(stock);
         }

@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <Folder Include="Concrete\" />
+    <Folder Include="AdminDTO\" />
+    <Folder Include="EndUserDTO\" />
   </ItemGroup>
 
   <ItemGroup>

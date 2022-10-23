@@ -38,6 +38,7 @@ namespace VehicleTender.Web.AdminUI.Models.IndividualCar
         [StringType(Max = 20, Min = 1)]
         public string Description { get; set; }
         public double TotalSumTramer { get; set; }
-        public Dictionary<TramerDTO, TramerValueDTO> TramerInformation { get; set; }
+        //public Dictionary<TramerDTO, TramerValueDTO> TramerInformation { get; set; }
+        public TramerDTO Tramer { get; set; }
     }
 }

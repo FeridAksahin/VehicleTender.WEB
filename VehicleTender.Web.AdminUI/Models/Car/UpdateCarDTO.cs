@@ -50,7 +50,8 @@ namespace VehicleTender.Web.AdminUI.Models.Car
         public string AdvertHeader { get; set; }
         [StringType(Max = 20, Min = 1)]
         public string AdvertDescription { get; set; }
-        public Dictionary<TramerDTO, TramerValueDTO> TramerInformation { get; set; }
+       // public Dictionary<TramerDTO, TramerValueDTO> TramerInformation { get; set; }
+       public TramerDTO Tramer { get; set; } 
         public List<CarStatuHistoryDTO> CarStatuHistory { get; set; }
       
     }

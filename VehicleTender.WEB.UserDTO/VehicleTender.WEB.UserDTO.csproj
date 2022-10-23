@@ -41,22 +41,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Concrete\CarDTO.cs" />
     <Compile Include="Concrete\TokenDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VM\Account\CorporateRegisterVM.cs" />
     <Compile Include="VM\Account\LoginVM.cs" />
     <Compile Include="VM\Account\RegisterVM.cs" />
     <Compile Include="VM\Account\ResetPasswordVM.cs" />
-    <Compile Include="VM\Advert\BuyVehicleNowVM.cs" />
+    <Compile Include="VM\Advert\BuyAVehicleNowInput.cs" />
     <Compile Include="VM\Advert\CarListVM.cs" />
     <Compile Include="VM\Contact\ContactVM.cs" />
     <Compile Include="VM\Error\ErrorVM.cs" />
-    <Compile Include="VM\Expertise\ExpertiseVM.cs" />
+    <Compile Include="VM\Page\BuyAVehicleNowVM.cs" />
     <Compile Include="VM\Stock\FilterStockVM.cs" />
     <Compile Include="VM\Stock\StockListVM.cs" />
     <Compile Include="VM\Stock\VehicleInStockVM.cs" />
+    <Compile Include="VM\Tender\PageModelTender.cs" />
     <Compile Include="VM\Tender\SearchTenderVM.cs" />
+    <Compile Include="VM\Tender\TenderCar.cs" />
+    <Compile Include="VM\Tender\TenderCarDetail.cs" />
     <Compile Include="VM\Tender\TenderListVM.cs" />
     <Compile Include="VM\User\FavoriteListVM.cs" />
     <Compile Include="VM\User\FavoriteVM.cs" />

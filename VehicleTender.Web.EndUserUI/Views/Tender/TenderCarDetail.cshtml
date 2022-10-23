@@ -1,4 +1,5 @@
-﻿
+﻿@using VehicleTender.WEB.UserDTO.VM.Tender
+@model TenderCarDetail
 @{
     ViewBag.Title = "TenderCarDetail";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -38,13 +39,13 @@
 <body>
     <div class="container-fluid">
         <div class="container pt-5 pb-3">
-            <h1 class="display-4 text-uppercase mb-5">Mercedes Benz R3</h1>
+            <h1 class="display-4 text-uppercase mb-5">@Model.AdvertHead</h1>
             <div class="row align-items-center pb-2">
                 <div class="col-lg-6 mb-4">
                     <img class="img-fluid" src="~/img/car-rent-1.png" alt="">
                 </div>
                 <div class="col-lg-6 mb-4">
-                    <h4 class="mb-2">50.000 ₺</h4>
+                    <h4 class="mb-2">@Model.Price</h4>
                     <div class="d-flex mb-3">
                         <h6 class="mr-2">Rating:</h6>
                         <div class="d-flex align-items-center justify-content-center mb-1">
@@ -57,7 +58,7 @@
                         </div>
                     </div>
                     <p>
-                        Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata consetetur invidunt
+                        @Model.AdvertDescription
                     </p>
                     <button class="btn btn-block btn-primary py-3">Favoriye Ekle</button>
                 </div>
@@ -65,43 +66,43 @@
             <div class="row mt-n3 mt-lg-0 pb-4">
                 <div class="col-md-3 col-6 mb-2">
                     <i class="fa fa-car text-primary mr-2"></i>
-                    <span>Marka: Mercedes</span>
+                    <span>Marka: @Model.Brand</span>
                 </div>
                 <div class="col-md-3 col-6 mb-2">
                     <i class="fa fa-cogs text-primary mr-2"></i>
-                    <span>Model: Benz</span>
+                    <span>Model: @Model.Model</span>
                 </div>
                 <div class="col-md-3 col-6 mb-2">
                     <i class="fa fa-road text-primary mr-2"></i>
-                    <span>Gövde Tipi: Sedan</span>
+                    <span>Gövde Tipi: @Model.BodyType</span>
                 </div>
                 <div class="col-md-3 col-6 mb-2">
                     <i class="fa fa-eye text-primary mr-2"></i>
-                    <span>Yıl: 2020</span>
+                    <span>Yıl: @Model.Year</span>
                 </div>
                 <div class="col-md-3 col-6 mb-2">
                     <i class="fa fa-car text-primary mr-2"></i>
-                    <span>Yakıt Tipi: Benzin</span>
+                    <span>Yakıt Tipi: @Model.FuelType</span>
                 </div>
                 <div class="col-md-3 col-6 mb-2">
                     <i class="fa fa-cogs text-primary mr-2"></i>
-                    <span>Vites Tipi: Otomatik</span>
+                    <span>Vites Tipi: @Model.TransmissionType</span>
                 </div>
                 <div class="col-md-3 col-6 mb-2">
                     <i class="fa fa-road text-primary mr-2"></i>
-                    <span>Versiyon: Yeni</span>
+                    <span>Versiyon: @Model.Version</span>
                 </div>
                 <div class="col-md-3 col-6 mb-2">
                     <i class="fa fa-car text-primary mr-2"></i>
-                    <span>KM: 12.000</span>
+                    <span>KM: @Model.KM</span>
                 </div>
                 <div class="col-md-3 col-6 mb-2">
                     <i class="fa fa-cogs text-primary mr-2"></i>
-                    <span>Renk: Siyah</span>
+                    <span>Renk: @Model.Color</span>
                 </div>
                 <div class="col-md-3 col-6 mb-2">
                     <i class="fa fa-road text-primary mr-2"></i>
-                    <span>Donanım: Turbo</span>
+                    <span>Donanım: @Model.Hardware</span>
                 </div>
             </div>
         </div>
@@ -115,15 +116,15 @@
                     <div class="mb-5">
                         <div class="row">
                             <div class="col-12 form-group">
-                                <h5 class="display-5 mb-5">Ad Soyad</h5>
+                                <h5 class="display-5 mb-5">@Model.Name</h5>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-6 form-group">
-                                <h5 class="display-5 mb-5">Email</h5>
+                                <h5 class="display-5 mb-5">@Model.Email</h5>
                             </div>
                             <div class="col-6 form-group">
-                                <h5 class="display-5 mb-5">Telefon</h5>
+                                <h5 class="display-5 mb-5">@Model.Telephone</h5>
                             </div>
                         </div>
                     </div>

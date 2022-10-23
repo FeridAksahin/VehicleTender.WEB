@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 using System.Web;
 using VehicleTender.Web.EndUserUI.ApiService.RepoService;
 using VehicleTender.WEB.UserDTO.Concrete;
-
+using VehicleTender.WEB.UserDTO.VM.Tender;
 
 namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
 {//Generic api servisi kullanım örnek
     public class CarService
     {
         RequestApiService requestApiService = new RequestApiService("https://localhost:7256/api/");
-        public async Task<List<CarDTO>> GetCarAsync(TokenDTO bearerTokenDTO)
+        public async Task<List<TenderCar>> GetCarAsync(TokenDTO bearerTokenDTO)
         {
              //testlik
-            return await requestApiService.GetAsyncList<CarDTO>(bearerTokenDTO,"endpoint yolu gelmeli");
+            return await requestApiService.GetAsyncList<TenderCar>(bearerTokenDTO,"endpoint yolu gelmeli");
         }
         /*
         public async Task<TokenDTO> GetToken(UserLoginDTO userLoginDTO, string endpoint)
