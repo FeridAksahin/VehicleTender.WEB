@@ -51,6 +51,7 @@
     <Compile Include="VM\Advert\CarListVM.cs" />
     <Compile Include="VM\Contact\ContactVM.cs" />
     <Compile Include="VM\Error\ErrorVM.cs" />
+    <Compile Include="VM\Expertise\ExpertiseVM.cs" />
     <Compile Include="VM\Page\BuyAVehicleNowVM.cs" />
     <Compile Include="VM\Stock\FilterStockVM.cs" />
     <Compile Include="VM\Stock\StockListVM.cs" />
