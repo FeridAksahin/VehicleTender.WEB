@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Xml.Linq;
 using VehicleTender.Web.EndUserUI.ApiService.Concrete;
 using VehicleTender.Web.EndUserUI.ApiService.Interface;
 using VehicleTender.Web.EndUserUI.ApiService.RepoService;
@@ -12,11 +14,11 @@ using VehicleTender.Web.EndUserUI.Models;
 using VehicleTender.WEB.UserDTO.Concrete;
 using VehicleTender.WEB.UserDTO.VM.Stock;
 
-
 namespace VehicleTender.Web.EndUserUI.Controllers
 {
     public class VehicleController : Controller
     {
+
         StockPageModel model = new StockPageModel();
        // StockService stockService = new StockService();
         TokenDTO token = new TokenDTO();
@@ -30,6 +32,10 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         // GET: Vehicle
         public ActionResult Index()
         {
+            if (HttpContext.Request.Cookies["token"] == null)
+            {
+                return RedirectToAction("Login", "Home");
+            }
             return View();
         }
 
@@ -47,6 +53,10 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         [HttpGet]
         public ActionResult AddVehicle()
         {
+            if (HttpContext.Request.Cookies["token"] == null)
+            {
+                return RedirectToAction("Login", "Home");
+            }
             return View();
         }
         //[HttpPost]
@@ -57,6 +67,10 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         [HttpGet]
         public ActionResult UpdateVehicle()
         {
+            if (HttpContext.Request.Cookies["token"] == null)
+            {
+                return RedirectToAction("Login", "Home");
+            }
             return View();
         }
         //[HttpPost]
@@ -78,18 +92,28 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         [HttpGet]
         public ActionResult PostingSalesAdvertisement()
         {
+            if (HttpContext.Request.Cookies["token"] == null)
+            {
+                return RedirectToAction("Login", "Home");
+            }
             return View();
         }
 
         [HttpGet]
         public async Task<ActionResult> Stock(string companyName,string count)
         {
+            if (HttpContext.Request.Cookies["token"] == null)
+            {
+                return RedirectToAction("Login", "Home");
+            }
+
             //model.stockList = await stockService.StockList(token);
             model.filterStock = new FilterStockVM();
 
             if (companyName!=null || count!=null)
             {
                 //model.stockList = await stockService.FilterStock(token, companyName + "," + count);
+                model.vehicleInStock = new List<VehicleInStockVM>();
                 List<StockListVM> stockListVMs = new List<StockListVM>();
                 StockListVM stockListVM = new StockListVM()
                 {
@@ -97,8 +121,10 @@ namespace VehicleTender.Web.EndUserUI.Controllers
                     LastModifiedDate = DateTime.Now,
                     StockNo = 1,
                     VehicleCount = "215",
+                    
                 };
                 stockListVMs.Add(stockListVM);
+                model.stockList = new List<StockListVM>();
                 model.stockList=stockListVMs;
             }
             else
@@ -113,6 +139,7 @@ namespace VehicleTender.Web.EndUserUI.Controllers
                     VehicleCount = "215",
                 };
                 stockListVMs.Add(stockListVM);
+                model.stockList = new List<StockListVM>();
                 model.stockList = stockListVMs;
             }
             return View(model);
@@ -120,18 +147,25 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         [HttpGet]
         public ActionResult GetVehicleInStock(int? id)
         {
-            //model.vehicleInStock = await stockService.VehicleInStock(token, id);
+            if (HttpContext.Request.Cookies["token"] == null)
+            {
+                return RedirectToAction("Login", "Home");
+            }
 
-            model.vehicleInStock = new List<VehicleInStockVM>();
+            //model.vehicleInStock = await stockService.VehicleInStock(token, id);
+            List<VehicleInStockVM> vehicleInStockVMs = new List<VehicleInStockVM>();
             VehicleInStockVM vehicleInStockVM = new VehicleInStockVM()
             {
                 Brand = "asdasd",
                 CreatedDate = DateTime.Now,
                 Model = "asdasd",
                 PreAssessmentPrice = "asdasdas",
-                Statu = "asdas"
+                Statu = "asdas",
+                Id=1
             };
-            model.vehicleInStock.Add(vehicleInStockVM);
+            vehicleInStockVMs.Add(vehicleInStockVM);
+            model.vehicleInStock = new List<VehicleInStockVM>();
+            model.vehicleInStock = vehicleInStockVMs;
             return View(model);
         }
 
