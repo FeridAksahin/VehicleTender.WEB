@@ -81,6 +81,16 @@ namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
             }
             return null;
         }
+        public async Task<List<T>> GetAsyncList<T>(TokenDTO bearerTokenDTO,int id, string endpoint) where T : class
+        {
+            httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {bearerTokenDTO.AccessToken}");
+            var response = await httpClient.GetAsync($"{endpoint}/{id}");
+            if (response.IsSuccessStatusCode)
+            {
+                return JsonConvert.DeserializeObject<List<T>>(await response.Content.ReadAsStringAsync());
+            }
+            return null;
+        }
         public async Task<List<T>> GetAsyncList<T>(TokenDTO bearerTokenDTO, string endpoint) where T : class
         {
             httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {bearerTokenDTO.AccessToken}");

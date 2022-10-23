@@ -1,4 +1,6 @@
-﻿<html>
+﻿@model List<VehicleTender.WEB.UserDTO.VM.Expertise.ExpertiseVM>
+
+<html>
 <head>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <link rel="stylesheet" type="text/css" href="./style.css" />
@@ -21,18 +23,20 @@
 </head>
 <body>
     <div class="container-fluid">
-        <h5 class="mb-3 pb-3 display-5 text-center mt-4">Ekspertiz Servisi Ara</h5>
-        <div class="row">
-            <div class="col-4">
-                <label>İl</label>
-                <input type="text" class="form-control" aria-describedby="basic-addon1">
+        <form method="get">
+            <h5 class="mb-3 pb-3 display-5 text-center mt-4">Ekspertiz Servisi Ara</h5>
+            <div class="row">
+                <div class="col-4">
+                    <label>İl</label>
+                    <input type="text" class="form-control" aria-describedby="basic-addon1" name="city">
+                </div>
+                <div class="col-4">
+                    <label>İlçe</label>
+                    <input type="text" class="form-control" aria-describedby="basic-addon1" name="district">
+                </div>
             </div>
-            <div class="col-4">
-                <label>İlçe</label>
-                <input type="text" class="form-control" aria-describedby="basic-addon1">
-            </div>
-        </div>
-        <input type="submit" a style="background-color: #2B2E4A; float:right;" value="Servis Ara" class="btn btn-info mt-1" />
+            <input type="submit" a style="background-color: #2B2E4A; float:right;" value="Servis Ara" class="btn btn-info mt-1" />
+        </form>
         <br />
         <br />
         <hr />
@@ -51,33 +55,17 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>A Servisi/Şirketi</td>
-                    <td>İstanbul</td>
-                    <td>Maslak</td>
-                    <td>05000000000</td>
-                    <td>Buraya Adres Gelecek...</td>
-                    <td><input type="button" a style="background-color: #2B2E4A; float:right;" value="Detay" class="btn btn-info mt-1" data-toggle="modal" data-target="#exampleModalCenter" /></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>B Servisi/Şirketi</td>
-                    <td>İstanbul</td>
-                    <td>Maslak</td>
-                    <td>05000000000</td>
-                    <td>Buraya Adres Gelecek...</td>
-                    <td><input type="button" a style="background-color: #2B2E4A; float:right;" value="Detay" class="btn btn-info mt-1" data-toggle="modal" data-target="#exampleModalCenter" /></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>C Servisi/Şirketi</td>
-                    <td>İstanbul</td>
-                    <td>Maslak</td>
-                    <td>05000000000</td>
-                    <td>Buraya Adres Gelecek...</td>
-                    <td><input type="button" a style="background-color: #2B2E4A; float:right;" value="Detay" class="btn btn-info mt-1" data-toggle="modal" data-target="#exampleModalCenter" /></td>
-                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.ExpertiseCompanyName</td>
+                        <td>@item.City</td>
+                        <td>@item.District</td>
+                        <td>@item.Telephone</td>
+                        <td>@item.Address</td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>
