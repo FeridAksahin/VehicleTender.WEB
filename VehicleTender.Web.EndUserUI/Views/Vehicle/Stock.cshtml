@@ -29,22 +29,24 @@
                 <th style="color:black;">Stok Sahibi Şirket</th>
                 <th style="color:black;">Stokta bulunan araç sayısı</th>
                 <th style="color:black;">Son Güncellenme Tarihi</th>
+                <th></th>
             </tr>
         </thead>
         
         <tbody>
             @foreach (var item in Model.stockList)
             {
-                @Html.BeginForm("GetVehicleInStock", "Vehicle", new { id = item.StockNo }, FormMethod.Get);
-            <tr>
-                <td>@item.StockNo</td>
-                <td>@item.CompanyName</td>
-                <td>@item.VehicleCount</td>
-                <td>@item.LastModifiedDate</td>
-
-                <td><button type="submit" a style="background-color: #2B2E4A; float:right;" value="Stok Detay" class="btn btn-info mt-1" />Stok Detay</td>
-            </tr>
-        }
+                using (Html.BeginForm("GetVehicleInStock", "Vehicle", new { id = item.StockNo }, FormMethod.Get))
+                {
+                    <tr>
+                        <td>@item.StockNo</td>
+                        <td>@item.CompanyName</td>
+                        <td>@item.VehicleCount</td>
+                        <td>@item.LastModifiedDate</td>
+                        <td><button type="submit" a style="background-color: #2B2E4A; float:right;" value="Stok Detay" class="btn btn-info mt-1" />Stok Detay</td>
+                    </tr>
+                }
+            }
         </tbody>
     </table>
 </div>
