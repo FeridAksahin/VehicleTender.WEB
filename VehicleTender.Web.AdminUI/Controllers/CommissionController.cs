@@ -12,7 +12,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
     public class CommissionController : Controller
     {
         CommissionService commissionService= new();
-        BearerTokenDTO token = new BearerTokenDTO();
+        Token token = new Token();
         CommissionPageModel commissionPageModel = new CommissionPageModel();
         IHttpContextAccessor _httpContextAccessor;
         public CommissionController(IHttpContextAccessor httpContextAccessor)

@@ -16,12 +16,12 @@ namespace VehicleTender.Web.AdminUI.ApiServices.Base.Concrete
             client = new HttpClient();
             client.BaseAddress = new Uri("https://localhost:7256/api/");
         }
-        public async Task<BearerTokenDTO> GetToken(UserLoginDTO getTokenForUser, string endpoint)
+        public async Task<Token> GetToken(UserLoginDTO getTokenForUser, string endpoint)
         {
             var convertedJsonParameterObject = new StringContent(JsonConvert.SerializeObject(getTokenForUser));
             convertedJsonParameterObject.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             var response = await client.PostAsync(endpoint, convertedJsonParameterObject);
-            return JsonConvert.DeserializeObject<BearerTokenDTO>(response.Content.ReadAsStringAsync().Result);
+            return JsonConvert.DeserializeObject<Token>(response.Content.ReadAsStringAsync().Result);
         }
         /*
         public async TokenDTO GetConvert<T>(string userName, string password, string endpoint,T whoWantNiceToken) where T : class
@@ -31,29 +31,29 @@ namespace VehicleTender.Web.AdminUI.ApiServices.Base.Concrete
             whoWantNiceToken.SetToken = res;
             return getTokenDeserialize = JsonConvert.DeserializeObject<TokenDTO>(res);
         }*/
-        public async Task<T> GetAsync<T>(BearerTokenDTO bearerTokenDTO, string endpoint) where T : class
+        public async Task<T> GetAsync<T>(Token bearerTokenDTO, string endpoint) where T : class
         {
-            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {bearerTokenDTO.TokenUri}");
+            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {bearerTokenDTO.AccessToken}");
             var response = await client.GetAsync(endpoint);
             if (response.IsSuccessStatusCode)
             return JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync());
             return null;
         }
-        public async Task<T> GetAsync<T>(BearerTokenDTO bearerTokenDTO, string endpoint, string id) where T : class
+        public async Task<T> GetAsync<T>(Token bearerTokenDTO, string endpoint, string id) where T : class
         {
-            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {bearerTokenDTO.TokenUri}");
+            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {bearerTokenDTO.AccessToken}");
             var response = await client.GetAsync($"{endpoint}/{id}");
             return JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync());
         }
-        public async Task<T> GetAsync<T, TSearch>(BearerTokenDTO bearerTokenDTO, string endpoint, string id) where T : class
+        public async Task<T> GetAsync<T, TSearch>(Token bearerTokenDTO, string endpoint, string id) where T : class
         {
-            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {bearerTokenDTO.TokenUri}");
+            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {bearerTokenDTO.AccessToken}");
             var response = await client.GetAsync($"{endpoint}/{id}");
             return JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync());
         }
-        public async Task<List<T>> GetAsyncList<T>(BearerTokenDTO bearerTokenDTO, string endpoint, T data) where T : class
+        public async Task<List<T>> GetAsyncList<T>(Token bearerTokenDTO, string endpoint, T data) where T : class
         {
-            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {bearerTokenDTO.TokenUri}");
+            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {bearerTokenDTO.AccessToken}");
             var response = await client.GetAsync(endpoint);
             if (response.IsSuccessStatusCode)
             {
@@ -74,9 +74,9 @@ namespace VehicleTender.Web.AdminUI.ApiServices.Base.Concrete
 
 
 
-        public async Task<List<T>> GetAsyncList<T>(BearerTokenDTO bearerTokenDTO, string endpoint) where T : class
+        public async Task<List<T>> GetAsyncList<T>(Token bearerTokenDTO, string endpoint) where T : class
         {
-            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {bearerTokenDTO.TokenUri}");
+            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {bearerTokenDTO.AccessToken}");
             var response = await client.GetAsync(endpoint);
             if (response.IsSuccessStatusCode)
             {
@@ -84,9 +84,9 @@ namespace VehicleTender.Web.AdminUI.ApiServices.Base.Concrete
             }
             return null;
         }
-        public async Task<List<T>> GetAsyncList<T>(BearerTokenDTO bearerTokenDTO, string endpoint, string request) where T : class
+        public async Task<List<T>> GetAsyncList<T>(Token bearerTokenDTO, string endpoint, string request) where T : class
         {
-            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {bearerTokenDTO.TokenUri}");
+            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {bearerTokenDTO.AccessToken}");
             var response = await client.GetAsync($"{endpoint}/{request}");
             if (response.IsSuccessStatusCode)
             {
@@ -94,9 +94,9 @@ namespace VehicleTender.Web.AdminUI.ApiServices.Base.Concrete
             }
             return null;
         }
-        public async Task<string> PostAsync<T>(BearerTokenDTO bearerTokenDTO, T data, string endpoint) where T : class
+        public async Task<string> PostAsync<T>(Token bearerTokenDTO, T data, string endpoint) where T : class
         {
-            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {bearerTokenDTO.TokenUri}");
+            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {bearerTokenDTO.AccessToken}");
             var convertedJsonParameterObject = new StringContent(JsonConvert.SerializeObject(data));
             convertedJsonParameterObject.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             var response = await client.PostAsync(endpoint, convertedJsonParameterObject);
@@ -123,18 +123,18 @@ namespace VehicleTender.Web.AdminUI.ApiServices.Base.Concrete
 
         }
 
-        public async Task<string> PostAsync<T>(BearerTokenDTO bearerTokenDTO, List<T> data, string endpoint) where T : class
+        public async Task<string> PostAsync<T>(Token bearerTokenDTO, List<T> data, string endpoint) where T : class
         {
-            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {bearerTokenDTO.TokenUri}");
+            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {bearerTokenDTO.AccessToken}");
             var convertedJsonParameterObject = new StringContent(JsonConvert.SerializeObject(data));
             convertedJsonParameterObject.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             var response = await client.PostAsync(endpoint, convertedJsonParameterObject);
             // return response.Content.ReadAsStringAsync().Result == statusGenerator.GetHttpStatusCodes(200) ? statusGenerator.GetHttpStatusCodes(200) : statusGenerator.GetHttpStatusCodes(404);
             return response.Content.ReadAsStringAsync().Result;
         }
-        public async Task<string> DeleteAsync(BearerTokenDTO bearerTokenDTO, string endpoint, int id)
+        public async Task<string> DeleteAsync(Token bearerTokenDTO, string endpoint, int id)
         {
-            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {bearerTokenDTO.TokenUri}");
+            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {bearerTokenDTO.AccessToken}");
             var response = await client.DeleteAsync($"{endpoint}/{id}");
             /*  return response.Content.ReadAsStringAsync().Result == statusGenerator.GetHttpStatusCodes(200) ? statusGenerator.MakeCustomStatuCode(410, "Belirtilen veri başarıyla silindi") :
                   statusGenerator.MakeCustomStatuCode(403, "Buna yetkiniz yok");*/
@@ -146,18 +146,18 @@ namespace VehicleTender.Web.AdminUI.ApiServices.Base.Concrete
                 statusGenerator.MakeCustomStatuCode(403, "Buna yetkiniz yok.");
             */
         }
-        public async Task<string> PutAsync<T>(BearerTokenDTO bearerTokenDTO, T data, string endpoint) where T : class
+        public async Task<string> PutAsync<T>(Token bearerTokenDTO, T data, string endpoint) where T : class
         {
-            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {bearerTokenDTO.TokenUri}");
+            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {bearerTokenDTO.AccessToken}");
             var convertedJsonParameterObject = new StringContent(JsonConvert.SerializeObject(data));
             convertedJsonParameterObject.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             var response = await client.PutAsync(endpoint, convertedJsonParameterObject);
             // return response.Content.ReadAsStringAsync().Result == statusGenerator.GetHttpStatusCodes(200) ? statusGenerator.GetHttpStatusCodes(201) : statusGenerator.GetHttpStatusCodes(404);
             return response.Content.ReadAsStringAsync().Result;
         }
-        public async Task<string> PutAsync<T>(BearerTokenDTO bearerTokenDTO, List<T> data, string endpoint) where T : class
+        public async Task<string> PutAsync<T>(Token bearerTokenDTO, List<T> data, string endpoint) where T : class
         {
-            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {bearerTokenDTO.TokenUri}");
+            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {bearerTokenDTO.AccessToken}");
             var convertedJsonParameterObject = new StringContent(JsonConvert.SerializeObject(data));
             convertedJsonParameterObject.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             var response = await client.PutAsync(endpoint, convertedJsonParameterObject);

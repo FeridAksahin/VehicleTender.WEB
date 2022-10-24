@@ -13,7 +13,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
 {
     public class TenderController : Controller
     {
-        BearerTokenDTO token = new BearerTokenDTO();
+        Token token = new Token();
         IHttpContextAccessor _httpContextAccessor;
         TenderService tenderService = new TenderService();
         public TenderController(IHttpContextAccessor httpContextAccessor)

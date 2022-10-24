@@ -11,7 +11,7 @@ namespace VehicleTender.API.Api.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-
+    [Authorize]
     public class VehicleController : ControllerBase
     {
         private readonly ILogger<VehicleController> _log;
@@ -41,8 +41,9 @@ namespace VehicleTender.API.Api.Controllers
         [HttpGet]
         public async Task<List<CarListVM>> Create()
         {
-            var s = HttpContext.Request.Headers.Values;
+            //var s = HttpContext.Request.Headers.Values;
             CarListVM ccdddd = new CarListVM();
+            ccdddd.BodyTypeId = 3;
             List<CarListVM> gg = new List<CarListVM>();
             gg.Add(ccdddd);
             return gg;

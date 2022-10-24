@@ -11,7 +11,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
 {
     public class StockController : Controller
     {
-        BearerTokenDTO token = new BearerTokenDTO();
+        Token token = new Token();
         StockService stockService = new StockService();
        
         IHttpContextAccessor _httpContextAccessor;

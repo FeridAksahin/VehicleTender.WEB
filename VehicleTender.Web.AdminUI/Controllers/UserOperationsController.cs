@@ -11,7 +11,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
     public class UserOperationsController : Controller
     {
         AdminService adminService = new AdminService();
-        BearerTokenDTO token = new BearerTokenDTO(); //durumluk 
+        Token token = new Token(); //durumluk 
         IHttpContextAccessor _httpContextAccessor;
         public UserOperationsController(IHttpContextAccessor httpContextAccessor)
         {
@@ -69,8 +69,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
             if (ValidatorProperties.GetValidatorResult<UpdateAdmin>(updateAdmin).Count != 0)
                 Console.WriteLine("aethaeth");
             var a = 4;
-            Console.WriteLine(admin.getAdminDTO);
-            adminService.AddNewAdmin(token, admin.addAdminDTO);
+            //adminService.AddNewAdmin(token, updateAdmin);
             return RedirectToAction("UserList");
         }
 
@@ -85,8 +84,6 @@ namespace VehicleTender.Web.AdminUI.Controllers
                 await adminService.AddNewAdmin(admin.addAdminDTO);
 
             var a = 4;
-            Console.WriteLine(id);
-            adminService.DeleteAdmin(token, id);
             return RedirectToAction("UserList");
         }
 

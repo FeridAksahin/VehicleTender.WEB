@@ -17,7 +17,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
 {
     public class VehicleController : Controller
     {
-        BearerTokenDTO token = new BearerTokenDTO();
+        Token token = new Token();
         
         CarService carService = new CarService();
         IdentifyingCehicleFaturesService identifyingCehicleFaturesService = new();

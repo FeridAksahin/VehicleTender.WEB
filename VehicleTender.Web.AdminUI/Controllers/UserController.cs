@@ -12,7 +12,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
     public class UserController : Controller
     {
         CorporateUserService corporateUservice = new CorporateUserService();
-        BearerTokenDTO token = new BearerTokenDTO(); //durumluk 
+        Token token = new Token(); //durumluk 
         IndividualCarService individualCarService = new IndividualCarService();
         IHttpContextAccessor _httpContextAccessor;
         public UserController(IHttpContextAccessor httpContextAccessor)

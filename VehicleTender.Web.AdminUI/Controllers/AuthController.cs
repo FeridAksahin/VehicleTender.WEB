@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using VehicleTender.Web.AdminUI.ApiServices.Base.Concrete;
 using VehicleTender.Web.AdminUI.Models;
 using VehicleTender.Web.AdminUI.Models.Auth;
 using VehicleTender.Web.AdminUI.Models.Token;
@@ -30,10 +31,16 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginModel loginModel)
         {
+            
             if (ModelState.IsValid)
             {
-
-                _httpContextAccessor.HttpContext.Response.Cookies.Append("token", "ihsan",new CookieOptions()
+                BaseApiService apiServiceRequestForTokenInjection = new BaseApiService();
+                var token = await apiServiceRequestForTokenInjection.GetToken(new UserLoginDTO
+                {
+                    Password = loginModel.Password,
+                    Mail = loginModel.Email
+                },"Auth/Login");
+                _httpContextAccessor.HttpContext.Response.Cookies.Append("token",token.AccessToken, new CookieOptions()
                     { 
                     Expires = DateTime.Now.AddDays(1),
                     });

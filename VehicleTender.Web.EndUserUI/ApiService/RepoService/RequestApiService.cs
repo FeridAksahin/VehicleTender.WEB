@@ -38,16 +38,16 @@ namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
         public HttpClient CreateHttpClient(string serviceBaseAddress)
         {
             httpClient = new HttpClient();
-            //httpClient.BaseAddress = new Uri(serviceBaseAddress);
+            httpClient.BaseAddress = new Uri(serviceBaseAddress);
             return httpClient;
         }
 
         public async Task<Token> GetToken(LoginVM getTokenForUser, string endpoint)  
         {
-            var convertedJsonParameterObject = new StringContent(JsonConvert.SerializeObject(getTokenForUser));
-            convertedJsonParameterObject.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            var response = await httpClient.PostAsync(endpoint, convertedJsonParameterObject);
-            return JsonConvert.DeserializeObject<Token>(response.Content.ReadAsStringAsync().Result);
+                var convertedJsonParameterObject = new StringContent(JsonConvert.SerializeObject(getTokenForUser));
+                convertedJsonParameterObject.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                var response = await httpClient.PostAsync(endpoint, convertedJsonParameterObject);
+                return JsonConvert.DeserializeObject<Token>(response.Content.ReadAsStringAsync().Result);
         }   
         /*
         public async TokenDTO GetConvert<T>(string userName, string password, string endpoint,T whoWantNiceToken) where T : class

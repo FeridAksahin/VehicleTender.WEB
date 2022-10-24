@@ -27,7 +27,7 @@ namespace VehicleTender.Web.EndUserUI.Controllers
                 AccessToken = HttpContext.Request.Cookies["token"].Value
             };
             var s = token.AccessToken;
-            await cs.CarList(token);
+            var c  = await cs.CarList(token);
             BuyAVehicleNowVM advertPage = new BuyAVehicleNowVM();
             List<CarListVM> carList = new List<CarListVM>();
             CarListVM car = new CarListVM()

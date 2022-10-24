@@ -12,7 +12,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         ExpertiseService expertiseService=new ExpertiseService();
         ExpertisePageModel model=new ExpertisePageModel();
 
-        BearerTokenDTO token=new BearerTokenDTO();
+        Token token=new Token();
         IHttpContextAccessor _httpContextAccessor;
         public ExpertiseController(IHttpContextAccessor httpContextAccessor)
         {
