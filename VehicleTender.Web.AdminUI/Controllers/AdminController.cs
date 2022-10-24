@@ -20,7 +20,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         }
         public IActionResult AdminHome()
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login","Auth");
             }
@@ -29,7 +29,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public IActionResult RoleAndAuthorization()
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -38,7 +38,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public IActionResult RoleAndAuthorizationDelete(int id)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -47,7 +47,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public IActionResult RoleAndAuthorizationAdd()
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }

@@ -22,7 +22,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public async Task<IActionResult> Commission()
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -43,7 +43,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> AddCommission(CommissionPageModel commissionPageModel)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -54,6 +54,10 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public async Task<IActionResult> UpdateCommission(string id)
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             UpdateCommission update = new UpdateCommission()
             {
                 CommissionId = int.Parse(id),
@@ -68,7 +72,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> UpdateCommission(CommissionPageModel commissionPageModel)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -78,7 +82,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> DeleteCommission(int id)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }

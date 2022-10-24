@@ -30,7 +30,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public async Task<IActionResult> VehicleList(string? brandName, string? modelName, string? individualOrCorparate, string? statu)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -71,7 +71,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public async Task<IActionResult> VehicleBrandList()
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -89,7 +89,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> AddVehicleBrand(BrandListPageModel brandListPageModel)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -99,7 +99,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> DeleteVehicleBrand(int id)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -110,7 +110,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public IActionResult VehicleModelList()
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -131,7 +131,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
 
         public IActionResult VehicleModelGetById(int id)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -141,7 +141,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public IActionResult VehicleModelDelete(int id)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -150,7 +150,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public IActionResult VehicleModelUpdate(CarModelPagedDto carModelPagedDto)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -159,7 +159,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         }
         public IActionResult VehicleModelAdd(CarModelPagedDto carModelPagedDto)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -169,7 +169,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public async Task<IActionResult> VehicleBodyTypeList()
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -190,7 +190,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> VehicleAddBodyType(string bodyType)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -200,7 +200,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> DeleteBodyType(int id)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -210,7 +210,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public IActionResult VehicleFuelTypeList()
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -228,7 +228,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> VehicleFuelTypeList(FuelTypePage fuelType)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -238,7 +238,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public async Task<IActionResult> VehicleGearTypeList()
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -252,7 +252,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> VehicleAddGearType(string gearType)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -262,7 +262,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> DeleteGearType(int id)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -272,7 +272,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public IActionResult VehicleColorList()
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -288,7 +288,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> VehicleColorList(ColorPageModel addColor) //add color
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -298,7 +298,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> DeleteColor(int id)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -308,7 +308,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public async Task<IActionResult> VehicleHardwareList()
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -326,7 +326,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> AddVehicleHardware(HardwareListPageModel hardwareListPageModel)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -336,7 +336,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> DeleteVehicleHardware(int id)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -346,7 +346,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public IActionResult StockList()
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -361,7 +361,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public IActionResult IndividualVehiclePurchaseListing()
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -369,7 +369,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         }
         public IActionResult VehicleDefineAndListing()
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -377,7 +377,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         }
         public IActionResult VehicleDetailInfo()
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -386,7 +386,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public IActionResult AddVehicle()
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -395,9 +395,14 @@ namespace VehicleTender.Web.AdminUI.Controllers
         }
         [HttpPost]
         public  IActionResult AddVehicle(AddCarDTO addVehicleViewModel)
-        {//tramer bilgilerini alma ve fotoğraf alma kısmı, hemen al satış butonu kısmı eksiktir 
-         //carService.AddNewCar(token,addVehicleViewModel); //komisyon ve noter ücreti api tarafında belirlenecektir. bireysel ya da kurumsal olup olmadıgı api 
-         //tarafında yazılan isme göre aratılıp db ye kaydedilcektir
+        {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
+            //tramer bilgilerini alma ve fotoğraf alma kısmı, hemen al satış butonu kısmı eksiktir 
+            //carService.AddNewCar(token,addVehicleViewModel); //komisyon ve noter ücreti api tarafında belirlenecektir. bireysel ya da kurumsal olup olmadıgı api 
+            //tarafında yazılan isme göre aratılıp db ye kaydedilcektir
 
             List<string> images = new List<string>();//fotoğrafların yolları
 
@@ -426,7 +431,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public IActionResult UpdateVehicle(string id)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -471,7 +476,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public IActionResult UpdateVehicle(UpdateCarDTO updateCarViewModel)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }

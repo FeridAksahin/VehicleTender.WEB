@@ -12,7 +12,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         }
         public IActionResult Index()
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -21,7 +21,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
 
         public IActionResult RestoreDeletedData()
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -30,7 +30,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
 
         public IActionResult Expertise()
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }

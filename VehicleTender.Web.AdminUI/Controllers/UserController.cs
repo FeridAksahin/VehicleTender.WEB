@@ -22,7 +22,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public async Task<IActionResult> CorporateUsers(string? companyType, string? packetType) //filtrelemeyi query string ile aldgımız için
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -68,7 +68,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public async Task<IActionResult> UpdateCorporateUser(int id)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -82,7 +82,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> UpdateCorporateUser(UpdateUser updateUser)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -91,7 +91,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         }
         public IActionResult Profile()
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -100,7 +100,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public async Task<IActionResult> IndividualVehicleSalesList(string? brand, string? model, string? statu)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -140,7 +140,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public async Task<IActionResult> IndividualVehicleSalesDetail(int id)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -177,7 +177,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> IndividualVehicleSalesDetail(IndividualCarSaleUpdateDetailPageDTO updateCar)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -187,7 +187,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> DeleteIndividualVehicleSales(int id)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }

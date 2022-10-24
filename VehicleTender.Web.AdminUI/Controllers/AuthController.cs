@@ -33,7 +33,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
             if (ModelState.IsValid)
             {
 
-                _httpContextAccessor.HttpContext.Response.Cookies.Append("deger", "ihsan",new CookieOptions()
+                _httpContextAccessor.HttpContext.Response.Cookies.Append("token", "ihsan",new CookieOptions()
                     { 
                     Expires = DateTime.Now.AddDays(1),
                     });
@@ -70,7 +70,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         }
         public IActionResult LogOut()
         {
-            _httpContextAccessor.HttpContext.Response.Cookies.Delete("deger");
+            _httpContextAccessor.HttpContext.Response.Cookies.Delete("token");
             return RedirectToAction("Login");
         }
     }

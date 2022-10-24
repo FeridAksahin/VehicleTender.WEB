@@ -29,11 +29,11 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Tender(string? tenderName, string? isIndividual, string? statu)
         {
-            List<GetTenderDTO> testlikTenderList = new List<GetTenderDTO>();
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
+            List<GetTenderDTO> testlikTenderList = new List<GetTenderDTO>();
             TenderDTO tenderDTO = new TenderDTO();
             if (tenderName != null || isIndividual != null || statu != null)
             {
@@ -53,6 +53,10 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public IActionResult NewTenderCreate()
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             AddNewTenderDTO addNewTender = new AddNewTenderDTO();
             TenderCarPriceAndTenderCar tenderCarPriceAndTenderCar = new TenderCarPriceAndTenderCar();
             List<TenderCar> tenderCarList = new List<TenderCar>();
@@ -86,6 +90,10 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> NewTenderCreate(AddNewTenderDTO addNewTenderDTO)
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             await tenderService.AddNewTender(token, addNewTenderDTO);
             return RedirectToAction("Tender");
         }
@@ -93,7 +101,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public IActionResult UpdateTender()
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -126,7 +134,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public IActionResult UpdateTender(int id)
         {
-            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Auth");
             }
@@ -157,6 +165,10 @@ namespace VehicleTender.Web.AdminUI.Controllers
 
         public async Task<IActionResult> DeleteTender(int id)
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             await tenderService.DeleteTender(token, id);
             return RedirectToAction("Tender");
         }
