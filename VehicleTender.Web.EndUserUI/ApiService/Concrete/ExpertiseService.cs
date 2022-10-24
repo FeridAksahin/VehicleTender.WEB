@@ -14,11 +14,11 @@ namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
     {
         RequestApiService requestApiService = new RequestApiService("ApiUrl");
 
-        public async Task<List<ExpertiseVM>> GetAllExpertise(TokenDTO token)
+        public async Task<List<ExpertiseVM>> GetAllExpertise(Token token)
         {
             return await requestApiService.GetAsyncList<ExpertiseVM>(token,"endpointburayagelecek");
         }
-        public async Task<List<ExpertiseVM>> GetAllExpertise(TokenDTO token,string filter)
+        public async Task<List<ExpertiseVM>> GetAllExpertise(Token token,string filter)
         {
             return await requestApiService.GetAsyncList<ExpertiseVM>(token,filter, "endpointburayagelecek");
         }

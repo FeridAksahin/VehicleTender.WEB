@@ -26,7 +26,7 @@ namespace VehicleTender.API.Api.Controllers
         [HttpPost]
         public async Task<Models.Token> Login([FromBody] UserLoginDto userLogin)
         {
-            User user = await _context.User.FirstOrDefaultAsync(u => userLogin.Password == u.Password);
+            User user = await _context.User.FirstOrDefaultAsync(u => userLogin.Password == u.Password);          
             if (user != null)
             {
                 //Token üretiliyor.

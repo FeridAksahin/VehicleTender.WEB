@@ -21,7 +21,7 @@ namespace VehicleTender.Web.EndUserUI.Controllers
 
         StockPageModel model = new StockPageModel();
        // StockService stockService = new StockService();
-        TokenDTO token = new TokenDTO();
+        Token token = new Token();
 
         private readonly CarService _vehicleService;
         public VehicleController()

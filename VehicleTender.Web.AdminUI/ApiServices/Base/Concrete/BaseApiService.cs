@@ -14,7 +14,7 @@ namespace VehicleTender.Web.AdminUI.ApiServices.Base.Concrete
         public BaseApiService()
         {
             client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:7011/");
+            client.BaseAddress = new Uri("https://localhost:7256/api/");
         }
         public async Task<BearerTokenDTO> GetToken(BearerTokenDTO bearerTokenDTO, UserLoginDTO getTokenForUser, string endpoint)
         {
@@ -61,6 +61,19 @@ namespace VehicleTender.Web.AdminUI.ApiServices.Base.Concrete
             }
             return null;
         }
+
+        public async Task<List<T>> GetAsyncList<T>(string endpoint) where T : class //tokensız test
+        {
+            var response = await client.GetAsync(endpoint);
+            if (response.IsSuccessStatusCode)
+            {
+                return JsonConvert.DeserializeObject<List<T>>(await response.Content.ReadAsStringAsync());
+            }
+            return null;
+        }
+
+
+
         public async Task<List<T>> GetAsyncList<T>(BearerTokenDTO bearerTokenDTO, string endpoint) where T : class
         {
             client.DefaultRequestHeaders.Add("Authorization", $"Bearer {bearerTokenDTO.TokenUri}");
@@ -98,6 +111,18 @@ namespace VehicleTender.Web.AdminUI.ApiServices.Base.Concrete
                 statusGenerator.GetHttpStatusCodes(429);
             */
         }
+
+        public async Task<string> PostAsync<T>(T data, string endpoint) where T : class
+        {
+
+            var convertedJsonParameterObject = new StringContent(JsonConvert.SerializeObject(data));
+            convertedJsonParameterObject.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            var response = await client.PostAsync(endpoint, convertedJsonParameterObject);
+
+            return response.Content.ReadAsStringAsync().Result;
+
+        }
+
         public async Task<string> PostAsync<T>(BearerTokenDTO bearerTokenDTO, List<T> data, string endpoint) where T : class
         {
             client.DefaultRequestHeaders.Add("Authorization", $"Bearer {bearerTokenDTO.TokenUri}");

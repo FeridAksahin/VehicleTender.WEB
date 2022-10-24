@@ -12,25 +12,25 @@ namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
     public class AccountService
     {
         RequestApiService requestApiService = new RequestApiService();
-        public async Task<string> CorporateRegister(TokenDTO tokenDTO, CorporateRegisterVM corporateRegisterViewModel)
+        public async Task<string> CorporateRegister(Token tokenDTO, CorporateRegisterVM corporateRegisterViewModel)
         {
             return await requestApiService.PostAsync<CorporateRegisterVM>(tokenDTO, corporateRegisterViewModel, "burayaendpointgelecek");
         }
-        public async Task<string> Login(TokenDTO tokenDTO, LoginVM loginViewModel)
+        public async Task<string> Login(Token tokenDTO, LoginVM loginViewModel)
         {
             return await requestApiService.PostAsync<LoginVM>(tokenDTO, loginViewModel, "burayaendpointgelecek");
         }
-        public async Task<string> Register(TokenDTO tokenDTO, RegisterVM registerViewModel)
+        public async Task<string> Register(Token tokenDTO, RegisterVM registerViewModel)
         {
             return await requestApiService.PostAsync<RegisterVM>(tokenDTO, registerViewModel, "burayaendpointgelecek");
         }
-        public async Task<string> ResetPassword(TokenDTO tokenDTO, ResetPasswordVM resetPasswordViewModel)
+        public async Task<string> ResetPassword(Token tokenDTO, ResetPasswordVM resetPasswordViewModel)
         {
             return await requestApiService.PutAsync<ResetPasswordVM>(tokenDTO, resetPasswordViewModel, "burayaendpointgelecek");
         }
-        public async Task<TokenDTO> GetToken(TokenDTO tokenDTO,LoginVM userLoginDTO)
+        public async Task<Token> GetToken(Token tokenDTO,LoginVM userLoginDTO)
         {
-            return await requestApiService.GetToken(tokenDTO, userLoginDTO,"endpointgelecek");
+            return await requestApiService.GetToken(tokenDTO, userLoginDTO,"Auth/Login");
         }
     }
 }

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace VehicleTender.WEB.UserDTO.Concrete
 {
-    public class TokenDTO
+    public class Token
     {
         public string AccessToken { get; set; }
-        public string TokenType { get; set; }
-        public DateTime ExpiresIn { get; set; }
+        public DateTime Expiration { get; set; }
+        public string RefreshToken { get; set; }
     }
 }

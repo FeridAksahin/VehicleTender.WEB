@@ -7,6 +7,14 @@ namespace VehicleTender.Web.AdminUI.ApiServices.Services
     public class TenderService
     {
         BaseApiService baseApiService = new BaseApiService();
+        public async Task<List<GetTenderDTO>> TenderList() //token yok diye şuanlık çözüm
+        {//https://localhost:7011/Tender/Tender
+            return await baseApiService.GetAsyncList<GetTenderDTO>("Tender/GetAll");
+        }
+        public async Task<List<GetTenderDTO>> TenderList(BearerTokenDTO token)
+        {//https://localhost:7011/Tender/Tender
+            return await baseApiService.GetAsyncList<GetTenderDTO>(token, "endpoint route");
+        }
         public async Task<List<GetTenderDTO>> TenderListBySearchFiltering(BearerTokenDTO token, string searchFilterValues)
         {//https://localhost:7011/Tender/Tender
             return await baseApiService.GetAsyncList<GetTenderDTO>(token, "endpoint route", searchFilterValues);

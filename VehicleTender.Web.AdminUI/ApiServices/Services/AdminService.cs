@@ -9,9 +9,9 @@ namespace VehicleTender.Web.AdminUI.ApiServices.Services
     {
         StatusGenerator statusGenerator = new StatusGenerator();
         BaseApiService baseApiService = new BaseApiService();
-        public async Task<string> AddNewAdmin(BearerTokenDTO token, AddAdminDTO newAdminInformation)
+        public async Task<string> AddNewAdmin(AddAdminDTO newAdminInformation)
         {//https://localhost:7011/UserOperations/UserList
-            return await baseApiService.PostAsync(token, newAdminInformation, "endpoint route gelmeli");
+            return await baseApiService.PostAsync(newAdminInformation, "User/AddAdmin");
         }
         public async Task<List<GetAdminDTO>> GetAllAdmin(BearerTokenDTO token)
         {//https://localhost:7011/UserOperations/UserList

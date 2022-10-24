@@ -23,7 +23,7 @@ namespace VehicleTender.Web.EndUserUI.Controllers
 {
     public class HomeController : Controller
     {
-        TokenDTO token = new TokenDTO();
+        Token token = new Token();
 
         public ActionResult Index()
         {
@@ -61,7 +61,7 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Contact(TokenDTO token, ContactVM contactVM)
+        public ActionResult Contact(Token token, ContactVM contactVM)
         {
             if (HttpContext.Request.Cookies["token"] == null)
             {
@@ -95,7 +95,7 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Login(TokenDTO tokenDTO,LoginVM loginVM)
+        public async Task<ActionResult> Login(Token tokenDTO,LoginVM loginVM)
         {           
             LoginValidation loginValidation = new LoginValidation();
             ValidationResult result = loginValidation.Validate(loginVM);
@@ -103,8 +103,8 @@ namespace VehicleTender.Web.EndUserUI.Controllers
             if (result.IsValid)
             {
                 
-                //AccountService accountService = new AccountService();
-                //var token=await accountService.GetToken(tokenDTO, loginVM);
+                AccountService accountService = new AccountService();
+                var token=await accountService.GetToken(tokenDTO, loginVM);
 
                 HttpCookie httpCookie = new HttpCookie("token");
                 httpCookie.Expires = DateTime.Now.AddDays(1);
@@ -133,7 +133,7 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Register(TokenDTO token, RegisterVM registerVM)
+        public ActionResult Register(Token token, RegisterVM registerVM)
         {
             RegisterValidation registerValidation = new RegisterValidation();
             ValidationResult result = registerValidation.Validate(registerVM);
@@ -201,7 +201,7 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult CorporateRegister(TokenDTO token, CorporateRegisterVM corporateRegisterVM)
+        public ActionResult CorporateRegister(Token token, CorporateRegisterVM corporateRegisterVM)
         {
             CorporateRegisterValidation corporateRegisterValidation = new CorporateRegisterValidation();
             ValidationResult result = corporateRegisterValidation.Validate(corporateRegisterVM);
@@ -225,7 +225,7 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult ForgotPassword(TokenDTO token, ResetPasswordVM resetPasswordVM)
+        public ActionResult ForgotPassword(Token token, ResetPasswordVM resetPasswordVM)
         {
             ResetPasswordValidation resetPasswordValidation = new ResetPasswordValidation();
             ValidationResult result = resetPasswordValidation.Validate(resetPasswordVM);
