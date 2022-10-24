@@ -13,9 +13,19 @@ namespace VehicleTender.Web.AdminUI.Controllers
     {
         BearerTokenDTO token = new BearerTokenDTO();
         StockService stockService = new StockService();
+       
+        IHttpContextAccessor _httpContextAccessor;
+        public StockController(IHttpContextAccessor httpContextAccessor)
+        {
+            _httpContextAccessor = httpContextAccessor;
+        }
         [HttpGet]
         public IActionResult Index()
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             StockPage companyName = new StockPage();
             List<StockCompanyNameDTO> testlikCompanyNameList = new List<StockCompanyNameDTO>();
             companyName.GetAllCompanyName = new List<StockCompanyNameDTO>();
@@ -33,6 +43,10 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public IActionResult Detail(int companyId)
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             StockPage stock = new StockPage();
             List<StockDTO> testlikStockList = new List<StockDTO>();
             StockDTO testlik = new StockDTO();

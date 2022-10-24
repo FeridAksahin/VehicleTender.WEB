@@ -1,4 +1,6 @@
-﻿@{
+﻿@*@model VehicleTender.WEB.UserDTO.VM.Vehicle.PostingSalesAdvertisementVM*@
+@model VehicleTender.Web.EndUserUI.Models.PostingSalesModel
+@{
 ViewBag.infoTitle="Bu sayfada aracınızın satış ilanını verebilirsiniz...";
 }
 
@@ -34,183 +36,137 @@ ViewBag.infoTitle="Bu sayfada aracınızın satış ilanını verebilirsiniz..."
 </head>
 
 <body>
-    <!-- Navbar Start -->
-    <div class="container-fluid">
-        <div class="container pt-5 pb-3">
-            <h1 class="display-4 text-center mb-5">Araç Satış</h1>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Araç Marka</label>
-                        <select class="form-control">
-                            <option value="1">Mercedes</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Araç Model</label>
-                        <select class="form-control">
-                            <option value="1">R3</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Gövde Tipi</label>
-                        <select class="form-control">
-                            <option value="1">Sedan</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Yıl</label>
-                        <select class="form-control">
-                            <option value="1">2022</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Vites Tipi</label>
-                        <select class="form-control">
-                            <option value="1">Otomatik</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Yakıt Tipi</label>
-                        <select class="form-control">
-                            <option value="1">Benzinli</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Renk</label>
-                        <select class="form-control">
-                            <option value="1">Siyah</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Versiyon</label>
-                        <select class="form-control">
-                            <option value="1">Yeni</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Donanım</label>
-                        <select class="form-control">
-                            <option value="1">Navigasyon</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>KM</label>
-                        <input type="text" class="form-control">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label>Fotoğraf</label>
-                        <input type="file" class="form-control" multiple>
-                    </div>
-                    <div class="form-group">
-                        <label>Açıklama</label>
-                        <textarea class="form-control" cols="5" rows="4"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <a href="tramer-bilgileri.html" class="btn btn-info btn-lg btn-block col-md-12" data-toggle="modal" data-target="#exampleModalCenter5" style="background-color: #2B2E4A;">Hasar Tramer Bilgileri</a>
-                        <button style="background-color: white; color: #2B2E4A;" class="btn btn-info btn-lg btn-block col-md-12" type="button">Teklif Al</button>
+    @using (Html.BeginForm("PostingSalesAdvertisement", "Vehicle", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <!-- Navbar Start -->
+        <div class="container-fluid">
+            <div class="container pt-5 pb-3">
+                <h1 class="display-4 text-center mb-5">Araç Satış</h1>
 
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Araç Marka</label>
+                            @Html.DropDownListFor(a => a.BrandName, new List<SelectListItem> { new SelectListItem
+                               {
+                                   Value = "Citröen",
+                                   Text = "Citröen",
+                               } }, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.BrandName, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <label>Araç Model</label>
+                            @Html.DropDownListFor(a => a.ModelName, new List<SelectListItem> { new SelectListItem
+                               {
+                                   Value = "C4",
+                                   Text = "C4",
+                               } }, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.ModelName, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <label>Gövde Tipi</label>
+                            @Html.DropDownListFor(a => a.BodyTypeName, new List<SelectListItem> { new SelectListItem
+                               {
+                                   Value = "Sedan",
+                                   Text = "Sedan",
+                               } }, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.BodyTypeName, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <label>Yıl</label>
+                            @Html.TextBoxFor(deg => deg.Year, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Year, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <label>Vites Tipi</label>
+                            @Html.DropDownListFor(a => a.GearTypeName, new List<SelectListItem> { new SelectListItem
+                               {
+                                   Value = "Otomatik",
+                                   Text = "Otomatik",
+                               } }, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.GearTypeName, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <label>Yakıt Tipi</label>
+                            @Html.DropDownListFor(a => a.FuelTypeName, new List<SelectListItem> { new SelectListItem
+                               {
+                                   Value = "Dizel",
+                                   Text = "Dizel",
+                               } }, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.FuelTypeName, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <label>Renk</label>
+                            @Html.DropDownListFor(a => a.ColorName, new List<SelectListItem> { new SelectListItem
+                               {
+                                   Value = "Beyaz",
+                                   Text = "Beyaz",
+                               } }, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.ColorName, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <label>Versiyon</label>
+                            @Html.DropDownListFor(a => a.VersionName, new List<SelectListItem> { new SelectListItem
+                               {
+                                   Value = "1",
+                                   Text = "1",
+                               } }, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.VersionName, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <label>Donanım</label>
+                            @Html.DropDownListFor(a => a.HardwareName, new List<SelectListItem> { new SelectListItem
+                               {
+                                   Value = "Navigasyon",
+                                   Text = "Navigasyon",
+                               } }, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.HardwareName, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <label>KM</label>
+                            @Html.TextBoxFor(deg => deg.KM, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.KM, "", new { @class = "text-danger" })
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Fotoğraf</label>
+                            <input type="file" name="Photos" class="form-control" multiple>
+                            @Html.ValidationMessageFor(m => m.Photos, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <label>Açıklama</label>
+                            @Html.TextAreaFor(a => a.Description, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            <a href="tramer-bilgileri.html" class="btn btn-info btn-lg btn-block col-md-12" data-toggle="modal" data-target="#exampleModalCenter" style="background-color: #2B2E4A;">Hasar Tramer Bilgileri</a>
+                            <button style="background-color: white; color: #2B2E4A;" class="btn btn-info btn-lg btn-block col-md-12" type="submit">Teklif Al</button>
 
-    <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Hemen Al Satışta</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Hemen Al Satışta
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                    <button type="button" class="btn btn-primary">Kaydet</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Komisyon</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Komisyon
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                    <button type="button" class="btn btn-primary">Kaydet</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Alıcı Bilgileri</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    Alıcı Bilgileri
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                    <button type="button" class="btn btn-primary">Kaydet</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="exampleModalCenter4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Araç Tarihçe</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form action="/" method="post">
-                    <div class="modal-body">
-                        Araç Tarihçe
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                        <button type="submit" class="btn btn-primary">Kaydet</button>
-                    </div>
-                </form>
+                </div>
+                
             </div>
         </div>
-    </div>
-    <div class="modal fade" id="exampleModalCenter5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Hasar Tramer Bilgileri</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form action="/" method="post">
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Hasar Tramer Bilgileri</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
                     <div class="modal-body">
 
                         <label>Toplam Tramer Tutarı</label>
-                        <input type="text" name="name" />
+                        @Html.TextBoxFor(deg => deg.TramerTutarı, new { @class = "form-control" })
+
                         <table class="table">
                             <thead>
                                 <tr>
@@ -223,137 +179,107 @@ ViewBag.infoTitle="Bu sayfada aracınızın satış ilanını verebilirsiniz..."
                             <tbody>
                                 <tr style="text-align:center;">
                                     <th scope="row">Sağ Arka Çamurluk</th>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"></td>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"></td>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"></td>
+                                    <td>@Html.RadioButtonFor(a => a.SagArkaCamurluk, "orginal")</td>
+                                    <td>@Html.RadioButtonFor(a => a.SagArkaCamurluk, "boyali")</td>
+                                    <td>@Html.RadioButtonFor(a => a.SagArkaCamurluk, "degisen")</td>
                                 </tr>
                                 <tr style="text-align:center;">
                                     <th scope="row">Arka Kaput</th>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio1" value="option1"></td>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio2" value="option2"></td>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions1" id="inlineRadio3" value="option3"></td>
+                                    <td>@Html.RadioButtonFor(a => a.ArkaKaput, "orginal")</td>
+                                    <td>@Html.RadioButtonFor(a => a.ArkaKaput, "boyali")</td>
+                                    <td>@Html.RadioButtonFor(a => a.ArkaKaput, "degisen")</td>
                                 </tr>
                                 <tr style="text-align:center;">
                                     <th scope="row">Sol Arka Çamurluk</th>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio1" value="option1"></td>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio2" value="option2"></td>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio3" value="option3"></td>
+                                    <td>@Html.RadioButtonFor(a => a.SolArkaCamurluk, "orginal")</td>
+                                    <td>@Html.RadioButtonFor(a => a.SolArkaCamurluk, "boyali")</td>
+                                    <td>@Html.RadioButtonFor(a => a.SolArkaCamurluk, "degisen")</td>
                                 </tr>
                                 <tr style="text-align:center;">
                                     <th scope="row">Sağ Arka Kapı</th>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio1" value="option1"></td>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio2" value="option2"></td>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions3" id="inlineRadio3" value="option3"></td>
+                                    <td>@Html.RadioButtonFor(a => a.SagArkaKapı, "orginal")</td>
+                                    <td>@Html.RadioButtonFor(a => a.SagArkaKapı, "boyali")</td>
+                                    <td>@Html.RadioButtonFor(a => a.SagArkaKapı, "degisen")</td>
                                 </tr>
                                 <tr style="text-align:center;">
                                     <th scope="row">Sağ Ön Kapı</th>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio1" value="option1"></td>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio2" value="option2"></td>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions4" id="inlineRadio3" value="option3"></td>
+                                    <td>@Html.RadioButtonFor(a => a.SagOnKapı, "orginal")</td>
+                                    <td>@Html.RadioButtonFor(a => a.SagOnKapı, "boyali")</td>
+                                    <td>@Html.RadioButtonFor(a => a.SagOnKapı, "degisen")</td>
                                 </tr>
                                 <tr style="text-align:center;">
                                     <th scope="row">Tavan</th>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio1" value="option1"></td>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio2" value="option2"></td>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions5" id="inlineRadio3" value="option3"></td>
+                                    <td>@Html.RadioButtonFor(a => a.Tavan, "orginal")</td>
+                                    <td>@Html.RadioButtonFor(a => a.Tavan, "boyali")</td>
+                                    <td>@Html.RadioButtonFor(a => a.Tavan, "degisen")</td>
                                 </tr>
                                 <tr style="text-align:center;">
                                     <th scope="row">Sol Arka Kapı</th>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio1" value="option1"></td>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio2" value="option2"></td>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions6" id="inlineRadio3" value="option3"></td>
+                                    <td>@Html.RadioButtonFor(a => a.SolArkaKapı, "orginal")</td>
+                                    <td>@Html.RadioButtonFor(a => a.SolArkaKapı, "boyali")</td>
+                                    <td>@Html.RadioButtonFor(a => a.SolArkaKapı, "degisen")</td>
                                 </tr>
                                 <tr style="text-align:center;">
                                     <th scope="row">Sol Ön Kapı</th>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions7" id="inlineRadio1" value="option1"></td>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions7" id="inlineRadio2" value="option2"></td>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions7" id="inlineRadio3" value="option3"></td>
+                                    <td>@Html.RadioButtonFor(a => a.SolOnKapı, "orginal")</td>
+                                    <td>@Html.RadioButtonFor(a => a.SolOnKapı, "boyali")</td>
+                                    <td>@Html.RadioButtonFor(a => a.SolOnKapı, "degisen")</td>
                                 </tr>
                                 <tr style="text-align:center;">
                                     <th scope="row">Sağ Ön Çamurluk</th>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions8" id="inlineRadio1" value="option1"></td>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions8" id="inlineRadio2" value="option2"></td>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions8" id="inlineRadio3" value="option3"></td>
+                                    <td>@Html.RadioButtonFor(a => a.SagOnCamurluk, "orginal")</td>
+                                    <td>@Html.RadioButtonFor(a => a.SagOnCamurluk, "boyali")</td>
+                                    <td>@Html.RadioButtonFor(a => a.SagOnCamurluk, "degisen")</td>
                                 </tr>
                                 <tr style="text-align:center;">
                                     <th scope="row">Motor Kaputu</th>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions9" id="inlineRadio1" value="option1"></td>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions9" id="inlineRadio2" value="option2"></td>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions9" id="inlineRadio3" value="option3"></td>
+                                    <td>@Html.RadioButtonFor(a => a.MotorKaputu, "orginal")</td>
+                                    <td>@Html.RadioButtonFor(a => a.MotorKaputu, "boyali")</td>
+                                    <td>@Html.RadioButtonFor(a => a.MotorKaputu, "degisen")</td>
                                 </tr>
                                 <tr style="text-align:center;">
                                     <th scope="row">Sol Ön Çamurluk</th>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions10" id="inlineRadio1" value="option1"></td>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions10" id="inlineRadio2" value="option2"></td>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions10" id="inlineRadio3" value="option3"></td>
+                                    <td>@Html.RadioButtonFor(a => a.SolOnCamurluk, "orginal")</td>
+                                    <td>@Html.RadioButtonFor(a => a.SolOnCamurluk, "boyali")</td>
+                                    <td>@Html.RadioButtonFor(a => a.SolOnCamurluk, "degisen")</td>
                                 </tr>
                                 <tr style="text-align:center;">
                                     <th scope="row">Ön Tampon</th>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions11" id="inlineRadio1" value="option1"></td>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions11" id="inlineRadio2" value="option2"></td>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions11" id="inlineRadio3" value="option3"></td>
+                                    <td>@Html.RadioButtonFor(a => a.OnTampon, "orginal")</td>
+                                    <td>@Html.RadioButtonFor(a => a.OnTampon, "boyali")</td>
+                                    <td>@Html.RadioButtonFor(a => a.OnTampon, "degisen")</td>
                                 </tr>
                                 <tr style="text-align:center;">
                                     <th scope="row">Arka Tampon</th>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions12" id="inlineRadio1" value="option1"></td>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions12" id="inlineRadio2" value="option2"></td>
-                                    <td><input class="form-check-input" type="radio" name="inlineRadioOptions12" id="inlineRadio3" value="option3"></td>
+                                    <td>@Html.RadioButtonFor(a => a.ArkaTampon, "orginal")</td>
+                                    <td>@Html.RadioButtonFor(a => a.ArkaTampon, "boyali")</td>
+                                    <td>@Html.RadioButtonFor(a => a.ArkaTampon, "degisen")</td>
                                 </tr>
                             </tbody>
                         </table>
 
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                        <button type="submit" class="btn btn-primary">Kaydet</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="exampleModalCenter6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">İlan Bilgileri</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Kaydet</button>
+                        </div>
                 </div>
-                <form action="/" method="post">
-                    <div class="modal-body">
-                        <div class="row m-3">
-                            <label>İlan Başlığı</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="row m-3">
-                            <label>İlan Açıklama</label>
-                            <textarea cols="20" rows="5" class="form-control"></textarea>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
-                        <button type="button" class="btn btn-primary">Kaydet</button>
-                    </div>
-                </form>
             </div>
         </div>
-    </div>
+    }
 
 
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/tempusdominus/js/moment.min.js"></script>
+        <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+        <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-</body>
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
 
 </html>

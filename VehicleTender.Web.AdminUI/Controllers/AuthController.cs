@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -32,7 +33,10 @@ namespace VehicleTender.Web.AdminUI.Controllers
             if (ModelState.IsValid)
             {
 
-                _httpContextAccessor.HttpContext.Response.Cookies.Append("deger", "ihsan");
+                _httpContextAccessor.HttpContext.Response.Cookies.Append("token", "ihsan",new CookieOptions()
+                    { 
+                    Expires = DateTime.Now.AddDays(1),
+                    });
 
                 return RedirectToAction("AdminHome", "Admin");
             }
@@ -63,6 +67,11 @@ namespace VehicleTender.Web.AdminUI.Controllers
                 return RedirectToAction("Login");
             }
             return View();
+        }
+        public IActionResult LogOut()
+        {
+            _httpContextAccessor.HttpContext.Response.Cookies.Delete("token");
+            return RedirectToAction("Login");
         }
     }
 }

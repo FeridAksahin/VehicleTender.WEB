@@ -12,9 +12,18 @@ namespace VehicleTender.Web.AdminUI.Controllers
     {
         AdminService adminService = new AdminService();
         BearerTokenDTO token = new BearerTokenDTO(); //durumluk 
+        IHttpContextAccessor _httpContextAccessor;
+        public UserOperationsController(IHttpContextAccessor httpContextAccessor)
+        {
+            _httpContextAccessor = httpContextAccessor;
+        }
         [HttpGet]
         public async Task<IActionResult> UserList()
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             AdminsPage adminsPageModel = new AdminsPage();
             //adminsPageModel.getAdminDTO = await adminService.GetAllAdmin(token);  -- db den çekilmediginde null hatası veriyor 
             List<GetAdminDTO> listAdmin = new List<GetAdminDTO>();
@@ -33,6 +42,10 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public async Task<IActionResult> UpdateUser(int id)
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             UpdateAdmin updateAdmin = new UpdateAdmin();
             updateAdmin.isActive = false;
             updateAdmin.Telephone = "345345";
@@ -49,23 +62,41 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> UpdateUser(UpdateAdmin updateAdmin)
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             if (ValidatorProperties.GetValidatorResult<UpdateAdmin>(updateAdmin).Count != 0)
                 Console.WriteLine("aethaeth");
-
+            var a = 4;
+            Console.WriteLine(admin.getAdminDTO);
+            adminService.AddNewAdmin(token, admin.addAdminDTO);
             return RedirectToAction("UserList");
         }
 
         [HttpPost]
         public async Task<IActionResult> AddNewAdmin(AdminsPage admin)
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             if (ValidatorProperties.GetValidatorResult<AddAdminDTO>(admin.addAdminDTO.Username).Count != 0)
                 await adminService.AddNewAdmin(admin.addAdminDTO);
+
+            var a = 4;
+            Console.WriteLine(id);
+            adminService.DeleteAdmin(token, id);
             return RedirectToAction("UserList");
         }
 
         [HttpPost]
         public IActionResult DeleteAdmin(int id)
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             var a = 4;
             Console.WriteLine(id);
             adminService.DeleteAdmin(token, id);
