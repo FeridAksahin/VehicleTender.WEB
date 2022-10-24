@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -13,6 +16,7 @@ using VehicleTender.Web.EndUserUI.ApiService.RepoService;
 using VehicleTender.Web.EndUserUI.Models;
 using VehicleTender.WEB.UserDTO.Concrete;
 using VehicleTender.WEB.UserDTO.VM.Stock;
+using VehicleTender.WEB.UserDTO.VM.Vehicle;
 
 namespace VehicleTender.Web.EndUserUI.Controllers
 {
@@ -92,11 +96,29 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         [HttpGet]
         public ActionResult PostingSalesAdvertisement()
         {
-            if (HttpContext.Request.Cookies["token"] == null)
+            //if (HttpContext.Request.Cookies["token"] == null)
+            //{
+            //    return RedirectToAction("Login", "Home");
+            //}
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult PostingSalesAdvertisement(PostingSalesModel car)
+        {
+            if (ModelState.IsValid == true)
             {
-                return RedirectToAction("Login", "Home");
+                //int i = 0;
+                foreach (var item in car.Photos)
+                {
+                    var image = Path.GetFileName(item.FileName);
+                    var path = Path.Combine(Server.MapPath("~/img"), image);
+                    item.SaveAs(path); 
+                }
+                return View();
             }
             return View();
+
         }
 
         [HttpGet]
