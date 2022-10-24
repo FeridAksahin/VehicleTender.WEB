@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using VehicleTender.API.Validation;
 using VehicleTender.Web.AdminUI.ApiServices.Services;
 using VehicleTender.Web.AdminUI.Models.Admin;
 using VehicleTender.Web.AdminUI.Models.PageModel;
@@ -44,20 +45,24 @@ namespace VehicleTender.Web.AdminUI.Controllers
 
             return View(updateAdmin);
         }
+
         [HttpPost]
         public async Task<IActionResult> UpdateUser(UpdateAdmin updateAdmin)
         {
+            if (ValidatorProperties.GetValidatorResult<UpdateAdmin>(updateAdmin).Count != 0)
+                Console.WriteLine("aethaeth");
+
             return RedirectToAction("UserList");
         }
+
         [HttpPost]
-        public IActionResult AddNewAdmin(AdminsPage admin)
+        public async Task<IActionResult> AddNewAdmin(AdminsPage admin)
         {
-            var a = 4;
-            Console.WriteLine(admin.getAdminDTO);
-            adminService.AddNewAdmin(token, admin.addAdminDTO);
+            if (ValidatorProperties.GetValidatorResult<AddAdminDTO>(admin.addAdminDTO.Username).Count != 0)
+                await adminService.AddNewAdmin(admin.addAdminDTO);
             return RedirectToAction("UserList");
         }
-        
+
         [HttpPost]
         public IActionResult DeleteAdmin(int id)
         {
@@ -66,21 +71,5 @@ namespace VehicleTender.Web.AdminUI.Controllers
             adminService.DeleteAdmin(token, id);
             return RedirectToAction("UserList");
         }
-        /*
-        [HttpPost]
-        public IActionResult UpdateAdmin(int id)
-        {
-            var a = 4;
-            Console.WriteLine(id);
-            return RedirectToAction("UserList");
-        }*/
-
-        /*
-        [HttpGet]
-        public IActionResult PackageIdentification()
-        {
-            return View();
-        }*/
-
     }
 }
