@@ -38,7 +38,7 @@ namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
         public HttpClient CreateHttpClient(string serviceBaseAddress)
         {
             httpClient = new HttpClient();
-            httpClient.BaseAddress = new Uri(serviceBaseAddress);
+            //httpClient.BaseAddress = new Uri(serviceBaseAddress);
             return httpClient;
         }
 

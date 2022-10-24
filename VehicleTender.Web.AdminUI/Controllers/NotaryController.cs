@@ -6,10 +6,19 @@ namespace VehicleTender.Web.AdminUI.Controllers
 {
     public class NotaryController : Controller
     {
+        IHttpContextAccessor _httpContextAccessor;
+        public NotaryController(IHttpContextAccessor httpContextAccessor)
+        {
+            _httpContextAccessor = httpContextAccessor;
+        }
         
         [HttpGet]
         public IActionResult Index()
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             NotaryDTO notaryDTO = new NotaryDTO()
             {
                 Id = 1,
@@ -24,8 +33,11 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public IActionResult Update(NotaryDTO notaryDTO)
         {
-           
-          
+            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
+
             notaryDTO.NotaryPrice = notaryDTO.NotaryPrice;
             notaryDTO.EndDate = notaryDTO.EndDate;
                

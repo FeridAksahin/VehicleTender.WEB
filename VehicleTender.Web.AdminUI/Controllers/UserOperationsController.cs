@@ -12,9 +12,18 @@ namespace VehicleTender.Web.AdminUI.Controllers
     {
         AdminService adminService = new AdminService();
         BearerTokenDTO token = new BearerTokenDTO(); //durumluk 
+        IHttpContextAccessor _httpContextAccessor;
+        public UserOperationsController(IHttpContextAccessor httpContextAccessor)
+        {
+            _httpContextAccessor = httpContextAccessor;
+        }
         [HttpGet]
         public async Task<IActionResult> UserList()
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             AdminsPage adminsPageModel = new AdminsPage();
             //adminsPageModel.getAdminDTO = await adminService.GetAllAdmin(token);  -- db den çekilmediginde null hatası veriyor 
             List<GetAdminDTO> listAdmin = new List<GetAdminDTO>();
@@ -52,6 +61,13 @@ namespace VehicleTender.Web.AdminUI.Controllers
             if (ValidatorProperties.GetValidatorResult<UpdateAdmin>(updateAdmin).Count != 0)
                 Console.WriteLine("aethaeth");
 
+            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
+            var a = 4;
+            Console.WriteLine(admin.getAdminDTO);
+            adminService.AddNewAdmin(token, admin.addAdminDTO);
             return RedirectToAction("UserList");
         }
 
@@ -60,6 +76,13 @@ namespace VehicleTender.Web.AdminUI.Controllers
         {
             if (ValidatorProperties.GetValidatorResult<AddAdminDTO>(admin.addAdminDTO.Username).Count != 0)
                 await adminService.AddNewAdmin(admin.addAdminDTO);
+            if (_httpContextAccessor.HttpContext.Request.Cookies["deger"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
+            var a = 4;
+            Console.WriteLine(id);
+            adminService.DeleteAdmin(token, id);
             return RedirectToAction("UserList");
         }
 
