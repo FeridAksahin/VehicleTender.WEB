@@ -16,32 +16,17 @@ namespace VehicleTender.Web.AdminUI.Controllers
         BearerTokenDTO token = new BearerTokenDTO();
         TenderService tenderService = new TenderService();
         [HttpGet]
-        public IActionResult Tender()
+        public async Task<IActionResult> Tender()
         {
-            TenderDTO tenderDTO = new TenderDTO();
-            List<GetTenderDTO> testlikTenderList = new List<GetTenderDTO>();
-            GetTenderDTO tender = new GetTenderDTO();
-            tender.TenderStart = DateTime.Now;
-            tender.Statu = "Başladı";
-            tender.TenderId = 1;
-            tender.IndivudualOrCorparate = "Bireysel";
-            tender.TenderStart = DateTime.Now;
-            tender.CreatedBy = 1;
-            tender.CreatedDate = DateTime.Now;
-            tender.TenderName = "İhale";
-            testlikTenderList.Add(tender);
-            tenderDTO.TenderList = testlikTenderList;
-
-            return View(tenderDTO);
+            return View(await tenderService.TenderList());
         }
 
         [HttpPost]
-        public IActionResult Tender(string? tenderName, string? isIndividual, string? statu)
+        public async Task<IActionResult> Tender(string? tenderName, string? isIndividual, string? statu)
         {
-            TenderDTO tenderDTO = new TenderDTO();
+            List<GetTenderDTO> testlikTenderList = new List<GetTenderDTO>();
             if (tenderName != null || isIndividual != null || statu != null)
             {
-                List<GetTenderDTO> testlikTenderList = new List<GetTenderDTO>();
                 GetTenderDTO tender = new GetTenderDTO();
                 tender.TenderStart = DateTime.Now;
                 tender.Statu = "Başladı";
@@ -52,9 +37,8 @@ namespace VehicleTender.Web.AdminUI.Controllers
                 tender.CreatedDate = DateTime.Now;
                 tender.TenderName = "İhaleAdi";
                 testlikTenderList.Add(tender);
-                tenderDTO.TenderList = testlikTenderList;
             }
-            return View(tenderDTO);
+            return View(testlikTenderList);
         }
         [HttpGet]
         public IActionResult NewTenderCreate()

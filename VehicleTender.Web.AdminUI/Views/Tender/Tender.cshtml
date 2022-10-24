@@ -1,5 +1,5 @@
 ﻿@using VehicleTender.Web.AdminUI.Models.Tender
-@model TenderDTO
+@model List<GetTenderDTO>
 <div>
     <form method="post">
         <div class="row filter">
@@ -56,7 +56,7 @@
             </thead>
 
             <tbody>
-                @foreach (var item in Model.TenderList)
+                @foreach (var item in Model)
                 {
                     <tr>
                         <td>@item.TenderId</td>

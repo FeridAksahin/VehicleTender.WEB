@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using VehicleTender.API.DataAccessLayer.Concrete;
+using VehicleTender.API.DTO.AdminDTO.Models.Tender;
 
 namespace VehicleTender.API.Api.Controllers
 {
@@ -7,6 +9,7 @@ namespace VehicleTender.API.Api.Controllers
     public class TenderController : ControllerBase
     {
         private readonly ILogger<VehicleController> _log;
+        TenderDal tenderDal = new TenderDal();
         public TenderController(ILogger<VehicleController> log)
         {
             _log = log;
@@ -14,10 +17,9 @@ namespace VehicleTender.API.Api.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<List<GetTenderDTO>> GetAll()
         {
-
-            return Ok();
+            return tenderDal.GetAllTenderForAdminUI();
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
