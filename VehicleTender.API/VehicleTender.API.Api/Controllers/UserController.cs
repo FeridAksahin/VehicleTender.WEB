@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using VehicleTender.API.Api.ViewModel;
+using VehicleTender.API.DataAccessLayer.Concrete;
+using VehicleTender.API.DTO.AdminDTO.Models.Admin;
 using VehicleTender.API.Entity.Context;
 using VehicleTender.API.Entity.Entities;
 
@@ -11,14 +13,14 @@ namespace VehicleTender.API.Api.Controllers
     {
         readonly VehicleTenderContext _context;
         readonly IConfiguration _configuration;
-       
+        UserDal userDal = new UserDal();
 
 
         public UserController(VehicleTenderContext content, IConfiguration configuration)
         {
             _context = content;
             _configuration = configuration;
-           
+
         }
 
 
@@ -48,9 +50,20 @@ namespace VehicleTender.API.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-
             return Ok();
         }
+        [HttpGet]
+        public async Task<List<GetAdminDTO>> GetAllAdmin()
+        {//https://localhost:7011/UserOperations/UserList
+            return userDal.GetAllAdmin();
+        }
+
+        [HttpPost]
+        public async Task<string> AddAdmin(AddAdminDTO newAdmin)
+        {//https://localhost:7011/UserOperations/UserList
+            return userDal.AddAdmin(newAdmin);
+        }
+
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
