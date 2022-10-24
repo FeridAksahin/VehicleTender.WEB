@@ -11,10 +11,10 @@ namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
 {
     public class VehicleService
     {
-        RequestApiService requestApiService = new RequestApiService("ApiUrl");
+        RequestApiService requestApiService = new RequestApiService();
         public async Task<string> IndividualVehicleSale(Token tokenDTO,IndividualVehicleSaleVM individualVehicleSaleViewModel)
         {
-            return await requestApiService.PostAsync<IndividualVehicleSaleVM>(tokenDTO, individualVehicleSaleViewModel, "endpointburayagelecek");
+            return await requestApiService.PostAsync<IndividualVehicleSaleVM>(tokenDTO, individualVehicleSaleViewModel, "Vehicle/Create");
         }
         public async Task<string> Tramer(Token tokenDTO, TramerVM tramerViewModel)
         {

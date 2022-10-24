@@ -17,7 +17,7 @@ namespace VehicleTender.Web.EndUserUI.ApiService.Interface
         Task<T> GetAsync<T>(Token bearerTokenDTO, string endpoint, string id) where T : class;
         Task<List<T>> GetAsyncList<T>(Token bearerTokenDTO, string endpoint, string request) where T : class;
         //post
-        Task<Token> GetToken(Token bearerTokenDTO, LoginVM getTokenForUser, string endpoint);
+        Task<Token> GetToken(LoginVM getTokenForUser, string endpoint);
         Task<string> PostAsync<T>(Token bearerTokenDTO, List<T> data, string endpoint) where T : class;
         Task<string> PostAsync<T>(Token bearerTokenDTO, T data, string endpoint) where T : class;
         //delete

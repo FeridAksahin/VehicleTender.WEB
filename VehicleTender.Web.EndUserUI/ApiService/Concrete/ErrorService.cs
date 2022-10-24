@@ -11,7 +11,7 @@ namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
 {
     public class ErrorService
     {
-        RequestApiService requestApiService = new RequestApiService("ApiUrl");
+        RequestApiService requestApiService = new RequestApiService();
         public async Task<ErrorVM> Error(Token tokenDTO,ErrorVM errorViewModel)
         {
             return await requestApiService.GetAsync<ErrorVM>(tokenDTO,"endpointburayagelecek");

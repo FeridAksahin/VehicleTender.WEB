@@ -16,7 +16,7 @@ namespace VehicleTender.Web.AdminUI.ApiServices.Base.Concrete
             client = new HttpClient();
             client.BaseAddress = new Uri("https://localhost:7256/api/");
         }
-        public async Task<BearerTokenDTO> GetToken(BearerTokenDTO bearerTokenDTO, UserLoginDTO getTokenForUser, string endpoint)
+        public async Task<BearerTokenDTO> GetToken(UserLoginDTO getTokenForUser, string endpoint)
         {
             var convertedJsonParameterObject = new StringContent(JsonConvert.SerializeObject(getTokenForUser));
             convertedJsonParameterObject.Headers.ContentType = new MediaTypeHeaderValue("application/json");

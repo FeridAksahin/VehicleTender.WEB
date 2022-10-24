@@ -11,7 +11,7 @@ namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
 {
     public class UserServices
     {
-        RequestApiService requestApiService = new RequestApiService("ApiUrl");
+        RequestApiService requestApiService = new RequestApiService();
         public async Task<List<FavoriteListVM>> FavoriteList(Token tokenDTO)
         {
             return await requestApiService.GetAsyncList<FavoriteListVM>(tokenDTO,"endpointburayagelecek");

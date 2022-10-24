@@ -11,14 +11,14 @@ namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
 {
     public class AdvertService
     {
-        RequestApiService requestApiService = new RequestApiService("ApiUrl");
+        RequestApiService requestApiService = new RequestApiService();
         public async Task<string> BuyVehicleNow(Token tokenDTO, BuyAVehicleNowInput buyVehicleNowViewModel)
         {
             return await requestApiService.PostAsync<BuyAVehicleNowInput>(tokenDTO, buyVehicleNowViewModel, "endpointburayagelecek");
         }
         public async Task<List<CarListVM>> CarList(Token tokenDTO)
         {
-            return await requestApiService.GetAsyncList<CarListVM>(tokenDTO, "burayaendpointgelecek");
+            return await requestApiService.GetAsyncList<CarListVM>(tokenDTO, "Vehicle/Create");
         }
     }
 }

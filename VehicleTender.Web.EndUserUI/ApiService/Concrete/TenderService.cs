@@ -11,7 +11,7 @@ namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
 {
     public class TenderService
     {
-        RequestApiService requestApiService = new RequestApiService("ApiUrl");
+        RequestApiService requestApiService = new RequestApiService();
         public async Task<string> SearchTender(Token tokenDTO,SearchTenderVM searchTenderViewModel)
         {
             return await requestApiService.PostAsync<SearchTenderVM>(tokenDTO,searchTenderViewModel,"endpointburayagelecek");

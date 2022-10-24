@@ -42,7 +42,7 @@ namespace VehicleTender.Web.EndUserUI.ApiService.RepoService
             return httpClient;
         }
 
-        public async Task<Token> GetToken(Token bearerTokenDTO,LoginVM getTokenForUser, string endpoint)  
+        public async Task<Token> GetToken(LoginVM getTokenForUser, string endpoint)  
         {
             var convertedJsonParameterObject = new StringContent(JsonConvert.SerializeObject(getTokenForUser));
             convertedJsonParameterObject.Headers.ContentType = new MediaTypeHeaderValue("application/json");

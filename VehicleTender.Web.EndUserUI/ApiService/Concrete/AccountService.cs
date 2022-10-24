@@ -28,9 +28,9 @@ namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
         {
             return await requestApiService.PutAsync<ResetPasswordVM>(tokenDTO, resetPasswordViewModel, "burayaendpointgelecek");
         }
-        public async Task<Token> GetToken(Token tokenDTO,LoginVM userLoginDTO)
+        public async Task<Token> GetToken(LoginVM userLoginDTO)
         {
-            return await requestApiService.GetToken(tokenDTO, userLoginDTO,"Auth/Login");
+            return await requestApiService.GetToken(userLoginDTO,"Auth/Login");
         }
     }
 }

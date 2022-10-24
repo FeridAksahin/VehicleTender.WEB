@@ -11,7 +11,7 @@ namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
 {
     public class StockService
     {
-        RequestApiService requestApiService = new RequestApiService("ApiUrl");
+        RequestApiService requestApiService = new RequestApiService();
         public async Task<List<StockListVM>> FilterStock(Token tokenDTO, string filter)
         {
             return await requestApiService.GetAsyncList<StockListVM>(tokenDTO,filter, "endpointburayagelecek");

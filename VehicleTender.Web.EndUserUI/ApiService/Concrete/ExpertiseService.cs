@@ -12,7 +12,7 @@ namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
 {
     public class ExpertiseService
     {
-        RequestApiService requestApiService = new RequestApiService("ApiUrl");
+        RequestApiService requestApiService = new RequestApiService();
 
         public async Task<List<ExpertiseVM>> GetAllExpertise(Token token)
         {
