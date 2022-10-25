@@ -183,6 +183,9 @@
     <Content Include="Global.asax" />
     <Content Include="img\1.jpg" />
     <Content Include="img\1.png" />
+    <Content Include="img\2.jpg" />
+    <Content Include="img\3.jpg" />
+    <Content Include="img\4.jpg" />
     <Content Include="img\about.png" />
     <Content Include="img\banner-left.png" />
     <Content Include="img\banner-right.png" />

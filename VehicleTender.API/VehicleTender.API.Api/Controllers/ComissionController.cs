@@ -1,23 +1,29 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace VehicleTender.API.Api.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
+    [Authorize]
+
     public class ComissionController : ControllerBase
     {
         private readonly ILogger<VehicleController> _log;
+        
         public ComissionController(ILogger<VehicleController> log)
         {
             _log = log;
+           
         }
 
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-
-            return Ok();
+            var LoginUserId = HttpContext.User.FindFirstValue("UserId");
+            return Ok(LoginUserId);
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)

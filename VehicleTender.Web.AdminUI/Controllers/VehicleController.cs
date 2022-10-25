@@ -412,7 +412,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
                 {
                     var fileName = Guid.NewGuid().ToString() + Path.GetExtension(addVehicleViewModel.Picture[i].FileName);
                     var x = Directory.GetCurrentDirectory();
-                    var path = Path.Combine("wwwroot/carimages", fileName);
+                    var path = Path.Combine(@"C:\Users\Doğukan Matuloğlu\source\repos\FeridAksahin\VehicleTender.WEB\carimages", fileName);
 
                     using (var stream = new FileStream(path, FileMode.Create))
                     {

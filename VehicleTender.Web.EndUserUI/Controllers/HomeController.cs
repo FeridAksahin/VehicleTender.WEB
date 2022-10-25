@@ -17,7 +17,7 @@ using VehicleTender.WEB.UserDTO.Concrete;
 using VehicleTender.WEB.UserDTO.VM.Account;
 using VehicleTender.WEB.UserDTO.VM.Contact;
 using VehicleTender.WEB.UserDTO.VM.Expertise;
-using VehicleTender.WEB.UserDTO.VM.Stock;
+using VehicleTender.WEB.UserDTO.VM.HomeModel;
 
 namespace VehicleTender.Web.EndUserUI.Controllers
 {
@@ -27,12 +27,52 @@ namespace VehicleTender.Web.EndUserUI.Controllers
 
         public ActionResult Index()
         {
+
+            //Dikkat admin tarafından kaydedilen araçların resimleri hem enduserdan hem admin uı dan görüntülenmek üzere erişilmeli 
+        
+           List<HomeAdvertViewModel> list = new List<HomeAdvertViewModel>();
+            HomeAdvertViewModel viewModel1 = new HomeAdvertViewModel();
+            HomeAdvertViewModel viewModel2 = new HomeAdvertViewModel();
+            HomeAdvertViewModel viewModel3 = new HomeAdvertViewModel();
+            HomeAdvertViewModel viewModel4 = new HomeAdvertViewModel();
+            viewModel1.AdvertHeader = "Doktordan Temiz Tempra Slx";
+            viewModel1.KM = "1000";
+            viewModel1.TransmissionType = "Düz";
+            viewModel1.Photograph = "1.jpg";
+            viewModel1.Model = "2000";
+
+            viewModel2.AdvertHeader = "Öğretmenden Çiziksiz Bakımlı Tofaş";
+            viewModel2.KM = "1324240";
+            viewModel2.TransmissionType = "Otamatik";
+            viewModel2.Photograph = @"2.jpg";
+            viewModel2.Model = "2020";
+
+            viewModel3.AdvertHeader = "Değişen Yok Hata Yook";
+            viewModel3.KM = "231230";
+            viewModel3.TransmissionType = "Düz";
+            viewModel3.Photograph = @"3.jpg";
+            viewModel3.Model = "1990";
+
+            viewModel4.AdvertHeader = "Temiz Araba";
+            viewModel4.KM = "23424";
+            viewModel4.TransmissionType = "Düz";
+            viewModel4.Photograph = @"4.jpg";
+            viewModel4.Model = "1889";
+
+
+            list.Add(viewModel1);
+            list.Add(viewModel2);
+            list.Add(viewModel4);
+            list.Add(viewModel3);
             if (HttpContext.Request.Cookies["token"] == null)
             {
                 return RedirectToAction("Login", "Home");
             }
 
             return View();
+
+
+            return View(list);
         }
 
         public ActionResult About()
@@ -96,7 +136,10 @@ namespace VehicleTender.Web.EndUserUI.Controllers
 
         [HttpPost]
         public async Task<ActionResult> Login(LoginVM loginVM)
-        {           
+        {
+          
+
+            return View();
             LoginValidation loginValidation = new LoginValidation();
             ValidationResult result = loginValidation.Validate(loginVM);
 
@@ -105,10 +148,14 @@ namespace VehicleTender.Web.EndUserUI.Controllers
                 
                 AccountService accountService = new AccountService();
                 var token = await accountService.GetToken(loginVM);
-
+                if (HttpContext.Request.Cookies["token"] == null)
+                {
+                    return RedirectToAction("Login", "Home");
+                }
                 HttpCookie httpCookie = new HttpCookie("token");
                 httpCookie.Expires = DateTime.Now.AddDays(1);
                 httpCookie.Value = token.AccessToken;
+              
                 //httpCookie.Values.Add("token",token.AccessToken);
                 HttpContext.Response.Cookies.Add(httpCookie);
                 //var x = HttpContext.Request.Cookies["token"].Value;

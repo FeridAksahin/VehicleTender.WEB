@@ -3287,12 +3287,11 @@ Error Number:-1,State:0,Class:20
 2022-10-21 00:41:25.5231 Info Adding target DatabaseTarget(Name=db)
 2022-10-21 00:41:25.5878 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
 2022-10-21 00:41:26.9424 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
-<<<<<<< HEAD
-2022-10-22 01:14:08.3980 Info Message Template Auto Format enabled
-2022-10-22 01:14:08.4741 Info Loading assembly: NLog.Web.AspNetCore
-2022-10-22 01:14:08.9170 Info Adding target DatabaseTarget(Name=db)
-2022-10-22 01:14:09.0193 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\okanc\source\repos\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
-2022-10-22 01:14:25.8691 Error DatabaseTarget(Name=db): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SNI_PN11, error: 26 - Error Locating Server/Instance Specified)
+2022-10-22 16:35:39.1904 Info Message Template Auto Format enabled
+2022-10-22 16:35:39.2403 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-22 16:35:39.5674 Info Adding target DatabaseTarget(Name=db)
+2022-10-22 16:35:39.6262 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\Doğukan Matuloğlu\Source\Repos\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-22 16:35:56.5286 Error DatabaseTarget(Name=db): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SNI_PN11, error: 26 - Error Locating Server/Instance Specified)
    at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
    at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover, SqlAuthenticationMethod authType)
    at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
@@ -3314,36 +3313,34 @@ Error Number:-1,State:0,Class:20
    at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
 ClientConnectionId:00000000-0000-0000-0000-000000000000
 Error Number:-1,State:0,Class:20
-2022-10-22 01:14:26.5535 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\okanc\source\repos\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
-=======
-2022-10-21 16:54:04.1904 Info Message Template Auto Format enabled
-2022-10-21 16:54:04.2014 Info Loading assembly: NLog.Web.AspNetCore
-2022-10-21 16:54:04.3890 Info Adding target DatabaseTarget(Name=db)
-2022-10-21 16:54:04.4376 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
-2022-10-21 16:54:05.7907 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
-2022-10-21 16:57:18.8533 Info Message Template Auto Format enabled
-2022-10-21 16:57:18.8533 Info Loading assembly: NLog.Web.AspNetCore
-2022-10-21 16:57:18.9961 Info Adding target DatabaseTarget(Name=db)
-2022-10-21 16:57:19.0312 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
-2022-10-21 16:57:20.0403 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
-2022-10-21 17:03:53.5540 Info Message Template Auto Format enabled
-2022-10-21 17:03:53.5657 Info Loading assembly: NLog.Web.AspNetCore
-2022-10-21 17:03:53.6890 Info Adding target DatabaseTarget(Name=db)
-2022-10-21 17:03:53.7277 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
-2022-10-21 17:03:54.8462 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
-2022-10-21 21:33:19.7155 Info Message Template Auto Format enabled
-2022-10-21 21:33:19.7245 Info Loading assembly: NLog.Web.AspNetCore
-2022-10-21 21:33:19.8915 Info Adding target DatabaseTarget(Name=db)
-2022-10-21 21:33:19.9277 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
-2022-10-21 21:33:21.1236 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
-2022-10-23 22:50:55.0406 Info Message Template Auto Format enabled
-2022-10-23 22:50:55.0528 Info Loading assembly: NLog.Web.AspNetCore
-2022-10-23 22:50:55.3582 Info Adding target DatabaseTarget(Name=db)
-2022-10-23 22:50:55.4022 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
-2022-10-23 22:50:56.6363 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
-2022-10-23 23:09:01.1835 Info Message Template Auto Format enabled
-2022-10-23 23:09:01.1955 Info Loading assembly: NLog.Web.AspNetCore
-2022-10-23 23:09:01.3486 Info Adding target DatabaseTarget(Name=db)
-2022-10-23 23:09:01.3889 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
-2022-10-23 23:09:02.4875 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
->>>>>>> İhsan
+2022-10-22 16:35:57.3509 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\Doğukan Matuloğlu\Source\Repos\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-23 17:15:18.4287 Info Message Template Auto Format enabled
+2022-10-23 17:15:18.4791 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-23 17:15:18.9888 Info Adding target DatabaseTarget(Name=db)
+2022-10-23 17:15:19.1313 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\Doğukan Matuloğlu\Source\Repos\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-23 17:15:36.6390 Error DatabaseTarget(Name=db): Error when writing to database. Exception: Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: SNI_PN11, error: 26 - Error Locating Server/Instance Specified)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, Boolean encrypt, Boolean trustServerCert, Boolean integratedSecurity, Boolean withFailover, SqlAuthenticationMethod authType)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at NLog.Targets.DatabaseTarget.OpenConnection(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.EnsureConnectionOpen(String connectionString, LogEventInfo logEventInfo)
+   at NLog.Targets.DatabaseTarget.WriteLogEventSuppressTransactionScope(LogEventInfo logEvent, String connectionString)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Error Number:-1,State:0,Class:20
+2022-10-23 17:15:37.4074 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\Doğukan Matuloğlu\Source\Repos\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config
+2022-10-23 17:26:39.7231 Info Message Template Auto Format enabled
+2022-10-23 17:26:39.7417 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-23 17:26:40.0113 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\Doğukan Matuloğlu\Source\Repos\FeridAksahin\VehicleTender.WEB\VehicleTender.Web.AdminUI\bin\Debug\net6.0\NLog.config

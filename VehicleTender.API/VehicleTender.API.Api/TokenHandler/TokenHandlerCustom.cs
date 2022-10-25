@@ -1,5 +1,6 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 using VehicleTender.API.Entity.Entities;
@@ -13,6 +14,7 @@ namespace VehicleTender.API.Api.TokenHandler
         {
             Configuration = configuration;
         }
+
         //Token üretecek metot.
         public Models.Token CreateAccessToken(User user)
         {
@@ -25,8 +27,9 @@ namespace VehicleTender.API.Api.TokenHandler
             SigningCredentials signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
             //Oluşturulacak token ayarlarını veriyoruz.
-            tokenInstance.Expiration = DateTime.Now.AddMinutes(5);
+            tokenInstance.Expiration = DateTime.Now.AddMinutes(99);
             JwtSecurityToken securityToken = new JwtSecurityToken(
+                claims:new List<Claim> { new Claim("UserId",user.Id.ToString()) },
                 issuer: Configuration["Token:Issuer"],
                 audience: Configuration["Token:Audience"],
                 expires: tokenInstance.Expiration,//Token süresini 5 dk olarak belirliyorum
@@ -44,6 +47,8 @@ namespace VehicleTender.API.Api.TokenHandler
             tokenInstance.RefreshToken = CreateRefreshToken();
             return tokenInstance;
         }
+
+
 
         //Refresh Token üretecek metot.
         public string CreateRefreshToken()
