@@ -104,8 +104,12 @@ namespace VehicleTender.Web.EndUserUI.Controllers
             {
                 
                 AccountService accountService = new AccountService();
+            
                 var token = await accountService.GetToken(loginVM);
-
+                if (token == null)
+                {
+                    return View();
+                }
                 HttpCookie httpCookie = new HttpCookie("token");
                 httpCookie.Expires = DateTime.Now.AddDays(1);
                 httpCookie.Value = token.AccessToken;

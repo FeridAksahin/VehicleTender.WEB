@@ -18,7 +18,7 @@ namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
         }
         public async Task<List<TenderListVM>> GetTenderList(Token tokenDTO)
         {
-            return await requestApiService.GetAsyncList<TenderListVM>(tokenDTO,"endpointburayagelecek");
+            return await requestApiService.GetAsyncList<TenderListVM>(tokenDTO, "Tender/GetAllTenderEndUserUI");
         }
     }
 }

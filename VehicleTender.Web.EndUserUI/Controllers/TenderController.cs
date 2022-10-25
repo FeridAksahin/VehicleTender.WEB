@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using VehicleTender.Web.EndUserUI.ApiService.Concrete;
+using VehicleTender.WEB.UserDTO.Concrete;
 using VehicleTender.WEB.UserDTO.VM.Tender;
 
 namespace VehicleTender.Web.EndUserUI.Controllers
@@ -10,6 +13,7 @@ namespace VehicleTender.Web.EndUserUI.Controllers
     public class TenderController : Controller
     {
         // GET: Tender
+        TenderService tenderService = new TenderService();
         public ActionResult Index()
         {
             return View();
@@ -21,34 +25,15 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         }
 
         [HttpGet]
-        public ActionResult ListTender()
+        public async Task<ActionResult> ListTender()
         {
+            
             PageModelTender pageModel = new PageModelTender();
-            List<TenderListVM> tenderListVM = new List<TenderListVM>() {
-            new TenderListVM
-                {
-                    TenderStartDate="22.10.2022",
-                    CreatedBy="vs",
-                    Id=3,
-                    CreatedDate="22.10.2022",
-                    IndividualOrCorparate="Kurumsal",
-                    Statu="Başladı",
-                    TenderEndDate="22.11.2022",
-                    TenderName="Ford İhalesi"
-                },
-            new TenderListVM
-                {
-                    TenderStartDate="22.10.2022",
-                    CreatedBy="vs",
-                    Id=5,
-                    CreatedDate="22.10.2022",
-                    IndividualOrCorparate="Kurumsal",
-                    Statu="Başladı",
-                    TenderEndDate="22.11.2022",
-                    TenderName="50.000 Araç İhalesi"
-                }
+            Token token = new Token()
+            {
+                AccessToken = HttpContext.Request.Cookies["token"].Value
             };
-            pageModel.TenderList = tenderListVM;
+            pageModel.TenderList = await tenderService.GetTenderList(token); ;
             return View(pageModel);
         }
         [HttpGet]
