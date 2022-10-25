@@ -46,7 +46,7 @@ namespace VehicleTender.API.DataAccessLayer.Concrete
             var sorgu6 = "select Id from AdvertInfo where Description=@Desc ";
             var parameters6 = new DynamicParameters();
             parameters6.Add("Desc", vm.Description);
-            using (SqlConnection conn = new SqlConnection("server=DESKTOP-A6E9IGN\\SQLEXPRESS;database=VehicleTender;uid=sa;password=123"))
+            using (SqlConnection conn = new SqlConnection("data source=.;database=VehicleTender;Integrated Security=true;"))
             {
                 conn.Open();
                 using(var tran = conn.BeginTransaction())
