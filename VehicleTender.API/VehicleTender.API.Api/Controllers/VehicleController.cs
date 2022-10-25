@@ -44,9 +44,13 @@ namespace VehicleTender.API.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(PostingSalesVM vm)
         {
+            PostingVehicleDal postingVehicleDal = new PostingVehicleDal();
 
-            return Ok();
-
+            if (postingVehicleDal.AddPostingvehicle(vm))
+            {
+                return Ok();
+            }
+            return StatusCode(500);
         }
 
         [HttpPost]

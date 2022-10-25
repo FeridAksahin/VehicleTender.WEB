@@ -11,8 +11,8 @@ namespace VehicleTender.API.DTO.EndUserDTO.VM.Tender
         public int CarId { get; set; }
         public string Brand { get; set; }
         public string Model { get; set; }
-        public string IndividualOrCorparate { get; set; }
-        public string Statu { get; set; }
+        public string IndividualOrCorparate { get; set; }//
+        public string Statu { get; set; } 
         public string CreatedBy { get; set; }
         public string CreatedDate { get; set; }
         public string Price { get; set; }
