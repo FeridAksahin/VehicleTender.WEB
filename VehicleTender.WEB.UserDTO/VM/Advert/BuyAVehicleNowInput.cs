@@ -1,7 +1,7 @@
 ﻿using System;
 namespace VehicleTender.WEB.UserDTO.VM.Advert
 {
-    public class BuyVehicleNowVM
+    public class BuyAVehicleNowInput
     {
         // hemen araç al sayfasının filtreleme işlemi için kullanılır.
         public int BrandId { get; set; }

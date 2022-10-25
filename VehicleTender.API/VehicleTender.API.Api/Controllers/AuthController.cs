@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using VehicleTender.API.Api.Models;
 using VehicleTender.API.Api.TokenHandler;
 using VehicleTender.API.Api.ViewModel;
 using VehicleTender.API.Entity.Context;
@@ -9,6 +10,7 @@ namespace VehicleTender.API.Api.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
+
     public class AuthController : ControllerBase
     {
         readonly VehicleTenderContext _context;
@@ -24,9 +26,9 @@ namespace VehicleTender.API.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<Models.Token> Login([FromBody] UserLoginDto userLogin)
+        public async Task<Token> Login([FromBody] UserLoginDto userLogin)
         {
-            User user = await _context.User.FirstOrDefaultAsync(u => userLogin.Password == u.Password);
+            User user = await _context.User.FirstOrDefaultAsync(u => userLogin.Password == u.Password);          
             if (user != null)
             {
                 //Token üretiliyor.
@@ -43,8 +45,9 @@ namespace VehicleTender.API.Api.Controllers
             return null;
         }
 
+
         [HttpGet]
-        public async Task<Models.Token> RefreshTokenLogin([FromBody] string refreshToken)
+        public async Task<Token> RefreshTokenLogin([FromBody] string refreshToken)
         {
             User user = await _context.User.FirstOrDefaultAsync(x => x.RefreshToken == refreshToken);
             if (user != null && user?.RefreshTokenEndDate > DateTime.Now)

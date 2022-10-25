@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -8,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using VehicleTender.Web.AdminUI.ApiServices.Base.Concrete;
 using VehicleTender.Web.AdminUI.Models;
 using VehicleTender.Web.AdminUI.Models.Auth;
 using VehicleTender.Web.AdminUI.Models.Token;
@@ -29,10 +31,19 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginModel loginModel)
         {
+            
             if (ModelState.IsValid)
             {
-
-                _httpContextAccessor.HttpContext.Response.Cookies.Append("deger", "ihsan");
+                BaseApiService apiServiceRequestForTokenInjection = new BaseApiService();
+                var token = await apiServiceRequestForTokenInjection.GetToken(new UserLoginDTO
+                {
+                    Password = loginModel.Password,
+                    Mail = loginModel.Email
+                },"Auth/Login");
+                _httpContextAccessor.HttpContext.Response.Cookies.Append("token",token.AccessToken, new CookieOptions()
+                    { 
+                    Expires = DateTime.Now.AddDays(1),
+                    });
 
                 return RedirectToAction("AdminHome", "Admin");
             }
@@ -63,6 +74,11 @@ namespace VehicleTender.Web.AdminUI.Controllers
                 return RedirectToAction("Login");
             }
             return View();
+        }
+        public IActionResult LogOut()
+        {
+            _httpContextAccessor.HttpContext.Response.Cookies.Delete("token");
+            return RedirectToAction("Login");
         }
     }
 }

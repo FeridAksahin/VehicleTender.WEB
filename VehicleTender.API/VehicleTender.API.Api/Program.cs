@@ -7,7 +7,7 @@ using System.Text;
 using VehicleTender.API.Api.Models;
 using VehicleTender.API.Entity.Context;
 
-var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
+var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
 logger.Debug("init main");
 
 try

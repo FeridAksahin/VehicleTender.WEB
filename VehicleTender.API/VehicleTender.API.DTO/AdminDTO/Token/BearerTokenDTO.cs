@@ -1,6 +1,5 @@
-﻿using VehicleTender.WEB.Admin.Validation.Attributes;
-
-namespace VehicleTender.Web.AdminUI.Models.Token
+﻿using VehicleTender.API.Validation.Attributes;
+namespace VehicleTender.API.DTO.AdminDTO.Models.Token
 {
     public class BearerTokenDTO
     {

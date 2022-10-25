@@ -86,17 +86,17 @@
                 <div class="modal-body">
                     <div class="container">
                         <div class="row">
-                            <input type="text" class="form-control form-control-lg mt-3" placeholder="Kullanıcı Adı" asp-for="addAdminDTO.Username" />
+                            <input type="text" class="form-control form-control-lg mt-3" placeholder="Kullanıcı Adı" asp-for="addAdminDTO.Username" required />
 
-                            <input type="text" class="form-control form-control-lg mt-3" placeholder="Ad " asp-for="addAdminDTO.Name" />
+                            <input type="text" class="form-control form-control-lg mt-3" placeholder="Ad " asp-for="addAdminDTO.Name" required/>
 
-                            <input type="text" class="form-control form-control-lg mt-3" placeholder="Soyad" asp-for="addAdminDTO.Surname" />
+                            <input type="text" class="form-control form-control-lg mt-3" placeholder="Soyad" asp-for="addAdminDTO.Surname" required/>
 
-                            <input type="text" class="form-control form-control-lg mt-3" placeholder="Telefon" asp-for="addAdminDTO.Telephone" />
+                            <input type="text" class="form-control form-control-lg mt-3" placeholder="Telefon" asp-for="addAdminDTO.Telephone" required/>
 
-                            <input type="text" class="form-control form-control-lg mt-3" placeholder="Email" asp-for="addAdminDTO.Email" />
+                            <input type="text" class="form-control form-control-lg mt-3" placeholder="Email" asp-for="addAdminDTO.Email" required/>
 
-                            <input type="password" class="form-control form-control-lg mt-3" placeholder="Parola" asp-for="addAdminDTO.Password"/>
+                            <input type="password" class="form-control form-control-lg mt-3" placeholder="Parola" asp-for="addAdminDTO.Password" required/>
 
                             <select class="form-control form-control-lg mt-3">
                                 <option value="@true">Aktif</option>

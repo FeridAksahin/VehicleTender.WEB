@@ -8,7 +8,15 @@
 
   <ItemGroup>
     <Folder Include="Interface\" />
-    <Folder Include="Concrete\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.123" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VehicleTender.API.DTO\VehicleTender.API.DTO.csproj" />
+    <ProjectReference Include="..\VehicleTender.API.Entity\VehicleTender.API.Entity.csproj" />
   </ItemGroup>
 
 </Project>

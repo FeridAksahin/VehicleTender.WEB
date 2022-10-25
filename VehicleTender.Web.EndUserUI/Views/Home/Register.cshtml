@@ -1,13 +1,13 @@
 ﻿@model VehicleTender.WEB.UserDTO.VM.Account.RegisterVM
 @{
     ViewBag.Title = "Register";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
 }
 <div class="container">
     <div class="row">
         <div class="col-6 col-md-4"></div>
         <div class="col-6 col-md-4">
-            @Html.BeginForm("Register", "Home", FormMethod.Post)
+            @using (Html.BeginForm("Register", "Home", FormMethod.Post))
             {
                 <h3 class="mb-3 pb-3 display-4 text-center">Kayıt Ol</h3>
                 <div class="mb-4">

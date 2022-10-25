@@ -28,6 +28,7 @@ namespace VehicleTender.API.Entity.Entities
 
         [StringLength(150)]
         public string? TenderEndDate { get; set; }
+        public string? TenderStartDate { get; set; }
 
         public bool? isItCorporate { get; set; }
 

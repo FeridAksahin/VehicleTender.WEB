@@ -11,8 +11,8 @@ namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
 {
     public class ContactService
     {
-        RequestApiService requestApiService = new RequestApiService("ApiUrl");
-        public async Task<string> Contact(TokenDTO tokenDTO, ContactVM contactViewModel)
+        RequestApiService requestApiService = new RequestApiService();
+        public async Task<string> Contact(Token tokenDTO, ContactVM contactViewModel)
         {
             return await requestApiService.PostAsync<ContactVM>(tokenDTO, contactViewModel, "endpointburayagelecek");
         }

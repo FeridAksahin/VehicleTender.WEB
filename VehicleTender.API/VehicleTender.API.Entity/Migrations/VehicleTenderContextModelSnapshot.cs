@@ -1336,6 +1336,9 @@ namespace VehicleTender.API.Entity.Migrations
                     b.Property<string>("TenderName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("TenderStartDate")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<decimal?>("TenderStartingPrice")
                         .HasColumnType("money");
 

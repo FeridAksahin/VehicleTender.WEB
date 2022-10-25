@@ -13,35 +13,30 @@ namespace VehicleTender.Web.AdminUI.Controllers
 {
     public class TenderController : Controller
     {
-        BearerTokenDTO token = new BearerTokenDTO();
+        Token token = new Token();
+        IHttpContextAccessor _httpContextAccessor;
         TenderService tenderService = new TenderService();
-        [HttpGet]
-        public IActionResult Tender()
+        public TenderController(IHttpContextAccessor httpContextAccessor)
         {
-            TenderDTO tenderDTO = new TenderDTO();
-            List<GetTenderDTO> testlikTenderList = new List<GetTenderDTO>();
-            GetTenderDTO tender = new GetTenderDTO();
-            tender.TenderStart = DateTime.Now;
-            tender.Statu = "Başladı";
-            tender.TenderId = 1;
-            tender.IndivudualOrCorparate = "Bireysel";
-            tender.TenderStart = DateTime.Now;
-            tender.CreatedBy = 1;
-            tender.CreatedDate = DateTime.Now;
-            tender.TenderName = "İhale";
-            testlikTenderList.Add(tender);
-            tenderDTO.TenderList = testlikTenderList;
-
-            return View(tenderDTO);
+            _httpContextAccessor = httpContextAccessor;
+        }
+        [HttpGet]
+        public async Task<IActionResult> Tender()
+        {
+            return View(await tenderService.TenderList());
         }
 
         [HttpPost]
-        public IActionResult Tender(string? tenderName, string? isIndividual, string? statu)
+        public async Task<IActionResult> Tender(string? tenderName, string? isIndividual, string? statu)
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
+            List<GetTenderDTO> testlikTenderList = new List<GetTenderDTO>();
             TenderDTO tenderDTO = new TenderDTO();
             if (tenderName != null || isIndividual != null || statu != null)
             {
-                List<GetTenderDTO> testlikTenderList = new List<GetTenderDTO>();
                 GetTenderDTO tender = new GetTenderDTO();
                 tender.TenderStart = DateTime.Now;
                 tender.Statu = "Başladı";
@@ -52,13 +47,16 @@ namespace VehicleTender.Web.AdminUI.Controllers
                 tender.CreatedDate = DateTime.Now;
                 tender.TenderName = "İhaleAdi";
                 testlikTenderList.Add(tender);
-                tenderDTO.TenderList = testlikTenderList;
             }
-            return View(tenderDTO);
+            return View(testlikTenderList);
         }
         [HttpGet]
         public IActionResult NewTenderCreate()
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             AddNewTenderDTO addNewTender = new AddNewTenderDTO();
             TenderCarPriceAndTenderCar tenderCarPriceAndTenderCar = new TenderCarPriceAndTenderCar();
             List<TenderCar> tenderCarList = new List<TenderCar>();
@@ -92,6 +90,10 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public async Task<IActionResult> NewTenderCreate(AddNewTenderDTO addNewTenderDTO)
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             await tenderService.AddNewTender(token, addNewTenderDTO);
             return RedirectToAction("Tender");
         }
@@ -99,6 +101,10 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public IActionResult UpdateTender()
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
 
             UpdateTenderDTO updateTender = new UpdateTenderDTO();
             updateTender.CompanyName = "BilgeAdam";
@@ -128,7 +134,10 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpPost]
         public IActionResult UpdateTender(int id)
         {
-
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             UpdateTenderDTO updateTender = new UpdateTenderDTO();
             //await tenderService.UpdateTender(token, updateTender);
             updateTender.CompanyName = "A";
@@ -156,6 +165,10 @@ namespace VehicleTender.Web.AdminUI.Controllers
 
         public async Task<IActionResult> DeleteTender(int id)
         {
+            if (_httpContextAccessor.HttpContext.Request.Cookies["token"] == null)
+            {
+                return RedirectToAction("Login", "Auth");
+            }
             await tenderService.DeleteTender(token, id);
             return RedirectToAction("Tender");
         }
