@@ -1,0 +1,158 @@
+﻿
+@model VehicleTender.WEB.UserDTO.VM.Advert.CarListVM
+@{
+    ViewBag.Title = "VehicleDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ROYAL CARS - Car Rental HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid">
+
+            <div class="container pt-5 pb-3">
+                <h1 class="display-4 text-uppercase mb-5">@Model.Brand @Model.Model</h1>
+                <div class="row align-items-center pb-2">
+                    <div class="col-lg-6 mb-4">
+                        <img class="img-fluid" src="~/img/car-rent-1.png" alt="">
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <h4 class="mb-2">50.000 ₺</h4>
+                        <div class="d-flex mb-3">
+                            <h6 class="mr-2">Rating:</h6>
+                            <div class="d-flex align-items-center justify-content-center mb-1">
+                                <small class="fa fa-star text-primary mr-1"></small>
+                                <small class="fa fa-star text-primary mr-1"></small>
+                                <small class="fa fa-star text-primary mr-1"></small>
+                                <small class="fa fa-star text-primary mr-1"></small>
+                                <small class="fa fa-star-half-alt text-primary mr-1"></small>
+                                <small>(250)</small>
+                            </div>
+                        </div>
+                        <p>
+                            @Model.Description
+                        </p>
+                        <button class="btn btn-block btn-primary py-3">Favoriye Ekle</button>
+                    </div>
+                </div>
+                <div class="row mt-n3 mt-lg-0 pb-4">
+                    <div class="col-md-3 col-6 mb-2">
+                        <i class="fa fa-car text-primary mr-2"></i>
+                        <span>Marka: @Model.Brand</span>
+                    </div>
+                    <div class="col-md-3 col-6 mb-2">
+                        <i class="fa fa-cogs text-primary mr-2"></i>
+                        <span>Model: @Model.Model</span>
+                    </div>
+                    <div class="col-md-3 col-6 mb-2">
+                        <i class="fa fa-road text-primary mr-2"></i>
+                        <span>Gövde Tipi: @Model.BodyType</span>
+                    </div>
+                    <div class="col-md-3 col-6 mb-2">
+                        <i class="fa fa-eye text-primary mr-2"></i>
+                        <span>Yıl: @Model.Year</span>
+                    </div>
+                    <div class="col-md-3 col-6 mb-2">
+                        <i class="fa fa-car text-primary mr-2"></i>
+                        <span>Yakıt Tipi: @Model.FuelType</span>
+                    </div>
+                    <div class="col-md-3 col-6 mb-2">
+                        <i class="fa fa-cogs text-primary mr-2"></i>
+                        <span>Vites Tipi: @Model.GearType</span>
+                    </div>
+                    <div class="col-md-3 col-6 mb-2">
+                        <i class="fa fa-road text-primary mr-2"></i>
+                        <span>Versiyon: @Model.Version</span>
+                    </div>
+                    <div class="col-md-3 col-6 mb-2">
+                        <i class="fa fa-car text-primary mr-2"></i>
+                        <span>KM: @Model.KM</span>
+                    </div>
+                    <div class="col-md-3 col-6 mb-2">
+                        <i class="fa fa-cogs text-primary mr-2"></i>
+                        <span>Renk: @Model.Color</span>
+                    </div>
+                    <div class="col-md-3 col-6 mb-2">
+                        <i class="fa fa-road text-primary mr-2"></i>
+                        <span>Donanım: @Model.HardwareId</span>
+                    </div>
+                </div>
+            </div>
+
+
+    </div>
+    <hr>
+    <div class="container-fluid pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h2 class="mb-4">Satıcı Bilgileri</h2>
+                    <div class="mb-5">
+                        <div class="row">
+                            <div class="col-12 form-group">
+                                <h5 class="display-5 mb-5">Ad Soyad</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6 form-group">
+                                <h5 class="display-5 mb-5">Email</h5>
+                            </div>
+                            <div class="col-6 form-group">
+                                <h5 class="display-5 mb-5">Telefon</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <button style="background-color: #2B2E4A;" class="btn btn-block btn-primary py-3">Satın Al</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
