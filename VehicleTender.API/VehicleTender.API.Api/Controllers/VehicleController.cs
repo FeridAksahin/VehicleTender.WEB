@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using VehicleTender.API.Api.Models;
 using VehicleTender.API.Common.CustomHTTPResponse;
+using VehicleTender.API.DataAccessLayer.Concrete;
 using VehicleTender.API.DTO.EndUserDTO.VM.Account;
 using VehicleTender.API.DTO.EndUserDTO.VM.Advert;
 using VehicleTender.API.DTO.EndUserDTO.VM.Vehicle;
@@ -11,13 +12,15 @@ namespace VehicleTender.API.Api.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    [Authorize]
+    ////[Authorize]
     public class VehicleController : ControllerBase
     {
         private readonly ILogger<VehicleController> _log;
+        private readonly CarDal _carDal;
         public VehicleController(ILogger<VehicleController> log)
         {
             _log = log;
+            _carDal = new CarDal();
         }
         [HttpGet]
         public async Task<IActionResult> GetAll()
@@ -38,15 +41,13 @@ namespace VehicleTender.API.Api.Controllers
 
         }
 
-        [HttpGet]
-        public async Task<List<CarListVM>> Create()
+        [HttpPost]
+        public async Task<IActionResult> Create(CarAddDto carAddDto)
         {
-            //var s = HttpContext.Request.Headers.Values;
-            CarListVM ccdddd = new CarListVM();
-            ccdddd.BodyTypeId = 3;
-            List<CarListVM> gg = new List<CarListVM>();
-            gg.Add(ccdddd);
-            return gg;
+
+
+            return Created(string.Empty,_carDal.Create(carAddDto));
+            
         }
         [HttpPut]
         public async Task<IActionResult> Update()
