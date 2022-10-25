@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using VehicleTender.API.DataAccessLayer.Concrete;
 using VehicleTender.API.DataAccessLayer.Interface;
 
 namespace VehicleTender.API.Api.Controllers
@@ -9,6 +10,7 @@ namespace VehicleTender.API.Api.Controllers
     {
         private readonly ILogger<VehicleController> _log;
         private readonly IAdvertDAL _advertDAL;
+        IndividualVehicleDal individualVehicleDal = new IndividualVehicleDal();
         public AdvertController(ILogger<VehicleController> log, IAdvertDAL advertDAL)
         {
             _advertDAL = advertDAL;
@@ -16,7 +18,7 @@ namespace VehicleTender.API.Api.Controllers
         }
 
 
-        [HttpGet] // endUser için hemen araç al
+        [HttpGet] // ilan listesi
         public async Task<IActionResult> GetAll()
         {
             try
@@ -28,11 +30,29 @@ namespace VehicleTender.API.Api.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
-        [HttpGet("{id}")]
+        [HttpGet] // endUser için hemen araç al
+        public async Task<IActionResult> GetAllCarsForIndividual()
+        {
+            try
+            {
+                return Ok(await individualVehicleDal.GetAllIndividualCars());
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+        [HttpGet("{id}")] // endUser hemen araç al sayfasından detaya gitme için 
         public async Task<IActionResult> GetById(int id)
         {
-
-            return Ok();
+            try
+            {
+                return Ok(await individualVehicleDal.GetCarByID(id));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
         [HttpGet]
         public async Task<IActionResult> Count()

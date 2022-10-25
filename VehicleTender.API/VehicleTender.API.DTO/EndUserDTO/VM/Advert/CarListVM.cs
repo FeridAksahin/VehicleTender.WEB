@@ -3,19 +3,14 @@
     public class CarListVM
     {
         public int CarId { get; set; }
-        public int BrandId { get; set; }
-        public string BrandName { get; set; }
-        public int ModelId { get; set; }
-        public string ModelName { get; set; }
-        public int BodyTypeId { get; set; }
-        public string BodyTypeName { get; set; }
+        public string Brand { get; set; }
+        public string Model { get; set; }
+        public string BodyType { get; set; }
         public int Year { get; set; }
-        public int GearTypeId { get; set; }
-        public string GearTypeName { get; set; }
-        public int FuelTypeId { get; set; }
-        public string FuelTypeName { get; set; }
-        public int ColorId { get; set; }
-        public string ColorName { get; set; }
+        public decimal Price { get; set; }
+        public string GearType { get; set; }
+        public string FuelType { get; set; }
+        public string Color { get; set; }
         public string Version { get; set; }
         public string HardwareId { get; set; }
         public string Kilometer { get; set; }

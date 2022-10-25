@@ -122,11 +122,6 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         [HttpGet]
         public ActionResult Login()
         {
-            if (HttpContext.Request.Cookies["token"] != null)
-            {
-                HttpCookie httpCookie = HttpContext.Request.Cookies["token"];
-                string token = httpCookie.Values["value"];
-            }
             return View();
         }
 

@@ -87,7 +87,7 @@
                 <div class="col-lg-4 col-md-6 mb-2">
                     <div class="rent-item mb-4">
                         <img class="img-fluid mb-4" src="~/img/car-rent-1.png" />
-                        <h4 class="text-uppercase mb-4">@item.BrandName @item.ModelName</h4>
+                        <h4 class="text-uppercase mb-4">@item.Brand @item.Model</h4>
                         <div class="d-flex justify-content-center mb-4">
                             <div class="px-2">
                                 <i class="fa fa-car text-primary mr-1"></i>
@@ -95,14 +95,16 @@
                             </div>
                             <div class="px-2 border-left border-right">
                                 <i class="fa fa-cogs text-primary mr-1"></i>
-                                <span>@item.GearTypeName</span>
+                                <span>@item.GearType</span>
                             </div>
                             <div class="px-2">
                                 <i class="fa fa-road text-primary mr-1"></i>
-                                <span>@item.Kilometer</span>
+                                <span>@item.KM</span>
                             </div>
                         </div>
-                        <a class="btn btn-primary px-3" href="/NonTenderVehicle/VehicleDetail/@item.CarId">Detay</a>
+                        @using (Html.BeginForm("VehicleDetail", "NonTenderVehicle", new { id = item.CarId }, FormMethod.Get))
+                        {<button class="btn btn-primary px-3" type="submit">Detay</button>}
+                       
                     </div>
                 </div>
             </div>
