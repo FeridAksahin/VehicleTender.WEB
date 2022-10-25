@@ -4,6 +4,7 @@ using VehicleTender.API.DataAccessLayer.Concrete;
 using VehicleTender.API.DTO.AdminDTO.Models.Tender;
 using VehicleTender.API.DTO.EndUserDTO.VM.Advert;
 using VehicleTender.API.DTO.EndUserDTO.VM.Tender;
+using VehicleTender.API.Entity.Context;
 
 namespace VehicleTender.API.Api.Controllers
 {

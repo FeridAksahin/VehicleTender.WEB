@@ -19,35 +19,14 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         [HttpGet]
         public async Task<ActionResult> BuyAVehicleNow()
         {
-            IndividualVehicleSaleVM v = new IndividualVehicleSaleVM();
-            v.BrandId = 2;
-            
             Token token = new Token()
             {
                 AccessToken = HttpContext.Request.Cookies["token"].Value
             };
-            var s = token.AccessToken;
             var c  = await cs.CarList(token);
-            BuyAVehicleNowVM advertPage = new BuyAVehicleNowVM();
-            List<CarListVM> carList = new List<CarListVM>();
-            CarListVM car = new CarListVM()
-            {
-                CarId = 1,
-                BrandName = "Mercedes",
-                ModelName = "CLA",
-                Kilometer = "2500",
-                GearTypeName = "Otomatik",
-                ColorName = "Siyah",
-                FuelTypeName = "Benzinli",
-                HardwareId = "Turbo",
-                Version = "Yeni",
-                BodyTypeName = "Sedan",   
-                Year = 2015,
-                Description = "Acil satılık, az kullanılmış aynı zamanda krediye de uygundur."
-            };
 
-            carList.Add(car);
-            advertPage.Cars = carList;
+            BuyAVehicleNowVM advertPage = new BuyAVehicleNowVM();
+            advertPage.Cars = c;
 
             return View(advertPage);
         }
@@ -59,26 +38,15 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         }
 
         [HttpGet]
-        public ActionResult VehicleDetail(int id)
+        public async Task<ActionResult> VehicleDetail(int id)
         {
-            List<CarListVM> carList = new List<CarListVM>();
-            CarListVM car = new CarListVM()
-            {
-                CarId = 1,
-                BrandName = "Mercedes",
-                ModelName = "CLA",
-                Kilometer = "2500",
-                GearTypeName = "Otomatik",
-                ColorName = "Siyah",
-                FuelTypeName = "Benzinli",
-                HardwareId = "Turbo",
-                Version = "Yeni",
-                BodyTypeName = "Sedan",
-                Year = 2015,
-                Description = "Acil satılık, az kullanılmış aynı zamanda krediye de uygundur."
-            };
-            carList.Add(car);
-            return View(carList);
+            //Token token = new Token()
+            //{
+            //    //AccessToken = HttpContext.Request.Cookies["token"].Value
+            //};
+            Token token = new Token();
+            CarListVM carDetail = await cs.GetById(token, id);
+            return View(carDetail);
         }
 
     }

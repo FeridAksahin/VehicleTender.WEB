@@ -46,7 +46,7 @@ app.UseRouting();
 app.UseEndpoints(endpoints =>endpoints.MapDefaultControllerRoute());
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Auth}/{action=Login}/{id?}");
+    pattern: "{controller=UserOperations}/{action=UserList}/{id?}");
 
 app.Run();
 }

@@ -21,7 +21,7 @@ namespace VehicleTender.Web.AdminUI.ApiServices.Services
         }
         public async Task<string> AddNewCar(Token token, AddCarDTO newCarInformation)
         {//https://localhost:7011/Vehicle/AddVehicle
-            return await baseApiService.PostAsync<AddCarDTO>(token, newCarInformation, "endpoint route gelmeli");
+            return await baseApiService.PostAsync<AddCarDTO>(token, newCarInformation, "Vehicle/Create");
         }
         public async Task<UpdateCarDTO> GetCarDetailForIntoUpdateButton(Token token, string id)
         {//https://localhost:7011/Vehicle/UpdateVehicle

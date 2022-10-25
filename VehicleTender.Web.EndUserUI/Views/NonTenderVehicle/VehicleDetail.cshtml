@@ -1,5 +1,5 @@
 ﻿
-@model List<VehicleTender.WEB.UserDTO.VM.Advert.CarListVM>
+@model VehicleTender.WEB.UserDTO.VM.Advert.CarListVM
 @{
     ViewBag.Title = "VehicleDetail";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -38,77 +38,74 @@
 
 <body>
     <div class="container-fluid">
-        @foreach (var item in Model)
-        {
-            <div class="container pt-5 pb-3">
-                <h1 class="display-4 text-uppercase mb-5">@item.BrandName @item.ModelName</h1>
-                <div class="row align-items-center pb-2">
-                    <div class="col-lg-6 mb-4">
-                        <img class="img-fluid" src="~/img/car-rent-1.png" alt="">
-                    </div>
-                    <div class="col-lg-6 mb-4">
-                        <h4 class="mb-2">50.000 ₺</h4>
-                        <div class="d-flex mb-3">
-                            <h6 class="mr-2">Rating:</h6>
-                            <div class="d-flex align-items-center justify-content-center mb-1">
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star text-primary mr-1"></small>
-                                <small class="fa fa-star-half-alt text-primary mr-1"></small>
-                                <small>(250)</small>
-                            </div>
-                        </div>
-                        <p>
-                            @item.Description
-                        </p>
-                        <button class="btn btn-block btn-primary py-3">Favoriye Ekle</button>
-                    </div>
+        <div class="container pt-5 pb-3">
+            <h1 class="display-4 text-uppercase mb-5">@Model.Brand @Model.Model</h1>
+            <div class="row align-items-center pb-2">
+                <div class="col-lg-6 mb-4">
+                    <img class="img-fluid" src="~/img/car-rent-1.png" alt="">
                 </div>
-                <div class="row mt-n3 mt-lg-0 pb-4">
-                    <div class="col-md-3 col-6 mb-2">
-                        <i class="fa fa-car text-primary mr-2"></i>
-                        <span>Marka: @item.BrandName</span>
+                <div class="col-lg-6 mb-4">
+                    <h4 class="mb-2">@Model.Price</h4>
+                    <div class="d-flex mb-3">
+                        <h6 class="mr-2">Rating:</h6>
+                        <div class="d-flex align-items-center justify-content-center mb-1">
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star text-primary mr-1"></small>
+                            <small class="fa fa-star-half-alt text-primary mr-1"></small>
+                            <small>(250)</small>
+                        </div>
                     </div>
-                    <div class="col-md-3 col-6 mb-2">
-                        <i class="fa fa-cogs text-primary mr-2"></i>
-                        <span>Model: @item.ModelName</span>
-                    </div>
-                    <div class="col-md-3 col-6 mb-2">
-                        <i class="fa fa-road text-primary mr-2"></i>
-                        <span>Gövde Tipi: @item.BodyTypeName</span>
-                    </div>
-                    <div class="col-md-3 col-6 mb-2">
-                        <i class="fa fa-eye text-primary mr-2"></i>
-                        <span>Yıl: @item.Year</span>
-                    </div>
-                    <div class="col-md-3 col-6 mb-2">
-                        <i class="fa fa-car text-primary mr-2"></i>
-                        <span>Yakıt Tipi: @item.FuelTypeName</span>
-                    </div>
-                    <div class="col-md-3 col-6 mb-2">
-                        <i class="fa fa-cogs text-primary mr-2"></i>
-                        <span>Vites Tipi: @item.GearTypeName</span>
-                    </div>
-                    <div class="col-md-3 col-6 mb-2">
-                        <i class="fa fa-road text-primary mr-2"></i>
-                        <span>Versiyon: @item.Version</span>
-                    </div>
-                    <div class="col-md-3 col-6 mb-2">
-                        <i class="fa fa-car text-primary mr-2"></i>
-                        <span>KM: @item.Kilometer</span>
-                    </div>
-                    <div class="col-md-3 col-6 mb-2">
-                        <i class="fa fa-cogs text-primary mr-2"></i>
-                        <span>Renk: @item.ColorName</span>
-                    </div>
-                    <div class="col-md-3 col-6 mb-2">
-                        <i class="fa fa-road text-primary mr-2"></i>
-                        <span>Donanım: @item.HardwareId</span>
-                    </div>
+                    <p>
+                        @Model.Description
+                    </p>
+                    <button class="btn btn-block btn-primary py-3">Favoriye Ekle</button>
                 </div>
             </div>
-        }
+            <div class="row mt-n3 mt-lg-0 pb-4">
+                <div class="col-md-3 col-6 mb-2">
+                    <i class="fa fa-car text-primary mr-2"></i>
+                    <span>Marka: @Model.Brand</span>
+                </div>
+                <div class="col-md-3 col-6 mb-2">
+                    <i class="fa fa-cogs text-primary mr-2"></i>
+                    <span>Model: @Model.Model</span>
+                </div>
+                <div class="col-md-3 col-6 mb-2">
+                    <i class="fa fa-road text-primary mr-2"></i>
+                    <span>Gövde Tipi: @Model.BodyType</span>
+                </div>
+                <div class="col-md-3 col-6 mb-2">
+                    <i class="fa fa-eye text-primary mr-2"></i>
+                    <span>Yıl: @Model.Year</span>
+                </div>
+                <div class="col-md-3 col-6 mb-2">
+                    <i class="fa fa-car text-primary mr-2"></i>
+                    <span>Yakıt Tipi: @Model.FuelType</span>
+                </div>
+                <div class="col-md-3 col-6 mb-2">
+                    <i class="fa fa-cogs text-primary mr-2"></i>
+                    <span>Vites Tipi: @Model.GearType</span>
+                </div>
+                <div class="col-md-3 col-6 mb-2">
+                    <i class="fa fa-road text-primary mr-2"></i>
+                    <span>Versiyon: @Model.Version</span>
+                </div>
+                <div class="col-md-3 col-6 mb-2">
+                    <i class="fa fa-car text-primary mr-2"></i>
+                    <span>KM: @Model.KM</span>
+                </div>
+                <div class="col-md-3 col-6 mb-2">
+                    <i class="fa fa-cogs text-primary mr-2"></i>
+                    <span>Renk: @Model.Color</span>
+                </div>
+                <div class="col-md-3 col-6 mb-2">
+                    <i class="fa fa-road text-primary mr-2"></i>
+                    <span>Donanım: @Model.HardwareId</span>
+                </div>
+            </div>
+        </div>
 
     </div>
     <hr>

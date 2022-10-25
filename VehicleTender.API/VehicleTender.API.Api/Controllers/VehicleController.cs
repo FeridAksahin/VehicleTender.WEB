@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using VehicleTender.API.Api.Models;
 using VehicleTender.API.Common.CustomHTTPResponse;
 using VehicleTender.API.DataAccessLayer.Concrete;
+using VehicleTender.API.DTO.AdminDTO.Models.Car;
 using VehicleTender.API.DTO.EndUserDTO.VM.Account;
 using VehicleTender.API.DTO.EndUserDTO.VM.Advert;
 using VehicleTender.API.DTO.EndUserDTO.VM.Vehicle;
@@ -16,9 +17,11 @@ namespace VehicleTender.API.Api.Controllers
     public class VehicleController : ControllerBase
     {
         private readonly ILogger<VehicleController> _log;
+        private readonly CarDal _carDal;
         public VehicleController(ILogger<VehicleController> log)
         {
             _log = log;
+            _carDal = new CarDal();
         }
         [HttpGet]
         public async Task<IActionResult> GetAll()
@@ -50,15 +53,11 @@ namespace VehicleTender.API.Api.Controllers
             return StatusCode(500);
         }
 
-        [HttpGet]
-        public async Task<List<CarListVM>> Create()
+        [HttpPost]
+        public async Task<int> Create(AddCarDTO carAddDto)
         {
-            //var s = HttpContext.Request.Headers.Values;
-            CarListVM ccdddd = new CarListVM();
-            ccdddd.BodyTypeId = 3;
-            List<CarListVM> gg = new List<CarListVM>();
-            gg.Add(ccdddd);
-            return gg;
+            return await _carDal.Create(carAddDto);
+            
         }
         [HttpPut]
         public async Task<IActionResult> Update()
