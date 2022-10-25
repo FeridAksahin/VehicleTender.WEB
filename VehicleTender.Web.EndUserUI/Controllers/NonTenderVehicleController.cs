@@ -28,6 +28,7 @@ namespace VehicleTender.Web.EndUserUI.Controllers
             };
             var s = token.AccessToken;
             var c  = await cs.CarList(token);
+
             BuyAVehicleNowVM advertPage = new BuyAVehicleNowVM();
             List<CarListVM> carList = new List<CarListVM>();
             CarListVM car = new CarListVM()
@@ -49,7 +50,7 @@ namespace VehicleTender.Web.EndUserUI.Controllers
             carList.Add(car);
             advertPage.Cars = carList;
 
-            return View(advertPage);
+            return View(c);
         }
 
         [HttpPost]

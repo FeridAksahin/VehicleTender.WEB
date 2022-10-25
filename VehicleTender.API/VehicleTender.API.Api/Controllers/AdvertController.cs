@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using VehicleTender.API.DataAccessLayer.Concrete;
 
 namespace VehicleTender.API.Api.Controllers
 {
@@ -7,16 +8,17 @@ namespace VehicleTender.API.Api.Controllers
     public class AdvertController : ControllerBase
     {
         private readonly ILogger<VehicleController> _log;
+        IndividualVehicleDal individualVehicleDal = new IndividualVehicleDal();
         public AdvertController(ILogger<VehicleController> log)
         {
             _log = log;
         }
 
 
-        [HttpGet]
+        [HttpGet] // endUser için hemen araç al
         public async Task<IActionResult> GetAll()
         {
-
+            await individualVehicleDal.GetAllCarAdverts();
             return Ok();
         }
         [HttpGet("{id}")]

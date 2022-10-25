@@ -33,30 +33,30 @@ namespace VehicleTender.API.Entity.Context
                             //If EntityState is Detached
                             break;
                         }
-                       
+
                     case EntityState.Unchanged:
                         {
                             //If EntityState is unchanged
                             break;
                         }
-                        
+
                     case EntityState.Deleted:
                         {
                             //If EntityState is Deleted
                             break;
                         }
-                        
+
                     case EntityState.Modified:
                         {
                             //If EntityState is Modified
                             break;
                         }
-                        
+
                     case EntityState.Added:
                         {
                             //If EntityState is Added
                             break;
-                        }                       
+                        }
                 }
             }
             return base.SaveChanges();
@@ -67,7 +67,7 @@ namespace VehicleTender.API.Entity.Context
         public VehicleTenderContext()
         {
 
-        } 
+        }
         public virtual DbSet<Car> Car { get; set; }
         public virtual DbSet<CarDetailInfo> CarDetailInfo { get; set; }
         public virtual DbSet<VehicleStatuHistory> VehicleStatuHistory { get; set; }
