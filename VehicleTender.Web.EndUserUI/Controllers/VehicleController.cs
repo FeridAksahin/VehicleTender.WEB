@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
@@ -26,13 +27,13 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         StockPageModel model = new StockPageModel();
        // StockService stockService = new StockService();
         Token token = new Token();
-        VehicleService _vehicleServicee;
+        
 
         private readonly CarService _vehicleService;
-        public VehicleController(VehicleService vehicleServicee)
+        public VehicleController()
         {
             _vehicleService = new CarService();
-            _vehicleServicee = vehicleServicee;
+
         }
 
         // GET: Vehicle
@@ -108,15 +109,53 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         [HttpPost]
         public ActionResult PostingSalesAdvertisement(PostingSalesModel car)
         {
+            
             if (ModelState.IsValid == true)
             {
-                //int i = 0;
+                VehicleService vehicleService = new VehicleService();
+                PostingSalesAdvertisementVM vm = new PostingSalesAdvertisementVM()
+                {
+                    ArkaKaput = car.ArkaKaput,
+                    ArkaTampon = car.ArkaTampon,
+                    BodyTypeName = car.BodyTypeName,
+                    BrandName = car.BrandName,
+                    ColorName = car.ColorName,
+                    Description = car.Description,
+                    FuelTypeName = car.FuelTypeName,
+                    GearTypeName = car.GearTypeName,
+                    HardwareName = car.HardwareName ,
+                    KM = car.KM,
+                    ModelName = car.ModelName,
+                    MotorKaputu = car.MotorKaputu,
+                    OnTampon = car.OnTampon,
+                    SagArkaCamurluk= car.SagArkaCamurluk,
+                    SagArkaKapı= car.SagArkaKapı,
+                    SagOnCamurluk= car.SagOnCamurluk,
+                    SagOnKapı = car.SagOnKapı,
+                    SolArkaCamurluk = car.SolArkaCamurluk,
+                    SolArkaKapı = car.SolArkaKapı,
+                    SolOnCamurluk = car.SolOnCamurluk,
+                    SolOnKapı = car.SolOnKapı,
+                    Tavan = car.Tavan,
+                    TramerTutarı = car.TramerTutarı,
+                    VersionName = car.VersionName,
+                    Year = car.Year
+                };
+                string[] images = new string[5];
+                int i = 0;
                 foreach (var item in car.Photos)
                 {
                     var image = Path.GetFileName(item.FileName);
-                    var path = Path.Combine(Server.MapPath("~/img"), image);
-                    item.SaveAs(path); 
+                    var path = Path.Combine(Server.MapPath("~/img/"), image);
+                    item.SaveAs(path);
+
+                    images[i]= "~/img"+item.FileName;
+                    i++;
                 }
+                vm.ImagePath = images;
+                Token token = new Token();
+                token.AccessToken = HttpContext.Request.Cookies["token"].Value;
+                vehicleService.IndividualVehicleSale(token, vm);
                 return View();
             }
             return View();

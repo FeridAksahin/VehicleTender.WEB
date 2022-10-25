@@ -37,6 +37,13 @@ namespace VehicleTender.API.Api.Controllers
             return Ok();
 
         }
+        [HttpPost]
+        public async Task<IActionResult> Post(PostingSalesVM vm)
+        {
+
+            return Ok();
+
+        }
 
         [HttpGet]
         public async Task<List<CarListVM>> Create()
