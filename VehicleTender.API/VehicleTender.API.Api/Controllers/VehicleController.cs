@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using VehicleTender.API.Api.Models;
 using VehicleTender.API.Common.CustomHTTPResponse;
+using VehicleTender.API.DataAccessLayer.Concrete;
 using VehicleTender.API.DTO.EndUserDTO.VM.Account;
 using VehicleTender.API.DTO.EndUserDTO.VM.Advert;
 using VehicleTender.API.DTO.EndUserDTO.VM.Vehicle;
@@ -40,9 +41,13 @@ namespace VehicleTender.API.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(PostingSalesVM vm)
         {
+            PostingVehicleDal postingVehicleDal = new PostingVehicleDal();
 
-            return Ok();
-
+            if (postingVehicleDal.AddPostingvehicle(vm))
+            {
+                return Ok();
+            }
+            return StatusCode(500);
         }
 
         [HttpGet]

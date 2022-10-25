@@ -149,7 +149,7 @@ namespace VehicleTender.Web.EndUserUI.Controllers
                     var path = Path.Combine(Server.MapPath("~/img/"), image);
                     item.SaveAs(path);
 
-                    images[i]= "~/img"+item.FileName;
+                    images[i]= "~/img/"+item.FileName;
                     i++;
                 }
                 vm.ImagePath = images;
