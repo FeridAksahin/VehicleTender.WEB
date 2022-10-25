@@ -5,6 +5,8 @@ using NLog;
 using NLog.Web;
 using System.Text;
 using VehicleTender.API.Api.Models;
+using VehicleTender.API.DataAccessLayer.Concrete;
+using VehicleTender.API.DataAccessLayer.Interface;
 using VehicleTender.API.Entity.Context;
 
 var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
@@ -44,6 +46,7 @@ try
             ClockSkew = TimeSpan.Zero
         };
     });
+    builder.Services.AddScoped<IAdvertDAL, AdvertDAL>();
 
     var app = builder.Build();
 
