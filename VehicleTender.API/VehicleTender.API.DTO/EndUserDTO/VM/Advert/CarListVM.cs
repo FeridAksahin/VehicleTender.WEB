@@ -2,7 +2,7 @@
 {
     public class CarListVM
     {
-        public int CarId { get; set; }
+        public int Id { get; set; }
         public string Brand { get; set; }
         public string Model { get; set; }
         public string BodyType { get; set; }
@@ -13,7 +13,7 @@
         public string Color { get; set; }
         public string Version { get; set; }
         public string HardwareId { get; set; }
-        public string Kilometer { get; set; }
+        public string KM { get; set; }
         public string[] Photos { get; set; }
         public string Description { get; set; }
     }

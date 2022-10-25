@@ -390,6 +390,7 @@
     <Content Include="Views\Home\Expertise.cshtml" />
     <Content Include="Views\Vehicle\GetVehicleInStock.cshtml" />
     <Content Include="Views\Shared\_Layout2.cshtml" />
+    <Content Include="Views\AdvertList\VehicleDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

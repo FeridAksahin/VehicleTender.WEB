@@ -12,9 +12,9 @@ namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
     public class VehicleService
     {
         RequestApiService requestApiService = new RequestApiService();
-        public async Task<string> IndividualVehicleSale(Token tokenDTO,IndividualVehicleSaleVM individualVehicleSaleViewModel)
+        public async Task<string> IndividualVehicleSale(Token tokenDTO,PostingSalesAdvertisementVM postingSalesAdvertisementVM)
         {
-            return await requestApiService.PostAsync<IndividualVehicleSaleVM>(tokenDTO, individualVehicleSaleViewModel, "Vehicle/Create");
+            return await requestApiService.PostAsync<PostingSalesAdvertisementVM>(tokenDTO, postingSalesAdvertisementVM, "Vehicle/Post");
         }
         public async Task<string> Tramer(Token tokenDTO, TramerVM tramerViewModel)
         {

@@ -35,5 +35,23 @@ namespace VehicleTender.API.DataAccessLayer.Concrete
             }
 
         }
+       
+        public async Task<List<DTO.EndUserDTO.VM.Tender.TenderCar>> GetTenderCar(int id)
+        {
+            using (SqlConnection conn = new SqlConnection("data source=.;database=VehicleTender;Integrated Security=true;"))
+            {
+                var query = "select CategoryID,CategoryName from Categories where CategorID =@id";
+                using (var multiSelect = await conn.QueryMultipleAsync(query, new { id = id }))
+                {
+                    var cat = await multiSelect.ReadSingleOrDefaultAsync<DTO.EndUserDTO.VM.Tender.TenderCar>();
+                  
+                        var list = (await multiSelect.ReadAsync<DTO.EndUserDTO.VM.Tender.TenderCar>()).ToList();
+
+
+                    return list;
+                }
+            }
+         
+        }
     }
 } 

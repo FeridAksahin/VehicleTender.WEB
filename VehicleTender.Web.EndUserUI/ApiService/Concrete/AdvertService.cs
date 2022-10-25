@@ -24,9 +24,9 @@ namespace VehicleTender.Web.EndUserUI.ApiService.Concrete
         {
             return await requestApiService.GetAsyncList<CarListVM>(tokenDTO, "Advert/GetAll");
         }
-        public async Task<CarListVM> GetById(Token tokenDTO, int id)
+        public async Task<CarListVM> CarDetail(Token tokenDTO,int id)
         {
-            return await requestApiService.GetAsync<CarListVM>(tokenDTO, "Advert/GetById", id.ToString());
+            return await requestApiService.GetAsync<CarListVM>(tokenDTO,"Advert/GetAdvertById",id.ToString());
         }
     }
 }

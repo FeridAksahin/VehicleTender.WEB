@@ -26,6 +26,9 @@ try
     builder.Services.AddEndpointsApiExplorer();
    
     builder.Services.AddDbContext<VehicleTenderContext>();
+   
+    
+   
 
     //token
     builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(option =>

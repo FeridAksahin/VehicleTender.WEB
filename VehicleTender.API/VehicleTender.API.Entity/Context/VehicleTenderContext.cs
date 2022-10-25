@@ -14,7 +14,7 @@ namespace VehicleTender.API.Entity.Context
         {
             optionsBuilder.UseSqlServer(@"Data Source=.;Initial Catalog=VehicleTender;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             //optionsBuilder.UseSqlServer("server=DESKTOP-A6E9IGN\\SQLEXPRESS;database=VehicleTender;uid=sa;password=123");
-            optionsBuilder.UseSqlServer("data source=.;database=VehicleTender;Integrated Security=true;");
+            //optionsBuilder.UseSqlServer("data source=.;database=VehicleTender;Integrated Security=true;");
         }
 
         #region Change Tracker

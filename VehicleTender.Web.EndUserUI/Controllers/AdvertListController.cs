@@ -21,6 +21,12 @@ namespace VehicleTender.Web.EndUserUI.Controllers
             List<CarListVM> carListVMs = await advertService.CarListAdvert(token);
             return View(carListVMs);
         }
+
+        public async Task<ActionResult> VehicleDetail(int id)
+        {
+            CarListVM carListVM = await advertService.CarDetail(token,id);
+            return View(carListVM);
+        }
     }
 
 }

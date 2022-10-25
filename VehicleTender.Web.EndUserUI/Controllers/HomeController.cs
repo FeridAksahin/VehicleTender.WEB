@@ -27,10 +27,14 @@ namespace VehicleTender.Web.EndUserUI.Controllers
 
         public ActionResult Index()
         {
+            if (HttpContext.Request.Cookies["token"] == null)
+            {
+                return RedirectToAction("Login", "Home");
+            }
 
             //Dikkat admin tarafından kaydedilen araçların resimleri hem enduserdan hem admin uı dan görüntülenmek üzere erişilmeli 
-        
-           List<HomeAdvertViewModel> list = new List<HomeAdvertViewModel>();
+
+            List<HomeAdvertViewModel> list = new List<HomeAdvertViewModel>();
             HomeAdvertViewModel viewModel1 = new HomeAdvertViewModel();
             HomeAdvertViewModel viewModel2 = new HomeAdvertViewModel();
             HomeAdvertViewModel viewModel3 = new HomeAdvertViewModel();
@@ -64,10 +68,12 @@ namespace VehicleTender.Web.EndUserUI.Controllers
             list.Add(viewModel2);
             list.Add(viewModel4);
             list.Add(viewModel3);
-            if (HttpContext.Request.Cookies["token"] == null)
-            {
-                return RedirectToAction("Login", "Home");
-            }
+
+
+
+            return View();
+
+
             return View(list);
         }
 
@@ -125,9 +131,10 @@ namespace VehicleTender.Web.EndUserUI.Controllers
             return View();
         }
 
-        [HttpPost]
-        public async Task<ActionResult> Login(LoginVM loginVM)
         {
+          
+
+            return View();
             LoginValidation loginValidation = new LoginValidation();
             ValidationResult result = loginValidation.Validate(loginVM);
 
@@ -140,10 +147,7 @@ namespace VehicleTender.Web.EndUserUI.Controllers
                 HttpCookie httpCookie = new HttpCookie("token");
                 httpCookie.Expires = DateTime.Now.AddDays(1);
                 httpCookie.Value = token.AccessToken;
-              
-                //httpCookie.Values.Add("token",token.AccessToken);
-                HttpContext.Response.Cookies.Add(httpCookie);
-                //var x = HttpContext.Request.Cookies["token"].Value;
+                
                 if (token == null)
                 {
                     return View();
