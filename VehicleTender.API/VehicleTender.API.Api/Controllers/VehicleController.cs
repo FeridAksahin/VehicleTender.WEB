@@ -53,6 +53,7 @@ namespace VehicleTender.API.Api.Controllers
         public async Task<int> Create(AddCarDTO carAddDto)
         {
             return await _carDal.Create(carAddDto);
+            
         }
         [HttpPut]
         public async Task<IActionResult> Update()

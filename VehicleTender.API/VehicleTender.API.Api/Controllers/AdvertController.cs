@@ -15,13 +15,25 @@ namespace VehicleTender.API.Api.Controllers
             _log = log;
         }
 
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetAdvertById(int id)
+        {
+            try
+            {
+                return Ok(await _advertDAL.GetAdvertById(id));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             try
             {
-                return Ok(await _advertDAL.GetAllCarAdverts());
+                return Ok(await _advertDAL.GetAllCarInAdverts());
             }
             catch (Exception ex)
             {

@@ -32,16 +32,16 @@ namespace VehicleTender.Web.EndUserUI.Controllers
             List<CarListVM> carList = new List<CarListVM>();
             CarListVM car = new CarListVM()
             {
-                CarId = 1,
-                BrandName = "Mercedes",
-                ModelName = "CLA",
-                Kilometer = "2500",
-                GearTypeName = "Otomatik",
-                ColorName = "Siyah",
-                FuelTypeName = "Benzinli",
+                Id = 1,
+                Brand = "Mercedes",
+                Model = "CLA",
+                KM = "2500",
+                GearType = "Otomatik",
+                Color = "Siyah",
+                FuelType = "Benzinli",
                 HardwareId = "Turbo",
                 Version = "Yeni",
-                BodyTypeName = "Sedan",   
+                BodyType = "Sedan",   
                 Year = 2015,
                 Description = "Acil satılık, az kullanılmış aynı zamanda krediye de uygundur."
             };
@@ -64,16 +64,16 @@ namespace VehicleTender.Web.EndUserUI.Controllers
             List<CarListVM> carList = new List<CarListVM>();
             CarListVM car = new CarListVM()
             {
-                CarId = 1,
-                BrandName = "Mercedes",
-                ModelName = "CLA",
-                Kilometer = "2500",
-                GearTypeName = "Otomatik",
-                ColorName = "Siyah",
-                FuelTypeName = "Benzinli",
+                Id = 1,
+                Brand = "Mercedes",
+                Model = "CLA",
+                KM = "2500",
+                GearType = "Otomatik",
+                Color = "Siyah",
+                FuelType = "Benzinli",
                 HardwareId = "Turbo",
                 Version = "Yeni",
-                BodyTypeName = "Sedan",
+                BodyType = "Sedan",
                 Year = 2015,
                 Description = "Acil satılık, az kullanılmış aynı zamanda krediye de uygundur."
             };

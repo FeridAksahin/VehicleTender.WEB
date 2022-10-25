@@ -1,8 +1,9 @@
-﻿
+﻿@using VehicleTender.WEB.UserDTO.VM.Advert;
 @{
     ViewBag.Title = "BuyAVehicleNow";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@model List<CarListVM>
 
 <h2 style="text-align:center;">Hemen Araç Al</h2>
 
@@ -101,261 +102,129 @@
         </div>
     </div>
 </div>
-<div class="container-fluid">
+
+
+
+@*<div class="container-fluid">
     <div class="container pt-5 pb-3">
         <h1 class="display-4 text-center mb-5">Araçlar</h1>
         <div class="row">
             <div class="col-lg-4 col-md-6 mb-2">
                 <div class="rent-item mb-4">
-                    <img class="img-fluid mb-4" src="~/img/car-rent-1.png" />
-                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
-                    <div class="d-flex justify-content-center mb-4">
-                        <div class="px-2">
-                            <i class="fa fa-car text-primary mr-1"></i>
-                            <span>2015</span>
+                    @foreach (var item in Model)
+                    {
+                        <img class="img-fluid mb-4" src="~/img/car-rent-1.png" />
+                        <h4 class="text-uppercase mb-4">@item.Brand @item.Model</h4>
+                        <div class="d-flex justify-content-center mb-4">
+                            <div class="px-2">
+                                <i class="fa fa-car text-primary mr-1"></i>
+                                <span>@item.Year</span>
+                            </div>
+                            <div class="px-2 border-left border-right">
+                                <i class="fa fa-cogs text-primary mr-1"></i>
+                                <span>@item.GearType</span>
+                            </div>
+                            <div class="px-2">
+                                <i class="fa fa-road text-primary mr-1"></i>
+                                <span>@item.Kilometer</span>
+                            </div>
                         </div>
-                        <div class="px-2 border-left border-right">
-                            <i class="fa fa-cogs text-primary mr-1"></i>
-                            <span>AUTO</span>
-                        </div>
-                        <div class="px-2">
-                            <i class="fa fa-road text-primary mr-1"></i>
-                            <span>25K</span>
-                        </div>
-                    </div>
-                    <a class="btn btn-primary px-3" href="/NonTenderVehicle/VehicleDetail">Detay</a>
+                        <a class="btn btn-primary px-3" href="/NonTenderVehicle/VehicleDetail">Detay</a>
+                    }
                 </div>
             </div>
+        </div>
+        <div class="row">
             <div class="col-lg-4 col-md-6 mb-2">
                 <div class="rent-item mb-4">
-                    <img class="img-fluid mb-4" src="~/img/car-rent-2.png" />
-                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
-                    <div class="d-flex justify-content-center mb-4">
-                        <div class="px-2">
-                            <i class="fa fa-car text-primary mr-1"></i>
-                            <span>2015</span>
+                    @foreach (var item in Model)
+                    {
+                        <img class="img-fluid mb-4" src="~/img/car-rent-1.png" />
+                        <h4 class="text-uppercase mb-4">@item.Brand @item.Model</h4>
+                        <div class="d-flex justify-content-center mb-4">
+                            <div class="px-2">
+                                <i class="fa fa-car text-primary mr-1"></i>
+                                <span>@item.Year</span>
+                            </div>
+                            <div class="px-2 border-left border-right">
+                                <i class="fa fa-cogs text-primary mr-1"></i>
+                                <span>@item.GearType</span>
+                            </div>
+                            <div class="px-2">
+                                <i class="fa fa-road text-primary mr-1"></i>
+                                <span>@item.Kilometer</span>
+                            </div>
                         </div>
-                        <div class="px-2 border-left border-right">
-                            <i class="fa fa-cogs text-primary mr-1"></i>
-                            <span>AUTO</span>
-                        </div>
-                        <div class="px-2">
-                            <i class="fa fa-road text-primary mr-1"></i>
-                            <span>25K</span>
-                        </div>
-                    </div>
-                    <a class="btn btn-primary px-3" href="/NonTenderVehicle/VehicleDetail">Detay</a>
+                        <a class="btn btn-primary px-3" href="/NonTenderVehicle/VehicleDetail">Detay</a>
+                    }
                 </div>
             </div>
+        </div>
+        <div class="row">
             <div class="col-lg-4 col-md-6 mb-2">
                 <div class="rent-item mb-4">
-                    <img class="img-fluid mb-4" src="~/img/car-rent-3.png" />
-                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
-                    <div class="d-flex justify-content-center mb-4">
-                        <div class="px-2">
-                            <i class="fa fa-car text-primary mr-1"></i>
-                            <span>2015</span>
+                    @foreach (var item in Model)
+                    {
+                        <img class="img-fluid mb-4" src="~/img/car-rent-1.png" />
+                        <h4 class="text-uppercase mb-4">@item.Brand @item.Model</h4>
+                        <div class="d-flex justify-content-center mb-4">
+                            <div class="px-2">
+                                <i class="fa fa-car text-primary mr-1"></i>
+                                <span>@item.Year</span>
+                            </div>
+                            <div class="px-2 border-left border-right">
+                                <i class="fa fa-cogs text-primary mr-1"></i>
+                                <span>@item.GearType</span>
+                            </div>
+                            <div class="px-2">
+                                <i class="fa fa-road text-primary mr-1"></i>
+                                <span>@item.Kilometer</span>
+                            </div>
                         </div>
-                        <div class="px-2 border-left border-right">
-                            <i class="fa fa-cogs text-primary mr-1"></i>
-                            <span>AUTO</span>
-                        </div>
-                        <div class="px-2">
-                            <i class="fa fa-road text-primary mr-1"></i>
-                            <span>25K</span>
-                        </div>
-                    </div>
-                    <a class="btn btn-primary px-3" href="/NonTenderVehicle/VehicleDetail">Detay</a>
+                        <a class="btn btn-primary px-3" href="/NonTenderVehicle/VehicleDetail">Detay</a>
+                    }
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 mb-2">
-                <div class="rent-item mb-4">
-                    <img class="img-fluid mb-4" src="~/img/car-rent-4.png" />
-                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
-                    <div class="d-flex justify-content-center mb-4">
-                        <div class="px-2">
-                            <i class="fa fa-car text-primary mr-1"></i>
-                            <span>2015</span>
-                        </div>
-                        <div class="px-2 border-left border-right">
-                            <i class="fa fa-cogs text-primary mr-1"></i>
-                            <span>AUTO</span>
-                        </div>
-                        <div class="px-2">
-                            <i class="fa fa-road text-primary mr-1"></i>
-                            <span>25K</span>
-                        </div>
-                    </div>
-                    <a class="btn btn-primary px-3" href="/NonTenderVehicle/VehicleDetail">Detay</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-2">
-                <div class="rent-item mb-4">
-                    <img class="img-fluid mb-4" src="~/img/car-rent-5.png" />
-                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
-                    <div class="d-flex justify-content-center mb-4">
-                        <div class="px-2">
-                            <i class="fa fa-car text-primary mr-1"></i>
-                            <span>2015</span>
-                        </div>
-                        <div class="px-2 border-left border-right">
-                            <i class="fa fa-cogs text-primary mr-1"></i>
-                            <span>AUTO</span>
-                        </div>
-                        <div class="px-2">
-                            <i class="fa fa-road text-primary mr-1"></i>t
-                            <span>25K</span>
-                        </div>
-                    </div>
-                    <a class="btn btn-primary px-3" href="/NonTenderVehicle/VehicleDetail">Detay</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-2">
-                <div class="rent-item mb-4">
-                    <img class="img-fluid mb-4" src="~/img/car-rent-6.png" />
-                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
-                    <div class="d-flex justify-content-center mb-4">
-                        <div class="px-2">
-                            <i class="fa fa-car text-primary mr-1"></i>
-                            <span>2015</span>
-                        </div>
-                        <div class="px-2 border-left border-right">
-                            <i class="fa fa-cogs text-primary mr-1"></i>
-                            <span>AUTO</span>
-                        </div>
-                        <div class="px-2">
-                            <i class="fa fa-road text-primary mr-1"></i>
-                            <span>25K</span>
-                        </div>
-                    </div>
-                    <a class="btn btn-primary px-3" href="/NonTenderVehicle/VehicleDetail">Detay</a>
-                </div>
-            </div>
+        </div>
+
+    </div>
+
+</div>*@
+
+
+<div class="container-fluid">
+    <div class="container pt-5 pb-3">
+        <h1 class="display-4 text-center mb-5">Araçlar</h1>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+            
             <div class="col-lg-4 col-md-6 mb-2">
                 <div class="rent-item mb-4">
                     <img class="img-fluid mb-4" src="~/img/car-rent-1.png" />
-                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
+                    <h4 class="text-uppercase mb-4">@item.Brand @item.Model</h4>
                     <div class="d-flex justify-content-center mb-4">
                         <div class="px-2">
                             <i class="fa fa-car text-primary mr-1"></i>
-                            <span>2015</span>
+                            <span>@item.Year</span>
                         </div>
                         <div class="px-2 border-left border-right">
                             <i class="fa fa-cogs text-primary mr-1"></i>
-                            <span>AUTO</span>
+                            <span>@item.GearType</span>
                         </div>
                         <div class="px-2">
                             <i class="fa fa-road text-primary mr-1"></i>
-                            <span>25K</span>
+                            <span>@item.KM</span>
                         </div>
                     </div>
-                    <a class="btn btn-primary px-3" href="/NonTenderVehicle/VehicleDetail">Detay</a>
+                    @using (Html.BeginForm("VehicleDetail", "AdvertList", new {id = item.Id }, FormMethod.Get)) {
+                    <button class="btn btn-primary px-3" type="submit" >Detay</button>
+                    }
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 mb-2">
-                <div class="rent-item mb-4">
-                    <img class="img-fluid mb-4" src="~/img/car-rent-1.png" />
-                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
-                    <div class="d-flex justify-content-center mb-4">
-                        <div class="px-2">
-                            <i class="fa fa-car text-primary mr-1"></i>
-                            <span>2015</span>
-                        </div>
-                        <div class="px-2 border-left border-right">
-                            <i class="fa fa-cogs text-primary mr-1"></i>
-                            <span>AUTO</span>
-                        </div>
-                        <div class="px-2">
-                            <i class="fa fa-road text-primary mr-1"></i>
-                            <span>25K</span>
-                        </div>
-                    </div>
-                    <a class="btn btn-primary px-3" href="/NonTenderVehicle/VehicleDetail">Detay</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-2">
-                <div class="rent-item mb-4">
-                    <img class="img-fluid mb-4" src="~/img/car-rent-1.png" />
-                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
-                    <div class="d-flex justify-content-center mb-4">
-                        <div class="px-2">
-                            <i class="fa fa-car text-primary mr-1"></i>
-                            <span>2015</span>
-                        </div>
-                        <div class="px-2 border-left border-right">
-                            <i class="fa fa-cogs text-primary mr-1"></i>
-                            <span>AUTO</span>
-                        </div>
-                        <div class="px-2">
-                            <i class="fa fa-road text-primary mr-1"></i>
-                            <span>25K</span>
-                        </div>
-                    </div>
-                    <a class="btn btn-primary px-3" href="/NonTenderVehicle/VehicleDetail">Detay</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-2">
-                <div class="rent-item mb-4">
-                    <img class="img-fluid mb-4" src="~/img/car-rent-1.png" />
-                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
-                    <div class="d-flex justify-content-center mb-4">
-                        <div class="px-2">
-                            <i class="fa fa-car text-primary mr-1"></i>
-                            <span>2015</span>
-                        </div>
-                        <div class="px-2 border-left border-right">
-                            <i class="fa fa-cogs text-primary mr-1"></i>
-                            <span>AUTO</span>
-                        </div>
-                        <div class="px-2">
-                            <i class="fa fa-road text-primary mr-1"></i>
-                            <span>25K</span>
-                        </div>
-                    </div>
-                    <a class="btn btn-primary px-3" href="/NonTenderVehicle/VehicleDetail">Detay</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-2">
-                <div class="rent-item mb-4">
-                    <img class="img-fluid mb-4" src="~/img/car-rent-1.png" />
-                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
-                    <div class="d-flex justify-content-center mb-4">
-                        <div class="px-2">
-                            <i class="fa fa-car text-primary mr-1"></i>
-                            <span>2015</span>
-                        </div>
-                        <div class="px-2 border-left border-right">
-                            <i class="fa fa-cogs text-primary mr-1"></i>
-                            <span>AUTO</span>
-                        </div>
-                        <div class="px-2">
-                            <i class="fa fa-road text-primary mr-1"></i>
-                            <span>25K</span>
-                        </div>
-                    </div>
-                    <a class="btn btn-primary px-3" href="/NonTenderVehicle/VehicleDetail">Detay</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-2">
-                <div class="rent-item mb-4">
-                    <img class="img-fluid mb-4" src="~/img/car-rent-1.png" />
-                    <h4 class="text-uppercase mb-4">Mercedes Benz R3</h4>
-                    <div class="d-flex justify-content-center mb-4">
-                        <div class="px-2">
-                            <i class="fa fa-car text-primary mr-1"></i>
-                            <span>2015</span>
-                        </div>
-                        <div class="px-2 border-left border-right">
-                            <i class="fa fa-cogs text-primary mr-1"></i>
-                            <span>AUTO</span>
-                        </div>
-                        <div class="px-2">
-                            <i class="fa fa-road text-primary mr-1"></i>
-                            <span>25K</span>
-                        </div>
-                    </div>
-                    <a class="btn btn-primary px-3" href="/NonTenderVehicle/VehicleDetail">Detay</a>
-                </div>
+
+            }
+            
             </div>
         </div>
     </div>
