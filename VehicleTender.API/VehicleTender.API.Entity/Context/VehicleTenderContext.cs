@@ -105,9 +105,6 @@ namespace VehicleTender.API.Entity.Context
         public virtual DbSet<TramerPart> TramerPart { get; set; }
         public virtual DbSet<TramerSituationValue> TramerSituationValue { get; set; }
         public virtual DbSet<TramerValue> TramerValue { get; set; }
-        public virtual DbSet<CarFeature> CarFeature { get; set; }
-        public virtual DbSet<CarFeatureCodeMeaning> CarFeatureCodeMeaning { get; set; }
-        public virtual DbSet<CarFeatureValue> CarFeatureValue { get; set; }
         public virtual DbSet<HardwareType> HardwareType { get; set; }
         public virtual DbSet<TenderVehicleDetail> TenderVehicleDetail { get; set; }
         public virtual DbSet<TenderVehicleBid> TenderVehicleBid { get; set; }

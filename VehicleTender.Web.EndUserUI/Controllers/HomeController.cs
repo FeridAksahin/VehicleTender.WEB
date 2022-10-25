@@ -68,10 +68,6 @@ namespace VehicleTender.Web.EndUserUI.Controllers
             {
                 return RedirectToAction("Login", "Home");
             }
-
-            return View();
-
-
             return View(list);
         }
 
@@ -137,7 +133,6 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         [HttpPost]
         public async Task<ActionResult> Login(LoginVM loginVM)
         {
-          
             LoginValidation loginValidation = new LoginValidation();
             ValidationResult result = loginValidation.Validate(loginVM);
 
@@ -145,6 +140,7 @@ namespace VehicleTender.Web.EndUserUI.Controllers
             {
                 
                 AccountService accountService = new AccountService();
+            
                 var token = await accountService.GetToken(loginVM);
                 HttpCookie httpCookie = new HttpCookie("token");
                 httpCookie.Expires = DateTime.Now.AddDays(1);
@@ -153,7 +149,10 @@ namespace VehicleTender.Web.EndUserUI.Controllers
                 //httpCookie.Values.Add("token",token.AccessToken);
                 HttpContext.Response.Cookies.Add(httpCookie);
                 //var x = HttpContext.Request.Cookies["token"].Value;
-                
+                if (token == null)
+                {
+                    return View();
+                }
                 return RedirectToAction("/Index");
             }
             else
