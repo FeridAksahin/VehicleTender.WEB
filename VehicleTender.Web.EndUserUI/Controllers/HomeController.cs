@@ -68,12 +68,6 @@ namespace VehicleTender.Web.EndUserUI.Controllers
             list.Add(viewModel2);
             list.Add(viewModel4);
             list.Add(viewModel3);
-
-
-
-            return View();
-
-
             return View(list);
         }
 
@@ -126,28 +120,25 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         
 
         [HttpGet]
-        public ActionResult Login()
+        public async Task<ActionResult> Login()
         {
             return View();
         }
-
+        [HttpPost]
+        public async Task<ActionResult> Login(LoginVM loginVM)
         {
-          
-
-            return View();
             LoginValidation loginValidation = new LoginValidation();
             ValidationResult result = loginValidation.Validate(loginVM);
 
             if (result.IsValid)
             {
-                
                 AccountService accountService = new AccountService();
-            
+
                 var token = await accountService.GetToken(loginVM);
                 HttpCookie httpCookie = new HttpCookie("token");
                 httpCookie.Expires = DateTime.Now.AddDays(1);
                 httpCookie.Value = token.AccessToken;
-                
+
                 if (token == null)
                 {
                     return View();
@@ -161,12 +152,8 @@ namespace VehicleTender.Web.EndUserUI.Controllers
                     ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
                 }
             }
-            
-            
             return View();
         }
-
-
         [HttpGet]
         public ActionResult Register()
         {
