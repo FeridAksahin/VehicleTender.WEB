@@ -43,7 +43,6 @@ namespace VehicleTender.API.Api.Controllers
         {
             //var s = HttpContext.Request.Headers.Values;
             CarListVM ccdddd = new CarListVM();
-            ccdddd.BodyTypeId = 3;
             List<CarListVM> gg = new List<CarListVM>();
             gg.Add(ccdddd);
             return gg;

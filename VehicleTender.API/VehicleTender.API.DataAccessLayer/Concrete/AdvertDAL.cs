@@ -19,13 +19,25 @@ namespace VehicleTender.API.DataAccessLayer.Concrete
         {
             _context = context;
         }
-        public async Task<List<CarListVM>> GetAllCarAdverts()
+        public async Task<List<CarListVM>> GetAllCarInAdverts()
         {
-            var value = "select ai.KM,c.Brand,c.Model,c.Year,cf.CarFeatureName from AdvertInfo ai JOIN CarDetailInfo cdi on ai.CarDetailInfoId=cdi.Id JOIN Car c on c.Id=cdi.Id JOIN CarFeatureValue cfv on cfv.CarId=c.Id JOIN CarFeature cf ON cfv.CarFeatureId=cf.Id";
+            var value = "select c.Id,c.Brand,c.Model,c.Year,c.GearType,ai.KM from AdvertInfo ai\r\ninner join CarDetailInfo cdi on ai.CarDetailInfoId=cdi.Id\r\ninner join car c on c.Id=cdi.CarId";
+
             using (SqlConnection db = new SqlConnection("data source=.;database=VehicleTender;Integrated Security=true;"))
             {
                 var result = await db.QueryAsync<CarListVM>(value);
                 return result.ToList();
+            }
+        }
+
+        public async Task<CarListVM> GetAdvertById(int id)
+        {
+            var value = $"select c.Id,c.Brand,c.Model,c.BodyType,c.Year,c.FuelType,c.GearType,c.Version,ai.KM,c.Color,ht.HardwareName from AdvertInfo ai\r\ninner join CarDetailInfo cdi on ai.CarDetailInfoId=cdi.Id\r\ninner join car c on c.Id=cdi.CarId\r\ninner join Hardware h on h.CarId=c.Id\r\ninner join HardwareType ht on ht.Id=h.HardwareTypeId\r\nwhere c.Id={id}";
+            using (SqlConnection db = new SqlConnection("data source=.;database=VehicleTender;Integrated Security=true;"))
+            {
+                var result = await db.QueryAsync<CarListVM>(value,id);
+                return result.FirstOrDefault();
+
             }
         }
     }

@@ -9,6 +9,7 @@ namespace VehicleTender.API.DataAccessLayer.Interface
 {
     public interface IAdvertDAL
     {
-        public Task<List<CarListVM>> GetAllCarAdverts();
+        public Task<List<CarListVM>> GetAllCarInAdverts();
+        public Task<CarListVM> GetAdvertById(int id);
     }
 }
