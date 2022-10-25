@@ -38,20 +38,15 @@ namespace VehicleTender.API.DataAccessLayer.Concrete
        
         public async Task<List<DTO.EndUserDTO.VM.Tender.TenderCar>> GetTenderCar(int id)
         {
-            using (SqlConnection conn = new SqlConnection("data source=.;database=VehicleTender;Integrated Security=true;"))
+            var value = $"select c.Id as CarId,c.Brand,c.Model,u.[Name],c.CreatedDate from Car c  join CarDetailInfo cd on cd.CarId=c.Id  join [User] u on u.Id=cd.UserId  join TenderVehicleDetail tvd on cd.Id=tvd.CarDetailInfoId  join TenderVehicleSales tvs on tvd.TenderVehicleSalesId = tvs.Id  where tvs.Id={id}";
+
+            using (SqlConnection db = new SqlConnection("data source=.;database=VehicleTender;Integrated Security=true;"))
             {
-                var query = "select CategoryID,CategoryName from Categories where CategorID =@id";
-                using (var multiSelect = await conn.QueryMultipleAsync(query, new { id = id }))
-                {
-                    var cat = await multiSelect.ReadSingleOrDefaultAsync<DTO.EndUserDTO.VM.Tender.TenderCar>();
-                  
-                        var list = (await multiSelect.ReadAsync<DTO.EndUserDTO.VM.Tender.TenderCar>()).ToList();
-
-
-                    return list;
-                }
+                var result = await db.QueryAsync<DTO.EndUserDTO.VM.Tender.TenderCar>(value);
+                return result.ToList();
             }
-         
         }
+
+    
     }
 } 

@@ -33,7 +33,7 @@ namespace VehicleTender.API.Api.Controllers
         public async Task<IActionResult> GetById(int id)
         {
             return Ok();
-        }
+        } 
         [HttpGet]
         public async Task<IActionResult> Count()
         {
@@ -55,6 +55,12 @@ namespace VehicleTender.API.Api.Controllers
         public async Task<IActionResult> Remove(int id)
         {
             return NoContent();
+        }
+
+        [HttpGet]
+        public async Task<List<DTO.EndUserDTO.VM.Tender.TenderCar>> GetByTenderCar(int id)
+        { 
+           return await tenderDal.GetTenderCar(id);
         }
     }
 }
