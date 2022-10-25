@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using VehicleTender.API.DataAccessLayer.Interface;
 
 namespace VehicleTender.API.Api.Controllers
 {
@@ -7,8 +8,10 @@ namespace VehicleTender.API.Api.Controllers
     public class AdvertController : ControllerBase
     {
         private readonly ILogger<VehicleController> _log;
-        public AdvertController(ILogger<VehicleController> log)
+        private readonly IAdvertDAL _advertDAL;
+        public AdvertController(ILogger<VehicleController> log, IAdvertDAL advertDAL)
         {
+            _advertDAL = advertDAL;
             _log = log;
         }
 
@@ -16,8 +19,14 @@ namespace VehicleTender.API.Api.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-
-            return Ok();
+            try
+            {
+                return Ok(await _advertDAL.GetAllCarAdverts());
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
