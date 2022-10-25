@@ -18,7 +18,7 @@ namespace VehicleTender.Web.AdminUI.Controllers
     public class VehicleController : Controller
     {
         Token token = new Token();
-        
+        SingletonToken tokenGetSingleton = SingletonToken.Instance;
         CarService carService = new CarService();
         
         IdentifyingCehicleFaturesService identifyingCehicleFaturesService = new();
@@ -405,8 +405,8 @@ namespace VehicleTender.Web.AdminUI.Controllers
             //tramer bilgilerini alma ve fotoğraf alma kısmı, hemen al satış butonu kısmı eksiktir 
             //carService.AddNewCar(token,addVehicleViewModel); //komisyon ve noter ücreti api tarafında belirlenecektir. bireysel ya da kurumsal olup olmadıgı api 
             //tarafında yazılan isme göre aratılıp db ye kaydedilcektir
-
-            carService.AddNewCar(token, addVehicleViewModel);
+       
+                carService.AddNewCar(tokenGetSingleton.Token, addVehicleViewModel);
 
             List<string> images = new List<string>();//fotoğrafların yolları
 

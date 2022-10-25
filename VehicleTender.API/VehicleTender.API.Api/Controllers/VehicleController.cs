@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using VehicleTender.API.Api.Models;
 using VehicleTender.API.Common.CustomHTTPResponse;
 using VehicleTender.API.DataAccessLayer.Concrete;
+using VehicleTender.API.DTO.AdminDTO.Models.Car;
 using VehicleTender.API.DTO.EndUserDTO.VM.Account;
 using VehicleTender.API.DTO.EndUserDTO.VM.Advert;
 using VehicleTender.API.DTO.EndUserDTO.VM.Vehicle;
@@ -12,7 +13,7 @@ namespace VehicleTender.API.Api.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    ////[Authorize]
+    [Authorize]
     public class VehicleController : ControllerBase
     {
         private readonly ILogger<VehicleController> _log;
@@ -49,12 +50,9 @@ namespace VehicleTender.API.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(CarAddDto carAddDto)
+        public async Task<int> Create(AddCarDTO carAddDto)
         {
-
-
-            return Created(string.Empty,_carDal.Create(carAddDto));
-            
+            return await _carDal.Create(carAddDto);
         }
         [HttpPut]
         public async Task<IActionResult> Update()

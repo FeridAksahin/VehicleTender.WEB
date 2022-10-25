@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VehicleTender.API.DTO.AdminDTO.Models.Car;
 using VehicleTender.API.DTO.EndUserDTO.VM.Vehicle;
 
 namespace VehicleTender.API.DataAccessLayer.Concrete
@@ -12,7 +13,7 @@ namespace VehicleTender.API.DataAccessLayer.Concrete
    
     public class CarDal
     {
-        public async Task<int> Create(CarAddDto carAddDto)
+        public async Task<int> Create(AddCarDTO carAddDto)
         {
 
             try
@@ -22,9 +23,9 @@ namespace VehicleTender.API.DataAccessLayer.Concrete
 
 
 
-
+                /*
                 var parameters = new DynamicParameters();
-                parameters.Add("Brand", carAddDto.Brand);
+                parameters.Add("Brand", carAddDto.CarBrand);
                 parameters.Add("Year", carAddDto.Year);
                 parameters.Add("Model", carAddDto.Model);
                 parameters.Add("IsActive", carAddDto.IsActive);
@@ -39,12 +40,13 @@ namespace VehicleTender.API.DataAccessLayer.Concrete
                 parameters.Add("GearType", carAddDto.GearType);
                 parameters.Add("Version", carAddDto.Version);
 
-
-
-                using (SqlConnection connection = new SqlConnection())
+                */
+                /*
+                using (SqlConnection connection = new SqlConnection("data source=.;database=VehicleTender;Integrated Security=true;"))
                 {
                     return (await connection.ExecuteAsync(sqlQuery, parameters));
-                }
+                }*/
+                return 3;
             }
             catch (Exception)
             {

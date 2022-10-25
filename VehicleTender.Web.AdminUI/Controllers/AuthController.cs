@@ -44,7 +44,9 @@ namespace VehicleTender.Web.AdminUI.Controllers
                     { 
                     Expires = DateTime.Now.AddDays(1),
                     });
-
+                SingletonToken addtoken = SingletonToken.Instance;
+              
+                addtoken.Token = token;
                 return RedirectToAction("AdminHome", "Admin");
             }
             return View();
