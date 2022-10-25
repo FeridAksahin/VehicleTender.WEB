@@ -14,6 +14,7 @@ namespace VehicleTender.Web.EndUserUI.Controllers
     {
         // GET: Tender
         TenderService tenderService = new TenderService();
+        Token token = new Token();
         public ActionResult Index()
         {
             return View();
@@ -27,18 +28,15 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         [HttpGet]
         public async Task<ActionResult> ListTender()
         {
-            
             PageModelTender pageModel = new PageModelTender();
-            Token token = new Token()
-            {
-                AccessToken = HttpContext.Request.Cookies["token"].Value
-            };
+            token.AccessToken = HttpContext.Request.Cookies["token"].Value;
             pageModel.TenderList = await tenderService.GetTenderList(token); ;
             return View(pageModel);
         }
         [HttpGet]
         public ActionResult TenderDetail(int id)
         {
+          
             List<TenderCar> tenderCarList = new List<TenderCar>() {
             new TenderCar
                 {
@@ -63,6 +61,8 @@ namespace VehicleTender.Web.EndUserUI.Controllers
                     Statu="Giriş"
                 }
             };
+            token.AccessToken = HttpContext.Request.Cookies["token"].Value;
+            tenderService.GetTenderCar(token,id);
             return View(tenderCarList);
         }
         [HttpGet]
