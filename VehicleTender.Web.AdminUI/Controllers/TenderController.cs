@@ -23,7 +23,28 @@ namespace VehicleTender.Web.AdminUI.Controllers
         [HttpGet]
         public async Task<IActionResult> Tender()
         {
-            return View(await tenderService.TenderList());
+            // return View(await tenderService.TenderList());
+            List<GetTenderDTO> tenderListVM = new List<GetTenderDTO>() {
+            new GetTenderDTO
+                {
+                    CreatedBy=3,
+                    TenderId=3,
+                    CreatedDate=DateTime.Now,
+                    IndivudualOrCorparate="Kurumsal",
+                    Statu="Başladı",
+                    TenderName="Ford İhalesi"
+                },
+            new GetTenderDTO
+                {
+              CreatedBy=3,
+                    TenderId=3,
+                    CreatedDate=DateTime.Now,
+                    IndivudualOrCorparate="Kurumsal",
+                    Statu="Başladı",
+                    TenderName="Ford İhalesi"
+                }
+            };
+            return View(tenderListVM);
         }
 
         [HttpPost]

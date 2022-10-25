@@ -21,8 +21,12 @@ namespace VehicleTender.API.Entity.Entities
         [StringLength(250)]
         public string? Model { get; set; }
         public string? Description { get; set; }
+        public string? Color { get; set; }
+        public string? GearType { get; set; } //vites
+        public string? BodyType { get; set; }
+        public string? FuelType { get; set; }
+        public string? Version { get; set; }
         public virtual List<CarDetailInfo> CarDetailInfo { get; set; }
         public virtual List<TramerValue> TramerValue { get; set; }
-        public virtual List<CarFeatureValue> CarFeatureValue { get; set; }
     }
 }

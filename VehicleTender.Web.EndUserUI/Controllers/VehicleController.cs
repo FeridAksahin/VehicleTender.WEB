@@ -26,11 +26,13 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         StockPageModel model = new StockPageModel();
        // StockService stockService = new StockService();
         Token token = new Token();
+        VehicleService _vehicleServicee;
 
         private readonly CarService _vehicleService;
-        public VehicleController()
+        public VehicleController(VehicleService vehicleServicee)
         {
             _vehicleService = new CarService();
+            _vehicleServicee = vehicleServicee;
         }
 
         // GET: Vehicle
