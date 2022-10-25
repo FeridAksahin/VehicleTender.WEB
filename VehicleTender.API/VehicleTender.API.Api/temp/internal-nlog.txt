@@ -503,3 +503,13 @@ Error Number:-1,State:0,Class:20
 ClientConnectionId:00000000-0000-0000-0000-000000000000
 Error Number:-1,State:0,Class:20
 2022-10-25 22:54:35.0016 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\Doğukan Matuloğlu\Source\Repos\FeridAksahin\VehicleTender.WEB\VehicleTender.API\VehicleTender.API.Api\bin\Debug\net6.0\NLog.config
+2022-10-26 01:04:26.8735 Info Message Template Auto Format enabled
+2022-10-26 01:04:26.8894 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-26 01:04:27.0323 Info Adding target DatabaseTarget(Name=db)
+2022-10-26 01:04:27.0829 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.API\VehicleTender.API.Api\bin\Debug\net6.0\NLog.config
+2022-10-26 01:04:29.1338 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.API\VehicleTender.API.Api\bin\Debug\net6.0\NLog.config
+2022-10-26 01:34:34.3695 Info Message Template Auto Format enabled
+2022-10-26 01:34:34.3833 Info Loading assembly: NLog.Web.AspNetCore
+2022-10-26 01:34:34.4963 Info Adding target DatabaseTarget(Name=db)
+2022-10-26 01:34:34.5321 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.API\VehicleTender.API.Api\bin\Debug\net6.0\NLog.config
+2022-10-26 01:34:35.7684 Info Validating config: TargetNames=db, ConfigItems=33, FilePath=C:\Users\zmb\Desktop\Bilge Adam\Proje\FeridAksahin\VehicleTender.WEB\VehicleTender.API\VehicleTender.API.Api\bin\Debug\net6.0\NLog.config

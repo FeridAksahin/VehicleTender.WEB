@@ -70,10 +70,6 @@ namespace VehicleTender.Web.EndUserUI.Controllers
             list.Add(viewModel3);
 
 
-
-            return View();
-
-
             return View(list);
         }
 
@@ -130,11 +126,10 @@ namespace VehicleTender.Web.EndUserUI.Controllers
         {
             return View();
         }
-
+        [HttpPost]
+        public async Task<ActionResult> Login(LoginVM loginVM)
         {
-          
-
-            return View();
+         
             LoginValidation loginValidation = new LoginValidation();
             ValidationResult result = loginValidation.Validate(loginVM);
 
